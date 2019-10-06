@@ -4,7 +4,10 @@ from django_mysql.models import ListCharField
 
 # Create your models here.
 class Pet(models.Model):
-    nombre = models.CharField(max_length=100, default="", blank=True)
+    def __str__(self):
+        return self.nombre
+    foto = models.URLField(blank=True, default="", max_length=200)
+    nombre = models.CharField(max_length=100, default="")
     sexo = models.CharField(max_length=100, default="", blank=True)
     mes_ingreso = models.DateField(default=None, blank=True)
     esterilizado = models.BooleanField(default=False)
@@ -12,7 +15,3 @@ class Pet(models.Model):
     peso = models.CharField(max_length=100, default="", blank=True)
     descripcion = models.TextField(blank=True)
     vacunas = models.TextField(blank=True)
-    foto = models.ImageField(
-        default=None, null=True, blank=True, upload_to='pets')
-
-    
