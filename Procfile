@@ -1,1 +1,1 @@
-web: gunicorn aaaimx-admin.wsgi --log-file -
+web: gunicorn aaaimxadmin.wsgi --log-file -
