@@ -7,7 +7,7 @@ class Pet(models.Model):
     nombre = models.CharField(max_length=100, default="", blank=True)
     sexo = models.CharField(max_length=100, default="", blank=True)
     mes_ingreso = models.DateField(default=None, blank=True)
-    esterilizado = models.CharField(max_length=100, default="", blank=True)
+    esterilizado = models.BooleanField(default=False)
     edad = models.CharField(max_length=100, default="", blank=True)
     peso = models.CharField(max_length=100, default="", blank=True)
     descripcion = models.TextField(blank=True)
