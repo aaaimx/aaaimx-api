@@ -16,4 +16,4 @@ class AdminRole(admin.ModelAdmin):
 @admin.register(Member)
 class AdminMember(admin.ModelAdmin):
     list_display = ('fullname', 'active', 'division', 'charge', 'adscription')
-    list_filter = ('active', 'division', 'charge', 'adscription')
+    list_filter = ('active', 'division', 'charge', 'roles', 'adscription')

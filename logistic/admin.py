@@ -9,10 +9,10 @@ class AdminCertifcate(admin.ModelAdmin):
 
 @admin.register(Event)
 class AdminEvent(admin.ModelAdmin):
-    list_display = ('id', 'date_start', 'date_end', 'description', 'type', 'division', 'flyer')
+    list_display = ('title', 'date_start', 'date_end',  'description', 'type', 'division', 'flyer')
     list_filter = ('date_start', 'type', 'division')
 
-@admin.register(Stock)
-class AdminStock(admin.ModelAdmin):
-    list_display = ('id', 'description', 'amount')
-    list_filter = ('id', 'description', 'amount')
+@admin.register(Component)
+class AdminComponent(admin.ModelAdmin):
+    list_display = ('description', 'stock', 'available', 'observations')
+    list_filter = ('stock', 'available')

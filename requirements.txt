@@ -1,6 +1,12 @@
 Django==2.2.6
 django-jet==1.0.8
+django-mysql==3.2.0
+feedparser==5.2.1
+gunicorn==19.9.0
+mysqlclient==1.4.4
 Pillow==6.2.0
 pkg-resources==0.0.0
+PyMySQL==0.9.3
 pytz==2019.2
 sqlparse==0.3.0
+whitenoise==4.1.4

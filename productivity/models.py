@@ -1,7 +1,6 @@
 from django.db import models
 from uuid import uuid4
 from datetime import datetime
-from django_mysql.models import ListTextField
 
 
 class Role(models.Model):
@@ -17,16 +16,15 @@ class Partner(models.Model):
 # fullname = models.CharField(default="", primary_key=True, unique=True, max_length=200)
 # adscription = models.ForeignKey(Partner, null=True, on_delete=models.SET_NULL)
 class Member(models.Model):
+    def __str__(self):
+        return self.fullname
     uuid = models.UUIDField(default=uuid4, editable=True)
     date_joined = models.DateTimeField(default=datetime.now, blank=True)
     fullname = models.CharField(default="", primary_key=True, unique=True, max_length=200)
     email = models.CharField(default="", max_length=100)
     division = models.CharField(max_length=100)
     active = models.BooleanField(default=False)
-    roles = ListTextField(
-        base_field=models.CharField(max_length=50),
-        size=10,
-    )
+    roles = models.ManyToManyField(Role, verbose_name="list of roles")
     charge = models.CharField(max_length=100)
     adscription = models.ForeignKey(Partner, null=True, on_delete=models.SET_NULL)
 
