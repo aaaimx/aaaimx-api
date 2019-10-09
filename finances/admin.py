@@ -4,8 +4,8 @@ from .models import *
 
 @admin.register(Income)
 class AdminIncome(admin.ModelAdmin):
-    list_display = ('id', 'from_what' ,   'concept' ,    'division' ,   'amount' ,  'type' , )
-    list_filter = ('from_what' ,   'division' ,   'amount' ,  'type' ,)
+    list_display = ('id', 'origin' ,   'concept' ,    'division' ,   'amount' ,  'type' , )
+    list_filter = ('origin' ,   'division' ,   'amount' ,  'type' ,)
 
 @admin.register(Expense)
 class AdminExpense(admin.ModelAdmin):

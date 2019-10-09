@@ -13,8 +13,7 @@ class Partner(models.Model):
     logo = models.ImageField(
         default=None, null=True, upload_to='logos')
     type = models.CharField(max_length=100, default="")
-# fullname = models.CharField(default="", primary_key=True, unique=True, max_length=200)
-# adscription = models.ForeignKey(Partner, null=True, on_delete=models.SET_NULL)
+    
 class Member(models.Model):
     def __str__(self):
         return self.fullname
