@@ -50,7 +50,8 @@ class Project(models.Model):
     title = models.TextField(default="", blank=True)
     start = models.DateTimeField(default=datetime.now, blank=True)
     end = models.DateTimeField(default=datetime.now, blank=True)
-    responsible = models.ForeignKey(Member, null=True, on_delete=models.SET_NULL)
+    responsible = models.CharField(default="", max_length=100, blank=True)
+    collaborators = models.ManyToManyField(Member, verbose_name="collaborators")
     insitute = models.ForeignKey(Partner, null=True, on_delete=models.SET_NULL)
     lines = models.ManyToManyField(Line, verbose_name="interest areas")
 
@@ -61,11 +62,10 @@ class Research(models.Model):
     class Meta:
         verbose_name_plural = "research"
     title = models.TextField(default="", blank=True)
-    resume = models.TextField(default="", blank=True)
     autors = models.ManyToManyField(Member, verbose_name="list of autors")
-    year = models.IntegerField(default=2018)
     lines = models.ManyToManyField(Line, verbose_name="research lines")
     order = models.CharField(default="", unique=True, max_length=100)
+    projects = models.ManyToManyField(Project, verbose_name="related projects")
 
 class Thesis(models.Model):
     def __str__(self):
@@ -77,24 +77,34 @@ class Thesis(models.Model):
         on_delete=models.CASCADE,
         primary_key=True,
     )
+    resume = models.TextField(default="", blank=True)
+    year = models.IntegerField(default=2018)
     grade = models.CharField(max_length=100)
     advisors = models.ManyToManyField(Member, verbose_name="list of adivisors")
     order = models.CharField(default="", unique=True, max_length=100)
 
 class Presentation(models.Model):
+    def __str__(self):
+        return self.research.title
     research = models.OneToOneField(
         Research,
         on_delete=models.CASCADE,
         primary_key=True,
     )
-    event = models.TextField(default="", blank=True)
+    resume = models.TextField(default="", blank=True)
+    year = models.IntegerField(default=2018)
+    event = models.CharField(default="", max_length=200, blank=True)
 
 class Article(models.Model):
+    def __str__(self):
+        return self.research.title
     research = models.OneToOneField(
         Research,
         on_delete=models.CASCADE,
         primary_key=True,
     )
+    resume = models.TextField(default="", blank=True)
+    year = models.IntegerField(default=2018)
     published_in = models.CharField(default="", max_length=200, blank=True)
     type = models.CharField(default="", max_length=200, blank=True)
     link = models.URLField(default="", max_length=200, blank=True)

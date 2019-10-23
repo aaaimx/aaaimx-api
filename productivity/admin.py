@@ -30,16 +30,27 @@ class AdminProject(admin.ModelAdmin):
 
 @admin.register(Research)
 class AdminResearch(admin.ModelAdmin):
-    list_display = ('title', 'year', 'resume')
-    list_filter = ('title', 'year', 'autors', 'lines')
+    list_display = ('title',)
+    list_filter = ('title', 'projects', 'autors', 'lines')
 
 
 @admin.register(Thesis)
 class AdminThesis(admin.ModelAdmin):
-    list_display = ('grade',)
+    list_display = ('research', 'year',  'grade','resume')
     list_filter = ('grade', 'advisors')
+    search_fields = ('research',)
 
-# Register your models here.
+@admin.register(Presentation)
+class AdminPresentation(admin.ModelAdmin):
+    list_display = ('research', 'year', 'event', 'resume')
+    list_filter = ('event',)
+    search_fields = ('research',)
+
+@admin.register(Article)
+class AdminArticle(admin.ModelAdmin):
+    list_display = ('research', 'year', 'published_in', 'type', 'link', 'resume',)
+    list_filter = ('published_in','type',)
+    search_fields = ('research',)
 
 @admin.register(Member)
 class AdminMember(admin.ModelAdmin):

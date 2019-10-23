@@ -7,9 +7,8 @@ sudo apt-get install libmysqlclient-dev
 
 # Setup
 ``` bash
-$ virtualenv venv --python=python3
-$ source venv/bin/activate
-$ pip install -r requirements.txt
+$ pip install pipenv
+$ pipenv install --python=python3
 ```
 
 # Environment
@@ -21,14 +20,13 @@ export DB_NAME='YOUR DATABASE NAME'
 export DB_USER='YOUR DB USER'
 export DB_PASS='YOUR DB PASSWORD'
 export DB_HOST='YOUR DB HOST'
-export DJANGO_DEBUG=True
 ```
-> NOTE: Change `DEBUG=True` to `DEBUG=False` in production
 
 # Run project
 
 ```bash
 $ source .env
+$ pipenv shell
 $ python manage.py makemigrations
 $ python manage.py migrate
 $ python manage.py collectstatic
