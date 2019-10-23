@@ -1,7 +1,7 @@
 from django.db import models
 from uuid import uuid4
 from datetime import datetime
-
+from productivity.models import *
 
 # Create your models here.
 class Event(models.Model):
@@ -12,7 +12,7 @@ class Event(models.Model):
     date_end = models.DateTimeField(blank=True)
     description = models.TextField(default="", blank=True)
     type = models.CharField(max_length=100)
-    division = models.CharField(max_length=100)
+    division = models.ForeignKey(Division, null=True, on_delete=models.SET_NULL)
     place = models.CharField(max_length=100)
     flyer = models.ImageField(
         default=None, null=True, blank=True, upload_to='flyers')

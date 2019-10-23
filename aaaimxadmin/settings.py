@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
+    'storages',
     'DIS',
     'productivity',
     'logistic',
@@ -150,6 +152,8 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#DEFAULT_FILE_STORAGE = 'storages.backends.ftp.FTPStorage'
+#FTP_STORAGE_LOCATION = 'ftp://u925603734.carlosmoo:c@rlosm00@aaaaimx.org:22/certificates'
 try:
     from settings_local import *
 except ImportError:

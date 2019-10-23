@@ -9,11 +9,41 @@ class AdminPartner(admin.ModelAdmin):
 
 @admin.register(Role)
 class AdminRole(admin.ModelAdmin):
-    list_display = ('id',)
-    list_filter = ('id',)
+    list_display = ('id','name')
+    list_filter = ('id','name')
+
+@admin.register(Line)
+class AdminLine(admin.ModelAdmin):
+    list_display = ('id','topic')
+    list_filter = ('id','topic')
+
+@admin.register(Division)
+class AdminDivision(admin.ModelAdmin):
+    list_display = ('id','name', 'logo', 'story')
+    list_filter = ('id','name')
+
+@admin.register(Project)
+class AdminProject(admin.ModelAdmin):
+    list_display = ('title','start', 'end', 'responsible',)
+    list_filter = ('responsible', 'start', 'end', 'lines')
+
+
+@admin.register(Research)
+class AdminResearch(admin.ModelAdmin):
+    list_display = ('title', 'year', 'resume')
+    list_filter = ('title', 'year', 'autors', 'lines')
+
+
+@admin.register(Thesis)
+class AdminThesis(admin.ModelAdmin):
+    list_display = ('grade',)
+    list_filter = ('grade', 'advisors')
 
 # Register your models here.
-@admin.register(Member)
+
 class AdminMember(admin.ModelAdmin):
-    list_display = ('fullname', 'active', 'division', 'charge', 'adscription')
-    list_filter = ('active', 'division', 'charge', 'roles', 'adscription')
+    list_display = ('id', 'fullname', 'active', 'charge', 'adscription')
+    list_filter = ('active', 'id', 'divisions', 'charge', 'roles', 'adscription')
+    search_fields = ('fullname', 'charge',)
+
+admin.site.register(Member, AdminMember)
