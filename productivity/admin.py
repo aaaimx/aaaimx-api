@@ -41,9 +41,8 @@ class AdminThesis(admin.ModelAdmin):
 
 # Register your models here.
 
+@admin.register(Member)
 class AdminMember(admin.ModelAdmin):
     list_display = ('id', 'fullname', 'active', 'charge', 'adscription')
-    list_filter = ('active', 'id', 'divisions', 'charge', 'roles', 'adscription')
+    list_filter = ('active', 'divisions', 'charge', 'roles', 'adscription')
     search_fields = ('fullname', 'charge',)
-
-admin.site.register(Member, AdminMember)
