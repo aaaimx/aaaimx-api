@@ -38,7 +38,6 @@ class Member(models.Model):
     charge = models.CharField(max_length=100)
     adscription = models.ForeignKey(Partner, null=True, on_delete=models.SET_NULL)
 
-
 class Line(models.Model):
     def __str__(self):
         return self.topic
@@ -66,6 +65,11 @@ class Research(models.Model):
     lines = models.ManyToManyField(Line, verbose_name="research lines")
     order = models.CharField(default="", unique=True, max_length=100)
     projects = models.ManyToManyField(Project, verbose_name="related projects")
+
+# class Authors(models.Model):
+#     member_id = models.ForeignKey(Member, on_delete=models.CASCADE)
+#     research_id = models.ForeignKey(Research, on_delete=models.CASCADE)
+#     position = models.IntegerField(blank=True, default=1)
 
 class Thesis(models.Model):
     def __str__(self):
@@ -110,33 +114,47 @@ class Article(models.Model):
     link = models.URLField(default="", max_length=200, blank=True)
 
 
-"""
-ROLES = ['Student', 'Teacher', 'Researcher', 'Graduated', 'Member']
-for r in ROLES:
-    try:
-        role = Role(name=r)
-        role.save()
-    except:
-        pass
 
+# try:
+#     Role.objects.bulk_create([
+#         Role(name='Student'),
+#         Role(name='Teacher'),
+#         Role(name='Researcher'),
+#         Role(name='Graduated'),
+#         Role(name='Member'),
+#     ])
+# except Exception as err:
+#     print(err)
+#     pass
 
-DIVISIONS = ['Software', 'Machine Learning', 'Operations', 'Robotics', 'Applied Maths', 'Social Impact']
-for d in DIVISIONS:
-    try:
-        div = Division(name=d)
-        div.save()
-    except:
-        pass
+# try:
+#     Division.objects.bulk_create([
+#         Division(name='Software'),
+#         Division(name='Machine Learning'),
+#         Division(name='Operations'),
+#         Division(name='Robotics'),
+#         Division(name='Applied Maths'),
+#         Division(name='Social Impact'),
+#     ])
+# except Exception as err:
+#     print(err)
+#     pass
 
-LINES = ['Fuzzy logic','Neural networks','Pattern recognition','Computer vision and image processing',
-    'Classification and clustering','Genetic programming and swarm intelligence','Searching and sorting algorithms',
-    'Internet of things','Planning and scheduling']
-for l in LINES:
-    try:
-        line = Line(topic=l)
-        line.save()
-    except:
-        pass
-"""
+# try:
+#     Line.objects.bulk_create([
+#         Line(topic='Fuzzy logic'),
+#         Line(topic='Neural networks'),
+#         Line(topic='Pattern recognition'),
+#         Line(topic='Computer vision and image processing'),
+#         Line(topic='Classification and clustering'),
+#         Line(topic='Genetic programming and swarm intelligence'),
+#         Line(topic='Searching and sorting algorithms'),
+#         Line(topic='Internet of things'),
+#         Line(topic='Planning and scheduling'),
+#     ])
+# except Exception as err:
+#     print(err)
+#     pass
+    
 
-
+    

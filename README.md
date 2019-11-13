@@ -22,6 +22,11 @@ export DB_PASS='YOUR DB PASSWORD'
 export DB_HOST='YOUR DB HOST'
 ```
 
+# Docker 
+```bash
+$  docker run -d -p 33060:3306 --name mysql-db -e MYSQL_ROOT_PASSWORD=secret mysql --default-authentication-plugin=mysql_native_password
+```
+
 # Run project
 
 ```bash

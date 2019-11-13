@@ -16,14 +16,35 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from django.conf import settings
+from django.conf.urls import include, url
 from django.conf.urls.static import static
+from django.contrib.auth.models import User
+from rest_framework import routers
+from .views import UserViewSet, GroupViewSet
+from productivity.views import *
+from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token
 
 admin.site.site_header = "AAAIMX Admin"
 admin.site.site_title = "AAAIMX Admin Portal"
 admin.site.index_title = "Welcome to AAAIMX Administration Portal"
 
+
+# Routers provide an easy way of automatically determining the URL conf.
+router = routers.DefaultRouter()
+router.register(r'users', UserViewSet)
+router.register(r'groups', GroupViewSet)
+router.register(r'members', MemberViewSet)
+router.register(r'research', ResearchViewSet)
+
+# Wire up our API using automatic URL routing.
+# Additionally, we include login URLs for the browsable API.
+
 urlpatterns = [
     path('jet/', include('jet.urls', namespace='jet')),  # Django JET URLS
     path('jet/dashboard/', include('jet.dashboard.urls', namespace='jet-dashboard')),  # Django JET dashboard URLS
-    path('', admin.site.urls),
+    path('admin/', admin.site.urls),
+    url(r'^auth/obtain_token/', obtain_jwt_token),
+    url(r'^auth/refresh_token/', refresh_jwt_token),
+    url(r'^api/', include(router.urls)),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
