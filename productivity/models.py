@@ -19,12 +19,13 @@ class Division(models.Model):
 class Partner(models.Model):
     def __str__(self):
         return self.alias
-    uuid = models.UUIDField(default=uuid4, editable=True)
-    name = models.CharField(default="", editable=True, max_length=200, primary_key=True, unique=True)
-    alias = models.CharField(max_length=100)
+    uuid = models.UUIDField(default=uuid4, primary_key=True, editable=True)
+    name = models.CharField(default="", editable=True, max_length=255, unique=True)
+    alias = models.CharField(max_length=100, blank=True)
     logo = models.ImageField(
         default=None, blank=True, upload_to='logos')
     type = models.CharField(max_length=100, default="")
+
     
 class Member(models.Model):
     def __str__(self):
@@ -113,48 +114,4 @@ class Article(models.Model):
     type = models.CharField(default="", max_length=200, blank=True)
     link = models.URLField(default="", max_length=200, blank=True)
 
-
-
-# try:
-#     Role.objects.bulk_create([
-#         Role(name='Student'),
-#         Role(name='Teacher'),
-#         Role(name='Researcher'),
-#         Role(name='Graduated'),
-#         Role(name='Member'),
-#     ])
-# except Exception as err:
-#     print(err)
-#     pass
-
-# try:
-#     Division.objects.bulk_create([
-#         Division(name='Software'),
-#         Division(name='Machine Learning'),
-#         Division(name='Operations'),
-#         Division(name='Robotics'),
-#         Division(name='Applied Maths'),
-#         Division(name='Social Impact'),
-#     ])
-# except Exception as err:
-#     print(err)
-#     pass
-
-# try:
-#     Line.objects.bulk_create([
-#         Line(topic='Fuzzy logic'),
-#         Line(topic='Neural networks'),
-#         Line(topic='Pattern recognition'),
-#         Line(topic='Computer vision and image processing'),
-#         Line(topic='Classification and clustering'),
-#         Line(topic='Genetic programming and swarm intelligence'),
-#         Line(topic='Searching and sorting algorithms'),
-#         Line(topic='Internet of things'),
-#         Line(topic='Planning and scheduling'),
-#     ])
-# except Exception as err:
-#     print(err)
-#     pass
-    
-
-    
+#from setup_data import *

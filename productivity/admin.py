@@ -4,23 +4,23 @@ from .models import *
 # Register your models here.
 @admin.register(Partner)
 class AdminPartner(admin.ModelAdmin):
-    list_display = ('uuid', 'name', 'alias', 'type', 'logo')
+    list_display = ('name', 'alias', 'type', 'logo')
     list_filter = ('type',)
 
 @admin.register(Role)
 class AdminRole(admin.ModelAdmin):
-    list_display = ('id','name')
-    list_filter = ('id','name')
+    list_display = ('name',)
+    list_filter = ('name',)
 
 @admin.register(Line)
 class AdminLine(admin.ModelAdmin):
-    list_display = ('id','topic')
-    list_filter = ('id','topic')
+    list_display = ('topic',)
+    list_filter = ('topic',)
 
 @admin.register(Division)
 class AdminDivision(admin.ModelAdmin):
-    list_display = ('id','name', 'logo', 'story')
-    list_filter = ('id','name')
+    list_display = ('name', 'logo', 'story')
+    list_filter = ('name',)
 
 @admin.register(Project)
 class AdminProject(admin.ModelAdmin):

@@ -11,6 +11,11 @@ class MemberSerializer(serializers.ModelSerializer):
         model = Member
         exclude = []
 
+class PartnerSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Partner
+        exclude = []
+
 class ResearchSerializer(serializers.ModelSerializer):
     class Meta:
         model = Research

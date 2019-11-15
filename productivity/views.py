@@ -10,6 +10,16 @@ class MemberViewSet(viewsets.ModelViewSet):
     queryset = Member.objects.all().order_by('-date_joined')
     serializer_class = MemberSerializer
 
+    def retrieve(self, request, pk=None):
+        pass
+
+class PartnerViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows Partners to be viewed or edited.
+    """
+    queryset = Partner.objects.all().order_by('-name')
+    serializer_class = PartnerSerializer
+
 class RoleViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows roles to be viewed or edited.
