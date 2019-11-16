@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from .models import *
-
+from .fields import *
 # Serializers define the API representation.
 class RoleSerializer(serializers.ModelSerializer):
     class Meta:
@@ -11,17 +11,28 @@ class MemberSerializer(serializers.ModelSerializer):
         model = Member
         exclude = []
 
+class LineSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Line
+        exclude = []
+
 class PartnerSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Partner
         exclude = []
 
 class ResearchSerializer(serializers.ModelSerializer):
+    authors = AuthorsListingField(many=True, read_only=True)
     class Meta:
         model = Research
         exclude = []
-
+class AdvisorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Advisor
+        exclude = []
 class ThesisSerializer(serializers.ModelSerializer):
+    advisors = AdvisorListingField(many=True, read_only=True)
+    research = ResearchField(many=False, read_only=True)
     class Meta:
         model = Thesis
         exclude = []

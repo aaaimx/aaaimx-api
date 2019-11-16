@@ -26,18 +26,16 @@ class Partner(models.Model):
         default=None, blank=True, upload_to='logos')
     type = models.CharField(max_length=100, default="")
 
-    
 class Member(models.Model):
     def __str__(self):
         return self.fullname
-    date_joined = models.DateTimeField(default=datetime.now, blank=True)
     fullname = models.CharField(default="", unique=True, max_length=200)
     email = models.EmailField(default="", blank=True, max_length=100)
-    divisions = models.ManyToManyField(Division, verbose_name="divisions")
+    divisions = models.ManyToManyField(Division, blank=True, verbose_name="divisions")
     active = models.BooleanField(default=False)
     roles = models.ManyToManyField(Role, verbose_name="list of roles")
     charge = models.CharField(max_length=100)
-    adscription = models.ForeignKey(Partner, null=True, on_delete=models.SET_NULL)
+    adscription = models.ForeignKey(Partner, null=True, related_name="adscription_institute", on_delete=models.SET_NULL)
 
 class Line(models.Model):
     def __str__(self):
@@ -47,13 +45,19 @@ class Line(models.Model):
 class Project(models.Model):
     def __str__(self):
         return self.title
+    uuid = models.UUIDField(default=uuid4, primary_key=True, editable=True)
     title = models.TextField(default="", blank=True)
-    start = models.DateTimeField(default=datetime.now, blank=True)
-    end = models.DateTimeField(default=datetime.now, blank=True)
+    start = models.DateField(default=datetime.now, blank=True)
+    end = models.DateField(default=datetime.now, blank=True)
     responsible = models.CharField(default="", max_length=100, blank=True)
     collaborators = models.ManyToManyField(Member, verbose_name="collaborators")
     insitute = models.ForeignKey(Partner, null=True, on_delete=models.SET_NULL)
     lines = models.ManyToManyField(Line, verbose_name="interest areas")
+
+
+class Author(models.Model):
+    member = models.ForeignKey(Member, on_delete=models.CASCADE)
+    position = models.IntegerField(blank=True, default=1)
 
 class Research(models.Model):
     def __str__(self):
@@ -62,15 +66,9 @@ class Research(models.Model):
     class Meta:
         verbose_name_plural = "research"
     title = models.TextField(default="", blank=True)
-    autors = models.ManyToManyField(Member, verbose_name="list of autors")
     lines = models.ManyToManyField(Line, verbose_name="research lines")
-    order = models.CharField(default="", unique=True, max_length=100)
     projects = models.ManyToManyField(Project, verbose_name="related projects")
 
-# class Authors(models.Model):
-#     member_id = models.ForeignKey(Member, on_delete=models.CASCADE)
-#     research_id = models.ForeignKey(Research, on_delete=models.CASCADE)
-#     position = models.IntegerField(blank=True, default=1)
 
 class Thesis(models.Model):
     def __str__(self):
@@ -79,14 +77,13 @@ class Thesis(models.Model):
         verbose_name_plural = "theses"
     research = models.OneToOneField(
         Research,
+        related_name="theses",
         on_delete=models.CASCADE,
         primary_key=True,
     )
     resume = models.TextField(default="", blank=True)
     year = models.IntegerField(default=2018)
     grade = models.CharField(max_length=100)
-    advisors = models.ManyToManyField(Member, verbose_name="list of adivisors")
-    order = models.CharField(default="", unique=True, max_length=100)
 
 class Presentation(models.Model):
     def __str__(self):
@@ -114,4 +111,16 @@ class Article(models.Model):
     type = models.CharField(default="", max_length=200, blank=True)
     link = models.URLField(default="", max_length=200, blank=True)
 
+class Advisor(models.Model):
+    member = models.ForeignKey(Member, on_delete=models.CASCADE)
+    thesis = models.ForeignKey(Thesis, related_name="advisors", on_delete=models.CASCADE)
+    position = models.IntegerField(blank=True, default=1)
+
+class Author(models.Model):
+    member = models.ForeignKey(Member, on_delete=models.CASCADE)
+    research = models.ForeignKey(Research, default=None, related_name="authors", on_delete=models.CASCADE)
+    position = models.IntegerField(blank=True, default=1)
+
+
 #from setup_data import *
+from .collaborators import *

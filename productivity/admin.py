@@ -4,7 +4,7 @@ from .models import *
 # Register your models here.
 @admin.register(Partner)
 class AdminPartner(admin.ModelAdmin):
-    list_display = ('name', 'alias', 'type', 'logo')
+    list_display = ('uuid', 'name', 'alias', 'type', 'logo')
     list_filter = ('type',)
 
 @admin.register(Role)
@@ -31,8 +31,12 @@ class AdminProject(admin.ModelAdmin):
 @admin.register(Research)
 class AdminResearch(admin.ModelAdmin):
     list_display = ('title',)
-    list_filter = ('title', 'projects', 'autors', 'lines')
+    list_filter = ('title', 'projects', 'lines')
 
+@admin.register(Advisor)
+class AdminAdvisor(admin.ModelAdmin):
+    list_display = ('member', 'position', 'thesis')
+    list_filter = ('member', 'position',)
 
 @admin.register(Thesis)
 class AdminThesis(admin.ModelAdmin):
