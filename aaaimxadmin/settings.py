@@ -105,9 +105,11 @@ CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:9756',
+    'http://rnoveloc.esy.es',
 ]
 CORS_ORIGIN_REGEX_WHITELIST = [
     'http://localhost:9756',
+    'http://rnoveloc.esy.es',
 ]
 
 ROOT_URLCONF = 'aaaimxadmin.urls'
