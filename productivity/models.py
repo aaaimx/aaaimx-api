@@ -50,14 +50,9 @@ class Project(models.Model):
     start = models.DateField(default=datetime.now, blank=True)
     end = models.DateField(default=datetime.now, blank=True)
     responsible = models.CharField(default="", max_length=100, blank=True)
-    collaborators = models.ManyToManyField(Member, verbose_name="collaborators")
-    insitute = models.ForeignKey(Partner, null=True, on_delete=models.SET_NULL)
-    lines = models.ManyToManyField(Line, verbose_name="interest areas")
-
-
-class Author(models.Model):
-    member = models.ForeignKey(Member, on_delete=models.CASCADE)
-    position = models.IntegerField(blank=True, default=1)
+    collaborators = models.ManyToManyField(Member, blank=True, verbose_name="collaborators")
+    institute = models.ForeignKey(Partner, null=True, on_delete=models.SET_NULL)
+    lines = models.ManyToManyField(Line, blank=True, verbose_name="interest areas")
 
 class Research(models.Model):
     def __str__(self):
@@ -124,3 +119,4 @@ class Author(models.Model):
 
 # from setup_data import *
 # from .collaborators import *
+# from .projects import *

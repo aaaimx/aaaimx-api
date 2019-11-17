@@ -1,0 +1,15 @@
+{
+"auth_group": [
+	{
+		"id" : 1,
+		"name" : "Finances"
+	},
+	{
+		"id" : 3,
+		"name" : "Logistic"
+	},
+	{
+		"id" : 2,
+		"name" : "Research"
+	}
+]}

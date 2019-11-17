@@ -83,8 +83,37 @@ class ProjectViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows projects to be viewed or edited.
     """
-    queryset = Project.objects.all()
+    queryset = Project.objects.all().order_by('title')
     serializer_class = ProjectSerializer
+
+    def list(self, request):
+        """
+        GET method to process pagination, filtering & sort
+        """
+        # get query params
+        limit = int(request.GET.get('limit', 10))
+        offset = int(request.GET.get('offset', 0))
+        page = int(request.GET.get('page', 1))
+        title = request.GET.get('title', "")
+        institute = request.GET.get('institute', None)
+
+        # filter by title
+        matched = list(filter(lambda m: re.findall(title.upper(), m.title.upper()), self.queryset))
+        if institute:
+            matched = list(filter(lambda m: m.institute.alias == institute, matched))
+
+        # pagination
+        queryset = matched[offset:limit*page]
+
+        # serialize data
+        serializer = self.serializer_class(queryset, many=True)
+
+        # custom response 
+        # status code 200 OK
+        return Response(data={
+          'count': len(matched),
+          'params': request.GET,
+          'results': serializer.data})
 
 class ResearchViewSet(viewsets.ModelViewSet):
     """

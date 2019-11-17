@@ -1,0 +1,68 @@
+{
+"auth_user": [
+	{
+		"id" : 1,
+		"password" : "pbkdf2_sha256$150000$Cku6Jxogl3hP$\/sBZYe6BustLTiYQBBOhaqJ+RdC0pP0gM+JKlWH10Z0=",
+		"last_login" : "2019-10-22 03:03:15.117031000",
+		"is_superuser" : 1,
+		"username" : "admin",
+		"first_name" : "",
+		"last_name" : "",
+		"email" : "rnovelo.cruz98@gmail.com",
+		"is_staff" : 1,
+		"is_active" : 1,
+		"date_joined" : "2019-10-06 06:40:52.617190000"
+	},
+	{
+		"id" : 2,
+		"password" : "pbkdf2_sha256$150000$WxrIXMnuPCBZ$9dtwVO0MAvFDASH0dA6d\/FR9YSkf+4wOWU2ySHh4yzU=",
+		"last_login" : "2019-10-07 18:06:44.158105000",
+		"is_superuser" : 0,
+		"username" : "social.impact@aaaimx.org",
+		"first_name" : "Viridiana Katia",
+		"last_name" : "Ramayo Rosales",
+		"email" : "social.impact@aaaimx.org",
+		"is_staff" : 1,
+		"is_active" : 1,
+		"date_joined" : "2019-10-06 07:51:50"
+	},
+	{
+		"id" : 3,
+		"password" : "pbkdf2_sha256$150000$cRyRbaj3orVO$U5h15cHmtTsgYcMxp+rwolZznLujise46g31GPXHxj0=",
+		"last_login" : "2019-10-15 16:59:29.480115000",
+		"is_superuser" : 0,
+		"username" : "operations@aaaimx.org",
+		"first_name" : "",
+		"last_name" : "",
+		"email" : "",
+		"is_staff" : 1,
+		"is_active" : 1,
+		"date_joined" : "2019-10-06 17:43:32"
+	},
+	{
+		"id" : 4,
+		"password" : "pbkdf2_sha256$150000$UrLX84vhqKEb$Wy+9U\/+zG+cfmBRNeoqP94zVpTZsajrloiKYmTckXiA=",
+		"last_login" : "2019-10-06 17:54:01.851160000",
+		"is_superuser" : 0,
+		"username" : "robotics@aaaimx.org",
+		"first_name" : "",
+		"last_name" : "",
+		"email" : "",
+		"is_staff" : 1,
+		"is_active" : 1,
+		"date_joined" : "2019-10-06 17:49:01"
+	},
+	{
+		"id" : 5,
+		"password" : "pbkdf2_sha256$150000$Bur5gf42uZax$6xHtTkZwbjqvYJIgTqWJzYCLH\/OG7\/r39k1C9dGqJrM=",
+		"last_login" : null,
+		"is_superuser" : 0,
+		"username" : "community@aaaimx.org",
+		"first_name" : "",
+		"last_name" : "",
+		"email" : "",
+		"is_staff" : 1,
+		"is_active" : 1,
+		"date_joined" : "2019-10-06 17:50:42"
+	}
+]}
