@@ -3,5 +3,6 @@ env
 .env
 .env.development
 media
+static
 .vscode
 settings_local.py
