@@ -6,6 +6,7 @@ class RoleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Role
         exclude = []
+        
 class MemberSerializer(serializers.ModelSerializer):
     class Meta:
         model = Member
@@ -26,13 +27,14 @@ class ResearchSerializer(serializers.ModelSerializer):
     class Meta:
         model = Research
         exclude = []
+
 class AdvisorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Advisor
         exclude = []
+
 class ThesisSerializer(serializers.ModelSerializer):
     advisors = AdvisorListingField(many=True, read_only=True)
-    research = ResearchField(many=False, read_only=True)
     class Meta:
         model = Thesis
         exclude = []
@@ -48,6 +50,7 @@ class PresentationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Presentation
         exclude = []
+
 class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project

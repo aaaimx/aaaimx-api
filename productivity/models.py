@@ -57,12 +57,12 @@ class Project(models.Model):
 class Research(models.Model):
     def __str__(self):
         return self.title
-    
     class Meta:
         verbose_name_plural = "research"
+    uuid = models.UUIDField(default=uuid4, primary_key=True, editable=True)
     title = models.TextField(default="", blank=True)
-    lines = models.ManyToManyField(Line, verbose_name="research lines")
-    projects = models.ManyToManyField(Project, verbose_name="related projects")
+    lines = models.ManyToManyField(Line, blank=True, verbose_name="research lines")
+    projects = models.ManyToManyField(Project, blank=True, verbose_name="related projects")
 
 
 class Thesis(models.Model):

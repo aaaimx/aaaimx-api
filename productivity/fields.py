@@ -7,11 +7,11 @@ class AuthorsListingField(serializers.RelatedField):
 
 class AdvisorListingField(serializers.RelatedField):
     def to_representation(self, value):
-        return {'position': value.position, 'fullname': value.member.fullname, 'active': value.member.active }
+        return {'position': value.position, 'id': value.id, 'fullname': value.member.fullname, 'active': value.member.active }
 
 class ResearchField(serializers.RelatedField):
     def to_representation(self, value):
-        return { 'id': value.id, 'title' : value.title }
+        return { 'uuid': value.uuid, 'title' : value.title }
 
 class AdscriptionField(serializers.RelatedField):
     def to_representation(self, value):

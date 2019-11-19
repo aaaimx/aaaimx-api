@@ -122,6 +122,13 @@ class ResearchViewSet(viewsets.ModelViewSet):
     queryset = Research.objects.all().order_by('-title')
     serializer_class = ResearchSerializer
 
+class AdvisorViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows Advisors to be viewed or edited.
+    """
+    queryset = Advisor.objects.all()
+    serializer_class = AdvisorSerializer
+
 class ArticleViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows articles to be viewed or edited.
