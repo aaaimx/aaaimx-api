@@ -47,9 +47,6 @@ router.register(r'divisions', DivisionViewSet)
 router.register(r'projects', ProjectViewSet)
 router.register(r'lines', LineViewSet)
 router.register(r'research', ResearchViewSet)
-router.register(r'theses', ThesisViewSet)
-router.register(r'articles', ArticleViewSet)
-router.register(r'presentations', PresentationViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.

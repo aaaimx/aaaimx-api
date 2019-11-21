@@ -128,24 +128,3 @@ class AdvisorViewSet(viewsets.ModelViewSet):
     """
     queryset = Advisor.objects.all()
     serializer_class = AdvisorSerializer
-
-class ArticleViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows articles to be viewed or edited.
-    """
-    queryset = Article.objects.all()
-    serializer_class = ArticleSerializer
-
-class PresentationViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows presentations to be viewed or edited.
-    """
-    queryset = Presentation.objects.all()
-    serializer_class = PresentationSerializer
-
-class ThesisViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows theses to be viewed or edited.
-    """
-    queryset = Thesis.objects.all()
-    serializer_class = ThesisSerializer

@@ -1,7 +1,10 @@
 from django.db import models
 from uuid import uuid4
 from datetime import datetime
+from gdstorage.storage import GoogleDriveStorage
 
+# Define Google Drive Storage
+gd_storage = GoogleDriveStorage()
 
 class Role(models.Model):
     def __str__(self):
@@ -23,7 +26,7 @@ class Partner(models.Model):
     name = models.CharField(default="", editable=True, max_length=255, unique=True)
     alias = models.CharField(max_length=100, blank=True)
     logo = models.ImageField(
-        default=None, blank=True, upload_to='logos')
+        default=None, blank=True, upload_to='logos', storage=gd_storage)
     type = models.CharField(max_length=100, default="")
 
 class Member(models.Model):
@@ -63,52 +66,19 @@ class Research(models.Model):
     title = models.TextField(default="", blank=True)
     lines = models.ManyToManyField(Line, blank=True, verbose_name="research lines")
     projects = models.ManyToManyField(Project, blank=True, verbose_name="related projects")
-
-
-class Thesis(models.Model):
-    def __str__(self):
-        return self.research.title
-    class Meta:
-        verbose_name_plural = "theses"
-    research = models.OneToOneField(
-        Research,
-        related_name="theses",
-        on_delete=models.CASCADE,
-        primary_key=True,
-    )
     resume = models.TextField(default="", blank=True)
-    year = models.IntegerField(default=2018)
-    grade = models.CharField(max_length=100)
-
-class Presentation(models.Model):
-    def __str__(self):
-        return self.research.title
-    research = models.OneToOneField(
-        Research,
-        on_delete=models.CASCADE,
-        primary_key=True,
-    )
-    resume = models.TextField(default="", blank=True)
-    year = models.IntegerField(default=2018)
+    year = models.IntegerField(default=2018, blank=True)
+    grade = models.CharField(default="", max_length=100, blank=True)
     event = models.CharField(default="", max_length=200, blank=True)
-
-class Article(models.Model):
-    def __str__(self):
-        return self.research.title
-    research = models.OneToOneField(
-        Research,
-        on_delete=models.CASCADE,
-        primary_key=True,
-    )
-    resume = models.TextField(default="", blank=True)
-    year = models.IntegerField(default=2018)
-    published_in = models.CharField(default="", max_length=200, blank=True)
+    pub_in = models.CharField(default="", max_length=200, blank=True)
+    pub_type = models.CharField(default="", max_length=200, blank=True)
     type = models.CharField(default="", max_length=200, blank=True)
     link = models.URLField(default="", max_length=200, blank=True)
 
+
 class Advisor(models.Model):
     member = models.ForeignKey(Member, on_delete=models.CASCADE)
-    thesis = models.ForeignKey(Thesis, related_name="advisors", on_delete=models.CASCADE)
+    thesis = models.ForeignKey(Research, related_name="advisors", on_delete=models.CASCADE)
     position = models.IntegerField(blank=True, default=1)
 
 class Author(models.Model):
@@ -120,3 +90,4 @@ class Author(models.Model):
 # from setup_data import *
 # from .collaborators import *
 # from .projects import *
+# from .research import *

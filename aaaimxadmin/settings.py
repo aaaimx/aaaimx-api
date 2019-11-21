@@ -50,7 +50,9 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
+    'gdstorage'
 ]
+
 
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
@@ -186,6 +188,9 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+GOOGLE_DRIVE_STORAGE_JSON_KEY_FILE= os.path.join(BASE_DIR, 'key.json')
+
 #DEFAULT_FILE_STORAGE = 'storages.backends.ftp.FTPStorage'
 #FTP_STORAGE_LOCATION = 'ftp://u925603734.carlosmoo:c@rlosm00@aaaaimx.org:22/certificates'
 try:

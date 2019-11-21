@@ -33,23 +33,11 @@ class AdvisorSerializer(serializers.ModelSerializer):
         model = Advisor
         exclude = []
 
-class ThesisSerializer(serializers.ModelSerializer):
-    advisors = AdvisorListingField(many=True, read_only=True)
-    class Meta:
-        model = Thesis
-        exclude = []
-
-
-class ArticleSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Article
-        exclude = []
-
-
-class PresentationSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Presentation
-        exclude = []
+# class ThesisSerializer(serializers.ModelSerializer):
+#     advisors = AdvisorListingField(many=True, read_only=True)
+#     class Meta:
+#         model = Thesis
+#         exclude = []
 
 class ProjectSerializer(serializers.ModelSerializer):
     class Meta:

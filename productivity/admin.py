@@ -27,34 +27,17 @@ class AdminProject(admin.ModelAdmin):
     list_display = ('title','start', 'end', 'responsible',)
     list_filter = ('responsible', 'start', 'end', 'lines')
 
-
 @admin.register(Research)
 class AdminResearch(admin.ModelAdmin):
-    list_display = ('title',)
-    list_filter = ('title', 'projects', 'lines')
+    list_display = ('title', "resume", "year", "type")
+    list_filter = ('title', 'projects', 'lines', "year", "type")
+    search_fields = ('title',)
 
 @admin.register(Advisor)
 class AdminAdvisor(admin.ModelAdmin):
     list_display = ('member', 'position', 'thesis')
     list_filter = ('member', 'position',)
 
-@admin.register(Thesis)
-class AdminThesis(admin.ModelAdmin):
-    list_display = ('research', 'year',  'grade','resume')
-    list_filter = ('grade', 'advisors')
-    search_fields = ('research',)
-
-@admin.register(Presentation)
-class AdminPresentation(admin.ModelAdmin):
-    list_display = ('research', 'year', 'event', 'resume')
-    list_filter = ('event',)
-    search_fields = ('research',)
-
-@admin.register(Article)
-class AdminArticle(admin.ModelAdmin):
-    list_display = ('research', 'year', 'published_in', 'type', 'link', 'resume',)
-    list_filter = ('published_in','type',)
-    search_fields = ('research',)
 
 @admin.register(Member)
 class AdminMember(admin.ModelAdmin):
