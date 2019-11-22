@@ -28,6 +28,7 @@ from rest_framework_simplejwt.views import (
 )
 from productivity.views import *
 from finances.views import MembershipViewSet
+from logistic.views import CertificateViewSet
 
 admin.site.site_header = "AAAIMX Admin"
 admin.site.site_title = "AAAIMX Admin Portal"
@@ -43,6 +44,7 @@ router.register(r'members', MemberViewSet)
 router.register(r'advisors', AdvisorViewSet)
 router.register(r'partners', PartnerViewSet)
 router.register(r'memberships', MembershipViewSet)
+router.register(r'certificates', CertificateViewSet)
 router.register(r'divisions', DivisionViewSet)
 router.register(r'projects', ProjectViewSet)
 router.register(r'lines', LineViewSet)

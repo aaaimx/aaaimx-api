@@ -63,7 +63,7 @@ class Research(models.Model):
     class Meta:
         verbose_name_plural = "research"
     uuid = models.UUIDField(default=uuid4, primary_key=True, editable=True)
-    title = models.TextField(default="", blank=True)
+    title = models.TextField(default="", blank=False)
     lines = models.ManyToManyField(Line, blank=True, verbose_name="research lines")
     projects = models.ManyToManyField(Project, blank=True, verbose_name="related projects")
     resume = models.TextField(default="", blank=True)

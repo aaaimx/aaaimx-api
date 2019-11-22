@@ -24,6 +24,7 @@ class PartnerSerializer(serializers.HyperlinkedModelSerializer):
 
 class ResearchSerializer(serializers.ModelSerializer):
     authors = AuthorsListingField(many=True, read_only=True)
+    advisors = AdvisorListingField(many=True, read_only=True)
     class Meta:
         model = Research
         exclude = []
@@ -32,12 +33,6 @@ class AdvisorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Advisor
         exclude = []
-
-# class ThesisSerializer(serializers.ModelSerializer):
-#     advisors = AdvisorListingField(many=True, read_only=True)
-#     class Meta:
-#         model = Thesis
-#         exclude = []
 
 class ProjectSerializer(serializers.ModelSerializer):
     class Meta:

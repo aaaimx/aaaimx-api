@@ -22,12 +22,11 @@ class Event(models.Model):
         default=None, null=True, blank=True, upload_to='flyers')
 
 class Certificate(models.Model):
-    uuid = models.UUIDField(default=uuid4, editable=True)
-    date_created = models.DateTimeField(default=datetime.now, blank=True)
-    description = models.TextField(default="", blank=True)
-    to = models.CharField(max_length=100)
-    qr_url = models.CharField(max_length=100)
-    file = models.FileField(upload_to='maps', storage=gd_storage)
+    uuid = models.UUIDField(default=uuid4, primary_key=True, editable=True)
+    type = models.CharField(max_length=100, default="Recognition", blank=True,)
+    to = models.CharField(max_length=100, blank=True, default="")
+    QR = models.CharField(max_length=100, blank=True, default='www.aaaimx.org/certificates/')
+    file = models.FileField(upload_to='certs', blank=True, storage=gd_storage)
 
 
 class Component(models.Model):

@@ -39,16 +39,15 @@ class MemberViewSet(viewsets.ModelViewSet):
 
         # pagination
         queryset = matched[offset:limit*page]
+        page = self.paginate_queryset(matched)
 
-        # serialize data
-        serializer = MemberSerializer(queryset, many=True)
+         # serialize data
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
 
-        # custom response 
-        # status code 200 OK
-        return Response(data={
-          'count': len(matched),
-          'params': request.GET,
-          'results': serializer.data})
+        serializer = self.get_serializer(queryset, many=True)
+        return Response(serializer.data)
 
 
 
@@ -97,6 +96,8 @@ class ProjectViewSet(viewsets.ModelViewSet):
         title = request.GET.get('title', "")
         institute = request.GET.get('institute', None)
 
+        queryset = self.filter_queryset(self.get_queryset())
+
         # filter by title
         matched = list(filter(lambda m: re.findall(title.upper(), m.title.upper()), self.queryset))
         if institute:
@@ -104,16 +105,15 @@ class ProjectViewSet(viewsets.ModelViewSet):
 
         # pagination
         queryset = matched[offset:limit*page]
+        page = self.paginate_queryset(matched)
 
-        # serialize data
-        serializer = self.serializer_class(queryset, many=True)
+         # serialize data
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
 
-        # custom response 
-        # status code 200 OK
-        return Response(data={
-          'count': len(matched),
-          'params': request.GET,
-          'results': serializer.data})
+        serializer = self.get_serializer(queryset, many=True)
+        return Response(serializer.data)
 
 class ResearchViewSet(viewsets.ModelViewSet):
     """
@@ -121,6 +121,17 @@ class ResearchViewSet(viewsets.ModelViewSet):
     """
     queryset = Research.objects.all().order_by('-title')
     serializer_class = ResearchSerializer
+
+    def list(self, request, *args, **kwargs):
+        queryset = self.filter_queryset(self.get_queryset())
+
+        page = self.paginate_queryset(queryset)
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+
+        serializer = self.get_serializer(queryset, many=True)
+        return Response(serializer.data)
 
 class AdvisorViewSet(viewsets.ModelViewSet):
     """
