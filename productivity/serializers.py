@@ -34,6 +34,11 @@ class AdvisorSerializer(serializers.ModelSerializer):
         model = Advisor
         exclude = []
 
+class AuthorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Author
+        exclude = []
+
 class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project

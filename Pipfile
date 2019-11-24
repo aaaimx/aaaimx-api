@@ -6,6 +6,7 @@ verify_ssl = true
 [dev-packages]
 pylint = "*"
 autopep8 = "*"
+black = "*"
 
 [packages]
 astroid = "==2.3.3"
@@ -43,3 +44,6 @@ django-googledrive-storage = "*"
 
 [requires]
 python_version = "3.6"
+
+[pipenv]
+allow_prereleases = true
