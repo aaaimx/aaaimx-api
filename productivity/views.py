@@ -119,13 +119,31 @@ class ResearchViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows research to be viewed or edited.
     """
-    queryset = Research.objects.all().order_by('-title')
+    queryset = Research.objects.all().order_by('title')
     serializer_class = ResearchSerializer
 
     def list(self, request, *args, **kwargs):
+        # get query params
+        limit = int(request.GET.get('limit', 10))
+        offset = int(request.GET.get('offset', 0))
+        page = int(request.GET.get('page', 1))
+        year = request.GET.get('year', 0)
+        title = request.GET.get('title', "")
+        type = request.GET.get('type', None)
+
         queryset = self.filter_queryset(self.get_queryset())
 
-        page = self.paginate_queryset(queryset)
+        # filter by title
+        matched = list(filter(lambda r: re.findall(title.upper(), r.title.upper()), self.queryset))
+        if type:
+            matched = list(filter(lambda r: r.type == type, matched))
+        if year and year != 0 and year != "":
+            matched = list(filter(lambda r: r.year == int(year), matched))
+
+        # pagination
+        queryset = matched[offset:limit*page]
+        page = self.paginate_queryset(matched)
+
         if page is not None:
             serializer = self.get_serializer(page, many=True)
             return self.get_paginated_response(serializer.data)
@@ -139,3 +157,10 @@ class AdvisorViewSet(viewsets.ModelViewSet):
     """
     queryset = Advisor.objects.all()
     serializer_class = AdvisorSerializer
+
+class AuthorViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows Authors to be viewed or edited.
+    """
+    queryset = Author.objects.all()
+    serializer_class = AuthorSerializer

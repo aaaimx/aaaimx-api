@@ -24,7 +24,7 @@ from .views import UserViewSet, GroupViewSet
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
-    TokenVerifyView
+    TokenVerifyView,
 )
 from productivity.views import *
 from finances.views import MembershipViewSet
@@ -37,29 +37,32 @@ admin.site.index_title = "Welcome to AAAIMX Administration Portal"
 
 # Routers provide an easy way of automatically determining the URL conf.
 router = routers.DefaultRouter()
-router.register(r'users', UserViewSet)
-router.register(r'groups', GroupViewSet)
-router.register(r'roles', RoleViewSet)
-router.register(r'members', MemberViewSet)
-router.register(r'advisors', AdvisorViewSet)
-router.register(r'partners', PartnerViewSet)
-router.register(r'memberships', MembershipViewSet)
-router.register(r'certificates', CertificateViewSet)
-router.register(r'divisions', DivisionViewSet)
-router.register(r'projects', ProjectViewSet)
-router.register(r'lines', LineViewSet)
-router.register(r'research', ResearchViewSet)
+router.register(r"users", UserViewSet)
+router.register(r"groups", GroupViewSet)
+router.register(r"roles", RoleViewSet)
+router.register(r"members", MemberViewSet)
+router.register(r"advisors", AdvisorViewSet)
+router.register(r"authors", AuthorViewSet)
+router.register(r"partners", PartnerViewSet)
+router.register(r"memberships", MembershipViewSet)
+router.register(r"certificates", CertificateViewSet)
+router.register(r"divisions", DivisionViewSet)
+router.register(r"projects", ProjectViewSet)
+router.register(r"lines", LineViewSet)
+router.register(r"research", ResearchViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 
 urlpatterns = [
-    path('jet/', include('jet.urls', namespace='jet')),  # Django JET URLS
-    path('jet/dashboard/', include('jet.dashboard.urls', namespace='jet-dashboard')),  # Django JET dashboard URLS
-    path('admin/', admin.site.urls),
-    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('api/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    path('api/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
-    url(r'^api/', include(router.urls)),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    path("jet/", include("jet.urls", namespace="jet")),  # Django JET URLS
+    path(
+        "jet/dashboard/", include("jet.dashboard.urls", namespace="jet-dashboard")
+    ),  # Django JET dashboard URLS
+    path("admin/", admin.site.urls),
+    path("api/token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
+    path("api/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
+    path("api/token/verify/", TokenVerifyView.as_view(), name="token_verify"),
+    url(r"^api/", include(router.urls)),
+    url(r"^api-auth/", include("rest_framework.urls", namespace="rest_framework")),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
