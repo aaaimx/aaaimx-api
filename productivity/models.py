@@ -78,7 +78,7 @@ class Research(models.Model):
 
 class Advisor(models.Model):
     member = models.ForeignKey(Member, on_delete=models.CASCADE)
-    thesis = models.ForeignKey(Research, related_name="advisors", on_delete=models.CASCADE)
+    research = models.ForeignKey(Research, related_name="advisors", on_delete=models.CASCADE)
     position = models.IntegerField(blank=True, default=1)
 
 class Author(models.Model):

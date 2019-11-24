@@ -96,7 +96,7 @@ class ProjectViewSet(viewsets.ModelViewSet):
         title = request.GET.get('title', "")
         institute = request.GET.get('institute', None)
 
-        queryset = self.filter_queryset(self.get_queryset())
+        self.queryset = self.filter_queryset(self.get_queryset())
 
         # filter by title
         matched = list(filter(lambda m: re.findall(title.upper(), m.title.upper()), self.queryset))
@@ -119,7 +119,7 @@ class ResearchViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows research to be viewed or edited.
     """
-    queryset = Research.objects.all().order_by('title')
+    queryset = Research.objects.all()
     serializer_class = ResearchSerializer
 
     def list(self, request, *args, **kwargs):
@@ -131,7 +131,7 @@ class ResearchViewSet(viewsets.ModelViewSet):
         title = request.GET.get('title', "")
         type = request.GET.get('type', None)
 
-        queryset = self.filter_queryset(self.get_queryset())
+        self.queryset = self.filter_queryset(self.get_queryset())
 
         # filter by title
         matched = list(filter(lambda r: re.findall(title.upper(), r.title.upper()), self.queryset))
