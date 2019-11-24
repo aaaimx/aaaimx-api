@@ -35,7 +35,7 @@ class AdminResearch(admin.ModelAdmin):
 
 @admin.register(Advisor)
 class AdminAdvisor(admin.ModelAdmin):
-    list_display = ('member', 'position', 'thesis')
+    list_display = ('member', 'position', 'research')
     list_filter = ('member', 'position',)
 
 
