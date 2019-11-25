@@ -73,7 +73,7 @@ class Research(models.Model):
     pub_in = models.CharField(default="", max_length=200, blank=True)
     pub_type = models.CharField(default="", max_length=200, blank=True)
     type = models.CharField(default="", max_length=200, blank=True)
-    link = models.URLField(default="", max_length=200, blank=True)
+    link = models.URLField(default="", max_length=500, blank=True)
 
 
 class Advisor(models.Model):
