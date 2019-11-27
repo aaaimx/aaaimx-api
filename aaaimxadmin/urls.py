@@ -20,6 +20,7 @@ from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib.auth.models import User
 from rest_framework import routers
+from django.views.generic.base import TemplateView
 from .views import UserViewSet, GroupViewSet
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
@@ -33,7 +34,7 @@ from logistic.views import CertificateViewSet
 admin.site.site_header = "AAAIMX Admin"
 admin.site.site_title = "AAAIMX Admin Portal"
 admin.site.index_title = "Welcome to AAAIMX Administration Portal"
-
+admin.site.site_url = "http://www.aaaimx.org"
 
 # Routers provide an easy way of automatically determining the URL conf.
 router = routers.DefaultRouter()
@@ -56,13 +57,12 @@ router.register(r"research", ResearchViewSet)
 
 urlpatterns = [
     path("jet/", include("jet.urls", namespace="jet")),  # Django JET URLS
-    path(
-        "jet/dashboard/", include("jet.dashboard.urls", namespace="jet-dashboard")
-    ),  # Django JET dashboard URLS
+    path("jet/dashboard/", include("jet.dashboard.urls", namespace="jet-dashboard")),  # Django JET dashboard URLS
     path("admin/", admin.site.urls),
     path("api/token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
     path("api/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
     path("api/token/verify/", TokenVerifyView.as_view(), name="token_verify"),
+    # url(r'^$', TemplateView.as_view(template_name='index.html'), name="home"),
     url(r"^api/", include(router.urls)),
     url(r"^api-auth/", include("rest_framework.urls", namespace="rest_framework")),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
