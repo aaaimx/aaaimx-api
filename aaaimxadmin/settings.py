@@ -134,14 +134,15 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
         "NAME": os.environ["DB_NAME"],
+        'CONN_MAX_AGE': 3600,
         "USER": os.environ["DB_USER"],
         "PASSWORD": os.environ["DB_PASS"],
         "HOST": os.environ["DB_HOST"],
-        "PORT": os.environ["DB_PORT"],
+        "PORT": int(os.environ["DB_PORT"]),
     },
     "OPTIONS": {"init_command": "SET sql_mode='STRICT_TRANS_TABLES'",},
 }
-
+print(DATABASES)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
