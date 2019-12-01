@@ -1,7 +1,7 @@
 from django.db import models
 from uuid import uuid4
 from datetime import datetime
-from productivity.models import *
+from productivity.models import Division
 from gdstorage.storage import GoogleDriveStorage
 
 # Define Google Drive Storage
