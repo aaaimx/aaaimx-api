@@ -1,7 +1,7 @@
 from django.db import models
 from uuid import uuid4
-from datetime import datetime
 from gdstorage.storage import GoogleDriveStorage
+from datetime import datetime, timedelta
 
 # Define Google Drive Storage
 gd_storage = GoogleDriveStorage()
@@ -16,8 +16,8 @@ class Division(models.Model):
         return self.name
     name = models.CharField(default="", max_length=100, unique=True)
     story = models.TextField(default="", blank=True)
-    logo = models.ImageField(
-        default=None, null=True, blank=True, upload_to='logos')
+    logo = models.ImageField(default=None, null=True, blank=True, upload_to='logos')
+
 
 class Partner(models.Model):
     def __str__(self):
@@ -29,6 +29,17 @@ class Partner(models.Model):
         default=None, blank=True, upload_to='logos', storage=gd_storage)
     type = models.CharField(max_length=100, default="")
 
+
+
+class Membership(models.Model):
+    # income = models.ForeignKey(Income, null=True, on_delete=models.CASCADE)
+    uuid = models.UUIDField(default=uuid4, editable=False)
+    QR = models.URLField(default="", max_length=100, blank=True)
+    photo = models.URLField(default="", max_length=100, blank=True)
+    nombre = models.CharField(default="", max_length=100, blank=True)
+    exp = models.DateTimeField(default=datetime.now() + timedelta(days=1) , blank=True)
+
+
 class Member(models.Model):
     def __str__(self):
         return self.fullname
@@ -37,8 +48,10 @@ class Member(models.Model):
     divisions = models.ManyToManyField(Division, blank=True, verbose_name="divisions")
     active = models.BooleanField(default=False)
     roles = models.ManyToManyField(Role, verbose_name="list of roles")
-    charge = models.CharField(max_length=100)
+    charge = models.CharField(max_length=100, default="", blank=True)
     adscription = models.ForeignKey(Partner, null=True, related_name="adscription_institute", on_delete=models.SET_NULL)
+    membership = models.ForeignKey(Membership, null=True, on_delete=models.SET_NULL)
+
 
 class Line(models.Model):
     def __str__(self):

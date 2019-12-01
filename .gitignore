@@ -1,7 +1,6 @@
 __pycache__
 env
-.env
-.env.development
+.env*
 media
 static
 .vscode
