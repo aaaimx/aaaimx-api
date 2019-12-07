@@ -4,7 +4,7 @@ from .models import *
 # Register your models here.
 @admin.register(Partner)
 class AdminPartner(admin.ModelAdmin):
-    list_display = ('uuid', 'name', 'alias', 'type', 'logo')
+    list_display = ('uuid', 'name', 'alias', 'type', 'site', 'logoFile')
     list_filter = ('type',)
 
 @admin.register(Role)
