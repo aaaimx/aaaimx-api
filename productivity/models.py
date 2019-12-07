@@ -25,7 +25,9 @@ class Partner(models.Model):
     uuid = models.UUIDField(default=uuid4, primary_key=True, editable=True)
     name = models.CharField(default="", editable=True, max_length=255, unique=True)
     alias = models.CharField(max_length=100, blank=True)
-    logo = models.ImageField(
+    site = models.URLField(default="", max_length=100, blank=True)
+    logoName = models.CharField(max_length=100, blank=True)
+    logoFile = models.ImageField(
         default=None, blank=True, upload_to='logos', storage=gd_storage)
     type = models.CharField(max_length=100, default="")
 
@@ -47,6 +49,10 @@ class Member(models.Model):
     email = models.EmailField(default="", blank=True, max_length=100)
     divisions = models.ManyToManyField(Division, blank=True, verbose_name="divisions")
     active = models.BooleanField(default=False)
+    board = models.BooleanField(default=False)
+    thumbnailUrl = models.CharField(max_length=100, blank=True)
+    thumbnailFile = models.ImageField(
+        default=None, blank=True, upload_to='thumbnail', storage=gd_storage)
     roles = models.ManyToManyField(Role, verbose_name="list of roles")
     charge = models.CharField(max_length=100, default="", blank=True)
     adscription = models.ForeignKey(Partner, null=True, related_name="adscription_institute", on_delete=models.SET_NULL)
