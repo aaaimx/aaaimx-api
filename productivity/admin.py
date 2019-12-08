@@ -41,6 +41,6 @@ class AdminAdvisor(admin.ModelAdmin):
 
 @admin.register(Member)
 class AdminMember(admin.ModelAdmin):
-    list_display = ('id', 'fullname', 'active', 'charge', 'adscription')
+    list_display = ('id', 'fullname', 'active', 'charge', 'adscription', 'thumbnailFile', 'thumbnailUrl')
     list_filter = ('active', 'divisions', 'charge', 'roles', 'adscription')
     search_fields = ('fullname', 'charge',)
