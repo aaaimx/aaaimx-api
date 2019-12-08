@@ -23,9 +23,9 @@ class Event(models.Model):
 
 class Certificate(models.Model):
     uuid = models.UUIDField(default=uuid4, primary_key=True, editable=True)
-    type = models.CharField(max_length=100, default="Recognition", blank=True,)
+    type = models.CharField(max_length=100, default="RECOGNITION", blank=True,)
     to = models.CharField(max_length=100, blank=True, default="")
-    QR = models.CharField(max_length=100, blank=True, default='www.aaaimx.org/certificates/')
+    QR = models.CharField(max_length=100, blank=True, default='www.aaaimx.org/certificates/?id=')
     file = models.FileField(upload_to='certs', blank=True, storage=gd_storage)
 
 
