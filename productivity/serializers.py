@@ -8,10 +8,6 @@ class RoleSerializer(serializers.ModelSerializer):
         model = Role
         exclude = []
 
-class MembershipSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Membership
-        exclude = []
         
 class MemberSerializer(serializers.ModelSerializer):
     class Meta:
