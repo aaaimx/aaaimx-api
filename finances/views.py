@@ -12,3 +12,10 @@ class MembershipViewSet(viewsets.ModelViewSet):
     """
     queryset = Membership.objects.all()
     serializer_class = MembershipSerializer
+
+class BankMovementViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows BankMovements to be viewed or edited.
+    """
+    queryset = BankMovement.objects.all()
+    serializer_class = MembershipSerializer
