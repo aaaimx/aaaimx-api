@@ -16,7 +16,8 @@ class Division(models.Model):
         return self.name
     name = models.CharField(default="", max_length=100, unique=True)
     story = models.TextField(default="", blank=True)
-    logo = models.ImageField(default=None, null=True, blank=True, upload_to='logos')
+    logo = models.ImageField(
+        default=None, blank=True, upload_to='logos', storage=gd_storage)
 
 
 class Partner(models.Model):
