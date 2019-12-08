@@ -49,14 +49,14 @@ class Member(models.Model):
     email = models.EmailField(default="", blank=True, max_length=100)
     divisions = models.ManyToManyField(Division, blank=True, verbose_name="divisions")
     active = models.BooleanField(default=False)
-    board = models.BooleanField(default=False)
+    board = models.BooleanField(default=False, blank=True)
     thumbnailUrl = models.CharField(max_length=100, blank=True)
     thumbnailFile = models.ImageField(
-        default=None, blank=True, upload_to='thumbnail', storage=gd_storage)
+        default=None, null=True, upload_to='thumbnail', storage=gd_storage)
     roles = models.ManyToManyField(Role, verbose_name="list of roles")
     charge = models.CharField(max_length=100, default="", blank=True)
     adscription = models.ForeignKey(Partner, null=True, related_name="adscription_institute", on_delete=models.SET_NULL)
-    membership = models.ForeignKey(Membership, null=True, on_delete=models.SET_NULL)
+    membership = models.ForeignKey(Membership, null=True, blank=True, on_delete=models.SET_NULL)
 
 
 class Line(models.Model):

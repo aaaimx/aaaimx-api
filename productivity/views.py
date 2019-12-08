@@ -31,6 +31,7 @@ class MemberViewSet(viewsets.ModelViewSet):
         page = int(request.GET.get('page', 1))
         fullname = request.GET.get('fullname', "")
         active = request.GET.get('active', None)
+        panel = request.GET.get('panel', None)
 
         # get all and order by fullname
         matched = Member.objects.all().order_by('fullname')
@@ -44,6 +45,8 @@ class MemberViewSet(viewsets.ModelViewSet):
         elif active == "false":
             matched = list(filter(lambda m: not m.active, matched))
 
+        if panel == "true":
+            matched = list(filter(lambda m: m.board or m.charge, matched))
         # pagination
         queryset = matched[offset:limit*page]
         page = self.paginate_queryset(matched)
