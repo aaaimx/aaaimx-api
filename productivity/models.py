@@ -41,7 +41,7 @@ class Member(models.Model):
     divisions = models.ManyToManyField(Division, blank=True, verbose_name="divisions")
     active = models.BooleanField(default=False)
     board = models.BooleanField(default=False, blank=True)
-    thumbnailUrl = models.CharField(max_length=100, blank=True)
+    thumbnailUrl = models.CharField(max_length=100, default="https://drive.google.com/uc?id=", blank=True)
     thumbnailFile = models.ImageField(
         default=None, null=True, upload_to='thumbnail', storage=gd_storage)
     roles = models.ManyToManyField(Role, verbose_name="list of roles")
