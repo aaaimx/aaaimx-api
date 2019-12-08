@@ -7,12 +7,6 @@ from .serializers import *
 from .models import *
 import re
 # Create your views here.
-class MembershipViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows Memberships to be viewed or edited.
-    """
-    queryset = Membership.objects.all()
-    serializer_class = MembershipSerializer
 
 class MemberViewSet(viewsets.ModelViewSet):
     """

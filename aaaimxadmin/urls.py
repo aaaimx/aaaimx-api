@@ -28,6 +28,7 @@ from rest_framework_simplejwt.views import (
     TokenVerifyView,
 )
 from productivity.views import *
+from finances.views import *
 from logistic.views import CertificateViewSet
 
 admin.site.site_header = "AAAIMX Admin"

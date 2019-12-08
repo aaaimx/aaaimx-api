@@ -7,10 +7,10 @@ class AdminPartner(admin.ModelAdmin):
     list_display = ('uuid', 'name', 'alias', 'type', 'site', 'logoFile')
     list_filter = ('type',)
 
-@admin.register(Role)
-class AdminRole(admin.ModelAdmin):
-    list_display = ('name',)
-    list_filter = ('name',)
+# @admin.register(Role)
+# class AdminRole(admin.ModelAdmin):
+#     list_display = ('name',)
+#     list_filter = ('name',)
 
 @admin.register(Line)
 class AdminLine(admin.ModelAdmin):

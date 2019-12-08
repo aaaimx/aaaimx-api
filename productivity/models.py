@@ -32,16 +32,6 @@ class Partner(models.Model):
     type = models.CharField(max_length=100, default="")
 
 
-
-class Membership(models.Model):
-    # income = models.ForeignKey(Income, null=True, on_delete=models.CASCADE)
-    uuid = models.UUIDField(default=uuid4, editable=False)
-    QR = models.URLField(default="", max_length=100, blank=True)
-    photo = models.URLField(default="", max_length=100, blank=True)
-    nombre = models.CharField(default="", max_length=100, blank=True)
-    exp = models.DateTimeField(default=datetime.now() + timedelta(days=1) , blank=True)
-
-
 class Member(models.Model):
     def __str__(self):
         return self.fullname
@@ -56,8 +46,7 @@ class Member(models.Model):
     roles = models.ManyToManyField(Role, verbose_name="list of roles")
     charge = models.CharField(max_length=100, default="", blank=True)
     adscription = models.ForeignKey(Partner, null=True, related_name="adscription_institute", on_delete=models.SET_NULL)
-    membership = models.ForeignKey(Membership, null=True, blank=True, on_delete=models.SET_NULL)
-
+    
 
 class Line(models.Model):
     def __str__(self):
