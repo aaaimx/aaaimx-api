@@ -45,9 +45,9 @@ class Member(models.Model):
     thumbnailUrl = models.CharField(max_length=100, default="https://drive.google.com/uc?id=", blank=True)
     thumbnailFile = models.ImageField(
         default=None, null=True, upload_to='thumbnail', storage=gd_storage)
-    roles = models.ManyToManyField(Role, verbose_name="list of roles")
+    roles = models.ManyToManyField(Role, blank=True, verbose_name="list of roles")
     charge = models.CharField(max_length=100, default="", blank=True)
-    adscription = models.ForeignKey(Partner, null=True, related_name="adscription_institute", on_delete=models.SET_NULL)
+    adscription = models.ForeignKey(Partner, null=True, blank=True, related_name="adscription_institute", on_delete=models.SET_NULL)
     
 
 class Line(models.Model):
