@@ -97,6 +97,9 @@ class Author(models.Model):
     position = models.IntegerField(blank=True, default=1)
 
 
+
+
+
 # from setup_data import *
 # from .collaborators import *
 # from .projects import *

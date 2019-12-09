@@ -12,7 +12,7 @@ class MemberViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows members to be viewed or edited.
     """
-    queryset = Member.objects.all()
+    queryset = Member.objects.all().order_by('name')
     serializer_class = MemberSerializer
 
     def list(self, request):
@@ -28,10 +28,10 @@ class MemberViewSet(viewsets.ModelViewSet):
         panel = request.GET.get('panel', None)
 
         # get all and order by surname
-        matched = Member.objects.all().order_by('surname')
+        self.queryset = self.filter_queryset(self.get_queryset())
 
         # filter by surname
-        matched = list(filter(lambda m: re.findall(name.capitalize(), m.name) or re.findall(name.capitalize(), m.surname), matched))
+        matched = list(filter(lambda m: re.findall(name.capitalize(), m.name) or re.findall(name.capitalize(), m.surname), self.queryset))
 
         # filter by status
         if active == "true":
@@ -52,7 +52,6 @@ class MemberViewSet(viewsets.ModelViewSet):
 
         serializer = self.get_serializer(queryset, many=True)
         return Response(serializer.data)
-
 
 
 class PartnerViewSet(viewsets.ModelViewSet):
@@ -123,7 +122,7 @@ class ResearchViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows research to be viewed or edited.
     """
-    queryset = Research.objects.all()
+    queryset = Research.objects.all().order_by('title')
     serializer_class = ResearchSerializer
 
     def list(self, request, *args, **kwargs):
