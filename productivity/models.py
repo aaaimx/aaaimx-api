@@ -35,8 +35,9 @@ class Partner(models.Model):
 
 class Member(models.Model):
     def __str__(self):
-        return self.fullname
-    fullname = models.CharField(default="", unique=True, max_length=200)
+        return self.name + ' ' + self.surname
+    name = models.CharField(default="", max_length=100)
+    surname = models.CharField(default="", blank=True, max_length=100)
     email = models.EmailField(default="", blank=True, max_length=100)
     divisions = models.ManyToManyField(Division, blank=True, verbose_name="divisions")
     active = models.BooleanField(default=False)
