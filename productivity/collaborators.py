@@ -1,269 +1,269 @@
 from .models import Partner, Member
 Collaborators = [
 	{
-		"fullname" : "Peniche-Ruiz, Larissa Jeanette",
+		"name" : "Peniche-Ruiz, Larissa Jeanette",
 		"email" : "",
 		"active" : True,
 		"adscription" : Partner.objects.get(uuid="8862a10a-9e86-43db-b513-d6101cca2e33")
 	},
 	{
-		"fullname" : "Cáceres-Escalante, Raúl",
+		"name" : "Cáceres-Escalante, Raúl",
 		"email" : "",
 		"charge": "Collaborator",
 		"active" : True,
 		"adscription" : Partner.objects.get(uuid="8862a10a-9e86-43db-b513-d6101cca2e33")
 	},
 	{
-		"fullname" : "Ávila-Carrera, Rafael",
+		"name" : "Ávila-Carrera, Rafael",
 		"email" : "",
 		"active" : False,
 		"adscription" : None
 	},
 	{
-		"fullname" : "Guzmán-Tolosa, José Misael",
+		"name" : "Guzmán-Tolosa, José Misael",
 		"email" : "",
 		"charge": "Collaborator",
 		"active" : True,
 		"adscription" : Partner.objects.get(uuid="8862a10a-9e86-43db-b513-d6101cca2e33")
 	},
 	{
-		"fullname" : "Lopez-Caloca, A.",
+		"name" : "Lopez-Caloca, A.",
 		"email" : "",
 		"active" : False,
 		"adscription" : None
 	},
 	{
-		"fullname" : "Suárez-Gallareta, Eric",
+		"name" : "Suárez-Gallareta, Eric",
 		"email" : "",
 		"charge": "Collaborator",
 		"active" : True,
 		"adscription" : Partner.objects.get(uuid="8862a10a-9e86-43db-b513-d6101cca2e33")
 	},
 	{
-		"fullname" : "Ortiz-Alemán, Carlos",
+		"name" : "Ortiz-Alemán, Carlos",
 		"email" : "",
 		"active" : False,
 		"adscription" : None
 	},
 	{
-		"fullname" : "Villafaña-Gamboa, Dakar Fernando",
+		"name" : "Villafaña-Gamboa, Dakar Fernando",
 		"email" : "",
 		"charge": "Collaborator",
 		"active" : True,
 		"adscription" : Partner.objects.get(uuid="8862a10a-9e86-43db-b513-d6101cca2e33")
 	},
 	{
-		"fullname" : "Salazar-Garibay, A.",
+		"name" : "Salazar-Garibay, A.",
 		"email" : "",
 		"active" : False,
 		"adscription" : None
 	},
 	{
-		"fullname" : "Silva-Aguilera, R.",
+		"name" : "Silva-Aguilera, R.",
 		"email" : "",
 		"active" : False,
 		"adscription" : None
 	},
 	{
-		"fullname" : "Hernández-Gómez, Jorge Javier",
+		"name" : "Hernández-Gómez, Jorge Javier",
 		"email" : "",
 		"charge": "Collaborator",
 		"active" : True,
 		"adscription" : Partner.objects.get(uuid="52f2a630-893c-4f69-b243-d5eaa75d27c9") 
 	},
 	{
-		"fullname" : "Cordero-Chan, Ricardo",
+		"name" : "Cordero-Chan, Ricardo",
 		"email" : "",
 		"charge": "Collaborator",
 		"active" : True,
 		"adscription" : Partner.objects.get(uuid="8862a10a-9e86-43db-b513-d6101cca2e33")
 	},
 	{
-		"fullname" : "Canul-Dzul, Wilberth",
+		"name" : "Canul-Dzul, Wilberth",
 		"email" : "",
 		"charge": "Collaborator",
 		"active" : True,
 		"adscription" : Partner.objects.get(uuid="8862a10a-9e86-43db-b513-d6101cca2e33")
 	},
 	{
-		"fullname" : "Moreno-Sabido, Mario Renán",
+		"name" : "Moreno-Sabido, Mario Renán",
 		"email" : "",
 		"charge": "Collaborator",
 		"active" : True,
 		"adscription" : Partner.objects.get(uuid="8862a10a-9e86-43db-b513-d6101cca2e33")
 	},
 	{
-		"fullname" : "Ortega-Olmos, Jessica",
+		"name" : "Ortega-Olmos, Jessica",
 		"email" : "",
 		"active" : False,
 		"adscription" : None
 	},
 	{
-		"fullname" : "Torres-San-Miguel, C.R.",
+		"name" : "Torres-San-Miguel, C.R.",
 		"email" : "",
 		"active" : False,
 		"adscription" : None
 	},
 	{
-		"fullname" : "Couder-Castañeda, Carlos",
+		"name" : "Couder-Castañeda, Carlos",
 		"email" : "",
 		"active" : False,
 		"adscription" : None
 	},
 	{
-		"fullname" : "Valle-Molina, C.",
+		"name" : "Valle-Molina, C.",
 		"email" : "",
 		"active" : False,
 		"adscription" : None
 	},
 	{
-		"fullname" : "Novelo-Cruz, Raul Armin",
+		"name" : "Novelo-Cruz, Raul Armin",
 		"email" : "rnovelo.cruz98@gmail.com",
 		"active" : True,
 		"adscription" : Partner.objects.get(uuid="8862a10a-9e86-43db-b513-d6101cca2e33")
 	},
 	{
-		"fullname" : "Molina-Puc, Jeni Karina",
+		"name" : "Molina-Puc, Jeni Karina",
 		"email" : "",
 		"charge": "Collaborator",
 		"active" : True,
 		"adscription" : Partner.objects.get(uuid="8862a10a-9e86-43db-b513-d6101cca2e33")
 	},
 	{
-		"fullname" : "Gómez-Buenfil, Romeo Alam",
+		"name" : "Gómez-Buenfil, Romeo Alam",
 		"email" : "",
 		"charge": "Collaborator",
 		"active" : True,
 		"adscription" : Partner.objects.get(uuid="8862a10a-9e86-43db-b513-d6101cca2e33")
 	},
 	{
-		"fullname" : "Cuevas-Cuevas, Nora Leticia",
+		"name" : "Cuevas-Cuevas, Nora Leticia",
 		"email" : "",
 		"charge": "Collaborator",
 		"active" : True,
 		"adscription" : Partner.objects.get(uuid="8862a10a-9e86-43db-b513-d6101cca2e33")
 	},
 	{
-		"fullname" : "Grageda-Arellano, J.I.",
+		"name" : "Grageda-Arellano, J.I.",
 		"email" : "",
 		"active" : False,
 		"adscription" : None
 	},
 	{
-		"fullname" : "Trejo-Sánchez, Joel Antonio",
+		"name" : "Trejo-Sánchez, Joel Antonio",
 		"email" : "",
 		"charge": "Collaborator",
 		"active" : True,
 		"adscription" : Partner.objects.get(uuid="ad9ad059-d6ea-4015-b3ab-0cb949e87e92") 
 	},
 	{
-		"fullname" : "Navarro-Tec, Saul",
+		"name" : "Navarro-Tec, Saul",
 		"email" : "",
 		"charge": "Collaborator",
 		"active" : True,
 		"adscription" : Partner.objects.get(uuid="8862a10a-9e86-43db-b513-d6101cca2e33")
 	},
 	{
-		"fullname" : "Tellez-Quinones, A.",
+		"name" : "Tellez-Quinones, A.",
 		"email" : "",
 		"active" : False,
 		"adscription" : None
 	},
 	{
-		"fullname" : "Rodríguez-Castillo, Héctor",
+		"name" : "Rodríguez-Castillo, Héctor",
 		"email" : "",
 		"charge": "Collaborator",
 		"active" : True,
 		"adscription" : Partner.objects.get(uuid="8862a10a-9e86-43db-b513-d6101cca2e33")
 	},
 	{
-		"fullname" : "Ordaz-Bencomo, Daniel",
+		"name" : "Ordaz-Bencomo, Daniel",
 		"email" : "",
 		"charge": "Collaborator",
 		"active" : True,
 		"adscription" : Partner.objects.get(uuid="8862a10a-9e86-43db-b513-d6101cca2e33")
 	},
 	{
-		"fullname" : "Rodríguez-Sánchez, J.E.",
+		"name" : "Rodríguez-Sánchez, J.E.",
 		"email" : "",
 		"active" : False,
 		"adscription" : None
 	},
 	{
-		"fullname" : "Abreu-Torres, Javier",
+		"name" : "Abreu-Torres, Javier",
 		"email" : "",
 		"active" : False,
 		"adscription" : None
 	},
 	{
-		"fullname" : "Rodríguez-Castellanos, Alejandro",
+		"name" : "Rodríguez-Castellanos, Alejandro",
 		"email" : "",
 		"active" : False,
 		"adscription" : None
 	},
 	{
-		"fullname" : "Cetzal-Balam, Gerardo",
+		"name" : "Cetzal-Balam, Gerardo",
 		"email" : "",
 		"charge": "Collaborator",
 		"active" : True,
 		"adscription" : Partner.objects.get(uuid="8862a10a-9e86-43db-b513-d6101cca2e33")
 	},
 	{
-		"fullname" : "Medina-Sánchez, Isaac",
+		"name" : "Medina-Sánchez, Isaac",
 		"email" : "",
 		"active" : False,
 		"adscription" : None
 	},
 	{
-		"fullname" : "Orozco-del-Castillo, Mauricio Gabriel",
+		"name" : "Orozco-del-Castillo, Mauricio Gabriel",
 		"email" : "",
 		"charge": "Collaborator",
 		"active" : True,
 		"adscription" : Partner.objects.get(uuid="8862a10a-9e86-43db-b513-d6101cca2e33")
 	},
 	{
-		"fullname" : "Barragan-Ramírez, Javier",
+		"name" : "Barragan-Ramírez, Javier",
 		"email" : "",
 		"active" : False,
 		"adscription" : None
 	},
 	{
-		"fullname" : "Alvarez-Pacheco, Adolfo",
+		"name" : "Alvarez-Pacheco, Adolfo",
 		"email" : "",
 		"charge": "Collaborator",
 		"active" : True,
 		"adscription" : Partner.objects.get(uuid="8862a10a-9e86-43db-b513-d6101cca2e33")
 	},
 	{
-		"fullname" : "Fernández-Estrella, Guillermo",
+		"name" : "Fernández-Estrella, Guillermo",
 		"email" : "",
 		"charge": "Collaborator",
 		"active" : True,
 		"adscription" : Partner.objects.get(uuid="8862a10a-9e86-43db-b513-d6101cca2e33")
 	},
 	{
-		"fullname" : "Bermejo-Sabbagh, Carlos",
+		"name" : "Bermejo-Sabbagh, Carlos",
 		"email" : "",
 		"charge": "Collaborator",
 		"active" : True,
 		"adscription" : Partner.objects.get(uuid="8862a10a-9e86-43db-b513-d6101cca2e33")
 	},
 	{
-		"fullname" : "Valdiviezo-Navarro, Juan Carlos",
+		"name" : "Valdiviezo-Navarro, Juan Carlos",
 		"email" : "",
 		"charge": "Collaborator",
 		"active" : True,
 		"adscription" : Partner.objects.get(uuid="3b8817e5-1df2-44ab-a1db-1b255b3a8fb4") 
 	},
 	{
-		"fullname" : "Manzanero-Martín, Sheila Sugey",
+		"name" : "Manzanero-Martín, Sheila Sugey",
 		"email" : "",
 		"charge": "Collaborator",
 		"active" : True,
 		"adscription" : Partner.objects.get(uuid="8862a10a-9e86-43db-b513-d6101cca2e33")
 	},
 	{
-		"fullname" : "Pino-Meza, Ariel",
+		"name" : "Pino-Meza, Ariel",
 		"email" : "",
 		"charge": "Collaborator",
 		"active" : True,

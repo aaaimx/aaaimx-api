@@ -23,15 +23,15 @@ class MemberViewSet(viewsets.ModelViewSet):
         limit = int(request.GET.get('limit', 10))
         offset = int(request.GET.get('offset', 0))
         page = int(request.GET.get('page', 1))
-        fullname = request.GET.get('fullname', "")
+        name = request.GET.get('name', "")
         active = request.GET.get('active', None)
         panel = request.GET.get('panel', None)
 
-        # get all and order by fullname
-        matched = Member.objects.all().order_by('fullname')
+        # get all and order by surname
+        matched = Member.objects.all().order_by('surname')
 
-        # filter by fullname
-        matched = list(filter(lambda m: re.findall(fullname.capitalize(), m.fullname), matched))
+        # filter by surname
+        matched = list(filter(lambda m: re.findall(name.capitalize(), m.name) or re.findall(name.capitalize(), m.surname), matched))
 
         # filter by status
         if active == "true":

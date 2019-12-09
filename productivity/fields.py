@@ -8,7 +8,8 @@ class AuthorsListingField(serializers.RelatedField):
             "position": value.position,
             "id": value.id,
             "member": value.member.id,
-            "fullname": value.member.fullname,
+            "name": value.member.name,
+            "surname": value.member.surname,
             "active": value.member.active,
         }
 
@@ -19,7 +20,7 @@ class AdvisorListingField(serializers.RelatedField):
             "position": value.position,
             "id": value.id,
             "member": value.member.id,
-            "fullname": value.member.fullname,
+            "surname": value.member.surname,
             "active": value.member.active,
         }
 
