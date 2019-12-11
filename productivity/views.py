@@ -41,6 +41,8 @@ class MemberViewSet(viewsets.ModelViewSet):
 
         if panel == "true":
             matched = list(filter(lambda m: m.board or m.charge, matched))
+            matched.sort(key=lambda m: m.charge)
+            
         # pagination
         queryset = matched[offset:limit*page]
         page = self.paginate_queryset(matched)
