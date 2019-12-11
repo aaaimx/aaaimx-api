@@ -22,6 +22,8 @@ class Event(models.Model):
         default=None, null=True, blank=True, upload_to='flyers')
 
 class Certificate(models.Model):
+    def __str__(self):
+        return '{0}: {1}'.format(self.type, self.to)
     uuid = models.UUIDField(default=uuid4, primary_key=True, editable=True)
     type = models.CharField(max_length=100, default="RECOGNITION", blank=True,)
     to = models.CharField(max_length=100, blank=True, default="")

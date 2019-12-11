@@ -6,6 +6,7 @@ from .models import *
 class AdminCertifcate(admin.ModelAdmin):
     list_display = ('uuid', 'type', 'to', 'QR', 'file')
     list_filter = ('type', 'to',)
+    list_per_page = 10
 
 @admin.register(Event)
 class AdminEvent(admin.ModelAdmin):
