@@ -46,10 +46,9 @@ class Member(models.Model):
         Division, blank=True, verbose_name="divisions")
     active = models.BooleanField(default=False)
     board = models.BooleanField(default=False, blank=True)
-    thumbnailUrl = models.CharField(
-        max_length=100, default="https://drive.google.com/uc?id=", blank=True)
+    committee = models.BooleanField(default=False, blank=True)
     thumbnailFile = models.ImageField(
-        default=None, null=True, upload_to='thumbnail', storage=gd_storage)
+        default=None, blank=True, upload_to='thumbnail', storage=gd_storage)
     roles = models.ManyToManyField(
         Role, blank=True, verbose_name="list of roles")
     charge = models.CharField(max_length=100, default="", blank=True)

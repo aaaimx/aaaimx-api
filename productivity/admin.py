@@ -6,6 +6,7 @@ from .models import *
 class AdminPartner(admin.ModelAdmin):
     list_display = ('uuid', 'name', 'alias', 'type', 'site', 'logoFile')
     list_filter = ('type',)
+    list_per_page = 10
 
 # @admin.register(Role)
 # class AdminRole(admin.ModelAdmin):
@@ -51,7 +52,12 @@ class AdminAdvisor(admin.ModelAdmin):
 
 @admin.register(Member)
 class AdminMember(admin.ModelAdmin):
-    list_display = ('name', 'surname', 'active', 'charge', 'adscription', 'thumbnailFile', 'thumbnailUrl')
+    list_display = ('name', 'surname', 'active', 'board', 'committee', 'charge', 'adscription', 'thumbnailFile')
     list_filter = ('active', 'divisions', 'charge', 'roles', 'adscription')
     search_fields = ('name', 'surname', 'charge',)
+    actions = ['mark_as_committee',]
     list_per_page = 10
+
+    def mark_as_committee(self, request, queryset):
+        queryset.update(committee=True)
+    mark_as_committee.short_description = "Mark selected members as committee"
