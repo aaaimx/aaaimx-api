@@ -1,18 +1,21 @@
 from django.shortcuts import render
 import django_filters.rest_framework
 from rest_framework import viewsets
+from rest_framework.decorators import action
 from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
+from django.db.models import Q
 from .serializers import *
 from .models import *
 import re
 # Create your views here.
 
+
 class MemberViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows members to be viewed or edited.
     """
-    queryset = Member.objects.all().order_by('name')
+    queryset = Member.objects.none()
     serializer_class = MemberSerializer
 
     def list(self, request):
@@ -27,32 +30,39 @@ class MemberViewSet(viewsets.ModelViewSet):
         active = request.GET.get('active', None)
         panel = request.GET.get('panel', None)
 
+        if panel == 'true':
+            self.queryset = Member.objects.filter(Q(name__icontains=name) | Q(
+                surname__icontains=name), Q(board=True) | Q(
+                committee=True))
         # get all and order by surname
-        self.queryset = self.filter_queryset(self.get_queryset())
-
-        # filter by surname
-        matched = list(filter(lambda m: re.findall(name.capitalize(), m.name) or re.findall(name.capitalize(), m.surname), self.queryset))
-
+        elif name or not active:
+            self.queryset = Member.objects.filter(Q(name__icontains=name) | Q(
+                surname__icontains=name))
         # filter by status
-        if active == "true":
-            matched = list(filter(lambda m: m.active, matched))
+        elif active == "true":
+            self.queryset = Member.objects.filter(Q(name__icontains=name) | Q(
+                surname__icontains=name), active=True)
         elif active == "false":
-            matched = list(filter(lambda m: not m.active, matched))
+            self.queryset = Member.objects.filter(Q(name__icontains=name) | Q(
+                surname__icontains=name), active=False)
 
-        if panel == "true":
-            matched = list(filter(lambda m: m.board or m.charge, matched))
-            matched.sort(key=lambda m: m.charge)
-            
         # pagination
-        queryset = matched[offset:limit*page]
-        page = self.paginate_queryset(matched)
+        queryset = self.queryset[offset:limit*page]
+        page = self.paginate_queryset(self.queryset)
 
-         # serialize data
+        # serialize data
         if page is not None:
             serializer = self.get_serializer(page, many=True)
             return self.get_paginated_response(serializer.data)
 
         serializer = self.get_serializer(queryset, many=True)
+        return Response(serializer.data)
+
+    @action(detail=False)
+    def panel(self, request):
+        panel_members = Member.objects.filter(Q(committee=True) | Q(board=True)
+                                              ).order_by('-name')
+        serializer = self.get_serializer(panel_members, many=True)
         return Response(serializer.data)
 
 
@@ -63,12 +73,14 @@ class PartnerViewSet(viewsets.ModelViewSet):
     queryset = Partner.objects.all().order_by('-name')
     serializer_class = PartnerSerializer
 
+
 class RoleViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows roles to be viewed or edited.
     """
     queryset = Role.objects.all()
     serializer_class = RoleSerializer
+
 
 class LineViewSet(viewsets.ModelViewSet):
     """
@@ -77,12 +89,15 @@ class LineViewSet(viewsets.ModelViewSet):
     queryset = Line.objects.all()
     serializer_class = LineSerializer
 
+
 class DivisionViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows divisions to be viewed or edited.
     """
     queryset = Division.objects.all()
     serializer_class = DivisionSerializer
+
+
 class ProjectViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows projects to be viewed or edited.
@@ -104,21 +119,24 @@ class ProjectViewSet(viewsets.ModelViewSet):
         self.queryset = self.filter_queryset(self.get_queryset())
 
         # filter by title
-        matched = list(filter(lambda m: re.findall(title.upper(), m.title.upper()), self.queryset))
+        matched = list(filter(lambda m: re.findall(
+            title.upper(), m.title.upper()), self.queryset))
         if institute:
-            matched = list(filter(lambda m: m.institute.alias == institute, matched))
+            matched = list(
+                filter(lambda m: m.institute.alias == institute, matched))
 
         # pagination
         queryset = matched[offset:limit*page]
         page = self.paginate_queryset(matched)
 
-         # serialize data
+        # serialize data
         if page is not None:
             serializer = self.get_serializer(page, many=True)
             return self.get_paginated_response(serializer.data)
 
         serializer = self.get_serializer(queryset, many=True)
         return Response(serializer.data)
+
 
 class ResearchViewSet(viewsets.ModelViewSet):
     """
@@ -156,12 +174,14 @@ class ResearchViewSet(viewsets.ModelViewSet):
         serializer = self.get_serializer(queryset, many=True)
         return Response(serializer.data)
 
+
 class AdvisorViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows Advisors to be viewed or edited.
     """
     queryset = Advisor.objects.all()
     serializer_class = AdvisorSerializer
+
 
 class AuthorViewSet(viewsets.ModelViewSet):
     """
