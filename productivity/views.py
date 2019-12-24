@@ -58,6 +58,11 @@ class MemberViewSet(viewsets.ModelViewSet):
         serializer = self.get_serializer(queryset, many=True)
         return Response(serializer.data)
 
+    def retrieve(self, request, pk=None):
+        instance = Member.objects.get(pk=pk)
+        serializer = self.get_serializer(instance)
+        return Response(serializer.data)
+
     @action(detail=False)
     def panel(self, request):
         panel_members = Member.objects.filter(Q(committee=True) | Q(board=True)
