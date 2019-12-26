@@ -63,9 +63,9 @@ class MemberViewSet(viewsets.ModelViewSet):
         serializer = self.get_serializer(instance)
         return Response(serializer.data)
 
-    def update(self, request, pk=None):
+    def update(self, request, *args, **kwargs):
         partial = kwargs.pop('partial', False)
-        instance = Member.objects.get(pk=pk)
+        instance = Member.objects.get(pk=kwargs['pk'])
         serializer = self.get_serializer(instance, data=request.data, partial=partial)
         serializer.is_valid(raise_exception=True)
         serializer.save()
