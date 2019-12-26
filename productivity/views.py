@@ -147,7 +147,7 @@ class ResearchViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows research to be viewed or edited.
     """
-    queryset = Research.objects.all().order_by('title')
+    queryset = Research.objects.all().order_by('-year')
     serializer_class = ResearchSerializer
 
     def list(self, request, *args, **kwargs):
