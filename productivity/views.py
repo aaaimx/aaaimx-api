@@ -27,13 +27,14 @@ class MemberViewSet(viewsets.ModelViewSet):
         active = request.GET.get('active', None)
         panel = request.GET.get('panel', None)
         _all = request.GET.get('all', None)
+        order = 'charge'
 
         if panel == "true":
             self.queryset = Member.objects.filter(Q(name__icontains=name) | Q(
-                surname__icontains=name), Q(committee=True) | Q(board=True))
+                surname__icontains=name), Q(committee=True) | Q(board=True)).order_by(order)
         else:
             self.queryset = Member.objects.filter(
-                Q(name__icontains=name) | Q(surname__icontains=name))
+                Q(name__icontains=name) | Q(surname__icontains=name)).order_by(order)
 
         # filter by status
         if active == "true":
@@ -41,7 +42,7 @@ class MemberViewSet(viewsets.ModelViewSet):
         elif active == "false":
             self.queryset = self.queryset.filter(active=False)
 
-       # serialize data
+        # serialize data
         if _all is not None:
             serializer = self.get_serializer(self.queryset, many=True)
             return Response(serializer.data)
@@ -89,6 +90,30 @@ class PartnerViewSet(viewsets.ModelViewSet):
     """
     queryset = Partner.objects.all().order_by('-name')
     serializer_class = PartnerSerializer
+
+    def list(self, request):
+        """
+        GET method to process pagination, filtering & sort
+        """
+        # get query params
+        name = request.GET.get('name', "")
+        type = request.GET.get('type', None)
+        _all = request.GET.get('all', None)
+
+        self.queryset = self.queryset.filter(Q(name__icontains=name) | Q(
+                alias__icontains=name))
+        if type:
+            self.queryset = self.queryset.filter(type=type)
+
+        # serialize data
+        if _all is not None:
+            serializer = self.get_serializer(self.queryset, many=True)
+            return Response(serializer.data)
+
+        # pagination
+        page = self.paginate_queryset(self.queryset)
+        serializer = self.get_serializer(page, many=True)
+        return self.get_paginated_response(serializer.data)
 
 
 class RoleViewSet(viewsets.ModelViewSet):
