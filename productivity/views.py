@@ -23,40 +23,33 @@ class MemberViewSet(viewsets.ModelViewSet):
         GET method to process pagination, filtering & sort
         """
         # get query params
-        limit = int(request.GET.get('limit', 10))
-        offset = int(request.GET.get('offset', 0))
-        page = int(request.GET.get('page', 1))
         name = request.GET.get('name', "")
         active = request.GET.get('active', None)
         panel = request.GET.get('panel', None)
+        _all = request.GET.get('all', None)
 
-        if panel == 'true':
+        if panel == "true":
             self.queryset = Member.objects.filter(Q(name__icontains=name) | Q(
-                surname__icontains=name), Q(board=True) | Q(
-                committee=True))
-        # get all and order by surname
-        elif name or not active:
-            self.queryset = Member.objects.filter(Q(name__icontains=name) | Q(
-                surname__icontains=name))
+                surname__icontains=name), Q(committee=True) | Q(board=True))
+        else:
+            self.queryset = Member.objects.filter(
+                Q(name__icontains=name) | Q(surname__icontains=name))
+
         # filter by status
-        elif active == "true":
-            self.queryset = Member.objects.filter(Q(name__icontains=name) | Q(
-                surname__icontains=name), active=True)
+        if active == "true":
+            self.queryset = self.queryset.filter(active=True)
         elif active == "false":
-            self.queryset = Member.objects.filter(Q(name__icontains=name) | Q(
-                surname__icontains=name), active=False)
+            self.queryset = self.queryset.filter(active=False)
+
+       # serialize data
+        if _all is not None:
+            serializer = self.get_serializer(self.queryset, many=True)
+            return Response(serializer.data)
 
         # pagination
-        queryset = self.queryset[offset:limit*page]
         page = self.paginate_queryset(self.queryset)
-
-        # serialize data
-        if page is not None:
-            serializer = self.get_serializer(page, many=True)
-            return self.get_paginated_response(serializer.data)
-
-        serializer = self.get_serializer(queryset, many=True)
-        return Response(serializer.data)
+        serializer = self.get_serializer(page, many=True)
+        return self.get_paginated_response(serializer.data)
 
     def retrieve(self, request, pk=None):
         instance = Member.objects.get(pk=pk)
@@ -66,7 +59,8 @@ class MemberViewSet(viewsets.ModelViewSet):
     def update(self, request, *args, **kwargs):
         partial = kwargs.pop('partial', False)
         instance = Member.objects.get(pk=kwargs['pk'])
-        serializer = self.get_serializer(instance, data=request.data, partial=partial)
+        serializer = self.get_serializer(
+            instance, data=request.data, partial=partial)
         serializer.is_valid(raise_exception=True)
         serializer.save()
 
@@ -112,6 +106,25 @@ class LineViewSet(viewsets.ModelViewSet):
     queryset = Line.objects.all()
     serializer_class = LineSerializer
 
+    def list(self, request):
+        """
+        GET method to process pagination, filtering & sort
+        """
+        # get query params
+        _all = request.GET.get('all', None)
+
+        self.queryset = self.filter_queryset(self.get_queryset())
+
+        # serialize data
+        if _all is not None:
+            serializer = self.get_serializer(self.queryset, many=True)
+            return Response(serializer.data)
+
+        # pagination
+        page = self.paginate_queryset(self.queryset)
+        serializer = self.get_serializer(page, many=True)
+        return self.get_paginated_response(serializer.data)
+
 
 class DivisionViewSet(viewsets.ModelViewSet):
     """
@@ -119,6 +132,25 @@ class DivisionViewSet(viewsets.ModelViewSet):
     """
     queryset = Division.objects.all()
     serializer_class = DivisionSerializer
+
+    def list(self, request):
+        """
+        GET method to process pagination, filtering & sort
+        """
+        # get query params
+        _all = request.GET.get('all', None)
+
+        self.queryset = self.filter_queryset(self.get_queryset())
+
+        # serialize data
+        if _all is not None:
+            serializer = self.get_serializer(self.queryset, many=True)
+            return Response(serializer.data)
+
+        # pagination
+        page = self.paginate_queryset(self.queryset)
+        serializer = self.get_serializer(page, many=True)
+        return self.get_paginated_response(serializer.data)
 
 
 class ProjectViewSet(viewsets.ModelViewSet):
@@ -133,11 +165,9 @@ class ProjectViewSet(viewsets.ModelViewSet):
         GET method to process pagination, filtering & sort
         """
         # get query params
-        limit = int(request.GET.get('limit', 10))
-        offset = int(request.GET.get('offset', 0))
-        page = int(request.GET.get('page', 1))
         title = request.GET.get('title', "")
         institute = request.GET.get('institute', None)
+        _all = request.GET.get('all', None)
 
         self.queryset = self.filter_queryset(self.get_queryset())
 
@@ -148,17 +178,15 @@ class ProjectViewSet(viewsets.ModelViewSet):
             matched = list(
                 filter(lambda m: m.institute.alias == institute, matched))
 
-        # pagination
-        queryset = matched[offset:limit*page]
-        page = self.paginate_queryset(matched)
-
         # serialize data
-        if page is not None:
-            serializer = self.get_serializer(page, many=True)
-            return self.get_paginated_response(serializer.data)
+        if _all is not None:
+            serializer = self.get_serializer(self.queryset, many=True)
+            return Response(serializer.data)
 
-        serializer = self.get_serializer(queryset, many=True)
-        return Response(serializer.data)
+        # pagination
+        page = self.paginate_queryset(matched)
+        serializer = self.get_serializer(page, many=True)
+        return self.get_paginated_response(serializer.data)
 
 
 class ResearchViewSet(viewsets.ModelViewSet):
@@ -170,32 +198,30 @@ class ResearchViewSet(viewsets.ModelViewSet):
 
     def list(self, request, *args, **kwargs):
         # get query params
-        limit = int(request.GET.get('limit', 10))
-        offset = int(request.GET.get('offset', 0))
-        page = int(request.GET.get('page', 1))
         year = request.GET.get('year', 0)
         title = request.GET.get('title', "")
         type = request.GET.get('type', None)
+        _all = request.GET.get('all', None)
 
         self.queryset = self.filter_queryset(self.get_queryset())
 
         # filter by title
-        matched = list(filter(lambda r: re.findall(title.upper(), r.title.upper()), self.queryset))
+        matched = list(filter(lambda r: re.findall(
+            title.upper(), r.title.upper()), self.queryset))
         if type:
             matched = list(filter(lambda r: r.type == type, matched))
         if year and year != 0 and year != "":
             matched = list(filter(lambda r: r.year == int(year), matched))
 
+        # serialize data
+        if _all is not None:
+            serializer = self.get_serializer(self.queryset, many=True)
+            return Response(serializer.data)
+
         # pagination
-        queryset = matched[offset:limit*page]
         page = self.paginate_queryset(matched)
-
-        if page is not None:
-            serializer = self.get_serializer(page, many=True)
-            return self.get_paginated_response(serializer.data)
-
-        serializer = self.get_serializer(queryset, many=True)
-        return Response(serializer.data)
+        serializer = self.get_serializer(page, many=True)
+        return self.get_paginated_response(serializer.data)
 
 
 class AdvisorViewSet(viewsets.ModelViewSet):
