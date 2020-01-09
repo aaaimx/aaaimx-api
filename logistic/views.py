@@ -20,12 +20,14 @@ class CertificateViewSet(viewsets.ModelViewSet):
         GET method to process pagination, filtering & sort
         """
         # get query params
-        query = request.GET.get('to', "")
+        to = request.GET.get('to', "")
+        query = request.GET.get('query', "")
         type = request.GET.get('type', "")
         _all = request.GET.get('all', None)
 
-        self.queryset = self.queryset.filter(Q(to__icontains=query) | Q(
-                description__icontains=query))
+        self.queryset = self.queryset.filter(Q(to__icontains=to))
+        if query:
+            self.queryset = self.queryset.filter(description__icontains=query)
         if type:
             self.queryset = self.queryset.filter(type=type)
 
