@@ -47,7 +47,7 @@ class CertificateViewSet(viewsets.ModelViewSet):
         serializer.is_valid(raise_exception=True)
         self.perform_create(serializer)
         uuid = serializer.data['uuid']
-        Certificate.objects.filter(pk=uuid).update(QR='www.aaaimx.org/certificates/?id={0}'.format(uuid))
+        Certificate.objects.filter(pk=uuid).update(QR='http://www.aaaimx.org/certificates/?id={0}'.format(uuid))
         headers = self.get_success_headers(serializer.data)
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
 
