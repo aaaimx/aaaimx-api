@@ -4,6 +4,7 @@ from .serializers import CertificateSerializer
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.settings import api_settings
+from django.db.models import Q
 import re
 
 # ViewSets define the view behavior.
@@ -19,32 +20,24 @@ class CertificateViewSet(viewsets.ModelViewSet):
         GET method to process pagination, filtering & sort
         """
         # get query params
-        limit = int(request.GET.get('limit', 10))
-        offset = int(request.GET.get('offset', 0))
-        page = int(request.GET.get('page', 1))
-        to = request.GET.get('to', "")
-        type = request.GET.get('type', None)
+        query = request.GET.get('to', "")
+        type = request.GET.get('type', "")
+        _all = request.GET.get('all', None)
 
-        self.queryset = self.filter_queryset(self.get_queryset())
-
-        # filter by title
-        matched = list(filter(lambda m: re.findall(
-            to.upper(), m.to.upper()), self.queryset))
+        self.queryset = self.queryset.filter(Q(to__icontains=query) | Q(
+                description__icontains=query))
         if type:
-            matched = list(
-                filter(lambda m: m.type == type, matched))
-
-        # pagination
-        queryset = matched[offset:limit*page]
-        page = self.paginate_queryset(matched)
+            self.queryset = self.queryset.filter(type=type)
 
         # serialize data
-        if page is not None:
-            serializer = self.get_serializer(page, many=True)
-            return self.get_paginated_response(serializer.data)
+        if _all is not None:
+            serializer = self.get_serializer(self.queryset, many=True)
+            return Response(serializer.data)
 
-        serializer = self.get_serializer(queryset, many=True)
-        return Response(serializer.data)
+        # pagination
+        page = self.paginate_queryset(self.queryset)
+        serializer = self.get_serializer(page, many=True)
+        return self.get_paginated_response(serializer.data)
 
 
     def create(self, request, *args, **kwargs):
