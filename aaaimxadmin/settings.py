@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
+import sys
 import os
 import datetime
 from django.contrib import messages
@@ -60,7 +61,7 @@ REST_FRAMEWORK = {
     # or allow read-only access for unauthenticated users.
     "DEFAULT_PERMISSION_CLASSES": [
         "rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly",
-        #'rest_framework.permissions.IsAdminUser'
+        # 'rest_framework.permissions.IsAdminUser'
     ],
     "DEFAULT_FILTER_BACKENDS": ["django_filters.rest_framework.DjangoFilterBackend"],
     "DEFAULT_AUTHENTICATION_CLASSES": (
@@ -70,6 +71,7 @@ REST_FRAMEWORK = {
     ),
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
     "PAGE_SIZE": 10,
+    'TEST_REQUEST_DEFAULT_FORMAT': 'json'
 }
 JWT_AUTH = {
     "JWT_ALLOW_REFRESH": True,
@@ -138,7 +140,7 @@ DATABASES = {
         "PASSWORD": os.environ["DB_PASS"],
         "HOST": os.environ["DB_HOST"],
         "PORT": int(os.environ["DB_PORT"]),
-        "OPTIONS": {"init_command": "SET sql_mode='STRICT_TRANS_TABLES'",},
+        "OPTIONS": {"init_command": "SET sql_mode='STRICT_TRANS_TABLES'", },
     }
 }
 
@@ -149,9 +151,9 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
-    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",},
-    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",},
-    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",},
+    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator", },
+    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator", },
+    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator", },
 ]
 
 
