@@ -5,7 +5,7 @@ from .models import *
 
 @admin.register(Membership)
 class AdminMembership(admin.ModelAdmin):
-    list_display = ('uuid', 'member', 'income', 'exp')
+    list_display = ('uuid', 'display_name', 'file', 'exp',)
     list_filter = ('member', 'exp',)
 
 
