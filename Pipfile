@@ -45,6 +45,7 @@ sqlalchemy = "*"
 django-conn-pool = "*"
 pytest = "*"
 coverage = "*"
+qrcode = "*"
 
 [requires]
 python_version = "3.6"

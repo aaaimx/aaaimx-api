@@ -5,6 +5,8 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.settings import api_settings
 from django.db.models import Q
+from utils.certificate import generate_cert, LOCATION
+from .forms import CertFile
 import re
 
 # ViewSets define the view behavior.
@@ -47,7 +49,16 @@ class CertificateViewSet(viewsets.ModelViewSet):
         serializer.is_valid(raise_exception=True)
         self.perform_create(serializer)
         uuid = serializer.data['uuid']
-        Certificate.objects.filter(pk=uuid).update(QR='http://www.aaaimx.org/certificates/?id={0}'.format(uuid))
+        to = serializer.data['to']
+        type = serializer.data['type']
+        url = 'http://www.aaaimx.org/certificates/?id={0}'.format(uuid)
+        imgCert = generate_cert(to, type, uuid, url)
+        inst = Certificate.objects.filter(pk=uuid).update(QR=url)
+        inst = Certificate.objects.get(pk=uuid)
+        cert = CertFile(files={'file': imgCert }, instance=inst)
+        if cert.is_valid():
+            cert.save(commit=False)
+            cert.save()
         headers = self.get_success_headers(serializer.data)
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
 
