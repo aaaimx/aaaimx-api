@@ -26,6 +26,7 @@ class Certificate(models.Model):
         return '{0}: {1}'.format(self.type, self.to)
     uuid = models.UUIDField(default=uuid4, primary_key=True, editable=True)
     type = models.CharField(max_length=100, default="RECOGNITION", blank=True,)
+    published = models.BooleanField(default=False)
     to = models.CharField(max_length=100, blank=True, default="")
     QR = models.CharField(max_length=100, blank=True, default='www.aaaimx.org/certificates/?id=')
     file = models.FileField(upload_to='certs', blank=True, storage=gd_storage)
