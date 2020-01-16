@@ -25,6 +25,7 @@ class CertificateViewSet(viewsets.ModelViewSet):
         to = request.GET.get('to', "")
         query = request.GET.get('query', "")
         type = request.GET.get('type', "")
+        status = request.GET.get('status', None)
         _all = request.GET.get('all', None)
 
         self.queryset = self.queryset.filter(Q(to__icontains=to))
@@ -32,6 +33,10 @@ class CertificateViewSet(viewsets.ModelViewSet):
             self.queryset = self.queryset.filter(description__icontains=query)
         if type:
             self.queryset = self.queryset.filter(type=type)
+
+        # filter by status
+        if status:
+            self.queryset = self.queryset.filter(published=status.capitalize())
 
         # serialize data
         if _all is not None:
