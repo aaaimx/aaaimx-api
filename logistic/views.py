@@ -5,7 +5,7 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.settings import api_settings
 from django.db.models import Q
-from utils.certificate import generate_cert, LOCATION
+from utils.images import generate_cert, LOCATION
 from .forms import CertFile
 import re
 
