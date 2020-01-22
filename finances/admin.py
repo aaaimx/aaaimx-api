@@ -11,5 +11,5 @@ class AdminMembership(admin.ModelAdmin):
 
 @admin.register(BankMovement)
 class AdminBankMovement(admin.ModelAdmin):
-    list_display = ('id', 'origin', 'to',  'concept',  'amount',  'type', )
+    list_display = ('id', 'origin', 'to',  'concept',  'amount', 'voucher',  'type', )
     list_filter = ('origin', 'amount', 'to',  'type',)
