@@ -78,7 +78,3 @@ def generate_membership(name, uuid, url, avatar=LOCATION("utils/foto.jpg")):
     img.save(output)
     return ImageFile(open(output, 'rb+'))
 
-generate_membership(
-"Raul Armin Novelo Cruz", 
-'7ae4fef9-6f60-4287-9ed3-55026ee3e233', 
-'http://www.aaaimx.org/memberships/?id={0}')
