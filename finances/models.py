@@ -16,6 +16,8 @@ class BankMovement(models.Model):
     concept = models.TextField(default="", blank=True)
     amount = models.FloatField(default=0, blank=True)
     type = models.CharField(default="", max_length=100, blank=True)
+    file = models.FileField(upload_to='voucher/%Y/%m/%D/', blank=True, storage=gd_storage)
+
 
 
 class Membership(models.Model):
@@ -26,4 +28,4 @@ class Membership(models.Model):
     uuid = models.UUIDField(default=uuid4, primary_key=True, editable=False)
     QR = models.URLField(default="", max_length=100, blank=True)
     exp = models.DateTimeField(default=datetime.now() + timedelta(days=1), blank=True)
-    file = models.FileField(upload_to='memberships', blank=True, storage=gd_storage)
+    file = models.ImageField(upload_to='memberships', blank=True, storage=gd_storage)
