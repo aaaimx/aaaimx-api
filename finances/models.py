@@ -16,7 +16,7 @@ class BankMovement(models.Model):
     concept = models.TextField(default="", blank=True)
     amount = models.FloatField(default=0, blank=True)
     type = models.CharField(default="", max_length=100, blank=True)
-    file = models.FileField(upload_to='voucher/%Y/%m/%D/', blank=True, storage=gd_storage)
+    file = models.FileField(upload_to='vouchers/%Y-%m-%D/', blank=True, storage=gd_storage)
 
 
 
