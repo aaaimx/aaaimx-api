@@ -43,7 +43,7 @@ class Member(models.Model):
     surname = models.CharField(default="", blank=True, max_length=100)
     email = models.EmailField(default="", blank=True, max_length=100)
     divisions = models.ManyToManyField(
-        Division, blank=True, verbose_name="divisions")
+        Division, blank=True, verbose_name="members")
     active = models.BooleanField(default=False)
     board = models.BooleanField(default=False, blank=True)
     committee = models.BooleanField(default=False, blank=True)
