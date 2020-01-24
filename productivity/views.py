@@ -4,6 +4,8 @@ from rest_framework import viewsets
 from rest_framework.decorators import action
 from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
+from django.http import JsonResponse
+
 from django.db.models import Q
 from .serializers import *
 from .models import *
@@ -96,6 +98,7 @@ class PartnerViewSet(viewsets.ModelViewSet):
     """
     queryset = Partner.objects.all().order_by('-name')
     serializer_class = PartnerSerializer
+    
 
     def list(self, request):
         """
@@ -253,6 +256,32 @@ class ResearchViewSet(viewsets.ModelViewSet):
         page = self.paginate_queryset(matched)
         serializer = self.get_serializer(page, many=True)
         return self.get_paginated_response(serializer.data)
+
+    @action(detail=False)
+    def statistics(self, request):
+        divisions = []
+        for div in Division.objects.all():
+            divisions.append({
+                'name': div.name,
+                'value': div.member_set.count()
+            })
+        return JsonResponse({
+            'research': [
+              { 'value': self.queryset.filter(type='Article').count(), 'name': 'Articles' },
+              { 'value': self.queryset.filter(type='Presentation').count(), 'name': 'Presentations' },
+              { 'value': self.queryset.filter(type='Thesis').count(), 'name': 'Theses' },
+              { 'value': Project.objects.count(), 'name': 'Projects' }
+            ],
+            'members': [
+              { 'value': Member.objects.filter(active=True).count(), 'name': 'Active' },
+              { 'value': Member.objects.filter(active=False).count(), 'name': 'Inactive' }
+            ],
+            'committee': [
+              { 'value': Member.objects.filter(committee=True).count(), 'name': 'Committee' },
+              { 'value': Member.objects.filter(board=True).count(), 'name': 'Board' }
+            ],
+            'divisions': divisions
+        })
 
 
 class AdvisorViewSet(viewsets.ModelViewSet):
