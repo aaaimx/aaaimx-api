@@ -1,7 +1,4 @@
-FROM python:3.6
-ENV PYTHONUNBUFFERED 1
-RUN mkdir /aaaimx
-WORKDIR /aaaimx
-COPY requirements.txt /aaaimx/
+FROM python:3.7.3-stretch
+WORKDIR /app
+COPY . .
 RUN pip install -r requirements.txt
-COPY . /aaaimx/

@@ -1,21 +1,15 @@
-version: '3.1'
+version: '3'
 services:
-  web:
-    restart: always
-    network_mode: host
-    environment:
-      - SECRET_KEY='23y7kt+o@#uwz7^82h6%id85fonk%^%4vcemyuh*0+dp98^qb8'
-      - DB_NAME=aaaimx_dev
-      - DB_USER=root
-      - DB_PASS=secret
-      - DB_HOST=127.0.0.1
-      - DB_PORT=33060
+  ###
+  # services
+  ###
+  django:
     build: .
-    command: bash -c "python manage.py collectstatic --noinput && 
-                      python manage.py makemigrations && 
-                      python manage.py migrate && 
-                      gunicorn aaaimxadmin.wsgi --log-file -"
+    network_mode: host
+    command: python manage.py runserver 0.0.0.0:3001
     volumes:
-      - .:/aaaimx
+        - .:/app
     ports:
-      - "8000:8000"
+        - "3001:3001"
+    tty: true
+    stdin_open: true

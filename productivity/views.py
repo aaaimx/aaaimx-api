@@ -83,6 +83,12 @@ class MemberViewSet(viewsets.ModelViewSet):
         serializer = self.get_serializer(panel_members, many=True)
         return Response(serializer.data)
 
+    @action(detail=False)
+    def divisions(self, request):
+        division_members = Member.objects.all()
+        division_members = list(filter(lambda m: m.divisions.all(), division_members))
+        serializer = self.get_serializer(division_members, many=True)
+        return Response(serializer.data)
 
 class PartnerViewSet(viewsets.ModelViewSet):
     """
