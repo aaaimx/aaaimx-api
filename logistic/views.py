@@ -52,7 +52,7 @@ class CertificateViewSet(viewsets.ModelViewSet):
         uuid = serializer.data['uuid']
         to = serializer.data['to']
         type = serializer.data['type']
-        url = 'http://www.aaaimx.org/certificates/?id={0}'.format(uuid)
+        url = 'https://www.aaaimx.org/certificates/?id={0}'.format(uuid)
         imgCert = generate_cert(to, type, uuid, url)
         inst = Certificate.objects.filter(pk=uuid).update(QR=url)
         inst = Certificate.objects.get(pk=uuid)
