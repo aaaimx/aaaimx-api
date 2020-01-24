@@ -85,8 +85,8 @@ class MemberViewSet(viewsets.ModelViewSet):
 
     @action(detail=False)
     def divisions(self, request):
-        division_members = Member.objects.all()
-        division_members = list(filter(lambda m: m.divisions.all(), division_members))
+        division_members = Member.objects.all().order_by('-name')
+        division_members = list(filter(lambda m: m.divisions.all() or m.board, division_members))
         serializer = self.get_serializer(division_members, many=True)
         return Response(serializer.data)
 
