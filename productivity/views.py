@@ -9,6 +9,7 @@ from django.http import JsonResponse
 from django.db.models import Q
 from .serializers import *
 from .models import *
+from logistic.models import Certificate
 import re
 # Create your views here.
 
@@ -271,6 +272,17 @@ class ResearchViewSet(viewsets.ModelViewSet):
               { 'value': self.queryset.filter(type='Presentation').count(), 'name': 'Presentations' },
               { 'value': self.queryset.filter(type='Thesis').count(), 'name': 'Theses' },
               { 'value': Project.objects.count(), 'name': 'Projects' }
+            ],
+            'certs': [
+              { 'value': Certificate.objects.filter(type='PARTICIPATION').count(), 'name': 'PARTICIPATION' },
+              { 'value': Certificate.objects.filter(type='RECOGNITION').count(), 'name': 'RECOGNITION' },
+              { 'value': Certificate.objects.filter(type='APPRECIATION').count(), 'name': 'APPRECIATION' }
+            ],
+            'partners': [
+              { 'value': Partner.objects.filter(type='Sponsor').count(), 'name': 'Sponsors' },
+              { 'value': Partner.objects.filter(type='Research Center').count(), 'name': 'Research Centers' },
+              { 'value': Partner.objects.filter(type='Division').count(), 'name': 'Divisions' },
+              { 'value': Partner.objects.filter(type='Partner').count(), 'name': 'Partners' }
             ],
             'members': [
               { 'value': Member.objects.filter(active=True).count(), 'name': 'Active' },
