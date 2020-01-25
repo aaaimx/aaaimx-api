@@ -6,10 +6,11 @@ from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
 from django.http import JsonResponse
 
-from django.db.models import Q
+from django.db.models import Q, Sum
 from .serializers import *
 from .models import *
 from logistic.models import Certificate
+from finances.models import BankMovement
 import re
 # Create your views here.
 
@@ -291,6 +292,11 @@ class ResearchViewSet(viewsets.ModelViewSet):
             'committee': [
               { 'value': Member.objects.filter(committee=True).count(), 'name': 'Committee' },
               { 'value': Member.objects.filter(board=True).count(), 'name': 'Board' }
+            ],
+            'finances': [
+              { 'value': BankMovement.objects.filter(type='Income').aggregate(Sum('amount')).get('amount__sum', 0), 'name': 'Incomes' },
+              { 'value': BankMovement.objects.filter(type='Donation').aggregate(Sum('amount')).get('amount__sum', 0), 'name': 'Donation' },
+              { 'value': BankMovement.objects.filter(type='Expense').aggregate(Sum('amount')).get('amount__sum', 0), 'name': 'Expenses' }
             ],
             'divisions': divisions
         })
