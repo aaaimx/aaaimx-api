@@ -58,7 +58,7 @@ router.register(r"research", ResearchViewSet)
 urlpatterns = [
     path("jet/", include("jet.urls", namespace="jet")),  # Django JET URLS
     path("jet/dashboard/", include("jet.dashboard.urls", namespace="jet-dashboard")),  # Django JET dashboard URLS
-    path("admin/", admin.site.urls),
+    path("", admin.site.urls),
     path("api/token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
     path("api/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
     path("api/token/verify/", TokenVerifyView.as_view(), name="token_verify"),
