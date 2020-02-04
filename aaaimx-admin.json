@@ -1,0 +1,5235 @@
+[
+    {
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "app_label": "dashboard",
+            "model": "userdashboardmodule"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "app_label": "jet",
+            "model": "bookmark"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "app_label": "jet",
+            "model": "pinnedapplication"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "app_label": "admin",
+            "model": "logentry"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "app_label": "auth",
+            "model": "permission"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "app_label": "auth",
+            "model": "group"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "app_label": "auth",
+            "model": "user"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "app_label": "contenttypes",
+            "model": "contenttype"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "app_label": "sessions",
+            "model": "session"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "app_label": "DIS",
+            "model": "pet"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "app_label": "productivity",
+            "model": "division"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "app_label": "productivity",
+            "model": "line"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "app_label": "productivity",
+            "model": "member"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "app_label": "productivity",
+            "model": "partner"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "app_label": "productivity",
+            "model": "project"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "app_label": "productivity",
+            "model": "role"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "app_label": "productivity",
+            "model": "research"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "app_label": "productivity",
+            "model": "author"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "app_label": "productivity",
+            "model": "advisor"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "app_label": "logistic",
+            "model": "certificate"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "app_label": "logistic",
+            "model": "component"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "app_label": "logistic",
+            "model": "event"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "app_label": "finances",
+            "model": "income"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "app_label": "finances",
+            "model": "membership"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "app_label": "finances",
+            "model": "expense"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "app_label": "authtoken",
+            "model": "token"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "app_label": "productivity",
+            "model": "membership"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "app_label": "finances",
+            "model": "bankmovement"
+        }
+    },
+    {
+        "model": "productivity.role",
+        "pk": 1,
+        "fields": {
+            "name": "Student"
+        }
+    },
+    {
+        "model": "productivity.role",
+        "pk": 2,
+        "fields": {
+            "name": "Teacher"
+        }
+    },
+    {
+        "model": "productivity.role",
+        "pk": 3,
+        "fields": {
+            "name": "Researcher"
+        }
+    },
+    {
+        "model": "productivity.role",
+        "pk": 4,
+        "fields": {
+            "name": "Graduated"
+        }
+    },
+    {
+        "model": "productivity.role",
+        "pk": 5,
+        "fields": {
+            "name": "Member"
+        }
+    },
+    {
+        "model": "productivity.division",
+        "pk": 1,
+        "fields": {
+            "name": "Software",
+            "story": "",
+            "logo": ""
+        }
+    },
+    {
+        "model": "productivity.division",
+        "pk": 2,
+        "fields": {
+            "name": "Machine Learning",
+            "story": "",
+            "logo": ""
+        }
+    },
+    {
+        "model": "productivity.division",
+        "pk": 3,
+        "fields": {
+            "name": "Operations",
+            "story": "",
+            "logo": ""
+        }
+    },
+    {
+        "model": "productivity.division",
+        "pk": 4,
+        "fields": {
+            "name": "Robotics",
+            "story": "",
+            "logo": ""
+        }
+    },
+    {
+        "model": "productivity.division",
+        "pk": 5,
+        "fields": {
+            "name": "Applied Maths",
+            "story": "",
+            "logo": ""
+        }
+    },
+    {
+        "model": "productivity.division",
+        "pk": 6,
+        "fields": {
+            "name": "Social Impact",
+            "story": "",
+            "logo": ""
+        }
+    },
+    {
+        "model": "productivity.division",
+        "pk": 9,
+        "fields": {
+            "name": "Bioengineering",
+            "story": "",
+            "logo": ""
+        }
+    },
+    {
+        "model": "productivity.partner",
+        "pk": "138fffdc-0e81-4b3b-af96-fb8862ae2430",
+        "fields": {
+            "name": "Electr\u00f3nica THIDO",
+            "alias": "THIDO",
+            "site": "http://www.electronicathido.com/index.php",
+            "logoName": "",
+            "logoFile": "logos/thido.png",
+            "type": "Sponsor"
+        }
+    },
+    {
+        "model": "productivity.partner",
+        "pk": "20769776-fe79-4f39-a077-979a48057e1d",
+        "fields": {
+            "name": "WolfCode programming Squad",
+            "alias": "WolfCode",
+            "site": "https://web.facebook.com/WolfCodeProgrammingSquad/",
+            "logoName": "",
+            "logoFile": "logos/wolfcode.jpg",
+            "type": "Partner"
+        }
+    },
+    {
+        "model": "productivity.partner",
+        "pk": "2eaa2dbe-4122-4555-832d-7a6176160b41",
+        "fields": {
+            "name": "AAAIMX Operations Division",
+            "alias": "Operations",
+            "site": "",
+            "logoName": "",
+            "logoFile": "",
+            "type": "Division"
+        }
+    },
+    {
+        "model": "productivity.partner",
+        "pk": "3b8817e5-1df2-44ab-a1db-1b255b3a8fb4",
+        "fields": {
+            "name": "Comisi\u00f3n Nacional de Ciencia y Tecnolog\u00eda / Centro de Investigaci\u00f3n en Ciencias de Informaci\u00f3n Geoespacial Subsede Yucat\u00e1n",
+            "alias": "CentroGEO",
+            "site": "http://mid.geoint.mx/",
+            "logoName": "centrogeo.png",
+            "logoFile": "",
+            "type": "Research Center"
+        }
+    },
+    {
+        "model": "productivity.partner",
+        "pk": "3ed72822-985c-4915-a3ed-c784023ed212",
+        "fields": {
+            "name": "Indaico Servicio y Reparaci\u00f3n",
+            "alias": "Indaico",
+            "site": "https://web.facebook.com/indaico/",
+            "logoName": "",
+            "logoFile": "logos/indaico.png",
+            "type": "Sponsor"
+        }
+    },
+    {
+        "model": "productivity.partner",
+        "pk": "405d8b93-48f5-4a45-b7e5-bbe558e058a8",
+        "fields": {
+            "name": "AAAIMX Software Division",
+            "alias": "Software",
+            "site": "",
+            "logoName": "",
+            "logoFile": "logos/software.jpg",
+            "type": "Division"
+        }
+    },
+    {
+        "model": "productivity.partner",
+        "pk": "41323d3e-cacc-437c-9d40-dec1c39078c3",
+        "fields": {
+            "name": "Universidad Aut\u00f3noma de Yucat\u00e1n",
+            "alias": "UADY",
+            "site": "http://www.uady.mx/index/",
+            "logoName": "",
+            "logoFile": "logos/uady.jpeg",
+            "type": "Partner"
+        }
+    },
+    {
+        "model": "productivity.partner",
+        "pk": "47415410-5d9a-4632-b0f5-218d2f68dfdd",
+        "fields": {
+            "name": "Jalisco Talent Land",
+            "alias": "Jalisco Talent Land",
+            "site": "https://www.talent-land.mx/",
+            "logoName": "",
+            "logoFile": "logos/jtl.jpeg",
+            "type": "Sponsor"
+        }
+    },
+    {
+        "model": "productivity.partner",
+        "pk": "52f2a630-893c-4f69-b243-d5eaa75d27c9",
+        "fields": {
+            "name": "Instituto Polit\u00e9cnico Nacional / Centro de Desarrollo Aeroespacial",
+            "alias": "IPN",
+            "site": "https://www.ipn.mx/cda/",
+            "logoName": "",
+            "logoFile": "logos/pleca-ipn.png",
+            "type": "Research Center"
+        }
+    },
+    {
+        "model": "productivity.partner",
+        "pk": "60466fa6-aae9-4784-87f2-53ea6725af39",
+        "fields": {
+            "name": "AAAIMX Machine Learning Division",
+            "alias": "ML",
+            "site": "",
+            "logoName": "",
+            "logoFile": "logos/ML_0OUUI9Q.png",
+            "type": "Division"
+        }
+    },
+    {
+        "model": "productivity.partner",
+        "pk": "6d6dd29b-ec9b-4d80-a57a-0c1030bee5b8",
+        "fields": {
+            "name": "Tecnol\u00f3gico Nacional de M\u00e9xico",
+            "alias": "TecNM",
+            "site": "https://www.tecnm.mx/",
+            "logoName": "",
+            "logoFile": "logos/tecnm.png",
+            "type": "Partner"
+        }
+    },
+    {
+        "model": "productivity.partner",
+        "pk": "7c34caf7-c295-44ff-bbc8-c1084724a7ab",
+        "fields": {
+            "name": "ECE Electronics MID",
+            "alias": "ECE Electronics",
+            "site": "https://web.facebook.com/ECEelectronics/",
+            "logoName": "",
+            "logoFile": "logos/ece-elect.jpg",
+            "type": "Sponsor"
+        }
+    },
+    {
+        "model": "productivity.partner",
+        "pk": "804e60ff-0454-4a81-a620-2d8e4f8f3db0",
+        "fields": {
+            "name": "Makerbot MID",
+            "alias": "Makerbot",
+            "site": "https://web.facebook.com/MakerbotMID/",
+            "logoName": "MakerBot.svg",
+            "logoFile": "",
+            "type": "Sponsor"
+        }
+    },
+    {
+        "model": "productivity.partner",
+        "pk": "8862a10a-9e86-43db-b513-d6101cca2e33",
+        "fields": {
+            "name": "Tecnol\u00f3gico Nacional de M\u00e9xico / I.T. M\u00e9rida",
+            "alias": "ITM",
+            "site": "http://www.itmerida.mx/",
+            "logoName": "",
+            "logoFile": "logos/tec_hTwHRKS.png",
+            "type": "Partner"
+        }
+    },
+    {
+        "model": "productivity.partner",
+        "pk": "8e71926e-df77-4ee1-9a71-b9e04aecdd3c",
+        "fields": {
+            "name": "Association for Advancement of Artificial Intelligence",
+            "alias": "AAAI",
+            "site": "https://www.aaai.org/",
+            "logoName": "",
+            "logoFile": "logos/aaai.png",
+            "type": "Partner"
+        }
+    },
+    {
+        "model": "productivity.partner",
+        "pk": "9036b749-5c6d-4f47-aaba-fbd810010f11",
+        "fields": {
+            "name": "Litoteca Nacional de Hidrocarburos",
+            "alias": "LNH",
+            "site": "https://www.gob.mx/cnh/videos/litoteca-nacional-de-la-industria-de-hidrocarburos-217890",
+            "logoName": "",
+            "logoFile": "logos/CNH.png",
+            "type": "Research Center"
+        }
+    },
+    {
+        "model": "productivity.partner",
+        "pk": "91e40237-c8c1-4f38-831f-7f064e79a0ef",
+        "fields": {
+            "name": "Generaci\u00f3n Estudiantil Tecnol\u00f3gica  ITM",
+            "alias": "GETEC",
+            "site": "https://web.facebook.com/GETECITM/",
+            "logoName": "",
+            "logoFile": "logos/getec.png",
+            "type": "Sponsor"
+        }
+    },
+    {
+        "model": "productivity.partner",
+        "pk": "a710be01-9f38-49d0-bf77-9f37df3e3081",
+        "fields": {
+            "name": "Direcci\u00f3n de Ingenier\u00eda Electrica y Electr\u00f3nica",
+            "alias": "DIEE",
+            "site": "https://diee.net/",
+            "logoName": "diee.jpg",
+            "logoFile": "logos/diee.jpg",
+            "type": "Partner"
+        }
+    },
+    {
+        "model": "productivity.partner",
+        "pk": "ad9ad059-d6ea-4015-b3ab-0cb949e87e92",
+        "fields": {
+            "name": "Centro de Investigaci\u00f3n en Matem\u00e1ticas / Unidad M\u00e9rida",
+            "alias": "CIMAT",
+            "site": "https://www.cimat.mx/es/unidad-merida",
+            "logoName": "",
+            "logoFile": "logos/cimat.png",
+            "type": "Research Center"
+        }
+    },
+    {
+        "model": "productivity.partner",
+        "pk": "aea6bcca-5c27-406e-83ee-8684bdaebf7b",
+        "fields": {
+            "name": "Universidad Complutense de Madrid",
+            "alias": "UCM",
+            "site": "https://www.ucm.es/disia",
+            "logoName": "ucm.png",
+            "logoFile": "logos/ucm.png",
+            "type": "Research Center"
+        }
+    },
+    {
+        "model": "productivity.partner",
+        "pk": "b1d12525-a18c-429d-ac14-eb52647eae3b",
+        "fields": {
+            "name": "Jarkol Technologies",
+            "alias": "Jarkol",
+            "site": "https://www.jarkol.com/",
+            "logoName": "",
+            "logoFile": "logos/jarkol-logo.png",
+            "type": "Sponsor"
+        }
+    },
+    {
+        "model": "productivity.partner",
+        "pk": "b549f397-244b-4124-baa0-dd4e49974953",
+        "fields": {
+            "name": "AAAIMX Bioengineering Division",
+            "alias": "Bioengineering",
+            "site": "https://web.facebook.com/AAAI-Bioingenier%C3%ADa-mx-110319147115694/",
+            "logoName": "",
+            "logoFile": "logos/bio.jpg",
+            "type": "Division"
+        }
+    },
+    {
+        "model": "productivity.partner",
+        "pk": "ca618a87-01d5-42f3-9643-9adfa9119ad2",
+        "fields": {
+            "name": "AAAIMX Social Impact Division",
+            "alias": "DIS",
+            "site": "https://web.facebook.com/Divisi%C3%B3n-IS-AAAI-Student-Chapter-M%C3%A9xico-100466724697875/",
+            "logoName": "",
+            "logoFile": "",
+            "type": "Division"
+        }
+    },
+    {
+        "model": "productivity.partner",
+        "pk": "ca93b056-b140-494e-8e7e-c3f808d1ac86",
+        "fields": {
+            "name": "AAAIMX Applied Maths & Symbolic AI Division",
+            "alias": "Applied Maths",
+            "site": "",
+            "logoName": "",
+            "logoFile": "logos/maths.jpg",
+            "type": "Division"
+        }
+    },
+    {
+        "model": "productivity.partner",
+        "pk": "cf4b4e5a-a803-4466-a6b2-90466bc232fd",
+        "fields": {
+            "name": "AAAIMX Robotics Division",
+            "alias": "Robotics",
+            "site": "https://web.facebook.com/DivRobotica/",
+            "logoName": "",
+            "logoFile": "logos/robotics.jpg",
+            "type": "Division"
+        }
+    },
+    {
+        "model": "productivity.partner",
+        "pk": "da1baed2-642c-4b52-826a-949deb5eca3d",
+        "fields": {
+            "name": "Departamento de Sistemas y Computaci\u00f3n",
+            "alias": "DISC",
+            "site": "http://www.itmerida.edu.mx/",
+            "logoName": "disc.jpg",
+            "logoFile": "logos/disc.png",
+            "type": "Partner"
+        }
+    },
+    {
+        "model": "productivity.partner",
+        "pk": "dcb79a6c-276e-448c-8712-e28cdc57887e",
+        "fields": {
+            "name": "CEISC - Club de Electr\u00f3nica ISC",
+            "alias": "CEISC",
+            "site": "https://web.facebook.com/DivRobotica/",
+            "logoName": "ceisc.jpg",
+            "logoFile": "logos/ceisc.jpg",
+            "type": "Partner"
+        }
+    },
+    {
+        "model": "productivity.partner",
+        "pk": "e998a8f5-12f1-45bd-98e0-e8b830bd16a4",
+        "fields": {
+            "name": "Ascodecodigo",
+            "alias": "ADC",
+            "site": "http://www.ascodecodigo.com/",
+            "logoName": "",
+            "logoFile": "logos/adc.png",
+            "type": "Sponsor"
+        }
+    },
+    {
+        "model": "productivity.partner",
+        "pk": "f88582d7-bc58-4d60-aa9a-6abdcf5fd614",
+        "fields": {
+            "name": "Universidad Modelo",
+            "alias": "Modelo",
+            "site": "https://www.unimodelo.edu.mx/",
+            "logoName": "",
+            "logoFile": "logos/modelo.png",
+            "type": "Partner"
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 1,
+        "fields": {
+            "name": "Larissa Jeanette",
+            "surname": "Peniche-Ruiz",
+            "email": "",
+            "active": false,
+            "board": false,
+            "committee": false,
+            "thumbnailFile": "",
+            "charge": "",
+            "adscription": "8862a10a-9e86-43db-b513-d6101cca2e33",
+            "divisions": [],
+            "roles": [
+                2
+            ]
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 2,
+        "fields": {
+            "name": "Ra\u00fal",
+            "surname": "C\u00e1ceres-Escalante",
+            "email": "",
+            "active": false,
+            "board": false,
+            "committee": false,
+            "thumbnailFile": "",
+            "charge": "",
+            "adscription": "8862a10a-9e86-43db-b513-d6101cca2e33",
+            "divisions": [],
+            "roles": [
+                2
+            ]
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 3,
+        "fields": {
+            "name": "Rafael",
+            "surname": "\u00c1vila-Carrera",
+            "email": "",
+            "active": false,
+            "board": false,
+            "committee": false,
+            "thumbnailFile": "",
+            "charge": "",
+            "adscription": null,
+            "divisions": [],
+            "roles": []
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 4,
+        "fields": {
+            "name": "Jos\u00e9 Misael",
+            "surname": "Guzm\u00e1n-Tolosa",
+            "email": "",
+            "active": true,
+            "board": false,
+            "committee": false,
+            "thumbnailFile": "",
+            "charge": "",
+            "adscription": "8862a10a-9e86-43db-b513-d6101cca2e33",
+            "divisions": [],
+            "roles": []
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 5,
+        "fields": {
+            "name": "A.",
+            "surname": "Lopez-Caloca",
+            "email": "",
+            "active": false,
+            "board": false,
+            "committee": false,
+            "thumbnailFile": "",
+            "charge": "",
+            "adscription": null,
+            "divisions": [],
+            "roles": []
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 6,
+        "fields": {
+            "name": "Eric",
+            "surname": "Su\u00e1rez-Gallareta",
+            "email": "",
+            "active": true,
+            "board": false,
+            "committee": false,
+            "thumbnailFile": "",
+            "charge": "",
+            "adscription": "8862a10a-9e86-43db-b513-d6101cca2e33",
+            "divisions": [],
+            "roles": []
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 7,
+        "fields": {
+            "name": "Carlos",
+            "surname": "Ortiz-Alem\u00e1n",
+            "email": "",
+            "active": true,
+            "board": true,
+            "committee": false,
+            "thumbnailFile": "thumbnail/Carlos_Ortiz-Alem\u00e1n.jfif",
+            "charge": "Member / Director, Litoteca Nacional de Hidrocarburos, M\u00e9xico",
+            "adscription": "9036b749-5c6d-4f47-aaba-fbd810010f11",
+            "divisions": [],
+            "roles": [
+                3
+            ]
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 8,
+        "fields": {
+            "name": "Dakar Fernando",
+            "surname": "Villafa\u00f1a-Gamboa",
+            "email": "",
+            "active": true,
+            "board": false,
+            "committee": false,
+            "thumbnailFile": "",
+            "charge": "",
+            "adscription": "8862a10a-9e86-43db-b513-d6101cca2e33",
+            "divisions": [],
+            "roles": []
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 9,
+        "fields": {
+            "name": "A.",
+            "surname": "Salazar-Garibay",
+            "email": "",
+            "active": false,
+            "board": false,
+            "committee": false,
+            "thumbnailFile": "",
+            "charge": "",
+            "adscription": null,
+            "divisions": [],
+            "roles": []
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 10,
+        "fields": {
+            "name": "R.",
+            "surname": "Silva-Aguilera",
+            "email": "",
+            "active": false,
+            "board": false,
+            "committee": false,
+            "thumbnailFile": "",
+            "charge": "",
+            "adscription": null,
+            "divisions": [],
+            "roles": []
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 11,
+        "fields": {
+            "name": "Jorge Javier",
+            "surname": "Hern\u00e1ndez-G\u00f3mez",
+            "email": "",
+            "active": true,
+            "board": true,
+            "committee": false,
+            "thumbnailFile": "thumbnail/jorge-hernandez.jpeg",
+            "charge": "Member / Senior Researcher, IPN-CDA, M\u00e9xico",
+            "adscription": "52f2a630-893c-4f69-b243-d5eaa75d27c9",
+            "divisions": [],
+            "roles": [
+                3
+            ]
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 12,
+        "fields": {
+            "name": "Ricardo",
+            "surname": "Cordero-Chan",
+            "email": "",
+            "active": true,
+            "board": false,
+            "committee": false,
+            "thumbnailFile": "",
+            "charge": "",
+            "adscription": "8862a10a-9e86-43db-b513-d6101cca2e33",
+            "divisions": [],
+            "roles": []
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 13,
+        "fields": {
+            "name": "Wilberth",
+            "surname": "Canul-Dzul",
+            "email": "",
+            "active": true,
+            "board": false,
+            "committee": false,
+            "thumbnailFile": "",
+            "charge": "",
+            "adscription": "8862a10a-9e86-43db-b513-d6101cca2e33",
+            "divisions": [],
+            "roles": []
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 14,
+        "fields": {
+            "name": "Mario Ren\u00e1n",
+            "surname": "Moreno-Sabido",
+            "email": "",
+            "active": true,
+            "board": false,
+            "committee": false,
+            "thumbnailFile": "",
+            "charge": "",
+            "adscription": "8862a10a-9e86-43db-b513-d6101cca2e33",
+            "divisions": [],
+            "roles": []
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 15,
+        "fields": {
+            "name": "Jessica",
+            "surname": "Ortega-Olmos",
+            "email": "",
+            "active": false,
+            "board": false,
+            "committee": false,
+            "thumbnailFile": "",
+            "charge": "",
+            "adscription": null,
+            "divisions": [],
+            "roles": []
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 16,
+        "fields": {
+            "name": "C.R.",
+            "surname": "Torres-San-Miguel",
+            "email": "",
+            "active": false,
+            "board": false,
+            "committee": false,
+            "thumbnailFile": "",
+            "charge": "",
+            "adscription": null,
+            "divisions": [],
+            "roles": []
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 17,
+        "fields": {
+            "name": "Carlos",
+            "surname": "Couder-Casta\u00f1eda",
+            "email": "",
+            "active": false,
+            "board": false,
+            "committee": false,
+            "thumbnailFile": "",
+            "charge": "",
+            "adscription": null,
+            "divisions": [],
+            "roles": []
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 18,
+        "fields": {
+            "name": "C.",
+            "surname": "Valle-Molina",
+            "email": "",
+            "active": false,
+            "board": false,
+            "committee": false,
+            "thumbnailFile": "",
+            "charge": "",
+            "adscription": null,
+            "divisions": [],
+            "roles": []
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 19,
+        "fields": {
+            "name": "Raul Armin",
+            "surname": "Novelo-Cruz",
+            "email": "rnovelo.cruz98@gmail.com",
+            "active": true,
+            "board": false,
+            "committee": true,
+            "thumbnailFile": "thumbnail/raul-novelo.jpeg",
+            "charge": "President / Software Leader",
+            "adscription": "8862a10a-9e86-43db-b513-d6101cca2e33",
+            "divisions": [
+                1
+            ],
+            "roles": [
+                1,
+                5
+            ]
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 20,
+        "fields": {
+            "name": "Jeni Karina",
+            "surname": "Molina-Puc",
+            "email": "",
+            "active": true,
+            "board": false,
+            "committee": false,
+            "thumbnailFile": "",
+            "charge": "",
+            "adscription": "8862a10a-9e86-43db-b513-d6101cca2e33",
+            "divisions": [],
+            "roles": []
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 21,
+        "fields": {
+            "name": "Romeo Alam",
+            "surname": "G\u00f3mez-Buenfil",
+            "email": "",
+            "active": true,
+            "board": false,
+            "committee": false,
+            "thumbnailFile": "",
+            "charge": "",
+            "adscription": "8862a10a-9e86-43db-b513-d6101cca2e33",
+            "divisions": [],
+            "roles": []
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 22,
+        "fields": {
+            "name": "Nora Leticia",
+            "surname": "Cuevas-Cuevas",
+            "email": "",
+            "active": true,
+            "board": false,
+            "committee": false,
+            "thumbnailFile": "",
+            "charge": "",
+            "adscription": "8862a10a-9e86-43db-b513-d6101cca2e33",
+            "divisions": [],
+            "roles": []
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 23,
+        "fields": {
+            "name": "J.I.",
+            "surname": "Grageda-Arellano",
+            "email": "",
+            "active": false,
+            "board": false,
+            "committee": false,
+            "thumbnailFile": "",
+            "charge": "",
+            "adscription": null,
+            "divisions": [],
+            "roles": []
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 24,
+        "fields": {
+            "name": "Joel Antonio",
+            "surname": "Trejo-S\u00e1nchez",
+            "email": "",
+            "active": true,
+            "board": true,
+            "committee": false,
+            "thumbnailFile": "thumbnail/dr-joel-trejo.jpg",
+            "charge": "Secretary / CIMAT Researcher",
+            "adscription": "ad9ad059-d6ea-4015-b3ab-0cb949e87e92",
+            "divisions": [],
+            "roles": [
+                3
+            ]
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 25,
+        "fields": {
+            "name": "Saul",
+            "surname": "Navarro-Tec",
+            "email": "",
+            "active": true,
+            "board": false,
+            "committee": false,
+            "thumbnailFile": "",
+            "charge": "",
+            "adscription": "8862a10a-9e86-43db-b513-d6101cca2e33",
+            "divisions": [],
+            "roles": []
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 26,
+        "fields": {
+            "name": "A.",
+            "surname": "Tellez-Quinones",
+            "email": "",
+            "active": false,
+            "board": false,
+            "committee": false,
+            "thumbnailFile": "",
+            "charge": "",
+            "adscription": null,
+            "divisions": [],
+            "roles": []
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 27,
+        "fields": {
+            "name": "H\u00e9ctor",
+            "surname": "Rodr\u00edguez-Castillo",
+            "email": "",
+            "active": true,
+            "board": false,
+            "committee": false,
+            "thumbnailFile": "",
+            "charge": "",
+            "adscription": "8862a10a-9e86-43db-b513-d6101cca2e33",
+            "divisions": [],
+            "roles": []
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 28,
+        "fields": {
+            "name": "Daniel",
+            "surname": "Ordaz-Bencomo",
+            "email": "",
+            "active": true,
+            "board": false,
+            "committee": false,
+            "thumbnailFile": "",
+            "charge": "",
+            "adscription": "8862a10a-9e86-43db-b513-d6101cca2e33",
+            "divisions": [],
+            "roles": []
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 29,
+        "fields": {
+            "name": "J.E.",
+            "surname": "Rodr\u00edguez-S\u00e1nchez",
+            "email": "",
+            "active": false,
+            "board": false,
+            "committee": false,
+            "thumbnailFile": "",
+            "charge": "",
+            "adscription": null,
+            "divisions": [],
+            "roles": []
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 30,
+        "fields": {
+            "name": "Javier",
+            "surname": "Abreu-Torres",
+            "email": "",
+            "active": false,
+            "board": false,
+            "committee": false,
+            "thumbnailFile": "",
+            "charge": "",
+            "adscription": null,
+            "divisions": [],
+            "roles": []
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 31,
+        "fields": {
+            "name": "Alejandro",
+            "surname": "Rodr\u00edguez-Castellanos",
+            "email": "",
+            "active": false,
+            "board": false,
+            "committee": false,
+            "thumbnailFile": "",
+            "charge": "",
+            "adscription": null,
+            "divisions": [],
+            "roles": []
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 32,
+        "fields": {
+            "name": "Gerardo",
+            "surname": "Cetzal-Balam",
+            "email": "",
+            "active": true,
+            "board": false,
+            "committee": false,
+            "thumbnailFile": "",
+            "charge": "",
+            "adscription": "8862a10a-9e86-43db-b513-d6101cca2e33",
+            "divisions": [],
+            "roles": []
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 33,
+        "fields": {
+            "name": "Isaac",
+            "surname": "Medina-S\u00e1nchez",
+            "email": "",
+            "active": false,
+            "board": false,
+            "committee": false,
+            "thumbnailFile": "",
+            "charge": "",
+            "adscription": null,
+            "divisions": [],
+            "roles": []
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 34,
+        "fields": {
+            "name": "Mauricio Gabriel",
+            "surname": "Orozco-del-Castillo",
+            "email": "",
+            "active": true,
+            "board": true,
+            "committee": false,
+            "thumbnailFile": "thumbnail/dr-mauricio-orozco.jpg",
+            "charge": "Chair / ITM Researcher",
+            "adscription": "8862a10a-9e86-43db-b513-d6101cca2e33",
+            "divisions": [],
+            "roles": [
+                2,
+                3
+            ]
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 35,
+        "fields": {
+            "name": "Javier",
+            "surname": "Barragan-Ram\u00edrez",
+            "email": "",
+            "active": false,
+            "board": false,
+            "committee": false,
+            "thumbnailFile": "",
+            "charge": "",
+            "adscription": null,
+            "divisions": [],
+            "roles": []
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 36,
+        "fields": {
+            "name": "Adolfo",
+            "surname": "Alvarez-Pacheco",
+            "email": "",
+            "active": true,
+            "board": false,
+            "committee": true,
+            "thumbnailFile": "thumbnail/adolfo-alvarez_seH7XkX.jpg",
+            "charge": "Advisor",
+            "adscription": "8862a10a-9e86-43db-b513-d6101cca2e33",
+            "divisions": [
+                1
+            ],
+            "roles": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 37,
+        "fields": {
+            "name": "Guillermo",
+            "surname": "Fern\u00e1ndez-Estrella",
+            "email": "",
+            "active": true,
+            "board": false,
+            "committee": false,
+            "thumbnailFile": "",
+            "charge": "",
+            "adscription": "8862a10a-9e86-43db-b513-d6101cca2e33",
+            "divisions": [],
+            "roles": []
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 38,
+        "fields": {
+            "name": "Carlos",
+            "surname": "Bermejo-Sabbagh",
+            "email": "",
+            "active": true,
+            "board": false,
+            "committee": false,
+            "thumbnailFile": "",
+            "charge": "",
+            "adscription": "8862a10a-9e86-43db-b513-d6101cca2e33",
+            "divisions": [],
+            "roles": [
+                2
+            ]
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 39,
+        "fields": {
+            "name": "Juan Carlos",
+            "surname": "Valdiviezo-Navarro",
+            "email": "",
+            "active": true,
+            "board": true,
+            "committee": false,
+            "thumbnailFile": "thumbnail/dr-juan-carlos.jpg",
+            "charge": "Co-Chair / CentroGeo Researcher",
+            "adscription": "3b8817e5-1df2-44ab-a1db-1b255b3a8fb4",
+            "divisions": [],
+            "roles": [
+                3
+            ]
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 40,
+        "fields": {
+            "name": "Sheila Sugey",
+            "surname": "Manzanero-Mart\u00edn",
+            "email": "",
+            "active": true,
+            "board": false,
+            "committee": false,
+            "thumbnailFile": "",
+            "charge": "",
+            "adscription": "8862a10a-9e86-43db-b513-d6101cca2e33",
+            "divisions": [],
+            "roles": []
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 41,
+        "fields": {
+            "name": "Ariel",
+            "surname": "Pino-Meza",
+            "email": "",
+            "active": true,
+            "board": false,
+            "committee": false,
+            "thumbnailFile": "",
+            "charge": "",
+            "adscription": "8862a10a-9e86-43db-b513-d6101cca2e33",
+            "divisions": [],
+            "roles": []
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 42,
+        "fields": {
+            "name": "Gabriela Aurora",
+            "surname": "Ya\u00f1ez-Casas",
+            "email": "",
+            "active": true,
+            "board": false,
+            "committee": false,
+            "thumbnailFile": "",
+            "charge": "",
+            "adscription": "52f2a630-893c-4f69-b243-d5eaa75d27c9",
+            "divisions": [],
+            "roles": [
+                3
+            ]
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 43,
+        "fields": {
+            "name": "Humberto",
+            "surname": "Cordova",
+            "email": "humberto11.cordova@gmail.com",
+            "active": true,
+            "board": false,
+            "committee": true,
+            "thumbnailFile": "thumbnail/default-avatar.jpg",
+            "charge": "Vice-president / Bioengineering Leader",
+            "adscription": "8862a10a-9e86-43db-b513-d6101cca2e33",
+            "divisions": [
+                9
+            ],
+            "roles": [
+                1,
+                5
+            ]
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 44,
+        "fields": {
+            "name": "Viridiana",
+            "surname": "Ramayo",
+            "email": "",
+            "active": true,
+            "board": false,
+            "committee": false,
+            "thumbnailFile": "thumbnail/viridiana.jpeg",
+            "charge": "",
+            "adscription": "8862a10a-9e86-43db-b513-d6101cca2e33",
+            "divisions": [
+                4,
+                6
+            ],
+            "roles": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 45,
+        "fields": {
+            "name": "Esteban Emmanuel",
+            "surname": "Brito-Borges",
+            "email": "",
+            "active": true,
+            "board": false,
+            "committee": true,
+            "thumbnailFile": "thumbnail/esteban-brito.jpg",
+            "charge": "Machine Learning Leader",
+            "adscription": "8862a10a-9e86-43db-b513-d6101cca2e33",
+            "divisions": [
+                2
+            ],
+            "roles": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 46,
+        "fields": {
+            "name": "Fernando",
+            "surname": "Herrera-Garnica",
+            "email": "",
+            "active": true,
+            "board": false,
+            "committee": true,
+            "thumbnailFile": "thumbnail/fernando-herrera_xZefyJJ.jpg",
+            "charge": "Applied Maths Leader",
+            "adscription": "8862a10a-9e86-43db-b513-d6101cca2e33",
+            "divisions": [
+                5
+            ],
+            "roles": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 47,
+        "fields": {
+            "name": "Humberto",
+            "surname": "Sarabia",
+            "email": "",
+            "active": true,
+            "board": false,
+            "committee": true,
+            "thumbnailFile": "thumbnail/humberto-sarabia.jpg",
+            "charge": "Robotics Leader",
+            "adscription": "8862a10a-9e86-43db-b513-d6101cca2e33",
+            "divisions": [
+                4
+            ],
+            "roles": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 48,
+        "fields": {
+            "name": "Katia",
+            "surname": "Rosales",
+            "email": "",
+            "active": true,
+            "board": false,
+            "committee": false,
+            "thumbnailFile": "thumbnail/katia-rosales.jpeg",
+            "charge": "DIS Member",
+            "adscription": "8862a10a-9e86-43db-b513-d6101cca2e33",
+            "divisions": [
+                6
+            ],
+            "roles": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 49,
+        "fields": {
+            "name": "Paul",
+            "surname": "Mena-Zapata",
+            "email": "",
+            "active": true,
+            "board": false,
+            "committee": true,
+            "thumbnailFile": "thumbnail/paul-mena.jpg",
+            "charge": "Operations Leader / Advisor",
+            "adscription": "8862a10a-9e86-43db-b513-d6101cca2e33",
+            "divisions": [
+                3
+            ],
+            "roles": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 50,
+        "fields": {
+            "name": "Vicente",
+            "surname": "Yah-Dzul",
+            "email": "",
+            "active": true,
+            "board": false,
+            "committee": true,
+            "thumbnailFile": "",
+            "charge": "Applied Maths Division Member",
+            "adscription": "8862a10a-9e86-43db-b513-d6101cca2e33",
+            "divisions": [
+                5
+            ],
+            "roles": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 51,
+        "fields": {
+            "name": "Juan Antonio",
+            "surname": "Recio-Garc\u00eda",
+            "email": "",
+            "active": true,
+            "board": true,
+            "committee": false,
+            "thumbnailFile": "thumbnail/juan-garcia.jpg",
+            "charge": "Member / SE and AI Head of Department, UCM, Espa\u00f1a",
+            "adscription": "aea6bcca-5c27-406e-83ee-8684bdaebf7b",
+            "divisions": [],
+            "roles": [
+                3
+            ]
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 54,
+        "fields": {
+            "name": "Alejandro Arturo",
+            "surname": "Castillo-Atoche",
+            "email": "",
+            "active": true,
+            "board": true,
+            "committee": false,
+            "thumbnailFile": "thumbnail/Alejandro_Castillo-Atoche.jfif",
+            "charge": "Member / Senior Researcher, UADY/TecNM-ITM, M\u00e9xico",
+            "adscription": "41323d3e-cacc-437c-9d40-dec1c39078c3",
+            "divisions": [],
+            "roles": []
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 55,
+        "fields": {
+            "name": "Didier Jes\u00fas",
+            "surname": "Crespo-Castilla",
+            "email": "LE18081079@itmerida.edu.mx",
+            "active": true,
+            "board": false,
+            "committee": true,
+            "thumbnailFile": "thumbnail/22dadeb1-5e88-465c-bfa3-97f50b8f49e6.jpeg",
+            "charge": "Social Impact Leader",
+            "adscription": "8862a10a-9e86-43db-b513-d6101cca2e33",
+            "divisions": [
+                6
+            ],
+            "roles": []
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 56,
+        "fields": {
+            "name": "David Iv\u00e1n",
+            "surname": "Mendoza",
+            "email": "",
+            "active": true,
+            "board": false,
+            "committee": false,
+            "thumbnailFile": "",
+            "charge": "Robotics Member",
+            "adscription": "8862a10a-9e86-43db-b513-d6101cca2e33",
+            "divisions": [
+                4
+            ],
+            "roles": []
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 57,
+        "fields": {
+            "name": "Selene",
+            "surname": "Can-Pool",
+            "email": "",
+            "active": true,
+            "board": false,
+            "committee": false,
+            "thumbnailFile": "",
+            "charge": "",
+            "adscription": "8862a10a-9e86-43db-b513-d6101cca2e33",
+            "divisions": [
+                4
+            ],
+            "roles": []
+        }
+    },
+    {
+        "model": "productivity.member",
+        "pk": 58,
+        "fields": {
+            "name": "Fernando",
+            "surname": "Gallardo",
+            "email": "",
+            "active": true,
+            "board": false,
+            "committee": false,
+            "thumbnailFile": "",
+            "charge": "WolfCode Programming Squad",
+            "adscription": "8862a10a-9e86-43db-b513-d6101cca2e33",
+            "divisions": [
+                1
+            ],
+            "roles": []
+        }
+    },
+    {
+        "model": "productivity.line",
+        "pk": 1,
+        "fields": {
+            "topic": "Fuzzy logic"
+        }
+    },
+    {
+        "model": "productivity.line",
+        "pk": 2,
+        "fields": {
+            "topic": "Neural networks"
+        }
+    },
+    {
+        "model": "productivity.line",
+        "pk": 3,
+        "fields": {
+            "topic": "Pattern recognition"
+        }
+    },
+    {
+        "model": "productivity.line",
+        "pk": 4,
+        "fields": {
+            "topic": "Computer vision and image processing"
+        }
+    },
+    {
+        "model": "productivity.line",
+        "pk": 5,
+        "fields": {
+            "topic": "Classification and clustering"
+        }
+    },
+    {
+        "model": "productivity.line",
+        "pk": 6,
+        "fields": {
+            "topic": "Genetic programming and swarm intelligence"
+        }
+    },
+    {
+        "model": "productivity.line",
+        "pk": 7,
+        "fields": {
+            "topic": "Searching and sorting algorithms"
+        }
+    },
+    {
+        "model": "productivity.line",
+        "pk": 8,
+        "fields": {
+            "topic": "Internet of things"
+        }
+    },
+    {
+        "model": "productivity.line",
+        "pk": 9,
+        "fields": {
+            "topic": "Planning and scheduling"
+        }
+    },
+    {
+        "model": "productivity.project",
+        "pk": "0eacce75-b9c9-4651-aac1-b487867630d4",
+        "fields": {
+            "title": "Reconocimiento autom\u00e1tico de patrones en im\u00e1genes tridimensionales basado en t\u00e9cnicas paralelas con OpenMP",
+            "start": "2019-01-01",
+            "end": "2019-12-31",
+            "responsible": "",
+            "institute": "52f2a630-893c-4f69-b243-d5eaa75d27c9",
+            "collaborators": [],
+            "lines": []
+        }
+    },
+    {
+        "model": "productivity.project",
+        "pk": "12c6ac69-99f4-4ac5-80d7-19759bda0860",
+        "fields": {
+            "title": "An\u00e1lisis y procesamiento de datos para el desarrollo de algoritmos de inteligencia artificial enfocados al estudio y reconocimiento de patrones en fen\u00f3menos naturales",
+            "start": "2018-01-01",
+            "end": "2018-12-31",
+            "responsible": "Orozco-del-Castillo, Mauricio Gabriel",
+            "institute": "8862a10a-9e86-43db-b513-d6101cca2e33",
+            "collaborators": [],
+            "lines": [
+                2,
+                3
+            ]
+        }
+    },
+    {
+        "model": "productivity.project",
+        "pk": "2c39fff9-6568-4d15-9434-5e2517a9b780",
+        "fields": {
+            "title": "Caracterizaci\u00f3n del dise\u00f1o, construcci\u00f3n y prueba de equipos autogeneradores",
+            "start": "2016-01-01",
+            "end": "2018-12-31",
+            "responsible": "",
+            "institute": "52f2a630-893c-4f69-b243-d5eaa75d27c9",
+            "collaborators": [],
+            "lines": []
+        }
+    },
+    {
+        "model": "productivity.project",
+        "pk": "3d037f34-4603-4023-8a37-8e12274ecdd4",
+        "fields": {
+            "title": "Sistema de an\u00e1lisis de im\u00e1genes radiol\u00f3gicas para diagn\u00f3stico por medio de redes neuronales",
+            "start": "2019-01-01",
+            "end": "2019-12-31",
+            "responsible": "d280bf0b-5449-4425-a6c3-fc6cdbaa840c",
+            "institute": "8862a10a-9e86-43db-b513-d6101cca2e33",
+            "collaborators": [],
+            "lines": []
+        }
+    },
+    {
+        "model": "productivity.project",
+        "pk": "5ab26328-a435-40a2-9aee-607ca52ca4e8",
+        "fields": {
+            "title": "Segmentaci\u00f3n de regiones basado en atributos de textura de datos bidimensionales utilizado t\u00e9cnicas de procesamiento digital de im\u00e1genes e inteligencia artificial",
+            "start": "2018-01-01",
+            "end": "2018-12-31",
+            "responsible": "Larissa Jeanette",
+            "institute": "8862a10a-9e86-43db-b513-d6101cca2e33",
+            "collaborators": [
+                14,
+                22,
+                34,
+                38
+            ],
+            "lines": [
+                2,
+                4,
+                6
+            ]
+        }
+    },
+    {
+        "model": "productivity.project",
+        "pk": "66225fa9-d0d9-4725-89cf-857ec7e6427a",
+        "fields": {
+            "title": "Predicci\u00f3n a largo plazo de la actividad solar en el ambiente espacial",
+            "start": "2017-01-01",
+            "end": "2018-07-31",
+            "responsible": "",
+            "institute": "52f2a630-893c-4f69-b243-d5eaa75d27c9",
+            "collaborators": [],
+            "lines": []
+        }
+    },
+    {
+        "model": "productivity.project",
+        "pk": "71c145ab-bf2b-40c0-8789-7547930d0238",
+        "fields": {
+            "title": "An\u00e1lisis de sistemas de flujo urbano para el dise\u00f1o de ciudades inteligentes",
+            "start": "2019-01-01",
+            "end": "2019-12-31",
+            "responsible": "Moreno-Sabido, Mario Ren\u00e1n",
+            "institute": "8862a10a-9e86-43db-b513-d6101cca2e33",
+            "collaborators": [],
+            "lines": []
+        }
+    },
+    {
+        "model": "productivity.project",
+        "pk": "9f146cf9-705c-4640-946a-5f575482f720",
+        "fields": {
+            "title": "Evaluaci\u00f3n del fen\u00f3meno de El Ni\u00f1o \\/ Oscilaci\u00f3n Meridional (ENOS) mediante percepci\u00f3n remota, series de tiempo e inteligencia artificial",
+            "start": "2019-07-01",
+            "end": "2022-12-31",
+            "responsible": "",
+            "institute": "52f2a630-893c-4f69-b243-d5eaa75d27c9",
+            "collaborators": [],
+            "lines": []
+        }
+    },
+    {
+        "model": "productivity.project",
+        "pk": "a25f3316-3212-47e2-95c7-48445e9e8e89",
+        "fields": {
+            "title": "Clasificaci\u00f3n, predicci\u00f3n y reconocimiento de patrones en series de tiempo mediante t\u00e9cnicas de aprendizaje autom\u00e1tico (machine learning)",
+            "start": "2019-01-01",
+            "end": "2019-12-31",
+            "responsible": "",
+            "institute": "8862a10a-9e86-43db-b513-d6101cca2e33",
+            "collaborators": [],
+            "lines": []
+        }
+    },
+    {
+        "model": "productivity.project",
+        "pk": "e6e8cf36-04c4-465a-8b59-77de2d7f21f1",
+        "fields": {
+            "title": "Sistema compacto de seguimiento de estaci\u00f3n terrena por visi\u00f3n artificial para implementaci\u00f3n en un nano-sat\u00e9lite transmitiendo v\u00eda comunicaciones \u00f3pticas",
+            "start": "2017-01-01",
+            "end": "2018-07-31",
+            "responsible": "",
+            "institute": "52f2a630-893c-4f69-b243-d5eaa75d27c9",
+            "collaborators": [],
+            "lines": []
+        }
+    },
+    {
+        "model": "productivity.project",
+        "pk": "ec12fc0a-8b78-46c6-a045-5bb63df79517",
+        "fields": {
+            "title": "An\u00e1lisis y procesamiento de datos para el control inteligente de un sistema de riego automatizado basado en internet de las cosas",
+            "start": "2019-01-01",
+            "end": "2019-12-31",
+            "responsible": "Villafa\u00f1a-Gamboa, Dakar Fernando",
+            "institute": "8862a10a-9e86-43db-b513-d6101cca2e33",
+            "collaborators": [
+                2,
+                3,
+                14,
+                34,
+                35,
+                38
+            ],
+            "lines": []
+        }
+    },
+    {
+        "model": "productivity.research",
+        "pk": "0e8b2c12-cd76-471b-a971-65ad0f002a4f",
+        "fields": {
+            "title": "Sistema h\u00edbrido basado en redes neuronales artificiales y descomposici\u00f3n modal emp\u00edrica para la evaluaci\u00f3n de la interrelaci\u00f3n entre la irradiancia solar total y el calentamiento global",
+            "resume": "",
+            "year": 2018,
+            "grade": "",
+            "event": "",
+            "pub_in": "Research in computing science",
+            "pub_type": "Revista indizada en otros \u00edndices",
+            "type": "Article",
+            "link": "",
+            "lines": [],
+            "projects": []
+        }
+    },
+    {
+        "model": "productivity.research",
+        "pk": "1b925200-0b82-41d7-9acc-a785b85cd271",
+        "fields": {
+            "title": "An\u00e1lisis del crecimiento urbano y su relaci\u00f3n con el incremento de temperaturas en la ciudad de M\u00e9rida utilizando im\u00e1genes satelitales",
+            "resume": "En este art\u00edculo se realiza un an\u00e1lisis de la correlaci\u00f3n entre el crecimiento de la mancha urbana y el cambio de temperaturas de la ciudad de M\u00e9rida, Yucat\u00e1n, M\u00e9xico, mediante la implementaci\u00f3n de t\u00e9cnicas de inteligencia artificial enfocadas a la segmentaci\u00f3n de im\u00e1genes. Partiendo de una secuencia multitemporal de im\u00e1genes satelitales registradas por Landsat en formato RGB ocupando un rango de los a\u00f1os 2001 al 2016, se realiza la segmentaci\u00f3n de la mancha urbana utilizando una t\u00e9cnica de inteligencia artificial, particularmente optimizaci\u00f3n por enjambre de part\u00edculas, una implementaci\u00f3n de inteligencia de enjambres. La segmentaci\u00f3n de los datos nos permite estimar el historial de crecimiento del \u00e1rea de suelo construido en la ciudad. Posteriormente los datos hist\u00f3ricos de temperaturas registradas en ese mismo periodo son analizados con el m\u00e9todo de descomposici\u00f3n modal emp\u00edrica. El an\u00e1lisis preliminar de la correlaci\u00f3n positiva entre los datos de \u00e1rea construida y temperatura como funciones num\u00e9ricas nos permiten concluir que puede existir una estrecha relaci\u00f3n entre ambos indicadores.",
+            "year": 2018,
+            "grade": "",
+            "event": "",
+            "pub_in": "Research in computing science",
+            "pub_type": "Revista indizada en otros \u00edndices",
+            "type": "Article",
+            "link": "https://www.rcs.cic.ipn.mx/2018_147_7/Analisis%20del%20crecimiento%20urbano%20y%20su%20relacion%20con%20el%20incremento%20de%20temperaturas%20en%20la%20ciudad.pdf",
+            "lines": [
+                4,
+                5
+            ],
+            "projects": [
+                "12c6ac69-99f4-4ac5-80d7-19759bda0860"
+            ]
+        }
+    },
+    {
+        "model": "productivity.research",
+        "pk": "3d911a8e-38b2-4949-b00e-a1647a71835e",
+        "fields": {
+            "title": "Pattern Recongnition throught Empirical Mode Descomposition for Temperature Time Series bettween 1986 and 2019 in Mexico City Downtown for Global Warming Assessment",
+            "resume": "Global warming is a real threat for the survival of life on Earth in the following 80 years. The effects of Global Warming are particularly harmful for inhabitants of very saturated urban settlements, which is the case of Mexico City. In this work, we analyse temperature time series from Mexico City Downtown, taken hourly between 1986 and 2019. The gaps in the time series were interpolated through the kriging method. Then, temporal tendencies and main frequencies were obtained through Empirical Mode Decomposition. The first frequency mode reveals a clear increasing tendency driven by Global Warming, which for 2019 was of 0.72 \\(^\\circ \\)C above a 30-year baseline period mean between 1986 and 2016. Furthermore, the shorter periods identified in the first intrinsic mode functions are likely driven by the solar activity periods. It remains to find the origin of the smallest identified periods in the time series (<0.36 years).",
+            "year": 2019,
+            "grade": "",
+            "event": "",
+            "pub_in": "",
+            "pub_type": "Book Chapter",
+            "type": "Article",
+            "link": "https://www.researchgate.net/publication/336771770_Pattern_Recognition_Through_Empirical_Mode_Decomposition_for_Temperature_Time_Series_Between_1986_and_2019_in_Mexico_City_Downtown_for_Global_Warming_Assessment",
+            "lines": [
+                3
+            ],
+            "projects": []
+        }
+    },
+    {
+        "model": "productivity.research",
+        "pk": "4037dd2b-0232-4972-ab98-41558849f109",
+        "fields": {
+            "title": "Metodolog\u00eda para el ordenamiento multiparam\u00e9trico de series de tiempo: aplicaci\u00f3n al ordenamiento de canciones",
+            "resume": "",
+            "year": 2018,
+            "grade": "",
+            "event": "Segundo Congreso de Estudiantes Asociados al Centro de Desarrollo Aeroespacial",
+            "pub_in": "",
+            "pub_type": "",
+            "type": "Presentation",
+            "link": "",
+            "lines": [],
+            "projects": []
+        }
+    },
+    {
+        "model": "productivity.research",
+        "pk": "41bf15e0-aedc-4cf1-a361-5b141c8ae50f",
+        "fields": {
+            "title": "Segmentaci\u00f3n de im\u00e1genes con redes neuronales convolucionales para la detecci\u00f3n de plagas y enfermedades del chile habanero",
+            "resume": "",
+            "year": 2019,
+            "grade": "Licenciatura",
+            "event": "",
+            "pub_in": "",
+            "pub_type": "",
+            "type": "Thesis",
+            "link": "",
+            "lines": [],
+            "projects": []
+        }
+    },
+    {
+        "model": "productivity.research",
+        "pk": "4462d8ce-cb60-47fc-9501-14695c3191d3",
+        "fields": {
+            "title": "Inland water-bodies extraction in complex reliefs from Sentinel-1 satellite data",
+            "resume": "",
+            "year": 2019,
+            "grade": "",
+            "event": "",
+            "pub_in": "Journal of Applied Remote Sensing",
+            "pub_type": "Revista indizada en JCR",
+            "type": "Article",
+            "link": "",
+            "lines": [
+                2
+            ],
+            "projects": []
+        }
+    },
+    {
+        "model": "productivity.research",
+        "pk": "4bc7ed01-ded4-43b6-9275-bce794420db0",
+        "fields": {
+            "title": "A fuzzy inference system applied to estimate the error in the recovery of the Green\u2019s function by means of seismic noise correlations",
+            "resume": "",
+            "year": 2018,
+            "grade": "",
+            "event": "",
+            "pub_in": "Journal of Geophysics and Engineering",
+            "pub_type": "Revista indizada en JCR",
+            "type": "Article",
+            "link": "",
+            "lines": [
+                1
+            ],
+            "projects": [
+                "12c6ac69-99f4-4ac5-80d7-19759bda0860"
+            ]
+        }
+    },
+    {
+        "model": "productivity.research",
+        "pk": "5c842b94-ef73-4e93-bb9e-ceb5550e7869",
+        "fields": {
+            "title": "Internet de las cosas (IoT) aplicado a un sistema de riego",
+            "resume": "",
+            "year": 2019,
+            "grade": "Licenciatura",
+            "event": "",
+            "pub_in": "",
+            "pub_type": "",
+            "type": "Thesis",
+            "link": "",
+            "lines": [
+                8
+            ],
+            "projects": []
+        }
+    },
+    {
+        "model": "productivity.research",
+        "pk": "7d2366a4-ec97-49b3-b67f-bf9a185765e2",
+        "fields": {
+            "title": "L\u00f3gica difusa aplicada a un controlador para un sistema de riego aut\u00f3nomo",
+            "resume": "",
+            "year": 2019,
+            "grade": "Licenciatura",
+            "event": "",
+            "pub_in": "",
+            "pub_type": "",
+            "type": "Thesis",
+            "link": "",
+            "lines": [],
+            "projects": []
+        }
+    },
+    {
+        "model": "productivity.research",
+        "pk": "85c619df-326e-4f90-a843-d99ac2455399",
+        "fields": {
+            "title": "Interpretaci\u00f3n s\u00edsmica semiautom\u00e1tica: an\u00e1lisis de componentes principales vs an\u00e1lisis del discriminante de Fisher",
+            "resume": "",
+            "year": 2018,
+            "grade": "",
+            "event": "Reuni\u00f3n Anual de la Uni\u00f3n Geof\u00edsica Mexicana2018",
+            "pub_in": "",
+            "pub_type": "",
+            "type": "Presentation",
+            "link": "",
+            "lines": [],
+            "projects": []
+        }
+    },
+    {
+        "model": "productivity.research",
+        "pk": "865065a9-7d2d-4b6e-b51e-577b02bc2716",
+        "fields": {
+            "title": "Clasificaci\u00f3n de galaxias utilizando procesamiento digital de im\u00e1genes y redes neuronales artificiales",
+            "resume": "",
+            "year": 2018,
+            "grade": "",
+            "event": "",
+            "pub_in": "Research in computing science",
+            "pub_type": "Revista indizada en otros \u00edndices",
+            "type": "Article",
+            "link": "",
+            "lines": [],
+            "projects": []
+        }
+    },
+    {
+        "model": "productivity.research",
+        "pk": "889c92bb-8b94-44f0-bb56-bc3ee17c65ec",
+        "fields": {
+            "title": "Redes neuronales artificiales para la interrelaci\u00f3n de datos de irradiancia solar total y el calentamiento global",
+            "resume": "",
+            "year": 2019,
+            "grade": "Licenciatura",
+            "event": "",
+            "pub_in": "",
+            "pub_type": "",
+            "type": "Thesis",
+            "link": "",
+            "lines": [],
+            "projects": []
+        }
+    },
+    {
+        "model": "productivity.research",
+        "pk": "8be99955-5bf2-41f3-a0ea-34216d203ffe",
+        "fields": {
+            "title": "An\u00e1lisis del crecimiento urbano en im\u00e1genes satelitales y su correlaci\u00f3n con el cambio de temperaturas de la ciudad de M\u00e9rida utilizando t\u00e9cnicas de inteligencia artificial",
+            "resume": "",
+            "year": 2019,
+            "grade": "Licenciatura",
+            "event": "",
+            "pub_in": "",
+            "pub_type": "",
+            "type": "Thesis",
+            "link": "",
+            "lines": [
+                2,
+                8
+            ],
+            "projects": []
+        }
+    },
+    {
+        "model": "productivity.research",
+        "pk": "8c106be4-afa8-4307-8349-d5232fb4d5f1",
+        "fields": {
+            "title": "Segmentaci\u00f3n de tumores cerebrales utilizando optimizaci\u00f3n por enjambre de part\u00edculas en im\u00e1genes de resonancia magn\u00e9tica",
+            "resume": "",
+            "year": 2018,
+            "grade": "",
+            "event": "",
+            "pub_in": "Coloquio de Investigaci\u00f3n Multidisciplinaria",
+            "pub_type": "Revista indizada en otros \u00edndices",
+            "type": "Article",
+            "link": "",
+            "lines": [],
+            "projects": []
+        }
+    },
+    {
+        "model": "productivity.research",
+        "pk": "a2a718b3-7f54-4e4e-8ce3-e0d46f7d4daf",
+        "fields": {
+            "title": "Redes neuronales artificiales para la segmentaci\u00f3n de im\u00e1genes basada en atributos de textura",
+            "resume": "",
+            "year": 2019,
+            "grade": "Licenciatura",
+            "event": "",
+            "pub_in": "",
+            "pub_type": "",
+            "type": "Thesis",
+            "link": "",
+            "lines": [],
+            "projects": []
+        }
+    },
+    {
+        "model": "productivity.research",
+        "pk": "ad08a5f6-0919-4e80-87e2-16e637f62caf",
+        "fields": {
+            "title": "Segmentaci\u00f3n de tumores cerebrales en im\u00e1genes obtenidas por resonancia magn\u00e9tica por medio de optimizaci\u00f3n por enjambre de part\u00edculas Darwiniano",
+            "resume": "",
+            "year": 2019,
+            "grade": "Licenciatura",
+            "event": "",
+            "pub_in": "",
+            "pub_type": "",
+            "type": "Thesis",
+            "link": "",
+            "lines": [],
+            "projects": []
+        }
+    },
+    {
+        "model": "productivity.research",
+        "pk": "af76eec8-c0b5-4768-9f19-85896968fe9f",
+        "fields": {
+            "title": "An\u00e1lisis, procesamiento e interpretaci\u00f3n de im\u00e1genes de exploraci\u00f3n petrolera mediante t\u00e9cnicas de computaci\u00f3n suave",
+            "resume": "",
+            "year": 2018,
+            "grade": "",
+            "event": "Seminario de Matem\u00e1ticas Aplicadas y Computaci\u00f3n CIMAT-UADY",
+            "pub_in": "",
+            "pub_type": "",
+            "type": "Presentation",
+            "link": "",
+            "lines": [],
+            "projects": []
+        }
+    },
+    {
+        "model": "productivity.research",
+        "pk": "c01991ad-ede1-4ff8-a5c4-c38bdcd5498d",
+        "fields": {
+            "title": "Metodolog\u00eda para el ordenamiento multiparam\u00e9trico de series de tiempo: aplicaci\u00f3n al ordenamiento de canciones",
+            "resume": "",
+            "year": 2019,
+            "grade": "Licenciatura",
+            "event": "",
+            "pub_in": "",
+            "pub_type": "",
+            "type": "Thesis",
+            "link": "",
+            "lines": [
+                6,
+                7
+            ],
+            "projects": []
+        }
+    },
+    {
+        "model": "productivity.research",
+        "pk": "c2ba5b01-eafa-4512-8b35-73432f6c8edc",
+        "fields": {
+            "title": "Control de tr\u00e1fico urbano para veh\u00edculos de prioridad",
+            "resume": "",
+            "year": 2019,
+            "grade": "Licenciatura",
+            "event": "",
+            "pub_in": "",
+            "pub_type": "",
+            "type": "Thesis",
+            "link": "",
+            "lines": [
+                9
+            ],
+            "projects": []
+        }
+    },
+    {
+        "model": "productivity.research",
+        "pk": "db93190e-d933-4dc6-b6e5-cd418dccb39b",
+        "fields": {
+            "title": "Interpretaci\u00f3n de im\u00e1genes s\u00edsmicas de exploraci\u00f3n petrolera con inteligencia artificial y machine learning",
+            "resume": "",
+            "year": 2019,
+            "grade": "",
+            "event": "unoTalks by unosquare, M\u00e9rida 2019",
+            "pub_in": "",
+            "pub_type": "",
+            "type": "Presentation",
+            "link": "",
+            "lines": [],
+            "projects": []
+        }
+    },
+    {
+        "model": "productivity.research",
+        "pk": "eaf31f34-0ee8-4f08-876c-653bde15769e",
+        "fields": {
+            "title": "Metodolog\u00eda para el ordenamiento multiparam\u00e9trico de series de tiempo: aplicaci\u00f3n al ordenamiento de canciones",
+            "resume": "",
+            "year": 2018,
+            "grade": "",
+            "event": "",
+            "pub_in": "Segundo Congreso de Estudiantes Asociados al Centro de Desarrollo Aeroespacial",
+            "pub_type": "Memorias de congreso",
+            "type": "Article",
+            "link": "",
+            "lines": [
+                6,
+                7
+            ],
+            "projects": []
+        }
+    },
+    {
+        "model": "productivity.research",
+        "pk": "eb93895c-cbf1-43c9-a9b7-d76615a7b7ae",
+        "fields": {
+            "title": "Artificial vision assisted ground fine pointing system for experimental optical link for CubeSat communications",
+            "resume": "",
+            "year": 2019,
+            "grade": "",
+            "event": "",
+            "pub_in": "Journal of Physics",
+            "pub_type": "Revista indizada en otros \u00edndices",
+            "type": "Article",
+            "link": "",
+            "lines": [],
+            "projects": []
+        }
+    },
+    {
+        "model": "productivity.research",
+        "pk": "ec935cfa-3fae-4c63-be05-4fe69028ae2e",
+        "fields": {
+            "title": "Pattern recognition applied to attenuation of multiples in subsalt imaging",
+            "resume": "",
+            "year": 2019,
+            "grade": "",
+            "event": "",
+            "pub_in": "Pure and Applied Geophysics",
+            "pub_type": "Revista indizada en JCR",
+            "type": "Article",
+            "link": "",
+            "lines": [],
+            "projects": []
+        }
+    },
+    {
+        "model": "productivity.advisor",
+        "pk": 11,
+        "fields": {
+            "member": 34,
+            "research": "8be99955-5bf2-41f3-a0ea-34216d203ffe",
+            "position": 1
+        }
+    },
+    {
+        "model": "productivity.advisor",
+        "pk": 12,
+        "fields": {
+            "member": 1,
+            "research": "8be99955-5bf2-41f3-a0ea-34216d203ffe",
+            "position": 2
+        }
+    },
+    {
+        "model": "productivity.advisor",
+        "pk": 13,
+        "fields": {
+            "member": 39,
+            "research": "8be99955-5bf2-41f3-a0ea-34216d203ffe",
+            "position": 3
+        }
+    },
+    {
+        "model": "productivity.advisor",
+        "pk": 14,
+        "fields": {
+            "member": 34,
+            "research": "41bf15e0-aedc-4cf1-a361-5b141c8ae50f",
+            "position": 1
+        }
+    },
+    {
+        "model": "productivity.advisor",
+        "pk": 15,
+        "fields": {
+            "member": 8,
+            "research": "41bf15e0-aedc-4cf1-a361-5b141c8ae50f",
+            "position": 2
+        }
+    },
+    {
+        "model": "productivity.advisor",
+        "pk": 16,
+        "fields": {
+            "member": 8,
+            "research": "5c842b94-ef73-4e93-bb9e-ceb5550e7869",
+            "position": 1
+        }
+    },
+    {
+        "model": "productivity.advisor",
+        "pk": 17,
+        "fields": {
+            "member": 2,
+            "research": "5c842b94-ef73-4e93-bb9e-ceb5550e7869",
+            "position": 2
+        }
+    },
+    {
+        "model": "productivity.advisor",
+        "pk": 18,
+        "fields": {
+            "member": 24,
+            "research": "c2ba5b01-eafa-4512-8b35-73432f6c8edc",
+            "position": 1
+        }
+    },
+    {
+        "model": "productivity.advisor",
+        "pk": 19,
+        "fields": {
+            "member": 34,
+            "research": "c2ba5b01-eafa-4512-8b35-73432f6c8edc",
+            "position": 2
+        }
+    },
+    {
+        "model": "productivity.advisor",
+        "pk": 20,
+        "fields": {
+            "member": 34,
+            "research": "c01991ad-ede1-4ff8-a5c4-c38bdcd5498d",
+            "position": 1
+        }
+    },
+    {
+        "model": "productivity.advisor",
+        "pk": 21,
+        "fields": {
+            "member": 38,
+            "research": "c01991ad-ede1-4ff8-a5c4-c38bdcd5498d",
+            "position": 2
+        }
+    },
+    {
+        "model": "productivity.author",
+        "pk": 7,
+        "fields": {
+            "member": 34,
+            "research": "3d911a8e-38b2-4949-b00e-a1647a71835e",
+            "position": 1
+        }
+    },
+    {
+        "model": "productivity.author",
+        "pk": 13,
+        "fields": {
+            "member": 8,
+            "research": "3d911a8e-38b2-4949-b00e-a1647a71835e",
+            "position": 2
+        }
+    },
+    {
+        "model": "productivity.author",
+        "pk": 14,
+        "fields": {
+            "member": 19,
+            "research": "3d911a8e-38b2-4949-b00e-a1647a71835e",
+            "position": 6
+        }
+    },
+    {
+        "model": "productivity.author",
+        "pk": 15,
+        "fields": {
+            "member": 42,
+            "research": "3d911a8e-38b2-4949-b00e-a1647a71835e",
+            "position": 3
+        }
+    },
+    {
+        "model": "productivity.author",
+        "pk": 16,
+        "fields": {
+            "member": 17,
+            "research": "3d911a8e-38b2-4949-b00e-a1647a71835e",
+            "position": 4
+        }
+    },
+    {
+        "model": "productivity.author",
+        "pk": 17,
+        "fields": {
+            "member": 14,
+            "research": "3d911a8e-38b2-4949-b00e-a1647a71835e",
+            "position": 5
+        }
+    },
+    {
+        "model": "productivity.author",
+        "pk": 22,
+        "fields": {
+            "member": 25,
+            "research": "1b925200-0b82-41d7-9acc-a785b85cd271",
+            "position": 1
+        }
+    },
+    {
+        "model": "productivity.author",
+        "pk": 23,
+        "fields": {
+            "member": 34,
+            "research": "1b925200-0b82-41d7-9acc-a785b85cd271",
+            "position": 2
+        }
+    },
+    {
+        "model": "productivity.author",
+        "pk": 24,
+        "fields": {
+            "member": 39,
+            "research": "1b925200-0b82-41d7-9acc-a785b85cd271",
+            "position": 3
+        }
+    },
+    {
+        "model": "productivity.author",
+        "pk": 25,
+        "fields": {
+            "member": 28,
+            "research": "1b925200-0b82-41d7-9acc-a785b85cd271",
+            "position": 4
+        }
+    },
+    {
+        "model": "productivity.author",
+        "pk": 26,
+        "fields": {
+            "member": 14,
+            "research": "1b925200-0b82-41d7-9acc-a785b85cd271",
+            "position": 5
+        }
+    },
+    {
+        "model": "productivity.author",
+        "pk": 27,
+        "fields": {
+            "member": 38,
+            "research": "1b925200-0b82-41d7-9acc-a785b85cd271",
+            "position": 6
+        }
+    },
+    {
+        "model": "productivity.author",
+        "pk": 28,
+        "fields": {
+            "member": 25,
+            "research": "8be99955-5bf2-41f3-a0ea-34216d203ffe",
+            "position": 1
+        }
+    },
+    {
+        "model": "productivity.author",
+        "pk": 29,
+        "fields": {
+            "member": 29,
+            "research": "4bc7ed01-ded4-43b6-9275-bce794420db0",
+            "position": 1
+        }
+    },
+    {
+        "model": "productivity.author",
+        "pk": 30,
+        "fields": {
+            "member": 34,
+            "research": "4bc7ed01-ded4-43b6-9275-bce794420db0",
+            "position": 2
+        }
+    },
+    {
+        "model": "productivity.author",
+        "pk": 31,
+        "fields": {
+            "member": 31,
+            "research": "4bc7ed01-ded4-43b6-9275-bce794420db0",
+            "position": 3
+        }
+    },
+    {
+        "model": "productivity.author",
+        "pk": 32,
+        "fields": {
+            "member": 3,
+            "research": "4bc7ed01-ded4-43b6-9275-bce794420db0",
+            "position": 4
+        }
+    },
+    {
+        "model": "productivity.author",
+        "pk": 33,
+        "fields": {
+            "member": 18,
+            "research": "4bc7ed01-ded4-43b6-9275-bce794420db0",
+            "position": 5
+        }
+    },
+    {
+        "model": "productivity.author",
+        "pk": 34,
+        "fields": {
+            "member": 34,
+            "research": "af76eec8-c0b5-4768-9f19-85896968fe9f",
+            "position": 1
+        }
+    },
+    {
+        "model": "productivity.author",
+        "pk": 35,
+        "fields": {
+            "member": 33,
+            "research": "eb93895c-cbf1-43c9-a9b7-d76615a7b7ae",
+            "position": 1
+        }
+    },
+    {
+        "model": "productivity.author",
+        "pk": 36,
+        "fields": {
+            "member": 11,
+            "research": "eb93895c-cbf1-43c9-a9b7-d76615a7b7ae",
+            "position": 2
+        }
+    },
+    {
+        "model": "productivity.author",
+        "pk": 37,
+        "fields": {
+            "member": 16,
+            "research": "eb93895c-cbf1-43c9-a9b7-d76615a7b7ae",
+            "position": 3
+        }
+    },
+    {
+        "model": "productivity.author",
+        "pk": 38,
+        "fields": {
+            "member": 17,
+            "research": "eb93895c-cbf1-43c9-a9b7-d76615a7b7ae",
+            "position": 4
+        }
+    },
+    {
+        "model": "productivity.author",
+        "pk": 39,
+        "fields": {
+            "member": 34,
+            "research": "eb93895c-cbf1-43c9-a9b7-d76615a7b7ae",
+            "position": 5
+        }
+    },
+    {
+        "model": "productivity.author",
+        "pk": 40,
+        "fields": {
+            "member": 23,
+            "research": "eb93895c-cbf1-43c9-a9b7-d76615a7b7ae",
+            "position": 6
+        }
+    },
+    {
+        "model": "productivity.author",
+        "pk": 41,
+        "fields": {
+            "member": 12,
+            "research": "865065a9-7d2d-4b6e-b51e-577b02bc2716",
+            "position": 1
+        }
+    },
+    {
+        "model": "productivity.author",
+        "pk": 42,
+        "fields": {
+            "member": 34,
+            "research": "865065a9-7d2d-4b6e-b51e-577b02bc2716",
+            "position": 2
+        }
+    },
+    {
+        "model": "productivity.author",
+        "pk": 43,
+        "fields": {
+            "member": 21,
+            "research": "41bf15e0-aedc-4cf1-a361-5b141c8ae50f",
+            "position": 1
+        }
+    },
+    {
+        "model": "productivity.author",
+        "pk": 44,
+        "fields": {
+            "member": 4,
+            "research": "5c842b94-ef73-4e93-bb9e-ceb5550e7869",
+            "position": 1
+        }
+    },
+    {
+        "model": "productivity.author",
+        "pk": 45,
+        "fields": {
+            "member": 37,
+            "research": "c2ba5b01-eafa-4512-8b35-73432f6c8edc",
+            "position": 1
+        }
+    },
+    {
+        "model": "productivity.author",
+        "pk": 46,
+        "fields": {
+            "member": 39,
+            "research": "4462d8ce-cb60-47fc-9501-14695c3191d3",
+            "position": 1
+        }
+    },
+    {
+        "model": "productivity.author",
+        "pk": 47,
+        "fields": {
+            "member": 9,
+            "research": "4462d8ce-cb60-47fc-9501-14695c3191d3",
+            "position": 2
+        }
+    },
+    {
+        "model": "productivity.author",
+        "pk": 48,
+        "fields": {
+            "member": 26,
+            "research": "4462d8ce-cb60-47fc-9501-14695c3191d3",
+            "position": 3
+        }
+    },
+    {
+        "model": "productivity.author",
+        "pk": 49,
+        "fields": {
+            "member": 34,
+            "research": "4462d8ce-cb60-47fc-9501-14695c3191d3",
+            "position": 4
+        }
+    },
+    {
+        "model": "productivity.author",
+        "pk": 50,
+        "fields": {
+            "member": 5,
+            "research": "4462d8ce-cb60-47fc-9501-14695c3191d3",
+            "position": 5
+        }
+    },
+    {
+        "model": "productivity.author",
+        "pk": 51,
+        "fields": {
+            "member": 34,
+            "research": "db93190e-d933-4dc6-b6e5-cd418dccb39b",
+            "position": 1
+        }
+    },
+    {
+        "model": "productivity.author",
+        "pk": 52,
+        "fields": {
+            "member": 40,
+            "research": "4037dd2b-0232-4972-ab98-41558849f109",
+            "position": 1
+        }
+    },
+    {
+        "model": "productivity.author",
+        "pk": 53,
+        "fields": {
+            "member": 34,
+            "research": "4037dd2b-0232-4972-ab98-41558849f109",
+            "position": 2
+        }
+    },
+    {
+        "model": "productivity.author",
+        "pk": 54,
+        "fields": {
+            "member": 40,
+            "research": "c01991ad-ede1-4ff8-a5c4-c38bdcd5498d",
+            "position": 1
+        }
+    },
+    {
+        "model": "productivity.author",
+        "pk": 55,
+        "fields": {
+            "member": 40,
+            "research": "eaf31f34-0ee8-4f08-876c-653bde15769e",
+            "position": 1
+        }
+    },
+    {
+        "model": "productivity.author",
+        "pk": 56,
+        "fields": {
+            "member": 34,
+            "research": "eaf31f34-0ee8-4f08-876c-653bde15769e",
+            "position": 2
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "000ad558-326d-4912-aef5-223f755c6b30",
+        "fields": {
+            "type": "RECOGNITION",
+            "published": true,
+            "to": "FRANCISCO JES\u00daS L\u00d3PEZ MOTA",
+            "QR": "www.aaaimx.org/certificates/?id=000ad558-326d-4912-aef5-223f755c6b30",
+            "file": "certs/000ad558-326d-4912-aef5-223f755c6b30.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "00431d4c-59dc-4246-9af5-560e14c8b597",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "VALERIA M. PERALTA ARCOS",
+            "QR": "http://www.aaaimx.org/certificates/?id=00431d4c-59dc-4246-9af5-560e14c8b597",
+            "file": "certs/CERTIFICATE_48.jpg",
+            "description": "for her participation in the workshops: \u201cEvaluaci\u00f3n y preinscripci\u00f3n de tecnolog\u00eda asistida en discapacidad\u201d, \u201cImplementaci\u00f3n de Redes Neuronales con Keras\u201d, \u201cDise\u00f1o y modelado de circuitos impresos\u201d and \u201cModelado en 3D para pr\u00f3tesis bi\u00f3nicas\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "03ad56cd-903d-4e1e-8d25-b4cafa4c8841",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "ANGEL CUPUL BELTR\u00c1N",
+            "QR": "http://www.aaaimx.org/certificates/?id=03ad56cd-903d-4e1e-8d25-b4cafa4c8841",
+            "file": "certs/CERTIFICATE_pbKqRpx.jpg",
+            "description": "for his participation in the workshops: \u201cReconocimiento de patrones en se\u00f1ales biom\u00e9dicas\u201d, \u201cIntroducci\u00f3n a la inteligencia artificial con resonancia magn\u00e9tica\u201d and \u201cModelado en 3D para pr\u00f3tesis bi\u00f3nicas\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "0e150641-6a8d-4ad4-91a8-831c6f0ff201",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "EDGAR SANTIAGO CONDE RUIZ",
+            "QR": "http://www.aaaimx.org/certificates/?id=0e150641-6a8d-4ad4-91a8-831c6f0ff201",
+            "file": "certs/CERTIFICATE_3_4DT4Dfo.jpg",
+            "description": "for his participation in the workshops: \u201cAn\u00e1lisis de im\u00e1genes satelitales\u201d, \u201cDise\u00f1o y modelado de circuitos impresos\u201d, \u201cProcesamiento de im\u00e1genes medicas con MATLAB\u201d and \u201cModelado en 3D para pr\u00f3tesis bi\u00f3nicas\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "0e955e6e-71fe-4834-a74a-bbdda7ac3137",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "CATHERINE V. POOT ALDECUA",
+            "QR": "http://www.aaaimx.org/certificates/?id=0e955e6e-71fe-4834-a74a-bbdda7ac3137",
+            "file": "certs/CERTIFICATE_3cj0hn4.jpg",
+            "description": "for her participation in the workshops: \u201cReconocimiento de patrones en se\u00f1ales biom\u00e9dicas\u201d, \u201cVentilaci\u00f3n mec\u00e1nica y monitoreo del paciente de la teor\u00eda a la pr\u00e1ctica\u201d, \u201cIntroducci\u00f3n a la inteligencia artificial con resonancia magn\u00e9tica\u201d and \u201cModelado en 3D para pr\u00f3tesis bi\u00f3nicas\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "1080b552-7fc2-4865-8433-71c3d551f85e",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "SERGIO ANTONIO GUERRERO AGUALLO",
+            "QR": "http://www.aaaimx.org/certificates/?id=1080b552-7fc2-4865-8433-71c3d551f85e",
+            "file": "certs/CERTIFICATE_46.jpg",
+            "description": "for his participation in the workshops: \u201cProcesamiento de im\u00e1genes medicas con MATLAB\u201d and \u201cImplementaci\u00f3n de Redes Neuronales con Keras\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "1444440c-8408-4714-844b-2271039671c9",
+        "fields": {
+            "type": "APPRECIATION",
+            "published": true,
+            "to": "LUIS ALBERTO MART\u00cdNEZ P\u00c9REZ",
+            "QR": "www.aaaimx.org/certificates/?id=1444440c-8408-4714-844b-2271039671c9",
+            "file": "certs/1444440c-8408-4714-844b-2271039671c9.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "147d747b-567b-4f87-86f5-995f51b8939b",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "ANG\u00c9LICA BARRIENTOS LE\u00d3N",
+            "QR": "http://www.aaaimx.org/certificates/?id=147d747b-567b-4f87-86f5-995f51b8939b",
+            "file": "certs/CERTIFICATE_VajamCC.jpg",
+            "description": "for her participation in the workshops: \u201cIntroducci\u00f3n a la programaci\u00f3n en LabVIEW para aplicaciones y desarrollo m\u00e9dico\u201d and \u201cProcesamiento de im\u00e1genes medicas con MATLAB\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "170680dd-173d-4f0e-86e8-a1c5be2858f6",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "RICARDO MART\u00cdNEZ LIZAMA",
+            "QR": "http://www.aaaimx.org/certificates/?id=170680dd-173d-4f0e-86e8-a1c5be2858f6",
+            "file": "certs/CERTIFICATE_43.jpg",
+            "description": "for his participation in the workshop: \u201cVentilaci\u00f3n mec\u00e1nica y monitoreo del paciente de la teor\u00eda a la pr\u00e1ctica\u201d\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "1a6180fc-30c7-4998-8768-fc1a81621331",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "ROBERTO MAY ENCALADA",
+            "QR": "http://www.aaaimx.org/certificates/?id=1a6180fc-30c7-4998-8768-fc1a81621331",
+            "file": "certs/CERTIFICATE_44.jpg",
+            "description": "for his participation in the workshops: \u201cReconocimiento de patrones en se\u00f1ales biom\u00e9dicas\u201d, \u201cImplementaci\u00f3n de Redes Neuronales con Keras\u201d, \u201cProcesamiento de im\u00e1genes m\u00e9dicas con MATLAB\u201d and \u201cModelado en 3D para pr\u00f3tesis bi\u00f3nicas\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "1c2da286-531d-4f9f-b42a-6f8445571f90",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "JOS\u00c9 ANDR\u00c9S CERVERA NOVELO",
+            "QR": "http://www.aaaimx.org/certificates/?id=1c2da286-531d-4f9f-b42a-6f8445571f90",
+            "file": "certs/CERTIFICATE_15.jpg",
+            "description": "for his participation in the workshops: \u201cIntroducci\u00f3n a Machine Learning\u201d and \u201cIntroducci\u00f3n a la programaci\u00f3n en Python y aplicaciones en ingenier\u00eda\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "1ec9db35-1726-4a31-a3ae-56ac2f4fde8c",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "LUCIANO CEL CABRERA",
+            "QR": "http://www.aaaimx.org/certificates/?id=1ec9db35-1726-4a31-a3ae-56ac2f4fde8c",
+            "file": "certs/CERTIFICATE_25_OhP8Lmp.jpg",
+            "description": "for his participation in the workshops: \u201cIntroducci\u00f3n a Machine Learning\u201d, \u201cImplementaci\u00f3n de Redes Neuronales con Keras\u201d, \u201cIntroducci\u00f3n a la programaci\u00f3n en Python y aplicaciones en ingenier\u00eda\u201d and \u201cMantenimiento y soporte de computadoras\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "20f1b0b1-efb4-4e32-aac1-819668440eff",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "VICTOR MANUEL KEB CHAN",
+            "QR": "http://www.aaaimx.org/certificates/?id=20f1b0b1-efb4-4e32-aac1-819668440eff",
+            "file": "certs/CERTIFICATE_19.jpg",
+            "description": "for her participation in the workshops: \u201cEvaluaci\u00f3n y preinscripci\u00f3n de tecnolog\u00eda asistida en discapacidad\u201d, \"Implementaci\u00f3n de Redes Neuronales con Keras\", \"Introducci\u00f3n a la programaci\u00f3n en Python y aplicaciones en ingenier\u00eda\" and \"Mantenimiento y soporte de computadoras\", at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "218eb554-1119-4617-a707-a2036e20d114",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "ALEJANDRO GABRIEL BRAVO S\u00c1NCHEZ",
+            "QR": "www.aaaimx.org/certificates/?id=218eb554-1119-4617-a707-a2036e20d114",
+            "file": "certs/ATTENDENT_TEMPLATE_PgEK46f.jpg",
+            "description": "for his participation in the workshops: \u201cImplementaci\u00f3n de Redes Neuronales con Keras\u201d, \u201cIntroducci\u00f3n a la inteligencia artificial con resonancia magn\u00e9tica\u201d and \u201cReconocimiento de patrones en se\u00f1ales biom\u00e9dicas\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "23a441ed-f208-4901-b3a7-9a3c70dc1027",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "ENRIQUE DEL JES\u00daS CANUL VAZQUEZ",
+            "QR": "http://www.aaaimx.org/certificates/?id=23a441ed-f208-4901-b3a7-9a3c70dc1027",
+            "file": "certs/CERTIFICATE_4.jpg",
+            "description": "for his participation in the workshops: \u201cMicrocontroladores desde cero\u201d, \u201cImplementaci\u00f3n de Redes Neuronales con Keras\u201d, \u201cIntroducci\u00f3n a la programaci\u00f3n en LabVIEW para aplicaciones y desarrollo m\u00e9dico\u201d and \u201cReconocimiento de patrones en se\u00f1ales biom\u00e9dicas\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "247bf91e-f7a1-4352-b2ef-d43ae7d801d3",
+        "fields": {
+            "type": "RECOGNITION",
+            "published": true,
+            "to": "ALFREDO GABRIEL SOSA BARRERA",
+            "QR": "www.aaaimx.org/certificates/?id=247bf91e-f7a1-4352-b2ef-d43ae7d801d3",
+            "file": "certs/247bf91e-f7a1-4352-b2ef-d43ae7d801d3.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "2703eb37-7e3f-4fee-8a70-f3c99672a25d",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "HILDA AIRY ROMERO CUSTODIO",
+            "QR": "http://www.aaaimx.org/certificates/?id=2703eb37-7e3f-4fee-8a70-f3c99672a25d",
+            "file": "certs/CERTIFICATE_9.jpg",
+            "description": "for her participation in the workshops: \u201cEvaluaci\u00f3n y preinscripci\u00f3n de tecnolog\u00eda asistida en discapacidad\u201d, \u201cMicrocontroladores desde cero\u201d, \u201cIntroducci\u00f3n a la inteligencia artificial con resonancia magn\u00e9tica\u201d and \u201cSistemas de control\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "2870e90e-3775-4b3f-aa4c-a893b43e1d5e",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "DAVID SANSORES ESCALANTE",
+            "QR": "http://www.aaaimx.org/certificates/?id=2870e90e-3775-4b3f-aa4c-a893b43e1d5e",
+            "file": "certs/CERTIFICATE_TSvJ2bQ.jpg",
+            "description": "for his participation in the workshops: \u201cEvaluaci\u00f3n y preinscripci\u00f3n de tecnolog\u00eda asistida en discapacidad\u201d and \u201cModelado en 3D para pr\u00f3tesis bi\u00f3nicas\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "2db94926-06ce-4c98-a5bc-8e34d897cf65",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "ANDREA MADRIGAL PALMA",
+            "QR": "http://www.aaaimx.org/certificates/?id=2db94926-06ce-4c98-a5bc-8e34d897cf65",
+            "file": "certs/CERTIFICATE_0uj9bDQ.jpg",
+            "description": "for her participation in the workshops: \u201cIntroducci\u00f3n a la inteligencia artificial con resonancia magn\u00e9tica\u201d and \u201cModelado en 3D para pr\u00f3tesis bi\u00f3nicas\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "2e2572bb-4529-49f5-9c72-f4142d6cc585",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "JAVIER HUMBERTO D\u00cdAZ SOSA",
+            "QR": "http://www.aaaimx.org/certificates/?id=2e2572bb-4529-49f5-9c72-f4142d6cc585",
+            "file": "certs/CERTIFICATE_11.jpg",
+            "description": "for his participation in the workshops: \u201cReconocimiento de patrones en se\u00f1ales biom\u00e9dicas\u201d, \u201cImplementaci\u00f3n de Redes Neuronales con Keras\u201d, \u201cArduino desde cero\u201d and \u201cIntroducci\u00f3n a la programaci\u00f3n en LabVIEW para aplicaciones y desarrollo m\u00e9dico\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "2ef6e6f5-91a5-47b6-af2a-bb76af30d4d3",
+        "fields": {
+            "type": "RECOGNITION",
+            "published": true,
+            "to": "MARIANA PAOLA GARC\u00cdA SALAZAR",
+            "QR": "www.aaaimx.org/certificates/?id=2ef6e6f5-91a5-47b6-af2a-bb76af30d4d3",
+            "file": "certs/2ef6e6f5-91a5-47b6-af2a-bb76af30d4d3.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "32084757-c0a5-40c0-9fed-8c30ac8e2d61",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "RAZIEL R. SOSA NAVARRETE",
+            "QR": "http://www.aaaimx.org/certificates/?id=32084757-c0a5-40c0-9fed-8c30ac8e2d61",
+            "file": "certs/CERTIFICATE_40_FBv8mai.jpg",
+            "description": "for his participation in the workshops: \u201cReconocimiento de patrones en se\u00f1ales biom\u00e9dicas\u201d, \u201cModelado en 3D para pr\u00f3tesis bi\u00f3nicas\u201d, \u201cMicrocontroladores desde cero\u201d and \u201cVentilaci\u00f3n mec\u00e1nica y monitoreo del paciente de la teor\u00eda a la pr\u00e1ctica\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "33272cbb-f4af-4687-ba2d-afcf03732b79",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "MARIANA LEAL",
+            "QR": "http://www.aaaimx.org/certificates/?id=33272cbb-f4af-4687-ba2d-afcf03732b79",
+            "file": "certs/CERTIFICATE_28.jpg",
+            "description": "for her participation in the workshops: \u201cModelado en 3D para pr\u00f3tesis bi\u00f3nicas\u201d and \u201cDise\u00f1o y modelado de circuitos impresos\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "33bd3a27-3d07-4f72-8a7a-dd852925d0cd",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "STEPHANIA MONTSERRAT DZIB TUN",
+            "QR": "http://www.aaaimx.org/certificates/?id=33bd3a27-3d07-4f72-8a7a-dd852925d0cd",
+            "file": "certs/CERTIFICATE_47.jpg",
+            "description": "for her participation in the workshops: \u201cModelado en 3D para pr\u00f3tesis bi\u00f3nicas\u201d and \u201cIntroducci\u00f3n a la inteligencia artificial con resonancia magn\u00e9tica\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "34ef25d2-68ea-436e-a775-283b1bbdb114",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "RENE JOSUE AGUILAR CASTRO",
+            "QR": "http://www.aaaimx.org/certificates/?id=34ef25d2-68ea-436e-a775-283b1bbdb114",
+            "file": "certs/CERTIFICATE_41.jpg",
+            "description": "for his participation in the workshops: \u201cIntroducci\u00f3n a la inteligencia artificial con resonancia magn\u00e9tica\u201d and \u201cProcesamiento de im\u00e1genes medicas con MATLAB\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "38128700-d315-4b24-88cf-f93a63103772",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "ANDREA P\u00c9REZ TORRES",
+            "QR": "http://www.aaaimx.org/certificates/?id=38128700-d315-4b24-88cf-f93a63103772",
+            "file": "certs/CERTIFICATE_0Q1RZzm.jpg",
+            "description": "for her participation in the workshops: \u201cEvaluaci\u00f3n y preinscripci\u00f3n de tecnolog\u00eda asistida en discapacidad\u201d, \u201cImplementaci\u00f3n de Redes Neuronales con Keras\u201d, \u201cIntroducci\u00f3n a la inteligencia artificial con resonancia magn\u00e9tica\u201d and \u201cModelado en 3D para pr\u00f3tesis bi\u00f3nicas\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "3c4a49a7-2558-4c12-9c62-64273da54efc",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "CYRENE Y. USCANGA GONZ\u00c1LEZ",
+            "QR": "http://www.aaaimx.org/certificates/?id=3c4a49a7-2558-4c12-9c62-64273da54efc",
+            "file": "certs/CERTIFICATE_PpAfatd.jpg",
+            "description": "for her participation in the workshops: \u201cIntroducci\u00f3n a la programaci\u00f3n en Python y aplicaciones en ingenier\u00eda\u201d, \u201cIntroducci\u00f3n a la inteligencia artificial con resonancia magn\u00e9tica\u201d and \u201cReconocimiento de patrones en se\u00f1ales biom\u00e9dicas\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "3e23c784-2247-4c43-adba-684d02675155",
+        "fields": {
+            "type": "RECOGNITION",
+            "published": true,
+            "to": "DAVID IV\u00c1N MENDOZA RODR\u00cdGUEZ",
+            "QR": "www.aaaimx.org/certificates/?id=3e23c784-2247-4c43-adba-684d02675155",
+            "file": "certs/3e23c784-2247-4c43-adba-684d02675155.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "3f812e90-e124-4810-8beb-1eab403542e8",
+        "fields": {
+            "type": "APPRECIATION",
+            "published": true,
+            "to": "ELO\u00cdSA GALICIA RODR\u00cdGUEZ",
+            "QR": "www.aaaimx.org/certificates/?id=3f812e90-e124-4810-8beb-1eab403542e8",
+            "file": "certs/3f812e90-e124-4810-8beb-1eab403542e8.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "40024568-438b-4914-8387-1fba47f968c7",
+        "fields": {
+            "type": "RECOGNITION",
+            "published": true,
+            "to": "HUMBERTO POOT C\u00d3RDOVA",
+            "QR": "www.aaaimx.org/certificates/?id=40024568-438b-4914-8387-1fba47f968c7",
+            "file": "certs/40024568-438b-4914-8387-1fba47f968c7.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "45fb8c7e-e130-4b0a-831b-972560bb7ce3",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "MARIANA ASERET SOBERANIS ANAYA",
+            "QR": "http://www.aaaimx.org/certificates/?id=45fb8c7e-e130-4b0a-831b-972560bb7ce3",
+            "file": "certs/CERTIFICATE_30.jpg",
+            "description": "for her participation in the workshops: \u201cEvaluaci\u00f3n y preinscripci\u00f3n de tecnolog\u00eda asistida en discapacidad\u201d, \u201cImplementaci\u00f3n de Redes Neuronales con Keras\u201d, \u201cIntroducci\u00f3n a la inteligencia artificial con resonancia magn\u00e9tica\u201d and \u201cModelado en 3D para pr\u00f3tesis bi\u00f3nicas\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "4935d292-a564-4a55-b276-5259f1af47fc",
+        "fields": {
+            "type": "RECOGNITION",
+            "published": true,
+            "to": "FRANCISCO JES\u00daS L\u00d3PEZ MOTA",
+            "QR": "www.aaaimx.org/certificates/?id=4935d292-a564-4a55-b276-5259f1af47fc",
+            "file": "certs/4935d292-a564-4a55-b276-5259f1af47fc.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "4ad31ad7-0da6-4213-88cf-aeade2509560",
+        "fields": {
+            "type": "RECOGNITION",
+            "published": true,
+            "to": "LUIS RUIZ BETANCOURT",
+            "QR": "www.aaaimx.org/certificates/?id=4ad31ad7-0da6-4213-88cf-aeade2509560",
+            "file": "certs/4ad31ad7-0da6-4213-88cf-aeade2509560.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "4c0d2403-7fb4-47f8-b914-79776e9668ca",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "GABRIELA AURORA YA\u00d1EZ CASAS",
+            "QR": "www.aaaimx.org/certificates/?id=4c0d2403-7fb4-47f8-b914-79776e9668ca",
+            "file": "certs/4c0d2403-7fb4-47f8-b914-79776e9668ca_OTEAzIV.jpeg",
+            "description": ""
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "4ceb4cee-9261-43db-b287-7596f1f6d77c",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "ISRAEL DE JES\u00daS ANDRADE POOL",
+            "QR": "http://www.aaaimx.org/certificates/?id=4ceb4cee-9261-43db-b287-7596f1f6d77c",
+            "file": "certs/CERTIFICATE_10.jpg",
+            "description": "for his participation in the workshops: \u201cIntroducci\u00f3n a la inteligencia artificial con resonancia magn\u00e9tica\u201d and \u201cModelado en 3D para pr\u00f3tesis bi\u00f3nicas\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "4dc31fd6-0b19-4ea1-8206-66dc14a61067",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "MAYA PINTO COLLI",
+            "QR": "http://www.aaaimx.org/certificates/?id=4dc31fd6-0b19-4ea1-8206-66dc14a61067",
+            "file": "certs/CERTIFICATE_34.jpg",
+            "description": "for her participation in the workshops: \u201cIntroducci\u00f3n a Machine Learning\u201d and \u201cIntroducci\u00f3n a la programaci\u00f3n en Python y aplicaciones en ingenier\u00eda\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "5142d314-5163-4b32-b434-a7e0b83fa628",
+        "fields": {
+            "type": "RECOGNITION",
+            "published": true,
+            "to": "IV\u00c1N ANDR\u00c9S CASTILLO GUTI\u00c9RREZ",
+            "QR": "www.aaaimx.org/certificates/?id=5142d314-5163-4b32-b434-a7e0b83fa628",
+            "file": "certs/5142d314-5163-4b32-b434-a7e0b83fa628.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "570296ca-1f99-4262-97a5-ca77304ffb4d",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "KARLA VANESSA MEDINA D\u00cdAZ",
+            "QR": "http://www.aaaimx.org/certificates/?id=570296ca-1f99-4262-97a5-ca77304ffb4d",
+            "file": "certs/CERTIFICATE_20_VxncOhy.jpg",
+            "description": "for her participation in the workshops: \u201cEvaluaci\u00f3n y preinscripci\u00f3n de tecnolog\u00eda asistida en discapacidad\u201d, \u201cImplementaci\u00f3n de Redes Neuronales con Keras\u201d, \u201cIntroducci\u00f3n a la programaci\u00f3n en Python y aplicaciones en ingenier\u00eda\u201d and \u201cModelado en 3D para pr\u00f3tesis bi\u00f3nicas\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "57f4ae85-5d79-48e1-9250-851dc56dd15a",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "MAURICIO ALBERTO CUEVAS CH\u00c1VEZ",
+            "QR": "http://www.aaaimx.org/certificates/?id=57f4ae85-5d79-48e1-9250-851dc56dd15a",
+            "file": "certs/CERTIFICATE_33.jpg",
+            "description": "for her participation in the workshops: \u201cEvaluaci\u00f3n y preinscripci\u00f3n de tecnolog\u00eda asistida en discapacidad\u201d, \u201cIntroducci\u00f3n a la programaci\u00f3n en Python y aplicaciones en ingenier\u00eda\u201d, \u201cReconocimiento de patrones en se\u00f1ales biom\u00e9dicas\u201d and \u201cVentilaci\u00f3n mec\u00e1nica y monitoreo del paciente de la teor\u00eda a la pr\u00e1ctica\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "5d3d60dd-b2e8-456d-ab9e-0d19ec7a4710",
+        "fields": {
+            "type": "APPRECIATION",
+            "published": true,
+            "to": "ALEJANDRO GIBRAN P\u00c9REZ P\u00c9REZ",
+            "QR": "www.aaaimx.org/certificates/?id=5d3d60dd-b2e8-456d-ab9e-0d19ec7a4710",
+            "file": "certs/5d3d60dd-b2e8-456d-ab9e-0d19ec7a4710.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "5d53f06d-5107-4c33-9c58-e04160057a78",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "LUIS ANDR\u00c9S GRANADOS ESCOTO",
+            "QR": "http://www.aaaimx.org/certificates/?id=5d53f06d-5107-4c33-9c58-e04160057a78",
+            "file": "certs/CERTIFICATE_26.jpg",
+            "description": "for his participation in the workshops: \u201cEvaluaci\u00f3n y preinscripci\u00f3n de tecnolog\u00eda asistida en discapacidad\u201d, \u201cModelado en 3D para pr\u00f3tesis bi\u00f3nicas\u201d and \u201cReconocimiento de patrones en se\u00f1ales biom\u00e9dicas\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "5e773a5c-93aa-45a3-84a1-91494e78bae1",
+        "fields": {
+            "type": "APPRECIATION",
+            "published": true,
+            "to": "\u00c1LVARO CORT\u00c9S MANICA",
+            "QR": "www.aaaimx.org/certificates/?id=5e773a5c-93aa-45a3-84a1-91494e78bae1",
+            "file": "certs/5e773a5c-93aa-45a3-84a1-91494e78bae1.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "60ba15d9-446f-487d-a615-7c5244f81ee7",
+        "fields": {
+            "type": "RECOGNITION",
+            "published": true,
+            "to": "V\u00cdCTOR EMMANUEL CHAN COCOM",
+            "QR": "www.aaaimx.org/certificates/?id=60ba15d9-446f-487d-a615-7c5244f81ee7",
+            "file": "certs/60ba15d9-446f-487d-a615-7c5244f81ee7.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "645fd170-7934-4b3e-829f-b81c884cb576",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "JORGE CHALE",
+            "QR": "http://www.aaaimx.org/certificates/?id=645fd170-7934-4b3e-829f-b81c884cb576",
+            "file": "certs/CERTIFICATE_13.jpg",
+            "description": "for his participation in the workshops: \u201cEvaluaci\u00f3n y preinscripci\u00f3n de tecnolog\u00eda asistida en discapacidad\u201d, \u201cIntroducci\u00f3n a la programaci\u00f3n en Python y aplicaciones en ingenier\u00eda\u201d, \u201cVentilaci\u00f3n mec\u00e1nica y monitoreo del paciente de la teor\u00eda a la pr\u00e1ctica\u201d and \u201cModelado en 3D para pr\u00f3tesis bi\u00f3nicas\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "65a0699e-c389-4eef-afa8-5637ac0728a1",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "MARIEL ALEJANDRA NOVELO AVILA",
+            "QR": "http://www.aaaimx.org/certificates/?id=65a0699e-c389-4eef-afa8-5637ac0728a1",
+            "file": "certs/CERTIFICATE_31.jpg",
+            "description": "for her participation in the workshops: \u201cArduino desde cero\u201d, \u201cImplementaci\u00f3n de Redes Neuronales con Keras\u201d, \u201cIntroducci\u00f3n a la programaci\u00f3n en LabVIEW para aplicaciones y desarrollo m\u00e9dico\u201d and \u201cReconocimiento de patrones en se\u00f1ales biom\u00e9dicas\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "65ba160c-65b4-4146-a386-bc0e56120233",
+        "fields": {
+            "type": "RECOGNITION",
+            "published": true,
+            "to": "SA\u00daL EZEQUIEL NAVARRO TEC",
+            "QR": "www.aaaimx.org/certificates/?id=65ba160c-65b4-4146-a386-bc0e56120233",
+            "file": "certs/65ba160c-65b4-4146-a386-bc0e56120233.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "66fc05e5-d3e1-4538-ae03-4577e9eced06",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "JIMENA JULISSA PECH ITZ\u00c1",
+            "QR": "http://www.aaaimx.org/certificates/?id=66fc05e5-d3e1-4538-ae03-4577e9eced06",
+            "file": "certs/CERTIFICATE_12.jpg",
+            "description": "for her participation in the workshops: \u201cProcesamiento de im\u00e1genes medicas con MATLAB\u201d and \u201cIntroducci\u00f3n a la programaci\u00f3n en LabVIEW para aplicaciones y desarrollo m\u00e9dico\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "67ff8fed-58e3-4655-a519-670be3e85da3",
+        "fields": {
+            "type": "RECOGNITION",
+            "published": true,
+            "to": "GERSON SUAREZ CHICLIN",
+            "QR": "www.aaaimx.org/certificates/?id=67ff8fed-58e3-4655-a519-670be3e85da3",
+            "file": "certs/67ff8fed-58e3-4655-a519-670be3e85da3.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "6ded6f49-528d-4871-85f2-1448a2506404",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "BRENDA P. HERN\u00c1NDEZ CERVERA",
+            "QR": "http://www.aaaimx.org/certificates/?id=6ded6f49-528d-4871-85f2-1448a2506404",
+            "file": "certs/CERTIFICATE_MGwnnOZ.jpg",
+            "description": "for her participation in the workshops: \u201cIntroducci\u00f3n a la inteligencia artificial con resonancia magn\u00e9tica\u201d and \u201cModelado en 3D para pr\u00f3tesis bi\u00f3nicas\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "6e38bb38-7736-4c2f-8560-b0cd4d077a0f",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "ADRIANA JAZM\u00cdN P\u00c9REZ CHAN",
+            "QR": "www.aaaimx.org/certificates/?id=6e38bb38-7736-4c2f-8560-b0cd4d077a0f",
+            "file": "certs/ATTENDENT_TEMPLATE_MtndiQ3.jpg",
+            "description": "for her participation in the workshops: \u201cIntroducci\u00f3n a la programaci\u00f3n en LabVIEW para aplicaciones y desarrollo m\u00e9dico\u201d and\u00a0\"Procesamiento de im\u00e1genes medicas con MATLAB\",\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "703ac1ed-1fa0-4e52-a14c-fad95ddbc2f0",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "GONZALO ADRI\u00c1N SALVADOR EUAN",
+            "QR": "http://www.aaaimx.org/certificates/?id=703ac1ed-1fa0-4e52-a14c-fad95ddbc2f0",
+            "file": "certs/CERTIFICATE_7.jpg",
+            "description": "for his participation in the workshops: \u201cIntroducci\u00f3n a la inteligencia artificial con resonancia magn\u00e9tica\u201d and \u201cMantenimiento y soporte de computadoras\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "717036b0-ee67-4719-ab4d-971c2edf86c0",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "LUC\u00cdA ISMENE ZOZAYA ALCOCER",
+            "QR": "http://www.aaaimx.org/certificates/?id=717036b0-ee67-4719-ab4d-971c2edf86c0",
+            "file": "certs/CERTIFICATE_24.jpg",
+            "description": "for her participation in the workshops: \u201cIntroducci\u00f3n a la programaci\u00f3n en LabVIEW para aplicaciones y desarrollo m\u00e9dico\u201d and \u201cIntroducci\u00f3n a la inteligencia artificial con\nresonancia magn\u00e9tica\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "726cad76-b012-4e6a-ac34-dbce4524a52c",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "EDGAR RUIZ GAYT\u00c1N",
+            "QR": "http://www.aaaimx.org/certificates/?id=726cad76-b012-4e6a-ac34-dbce4524a52c",
+            "file": "certs/CERTIFICATE_3.jpg",
+            "description": "for his participation in the workshops: \u201cArduino desde cero\u201d, \u201cDise\u00f1o y modelado de circuitos impresos\u201d and \u201cModelado en 3D para pr\u00f3tesis bi\u00f3nicas\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "7383fcf2-3c29-43ad-b2c1-48cb607719a6",
+        "fields": {
+            "type": "RECOGNITION",
+            "published": true,
+            "to": "ISMAEL P\u00c9REZ RUIZ",
+            "QR": "www.aaaimx.org/certificates/?id=7383fcf2-3c29-43ad-b2c1-48cb607719a6",
+            "file": "certs/7383fcf2-3c29-43ad-b2c1-48cb607719a6.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "752be021-4466-4c47-98d3-c2c127f488f5",
+        "fields": {
+            "type": "RECOGNITION",
+            "published": true,
+            "to": "FERNANDO JAVIER AGUILAR CANTO",
+            "QR": "www.aaaimx.org/certificates/?id=752be021-4466-4c47-98d3-c2c127f488f5",
+            "file": "certs/752be021-4466-4c47-98d3-c2c127f488f5.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "7a37fa61-fcd7-4b83-94ce-b6566286aef7",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "CECILIA ELIDE EUAN D\u00cdAZ",
+            "QR": "http://www.aaaimx.org/certificates/?id=7a37fa61-fcd7-4b83-94ce-b6566286aef7",
+            "file": "certs/CERTIFICATE_IhVCVRU.jpg",
+            "description": "for her participation in the workshops: \u201cEvaluaci\u00f3n y preinscripci\u00f3n de tecnolog\u00eda asistida en discapacidad\u201d and \u201cReconocimiento de patrones en se\u00f1ales biom\u00e9dicas\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "7b343f86-d01a-414e-8413-a928df7f177e",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "ANDREY SALVADOR YERVES YAM",
+            "QR": "http://www.aaaimx.org/certificates/?id=7b343f86-d01a-414e-8413-a928df7f177e",
+            "file": "certs/CERTIFICATE_t4SYjsc.jpg",
+            "description": "for his participation in the workshops: \u201cIntroducci\u00f3n a la programaci\u00f3n en LabVIEW para aplicaciones y desarrollo m\u00e9dico\u201d and \u201cIntroducci\u00f3n a la programaci\u00f3n en Python y aplicaciones en ingenier\u00eda\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "7e04e0ea-b642-4a96-8d05-495365452b4b",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "ALEXIS RAM\u00cdREZ CHABL\u00c9",
+            "QR": "www.aaaimx.org/certificates/?id=7e04e0ea-b642-4a96-8d05-495365452b4b",
+            "file": "certs/ATTENDENT_TEMPLATE_JLd0QvY.jpg",
+            "description": "for his participation in the workshops: \u201cProcesamiento de im\u00e1genes medicas con MATLAB\u201d and \u201cSistemas de control\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "7eab7df5-316d-449c-8b6e-71bda0b3126d",
+        "fields": {
+            "type": "APPRECIATION",
+            "published": true,
+            "to": "GABRIEL VILLALOBOS MU\u00d1OZ",
+            "QR": "www.aaaimx.org/certificates/?id=7eab7df5-316d-449c-8b6e-71bda0b3126d",
+            "file": "certs/7eab7df5-316d-449c-8b6e-71bda0b3126d.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "81a60d56-bdf2-492d-a6fd-c2f624a0536a",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "ODETT CHAMARRO RODR\u00cdGUEZ",
+            "QR": "http://www.aaaimx.org/certificates/?id=81a60d56-bdf2-492d-a6fd-c2f624a0536a",
+            "file": "certs/CERTIFICATE_35.jpg",
+            "description": "for her participation in the workshops: \u201cAn\u00e1lisis de im\u00e1genes satelitales\u201d and \u201cDise\u00f1o y modelado de circuitos impresos\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "81ea5579-9dc6-4fec-9545-093cef5c75a1",
+        "fields": {
+            "type": "RECOGNITION",
+            "published": true,
+            "to": "XAVIER SIERRA CANTO",
+            "QR": "www.aaaimx.org/certificates/?id=81ea5579-9dc6-4fec-9545-093cef5c75a1",
+            "file": "certs/81ea5579-9dc6-4fec-9545-093cef5c75a1.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "8545fa74-f6aa-4e1a-b139-a289eccc6417",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "WENDER E. NAVARRETE MAGA\u00d1A",
+            "QR": "http://www.aaaimx.org/certificates/?id=8545fa74-f6aa-4e1a-b139-a289eccc6417",
+            "file": "certs/CERTIFICATE_fll8UhH.png",
+            "description": "for his participation in the workshops: \u201cIntroducci\u00f3n a la programaci\u00f3n en LabVIEW para aplicaciones y desarrollo m\u00e9dico\u201d and \u201cModelado en 3D para pr\u00f3tesis Bi\u00f3nicas\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "887c266b-6d14-44af-b7ac-9f292b6ea75f",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "PEDRO ANDRES PUCH ALCANTAR",
+            "QR": "http://www.aaaimx.org/certificates/?id=887c266b-6d14-44af-b7ac-9f292b6ea75f",
+            "file": "certs/CERTIFICATE_37.jpg",
+            "description": "for his participation in the workshops: \u201cIntroducci\u00f3n a la inteligencia artificial con resonancia magn\u00e9tica\u201d and \u201cIntroducci\u00f3n a la programaci\u00f3n en LabVIEW para aplicaciones y desarrollo m\u00e9dico\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "89921eaa-00bf-47b9-b9fd-7197373f930d",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "CRISTIAN ANDRE TENORIO GARCIA",
+            "QR": "http://www.aaaimx.org/certificates/?id=89921eaa-00bf-47b9-b9fd-7197373f930d",
+            "file": "certs/CERTIFICATE_2.jpg",
+            "description": "for his participation in the workshops: \u201cDise\u00f1o y modelado de circuitos impresos\u201d and \u201cImplementaci\u00f3n de Redes Neuronales con Keras\u201d\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "8fd4b22e-9ac8-4942-a4ff-5e9d1ad17e3e",
+        "fields": {
+            "type": "RECOGNITION",
+            "published": true,
+            "to": "DAVID FERNANDO TORRES COLLI",
+            "QR": "www.aaaimx.org/certificates/?id=8fd4b22e-9ac8-4942-a4ff-5e9d1ad17e3e",
+            "file": "certs/8fd4b22e-9ac8-4942-a4ff-5e9d1ad17e3e.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "9410eec9-6723-4548-a879-55ebaca7483d",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "ERICK RODRIGUEZ CHI",
+            "QR": "http://www.aaaimx.org/certificates/?id=9410eec9-6723-4548-a879-55ebaca7483d",
+            "file": "certs/CERTIFICATE_8.jpg",
+            "description": "for his participation in the workshops: \u201cIntroducci\u00f3n a Machine Learning\u201d and \u201cIntroducci\u00f3n a la programaci\u00f3n en Python y aplicaciones en ingenier\u00eda\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "951a192d-6470-41db-9bc7-78164d5261ea",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "ARIANNY CALDER\u00d3N CAN",
+            "QR": "http://www.aaaimx.org/certificates/?id=951a192d-6470-41db-9bc7-78164d5261ea",
+            "file": "certs/CERTIFICATE_wfItsoQ.jpg",
+            "description": "for her participation in the workshops: \u201cAn\u00e1lisis de im\u00e1genes satelitales\u201d, \u201cDise\u00f1o y modelado de circuitos impresos\u201d, \u201cMantenimiento y soporte de computadoras\u201d and \u201cMicrocontroladores desde cero\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "95f64f70-144d-4e36-8453-0431159d7f7e",
+        "fields": {
+            "type": "RECOGNITION",
+            "published": true,
+            "to": "LUIS RUIZ BETANCOURT",
+            "QR": "www.aaaimx.org/certificates/?id=95f64f70-144d-4e36-8453-0431159d7f7e",
+            "file": "certs/95f64f70-144d-4e36-8453-0431159d7f7e.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "994c61c2-bec9-45cd-a1e3-5133267b0bca",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "ARIANA GUADALUPE GUTIERREZ MAY",
+            "QR": "http://www.aaaimx.org/certificates/?id=994c61c2-bec9-45cd-a1e3-5133267b0bca",
+            "file": "certs/CERTIFICATE_TZsnMeS.jpg",
+            "description": "for her participation in the workshop: \u201cIntroducci\u00f3n a la inteligencia artificial con resonancia magn\u00e9tica\u201d, at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "9cd54a9b-1f9d-42b1-af4a-2f637ed599e4",
+        "fields": {
+            "type": "RECOGNITION",
+            "published": false,
+            "to": "Raul Novelo",
+            "QR": "http://www.aaaimx.org/certificates/?id=9cd54a9b-1f9d-42b1-af4a-2f637ed599e4",
+            "file": "/app/utils/sample-out_dSWONHo.png",
+            "description": "This is a draft certificate"
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "a036a8aa-8a61-4502-b683-3112b4082e2d",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "GEOVANI E. SANSORES S\u00c1NCHEZ",
+            "QR": "http://www.aaaimx.org/certificates/?id=a036a8aa-8a61-4502-b683-3112b4082e2d",
+            "file": "certs/CERTIFICATE_6.jpg",
+            "description": "for his participation in the workshops: \u201cMantenimiento y soporte de computadoras\u201d, \u201cIntroducci\u00f3n a la inteligencia artificial con resonancia magn\u00e9tica\u201d and \u201cProcesamiento de im\u00e1genes medicas con MATLAB\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "a0870252-3865-4748-b86b-ad4906c28416",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "JOHAN ADRI\u00c1N BARRERA C\u00c1MARA",
+            "QR": "http://www.aaaimx.org/certificates/?id=a0870252-3865-4748-b86b-ad4906c28416",
+            "file": "certs/CERTIFICATE_12_ZPsavHt.jpg",
+            "description": "for his participation in the workshops: \u201cEvaluaci\u00f3n y preinscripci\u00f3n de tecnolog\u00eda asistida en discapacidad\u201d, \u201cMicrocontroladores desde cero\u201d, \u201cReconocimiento de patrones en se\u00f1ales biom\u00e9dicas\u201d and \u201cSistemas de control\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "a27e03b1-b051-4a6d-b063-4519623cf404",
+        "fields": {
+            "type": "RECOGNITION",
+            "published": true,
+            "to": "IRVING AARON CIFUENTES GONZ\u00c1LES",
+            "QR": "www.aaaimx.org/certificates/?id=a27e03b1-b051-4a6d-b063-4519623cf404",
+            "file": "certs/a27e03b1-b051-4a6d-b063-4519623cf404.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "a2b6b456-b963-4f9d-acbf-0b04da6b3180",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "IRVING AGUILAR MALDONADO",
+            "QR": "http://www.aaaimx.org/certificates/?id=a2b6b456-b963-4f9d-acbf-0b04da6b3180",
+            "file": "certs/CERTIFICATE_9_XUm71pY.jpg",
+            "description": "for his participation in the workshops: \u201cReconocimiento de patrones en se\u00f1ales biom\u00e9dicas\u201d, \u201cVentilaci\u00f3n mec\u00e1nica y monitoreo del paciente de la teor\u00eda a la pr\u00e1ctica\u201d and \u201cSistemas de control\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "a4daeac5-833c-4772-b056-8060dc63b109",
+        "fields": {
+            "type": "APPRECIATION",
+            "published": true,
+            "to": "HANAN CRIST\u00d3BAL HUERTA CONSUEGRA",
+            "QR": "www.aaaimx.org/certificates/?id=a4daeac5-833c-4772-b056-8060dc63b109",
+            "file": "certs/a4daeac5-833c-4772-b056-8060dc63b109.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "acf072cc-4398-48fb-a15f-52a97c67bc9e",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "KAREY ABIGAIL CONTRERAS UC",
+            "QR": "http://www.aaaimx.org/certificates/?id=acf072cc-4398-48fb-a15f-52a97c67bc9e",
+            "file": "certs/CERTIFICATE_17.jpg",
+            "description": "for her participation in the workshops: \u201cMicrocontroladores desde cero\u201d, \u201cImplementaci\u00f3n de Redes Neuronales con Keras\u201d, \u201cReconocimiento de patrones en se\u00f1ales biom\u00e9dicas\u201d and \u201cVentilaci\u00f3n mec\u00e1nica y monitoreo del paciente de la teor\u00eda a la pr\u00e1ctica\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "ae2b3980-6849-4fd9-8114-fdbac695dfb2",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "BENJAMIN ISRAEL CHI OZALDE",
+            "QR": "http://www.aaaimx.org/certificates/?id=ae2b3980-6849-4fd9-8114-fdbac695dfb2",
+            "file": "certs/CERTIFICATE_1.jpg",
+            "description": "for his participation in the workshops: \u201cAn\u00e1lisis de im\u00e1genes satelitales\u201d and \u201cIntroducci\u00f3n a Machine Learning\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "afeed5f1-0c20-4b3b-99ea-1babd5fd40ec",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "ANG\u00c9LICA M. G\u00d3MEZ ZWANZIGER",
+            "QR": "http://www.aaaimx.org/certificates/?id=afeed5f1-0c20-4b3b-99ea-1babd5fd40ec",
+            "file": "certs/CERTIFICATE_kgQoemT.jpg",
+            "description": "for her participation in the workshops: \u201cAn\u00e1lisis de im\u00e1genes satelitales\u201d, \u201cDise\u00f1o y modelado de circuitos impresos\u201d and \u201cProcesamiento de im\u00e1genes medicas con MATLAB\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "b565c99d-9aa5-4351-9e7e-28a9296b7db7",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "LIBNI ABIGAIL ALAMINA ARANA",
+            "QR": "http://www.aaaimx.org/certificates/?id=b565c99d-9aa5-4351-9e7e-28a9296b7db7",
+            "file": "certs/CERTIFICATE_22.jpg",
+            "description": "for her participation in the workshops: \u201cIntroducci\u00f3n a la inteligencia artificial con resonancia magn\u00e9tica\u201d and \u201cIntroducci\u00f3n a la programaci\u00f3n en LabVIEW para aplicaciones y desarrollo m\u00e9dico\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "b64056d7-15d1-4eca-a6df-ab6175e83d27",
+        "fields": {
+            "type": "APPRECIATION",
+            "published": true,
+            "to": "FERNANDO JAVIER AGUILAR CANTO",
+            "QR": "www.aaaimx.org/certificates/?id=b64056d7-15d1-4eca-a6df-ab6175e83d27",
+            "file": "certs/b64056d7-15d1-4eca-a6df-ab6175e83d27.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "b91f1694-d434-4856-b804-e2aa3e007029",
+        "fields": {
+            "type": "RECOGNITION",
+            "published": true,
+            "to": "ZURIELY IVONE FRAGA PASOS",
+            "QR": "www.aaaimx.org/certificates/?id=b91f1694-d434-4856-b804-e2aa3e007029",
+            "file": "certs/b91f1694-d434-4856-b804-e2aa3e007029_taEeMw0.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "ba401343-9b9e-4d12-a9e2-da1792faa6b8",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "RAMIRO RODR\u00cdGUEZ PACHECO",
+            "QR": "http://www.aaaimx.org/certificates/?id=ba401343-9b9e-4d12-a9e2-da1792faa6b8",
+            "file": "certs/CERTIFICATE_38.jpg",
+            "description": "for his participation in the workshops: \u201cImplementaci\u00f3n de Redes Neuronales con Keras\u201d and \u201cMantenimiento y soporte de computadoras\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "bee16783-2cd6-4670-a4c8-edc7d47282c7",
+        "fields": {
+            "type": "RECOGNITION",
+            "published": true,
+            "to": "H\u00c9CTOR L\u00d3PEZ PI\u00d1A",
+            "QR": "www.aaaimx.org/certificates/?id=bee16783-2cd6-4670-a4c8-edc7d47282c7",
+            "file": "certs/bee16783-2cd6-4670-a4c8-edc7d47282c7.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "bf836798-ab69-4342-9f9d-d3cb9d0a61b7",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "\u00c1ARON JOS\u00c9 MORITA SANTANA",
+            "QR": "www.aaaimx.org/certificates/?id=bf836798-ab69-4342-9f9d-d3cb9d0a61b7",
+            "file": "certs/ATTENDENT_TEMPLATE.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "c014b381-1835-405d-b2a0-32b90ae49ec5",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "JORGE BONILLA MONTOYA",
+            "QR": "http://www.aaaimx.org/certificates/?id=c014b381-1835-405d-b2a0-32b90ae49ec5",
+            "file": "certs/CERTIFICATE_14.jpg",
+            "description": "for his participation in the workshops: \u201cIntroducci\u00f3n a Machine Learning\u201d, \u201cImplementaci\u00f3n de Redes Neuronales con Keras\u201d, \u201cIntroducci\u00f3n a la programaci\u00f3n en LabVIEW para aplicaciones y desarrollo m\u00e9dico\u201d and \u201cIntroducci\u00f3n a la programaci\u00f3n en Python y aplicaciones en ingenier\u00eda\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "c1e08c3b-b5b7-4a00-bddd-4ddbb307a05c",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "JULIO LIZANDRO UC SANTOS",
+            "QR": "http://www.aaaimx.org/certificates/?id=c1e08c3b-b5b7-4a00-bddd-4ddbb307a05c",
+            "file": "certs/CERTIFICATE_16.jpg",
+            "description": "for his participation in the workshops: \u201cIntroducci\u00f3n a la programaci\u00f3n en LabVIEW para aplicaciones y desarrollo m\u00e9dico\u201d and \u201cProcesamiento de im\u00e1genes medicas con MATLAB\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "c7ae4c3a-a662-45eb-8099-b394ab8d442d",
+        "fields": {
+            "type": "RECOGNITION",
+            "published": true,
+            "to": "HUMBERTO POOT C\u00d3RDOVA",
+            "QR": "www.aaaimx.org/certificates/?id=c7ae4c3a-a662-45eb-8099-b394ab8d442d",
+            "file": "certs/c7ae4c3a-a662-45eb-8099-b394ab8d442d.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "c92ce12b-4607-498d-9b31-b25e13e3b4ae",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "MARIO A. CARRASQUEDO MARQUEZ",
+            "QR": "http://www.aaaimx.org/certificates/?id=c92ce12b-4607-498d-9b31-b25e13e3b4ae",
+            "file": "certs/CERTIFICATE_32.jpg",
+            "description": "for her participation in the workshops: \u201cIntroducci\u00f3n a la programaci\u00f3n en Python y aplicaciones en ingenier\u00eda\u201d, \u201cIntroducci\u00f3n a la inteligencia artificial con resonancia magn\u00e9tica\u201d and \u201cModelado en 3D para pr\u00f3tesis bi\u00f3nicas\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "c9756915-8eb9-40c5-bacf-60e6ff670d0b",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "KEVIN IMANOL NAVA OCAMPO",
+            "QR": "http://www.aaaimx.org/certificates/?id=c9756915-8eb9-40c5-bacf-60e6ff670d0b",
+            "file": "certs/CERTIFICATE_21.jpg",
+            "description": "for his participation in the workshops: \u201cIntroducci\u00f3n a Machine Learning\u201d and \u201cImplementaci\u00f3n de Redes Neuronales con Keras\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "ccb43400-ee4b-44e2-bef5-0cdb9a5fa088",
+        "fields": {
+            "type": "RECOGNITION",
+            "published": true,
+            "to": "ERWIN SOSA L\u00d3PEZ",
+            "QR": "www.aaaimx.org/certificates/?id=ccb43400-ee4b-44e2-bef5-0cdb9a5fa088",
+            "file": "certs/ccb43400-ee4b-44e2-bef5-0cdb9a5fa088.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "d20543c0-2c91-437d-9379-84bec7eb5646",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "RAM\u00d3N LIZAMA",
+            "QR": "http://www.aaaimx.org/certificates/?id=d20543c0-2c91-437d-9379-84bec7eb5646",
+            "file": "certs/CERTIFICATE_39.jpg",
+            "description": "for his participation in the workshops: \u201cEvaluaci\u00f3n y preinscripci\u00f3n de tecnolog\u00eda asistida en discapacidad\u201d\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "d4c4e75e-647b-47a1-bbbc-2fabf9b09b33",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "MANUEL ANTONIO LOEZA MEDINA",
+            "QR": "http://www.aaaimx.org/certificates/?id=d4c4e75e-647b-47a1-bbbc-2fabf9b09b33",
+            "file": "certs/CERTIFICATE_27_oF1H8xY.jpg",
+            "description": "for his participation in the workshops: \u201cModelado en 3D para pr\u00f3tesis bi\u00f3nicas\u201d and \u201cIntroducci\u00f3n a la inteligencia artificial con resonancia magn\u00e9tica\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "d78cf008-4131-416d-a8a4-210dd4b19136",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "LIGIA AMAIRANI PERAZA CASTA\u00d1EDA",
+            "QR": "http://www.aaaimx.org/certificates/?id=d78cf008-4131-416d-a8a4-210dd4b19136",
+            "file": "certs/CERTIFICATE_23.jpg",
+            "description": "for her participation in the workshops: \u201cEvaluaci\u00f3n y preinscripci\u00f3n de tecnolog\u00eda asistida en discapacidad\u201d, \u201cImplementaci\u00f3n de Redes Neuronales con Keras\u201d, \u201cIntroducci\u00f3n a la inteligencia artificial con resonancia magn\u00e9tica\u201d and \u201cReconocimiento de patrones en se\u00f1ales biom\u00e9dicas\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "dd30a3bf-fe6f-4d0b-bd5c-eaf325e0520f",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "RODRIGO ELI\u00c1N MASS MOO",
+            "QR": "http://www.aaaimx.org/certificates/?id=dd30a3bf-fe6f-4d0b-bd5c-eaf325e0520f",
+            "file": "certs/CERTIFICATE_45.jpg",
+            "description": "for his participation in the workshops: \u201cAn\u00e1lisis de im\u00e1genes satelitales\u201d, \u201cModelado en 3D para pr\u00f3tesis bi\u00f3nicas\u201d, \u201cArduino desde cero\u201d and \u201cVentilaci\u00f3n mec\u00e1nica y monitoreo del\npaciente de la teor\u00eda a la pr\u00e1ctica\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "df031049-5ef2-4d65-8f53-d925ebe89209",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "MARIANA RIVERA CABRERA",
+            "QR": "http://www.aaaimx.org/certificates/?id=df031049-5ef2-4d65-8f53-d925ebe89209",
+            "file": "certs/CERTIFICATE_29_2IELRAS.jpg",
+            "description": "for her participation in the workshops: \u201cEvaluaci\u00f3n y preinscripci\u00f3n de tecnolog\u00eda asistida en discapacidad\u201d, \u201cIntroducci\u00f3n a la programaci\u00f3n en Python y aplicaciones en ingenier\u00eda\u201d, \u201cVentilaci\u00f3n mec\u00e1nica y monitoreo del paciente de la teor\u00eda a la pr\u00e1ctica\u201d and \u201cModelado en 3D para pr\u00f3tesis bi\u00f3nicas\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "df703836-58a5-4abf-b0cb-79c7746a6f32",
+        "fields": {
+            "type": "APPRECIATION",
+            "published": true,
+            "to": "JONATHAN DEL JES\u00daS BURGOS SUSTAITA",
+            "QR": "www.aaaimx.org/certificates/?id=df703836-58a5-4abf-b0cb-79c7746a6f32",
+            "file": "certs/df703836-58a5-4abf-b0cb-79c7746a6f32.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "e4bfd878-caeb-4ffe-92b3-a0be1841bb52",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "C\u00c9SAR O. SORIANO MAY",
+            "QR": "http://www.aaaimx.org/certificates/?id=e4bfd878-caeb-4ffe-92b3-a0be1841bb52",
+            "file": "certs/CERTIFICATE_1_um0vY3k.jpg",
+            "description": "for his participation in the workshops: \u201cIntroducci\u00f3n a la inteligencia artificial con resonancia magn\u00e9tica\u201d and \u201cReconocimiento de patrones en se\u00f1ales biom\u00e9dicas\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "e958abac-4125-422b-82d3-d45bb64b7250",
+        "fields": {
+            "type": "RECOGNITION",
+            "published": true,
+            "to": "GEOVANY N\u00da\u00d1EZ TRACONIS",
+            "QR": "www.aaaimx.org/certificates/?id=e958abac-4125-422b-82d3-d45bb64b7250",
+            "file": "certs/e958abac-4125-422b-82d3-d45bb64b7250.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "ec638c13-66e4-4ec1-8dff-7fbd1540f22e",
+        "fields": {
+            "type": "RECOGNITION",
+            "published": true,
+            "to": "WILBERT RODRIGO ALBERTO CARBALLO MEDINA",
+            "QR": "www.aaaimx.org/certificates/?id=ec638c13-66e4-4ec1-8dff-7fbd1540f22e",
+            "file": "certs/ec638c13-66e4-4ec1-8dff-7fbd1540f22e.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "eee1e49b-8928-4f42-9b58-7c5e080dc64a",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "RICARDO MART\u00cdNEZ G\u00d3MEZ",
+            "QR": "http://www.aaaimx.org/certificates/?id=eee1e49b-8928-4f42-9b58-7c5e080dc64a",
+            "file": "certs/CERTIFICATE_42.jpg",
+            "description": "for his participation in the workshops: \u201cEvaluaci\u00f3n y preinscripci\u00f3n de tecnolog\u00eda asistida en discapacidad\u201d, \u201cReconocimiento de patrones en se\u00f1ales biom\u00e9dicas\u201d, \u201cIntroducci\u00f3n a la inteligencia artificial con resonancia magn\u00e9tica\u201d and \u201cProcesamiento de im\u00e1genes medicas con MATLAB\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "fca5bb7d-29ae-4bf4-85f1-e05634d84741",
+        "fields": {
+            "type": "APPRECIATION",
+            "published": true,
+            "to": "JOANNA MAR\u00cdA ORTIZ ALC\u00c1NTARA",
+            "QR": "www.aaaimx.org/certificates/?id=fca5bb7d-29ae-4bf4-85f1-e05634d84741",
+            "file": "certs/fca5bb7d-29ae-4bf4-85f1-e05634d84741.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "logistic.certificate",
+        "pk": "feee5aa4-c7c4-49bd-b0a8-52d2c7ddbeeb",
+        "fields": {
+            "type": "PARTICIPATION",
+            "published": true,
+            "to": "PABLO V\u00c1RGUEZ ZAPATA",
+            "QR": "http://www.aaaimx.org/certificates/?id=feee5aa4-c7c4-49bd-b0a8-52d2c7ddbeeb",
+            "file": "certs/CERTIFICATE_36.jpg",
+            "description": "for his participation in the workshops: \u201cImplementaci\u00f3n de Redes Neuronales con Keras\u201d and \u201cIntroducci\u00f3n a la programaci\u00f3n en Python y aplicaciones en ingenier\u00eda\u201d,\u00a0at SINABIA 2019, held from the 11th to the 13th of December 2019 at the AAAIMX facilities at the Instituto Tecnol\u00f3gico de M\u00e9rida, Campus Norte."
+        }
+    },
+    {
+        "model": "logistic.component",
+        "pk": 1,
+        "fields": {
+            "description": "Raspberry Pi model 3 B+",
+            "stock": 4,
+            "available": 3,
+            "observations": ""
+        }
+    },
+    {
+        "model": "finances.bankmovement",
+        "pk": 2,
+        "fields": {
+            "to": "AAAIMX Site",
+            "origin": "",
+            "concept": "Premium Web Hosting (4 a\u00f1os)",
+            "amount": 2083.72,
+            "type": "Expense",
+            "voucher": "vouchers/2020-01-01/22/20/Hosting.pdf"
+        }
+    },
+    {
+        "model": "finances.bankmovement",
+        "pk": 4,
+        "fields": {
+            "to": "AAAIMX Site",
+            "origin": "",
+            "concept": "SSL Certicate Activation",
+            "amount": 245.0,
+            "type": "Expense",
+            "voucher": "vouchers/2020-01-01/22/20/SSL_vouncher.pdf"
+        }
+    },
+    {
+        "model": "finances.bankmovement",
+        "pk": 5,
+        "fields": {
+            "to": "",
+            "origin": "Jarkol Technologies",
+            "concept": "Jarkol Website",
+            "amount": 8000.0,
+            "type": "Income",
+            "voucher": ""
+        }
+    },
+    {
+        "model": "finances.bankmovement",
+        "pk": 7,
+        "fields": {
+            "to": "Developers",
+            "origin": "",
+            "concept": "Desarrollo de la p\u00e1gina web de Jarkol",
+            "amount": 5000.0,
+            "type": "Expense",
+            "voucher": ""
+        }
+    },
+    {
+        "model": "finances.bankmovement",
+        "pk": 8,
+        "fields": {
+            "to": "Mauricio Orozco",
+            "origin": "",
+            "concept": "Devoluci\u00f3n de 50% de inversi\u00f3n por pago del hosting",
+            "amount": 1040.0,
+            "type": "Expense",
+            "voucher": ""
+        }
+    },
+    {
+        "model": "finances.bankmovement",
+        "pk": 9,
+        "fields": {
+            "to": "",
+            "origin": "Developers",
+            "concept": "Donaci\u00f3n de sus ganancias por desarrollo de la p\u00e1gina de Jarkol",
+            "amount": 1000.0,
+            "type": "Donation",
+            "voucher": ""
+        }
+    },
+    {
+        "model": "finances.bankmovement",
+        "pk": 10,
+        "fields": {
+            "to": "",
+            "origin": "Mauricio Orozco",
+            "concept": "Dono 50% de sus gastos del hosting",
+            "amount": 1043.72,
+            "type": "Donation",
+            "voucher": ""
+        }
+    },
+    {
+        "model": "finances.membership",
+        "pk": "31e3fc4a-d3eb-48fc-ab7a-278b57b9d85f",
+        "fields": {
+            "member": 19,
+            "display_name": "RAUL ARMIN NOVELO CRUZ",
+            "QR": "",
+            "exp": "2020-01-14T22:42:10",
+            "file": ""
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add user dashboard module",
+            "content_type": 1,
+            "codename": "add_userdashboardmodule"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change user dashboard module",
+            "content_type": 1,
+            "codename": "change_userdashboardmodule"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete user dashboard module",
+            "content_type": 1,
+            "codename": "delete_userdashboardmodule"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view user dashboard module",
+            "content_type": 1,
+            "codename": "view_userdashboardmodule"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add bookmark",
+            "content_type": 2,
+            "codename": "add_bookmark"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change bookmark",
+            "content_type": 2,
+            "codename": "change_bookmark"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete bookmark",
+            "content_type": 2,
+            "codename": "delete_bookmark"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view bookmark",
+            "content_type": 2,
+            "codename": "view_bookmark"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add pinned application",
+            "content_type": 3,
+            "codename": "add_pinnedapplication"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change pinned application",
+            "content_type": 3,
+            "codename": "change_pinnedapplication"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete pinned application",
+            "content_type": 3,
+            "codename": "delete_pinnedapplication"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view pinned application",
+            "content_type": 3,
+            "codename": "view_pinnedapplication"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add log entry",
+            "content_type": 4,
+            "codename": "add_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change log entry",
+            "content_type": 4,
+            "codename": "change_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete log entry",
+            "content_type": 4,
+            "codename": "delete_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view log entry",
+            "content_type": 4,
+            "codename": "view_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add permission",
+            "content_type": 5,
+            "codename": "add_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change permission",
+            "content_type": 5,
+            "codename": "change_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete permission",
+            "content_type": 5,
+            "codename": "delete_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view permission",
+            "content_type": 5,
+            "codename": "view_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add group",
+            "content_type": 6,
+            "codename": "add_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change group",
+            "content_type": 6,
+            "codename": "change_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete group",
+            "content_type": 6,
+            "codename": "delete_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view group",
+            "content_type": 6,
+            "codename": "view_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add user",
+            "content_type": 7,
+            "codename": "add_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change user",
+            "content_type": 7,
+            "codename": "change_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete user",
+            "content_type": 7,
+            "codename": "delete_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view user",
+            "content_type": 7,
+            "codename": "view_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add content type",
+            "content_type": 8,
+            "codename": "add_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change content type",
+            "content_type": 8,
+            "codename": "change_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete content type",
+            "content_type": 8,
+            "codename": "delete_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view content type",
+            "content_type": 8,
+            "codename": "view_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add session",
+            "content_type": 9,
+            "codename": "add_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change session",
+            "content_type": 9,
+            "codename": "change_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete session",
+            "content_type": 9,
+            "codename": "delete_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view session",
+            "content_type": 9,
+            "codename": "view_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add pet",
+            "content_type": 10,
+            "codename": "add_pet"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change pet",
+            "content_type": 10,
+            "codename": "change_pet"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete pet",
+            "content_type": 10,
+            "codename": "delete_pet"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view pet",
+            "content_type": 10,
+            "codename": "view_pet"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add division",
+            "content_type": 11,
+            "codename": "add_division"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change division",
+            "content_type": 11,
+            "codename": "change_division"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete division",
+            "content_type": 11,
+            "codename": "delete_division"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view division",
+            "content_type": 11,
+            "codename": "view_division"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add line",
+            "content_type": 12,
+            "codename": "add_line"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change line",
+            "content_type": 12,
+            "codename": "change_line"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete line",
+            "content_type": 12,
+            "codename": "delete_line"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view line",
+            "content_type": 12,
+            "codename": "view_line"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add member",
+            "content_type": 13,
+            "codename": "add_member"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change member",
+            "content_type": 13,
+            "codename": "change_member"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete member",
+            "content_type": 13,
+            "codename": "delete_member"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view member",
+            "content_type": 13,
+            "codename": "view_member"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add partner",
+            "content_type": 14,
+            "codename": "add_partner"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change partner",
+            "content_type": 14,
+            "codename": "change_partner"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete partner",
+            "content_type": 14,
+            "codename": "delete_partner"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view partner",
+            "content_type": 14,
+            "codename": "view_partner"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add project",
+            "content_type": 15,
+            "codename": "add_project"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change project",
+            "content_type": 15,
+            "codename": "change_project"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete project",
+            "content_type": 15,
+            "codename": "delete_project"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view project",
+            "content_type": 15,
+            "codename": "view_project"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add role",
+            "content_type": 16,
+            "codename": "add_role"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change role",
+            "content_type": 16,
+            "codename": "change_role"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete role",
+            "content_type": 16,
+            "codename": "delete_role"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view role",
+            "content_type": 16,
+            "codename": "view_role"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add research",
+            "content_type": 17,
+            "codename": "add_research"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change research",
+            "content_type": 17,
+            "codename": "change_research"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete research",
+            "content_type": 17,
+            "codename": "delete_research"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view research",
+            "content_type": 17,
+            "codename": "view_research"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add author",
+            "content_type": 18,
+            "codename": "add_author"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change author",
+            "content_type": 18,
+            "codename": "change_author"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete author",
+            "content_type": 18,
+            "codename": "delete_author"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view author",
+            "content_type": 18,
+            "codename": "view_author"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add advisor",
+            "content_type": 19,
+            "codename": "add_advisor"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change advisor",
+            "content_type": 19,
+            "codename": "change_advisor"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete advisor",
+            "content_type": 19,
+            "codename": "delete_advisor"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view advisor",
+            "content_type": 19,
+            "codename": "view_advisor"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add certificate",
+            "content_type": 20,
+            "codename": "add_certificate"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change certificate",
+            "content_type": 20,
+            "codename": "change_certificate"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete certificate",
+            "content_type": 20,
+            "codename": "delete_certificate"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view certificate",
+            "content_type": 20,
+            "codename": "view_certificate"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add component",
+            "content_type": 21,
+            "codename": "add_component"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change component",
+            "content_type": 21,
+            "codename": "change_component"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete component",
+            "content_type": 21,
+            "codename": "delete_component"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view component",
+            "content_type": 21,
+            "codename": "view_component"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add event",
+            "content_type": 22,
+            "codename": "add_event"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change event",
+            "content_type": 22,
+            "codename": "change_event"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete event",
+            "content_type": 22,
+            "codename": "delete_event"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view event",
+            "content_type": 22,
+            "codename": "view_event"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add income",
+            "content_type": 23,
+            "codename": "add_income"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change income",
+            "content_type": 23,
+            "codename": "change_income"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete income",
+            "content_type": 23,
+            "codename": "delete_income"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view income",
+            "content_type": 23,
+            "codename": "view_income"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add membership",
+            "content_type": 24,
+            "codename": "add_membership"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change membership",
+            "content_type": 24,
+            "codename": "change_membership"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete membership",
+            "content_type": 24,
+            "codename": "delete_membership"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view membership",
+            "content_type": 24,
+            "codename": "view_membership"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add expense",
+            "content_type": 25,
+            "codename": "add_expense"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change expense",
+            "content_type": 25,
+            "codename": "change_expense"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete expense",
+            "content_type": 25,
+            "codename": "delete_expense"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view expense",
+            "content_type": 25,
+            "codename": "view_expense"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add Token",
+            "content_type": 26,
+            "codename": "add_token"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change Token",
+            "content_type": 26,
+            "codename": "change_token"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete Token",
+            "content_type": 26,
+            "codename": "delete_token"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view Token",
+            "content_type": 26,
+            "codename": "view_token"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add membership",
+            "content_type": 27,
+            "codename": "add_membership"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change membership",
+            "content_type": 27,
+            "codename": "change_membership"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete membership",
+            "content_type": 27,
+            "codename": "delete_membership"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view membership",
+            "content_type": 27,
+            "codename": "view_membership"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can add bank movement",
+            "content_type": 28,
+            "codename": "add_bankmovement"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can change bank movement",
+            "content_type": 28,
+            "codename": "change_bankmovement"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can delete bank movement",
+            "content_type": 28,
+            "codename": "delete_bankmovement"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "fields": {
+            "name": "Can view bank movement",
+            "content_type": 28,
+            "codename": "view_bankmovement"
+        }
+    },
+    {
+        "model": "auth.group",
+        "fields": {
+            "name": "Finances",
+            "permissions": [
+                109,
+                110,
+                111,
+                112,
+                97,
+                98,
+                99,
+                100,
+                89,
+                90,
+                91,
+                92
+            ]
+        }
+    },
+    {
+        "model": "auth.group",
+        "fields": {
+            "name": "Research",
+            "permissions": [
+                73,
+                74,
+                75,
+                76,
+                69,
+                70,
+                71,
+                72,
+                41,
+                42,
+                43,
+                44,
+                45,
+                46,
+                47,
+                48,
+                49,
+                50,
+                51,
+                52,
+                53,
+                54,
+                55,
+                56,
+                57,
+                58,
+                59,
+                60,
+                65,
+                66,
+                67,
+                68,
+                61,
+                62,
+                63,
+                64
+            ]
+        }
+    },
+    {
+        "model": "auth.group",
+        "fields": {
+            "name": "Certificates",
+            "permissions": [
+                77,
+                78,
+                79,
+                80
+            ]
+        }
+    },
+    {
+        "model": "auth.group",
+        "fields": {
+            "name": "Components",
+            "permissions": [
+                81,
+                82,
+                83,
+                84
+            ]
+        }
+    },
+    {
+        "model": "auth.group",
+        "fields": {
+            "name": "Memberships",
+            "permissions": [
+                93,
+                94,
+                95,
+                96
+            ]
+        }
+    },
+    {
+        "model": "auth.group",
+        "fields": {
+            "name": "Social Impact",
+            "permissions": [
+                37,
+                38,
+                39,
+                40
+            ]
+        }
+    },
+    {
+        "model": "auth.group",
+        "fields": {
+            "name": "Members",
+            "permissions": [
+                49,
+                50,
+                51,
+                52
+            ]
+        }
+    },
+    {
+        "model": "auth.user",
+        "fields": {
+            "password": "pbkdf2_sha256$150000$lFwcWOlv7UDi$mDHXwxOHWxVIFTc8LrQWz4Oos4E3X1sLMbiqVSK3OhE=",
+            "last_login": "2020-01-26T02:24:03.119",
+            "is_superuser": true,
+            "username": "admin",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2019-11-16T16:54:17.450",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "fields": {
+            "password": "pbkdf2_sha256$150000$WxrIXMnuPCBZ$9dtwVO0MAvFDASH0dA6d/FR9YSkf+4wOWU2ySHh4yzU=",
+            "last_login": "2019-10-07T18:06:44",
+            "is_superuser": false,
+            "username": "DIS",
+            "first_name": "Viridiana Katia",
+            "last_name": "Ramayo Rosales",
+            "email": "social.impact@aaaimx.org",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2019-10-06T07:51:50",
+            "groups": [
+                6
+            ],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "fields": {
+            "password": "pbkdf2_sha256$150000$cRyRbaj3orVO$U5h15cHmtTsgYcMxp+rwolZznLujise46g31GPXHxj0=",
+            "last_login": "2020-01-24T18:26:49.751",
+            "is_superuser": false,
+            "username": "operations",
+            "first_name": "",
+            "last_name": "",
+            "email": "operations@aaaimx.org",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2019-10-06T17:43:32",
+            "groups": [
+                3,
+                1,
+                7,
+                5
+            ],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "fields": {
+            "password": "pbkdf2_sha256$150000$UrLX84vhqKEb$Wy+9U/+zG+cfmBRNeoqP94zVpTZsajrloiKYmTckXiA=",
+            "last_login": "2019-10-06T17:54:01",
+            "is_superuser": false,
+            "username": "robotics",
+            "first_name": "",
+            "last_name": "",
+            "email": "robotics@aaaimx.org",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2019-10-06T17:49:01",
+            "groups": [
+                4,
+                7
+            ],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "fields": {
+            "password": "pbkdf2_sha256$150000$kARLMm758xVi$C6QmqpedFwLKbC1e58+SNAaIfmxsUbf5iSdtwKKaH4M=",
+            "last_login": "2020-01-27T04:06:26.174",
+            "is_superuser": false,
+            "username": "research",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2019-11-24T07:04:42",
+            "groups": [
+                3,
+                7,
+                5,
+                2
+            ],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "authtoken.token",
+        "pk": "fef5593f1d909ebe757a94a10309e9170ad61642",
+        "fields": {
+            "user": 3,
+            "created": "2019-11-26T08:03:18.233"
+        }
+    }
+]
