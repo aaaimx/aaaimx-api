@@ -14,6 +14,7 @@ import sys
 import os
 import datetime
 from django.contrib import messages
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -133,16 +134,23 @@ WSGI_APPLICATION = "aaaimxadmin.wsgi.application"
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": os.environ["DB_NAME"],
-        "USER": os.environ["DB_USER"],
-        "PASSWORD": os.environ["DB_PASS"],
-        "HOST": os.environ["DB_HOST"],
-        "PORT": int(os.environ["DB_PORT"]),
-        "OPTIONS": {"init_command": "SET sql_mode='STRICT_TRANS_TABLES'", },
+    # "default": {
+    #     "ENGINE": "django.db.backends.mysql",
+    #     "NAME": os.environ["DB_NAME"],
+    #     "USER": os.environ["DB_USER"],
+    #     "PASSWORD": os.environ["DB_PASS"],
+    #     "HOST": os.environ["DB_HOST"],
+    #     "PORT": int(os.environ["DB_PORT"]),
+    #     "OPTIONS": {"init_command": "SET sql_mode='STRICT_TRANS_TABLES'", },
+    # },
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'postgres',
     }
 }
+
+URL = os.environ.get('DB_URI', None)
+DATABASES['default'] = dj_database_url.config(default=URL, conn_max_age=600)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
