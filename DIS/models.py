@@ -1,6 +1,5 @@
 from django.db import models
 from datetime import date
-from django_mysql.models import ListCharField
 from gdstorage.storage import GoogleDriveStorage
 
 # Define Google Drive Storage
