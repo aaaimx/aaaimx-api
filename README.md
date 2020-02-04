@@ -46,8 +46,12 @@ $ python manage.py runserver
 ## Setup database
 
 ```bash
-$ python manage.py dumpdata --all -e auth -e authtoken -e admin -e dashboard -e sessions --natural-primary --indent=4 > aaaimx-admin.json
+$ python manage.py dumpdata --all -e authtoken -e admin -e dashboard -e sessions --natural-primary --indent=4 > aaaimx-admin.json
 $ python manage.py migrate --run-syncdb --database=postgres
 $ python manage.py sqlflush --database=postgres
 $ python manage.py loaddata aaaimx-admin.json --database=postgres
+```
+
+```bash
+$ python manage.py dumpdata finances --natural-primary --indent=4 > aaaimx-finances.json
 ```
