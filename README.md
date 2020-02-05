@@ -15,9 +15,8 @@ $ pipenv install --python=python3
 
 `.env` File
 ```
-export SECRET_KEY='23y7kt+o@#uwz7^82h6%id85fonk%^%4vcemyuh*0+dp98^qb8'
-export CELERY_BROKER_URL='amqp://guest:guest@localhost:5672/'
-export DB_URI='postgres://postgres:postgres@localhost:5433/postgres'
+export SECRET_KEY='SECRETO'
+export DB_URI='postgres://USER:PASSWORD@HOST:PORT/DB_NAME'
 ```
 
 # Docker 
