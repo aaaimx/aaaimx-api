@@ -1,7 +1,8 @@
 __pycache__
 .idea
 env
-.env*
+.env
+.env.production
 media
 static
 .vscode
