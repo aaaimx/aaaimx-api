@@ -81,7 +81,6 @@ class CertificateViewSet(viewsets.ModelViewSet):
 
     def update(self, request, *args, **kwargs):
         partial = kwargs.pop('partial', False)
-        print(partial)
         instance = Certificate.objects.get(pk=kwargs['pk'])
         serializer = self.get_serializer(
             instance, data=request.data, partial=partial)
