@@ -4,9 +4,9 @@ from .models import *
 # Register your models here.
 @admin.register(Certificate)
 class AdminCertifcate(admin.ModelAdmin):
-    list_display = ('uuid', 'type', 'to', 'QR', 'published', 'file', 'description')
-    list_filter = ('type', 'to',)
-    search_fields = ('to', 'description')
+    list_display = ('uuid', 'type', 'to', 'QR', 'published', 'created_at', 'file', 'description')
+    list_filter = ('type', 'to', 'created_at',)
+    search_fields = ('to', 'description', 'created_at')
     actions = ['publish',]
     list_per_page = 10
 
