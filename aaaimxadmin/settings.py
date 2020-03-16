@@ -89,6 +89,15 @@ SIMPLE_JWT = {
     'USER_ID_CLAIM': 'username',
 }
 
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
+
+ROOT_URLCONF = "aaaimxadmin.urls"
+
+
+DAB_FIELD_RENDERER = "django_admin_bootstrapped.renderers.BootstrapFieldRenderer"
+
+
 
 MESSAGE_TAGS = {
     messages.SUCCESS: "alert-success success",
@@ -110,10 +119,6 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
-
-CORS_ORIGIN_ALLOW_ALL = True
-CORS_ALLOW_CREDENTIALS = True
-ROOT_URLCONF = "aaaimxadmin.urls"
 
 TEMPLATES = [
     {
