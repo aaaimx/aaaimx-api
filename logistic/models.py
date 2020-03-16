@@ -31,6 +31,7 @@ class Certificate(models.Model):
     QR = models.CharField(max_length=100, blank=True, default='www.aaaimx.org/certificates/?id=')
     file = models.ImageField(upload_to='certs', blank=True, storage=gd_storage)
     description = models.TextField(default="", blank=True)
+    created_at = models.DateField(default=datetime.now, blank=True, null=True)
 
 
 class Component(models.Model):
