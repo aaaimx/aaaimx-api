@@ -14,7 +14,7 @@ class CertificateViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows Certificates to be viewed or edited.
     """
-    queryset = Certificate.objects.all().order_by('to')
+    queryset = Certificate.objects.all().order_by('-created_at')
     serializer_class = CertificateSerializer
 
     def list(self, request):

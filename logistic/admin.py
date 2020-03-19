@@ -1,13 +1,15 @@
 from django.contrib import admin
 from .models import *
+from .mixins import ExportCsvMixin
 
 # Register your models here.
 @admin.register(Certificate)
-class AdminCertifcate(admin.ModelAdmin):
+class AdminCertifcate(admin.ModelAdmin, ExportCsvMixin):
     list_display = ('uuid', 'type', 'to', 'QR', 'published', 'created_at', 'file', 'description')
     list_filter = ('type', 'to', 'created_at',)
     search_fields = ('to', 'description', 'created_at')
-    actions = ['publish',]
+    ordering = ('-created_at',)
+    actions = ['publish', 'export_as_csv']
     list_per_page = 10
 
     def publish(self, request, queryset):
