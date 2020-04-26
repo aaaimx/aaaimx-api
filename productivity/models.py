@@ -116,9 +116,3 @@ class Author(models.Model):
     research = models.ForeignKey(
         Research, default=None, related_name="authors", on_delete=models.CASCADE)
     position = models.IntegerField(blank=True, default=1)
-
-
-# from setup_data import *
-# from .collaborators import *
-# from .projects import *
-# from .research import *

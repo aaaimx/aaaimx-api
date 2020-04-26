@@ -159,7 +159,7 @@ DATABASES = {
 }
 
 URL = os.environ.get('DB_URI', None)
-DATABASES['default'] = dj_database_url.config(default=URL, conn_max_age=600)
+DATABASES['default'] = dj_database_url.config(default=URL, conn_max_age=0)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -201,8 +201,6 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 GOOGLE_DRIVE_STORAGE_JSON_KEY_FILE = os.path.join(BASE_DIR, "key.json")
 
-# DEFAULT_FILE_STORAGE = 'storages.backends.ftp.FTPStorage'
-# FTP_STORAGE_LOCATION = 'ftp://u925603734.carlosmoo:c@rlosm00@aaaaimx.org:22/certificates'
 try:
     from settings_local import *
 except ImportError:

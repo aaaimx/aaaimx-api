@@ -2,6 +2,7 @@ import csv
 from django.http import HttpResponse
 
 class ExportCsvMixin:
+
     def export_as_csv(self, request, queryset):
 
         meta = self.model._meta
@@ -16,7 +17,6 @@ class ExportCsvMixin:
         for obj in queryset:
             row = writer.writerow([getattr(obj, field)
                                    for field in field_names])
-
         return response
 
     export_as_csv.short_description = "Export Selected"
