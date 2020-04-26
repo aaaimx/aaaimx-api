@@ -7,7 +7,7 @@ from .mixins import ExportCsvMixin
 class AdminCertifcate(admin.ModelAdmin, ExportCsvMixin):
     list_display = ('QR', 'type', 'to',  'published',
                     'created_at', 'file', 'description')
-    list_filter = ('type', 'to', 'created_at',)
+    list_filter = ('type', 'created_at',)
     search_fields = ('to', 'description', 'created_at')
     ordering = ('-created_at',)
     actions = ['publish', 'export_as_csv']
