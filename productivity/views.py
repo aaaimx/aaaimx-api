@@ -30,21 +30,27 @@ class MemberViewSet(viewsets.ModelViewSet):
         name = request.GET.get('name', "")
         active = request.GET.get('active', None)
         panel = request.GET.get('panel', None)
+        division = request.GET.get('division', None)
         _all = request.GET.get('all', None)
         order = 'charge'
 
         if panel == "true":
             self.queryset = Member.objects.filter(Q(name__icontains=name) | Q(
-                surname__icontains=name), Q(committee=True) | Q(board=True)).order_by(order)
+                surname__icontains=name), Q(committee=True) | Q(board=True))
+        elif division:
+            self.queryset = Member.objects.filter(
+                Q(name__icontains=name) | Q(surname__icontains=name), divisions__name=division)
         else:
             self.queryset = Member.objects.filter(
-                Q(name__icontains=name) | Q(surname__icontains=name)).order_by(order)
+                Q(name__icontains=name) | Q(surname__icontains=name))
 
         # filter by status
         if active == "true":
             self.queryset = self.queryset.filter(active=True)
         elif active == "false":
             self.queryset = self.queryset.filter(active=False)
+
+        self.queryset.order_by(order)
 
         # serialize data
         if _all is not None:
