@@ -80,14 +80,14 @@ class MemberViewSet(viewsets.ModelViewSet):
         kwargs['partial'] = True
         return self.update(request, *args, **kwargs)
 
-    @action(detail=False)
+    @action(detail=False, methods=['get'])
     def panel(self, request):
         panel_members = Member.objects.filter(Q(committee=True) | Q(board=True)
                                               ).order_by('-name')
         serializer = self.get_serializer(panel_members, many=True)
         return Response(serializer.data)
 
-    @action(detail=False)
+    @action(detail=False, methods=['get'])
     def divisions(self, request):
         division_members = Member.objects.all().order_by('-name')
         division_members = list(filter(lambda m: m.divisions.all() or m.board, division_members))
@@ -259,7 +259,7 @@ class ResearchViewSet(viewsets.ModelViewSet):
         serializer = self.get_serializer(page, many=True)
         return self.get_paginated_response(serializer.data)
 
-    @action(detail=False)
+    @action(detail=False, methods=['get'])
     def statistics(self, request):
         divisions = []
         for div in Division.objects.all():

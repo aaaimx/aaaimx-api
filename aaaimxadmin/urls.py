@@ -22,6 +22,7 @@ from django.contrib.auth.models import User
 from rest_framework import routers
 from django.views.generic.base import TemplateView
 from .views import UserViewSet, GroupViewSet
+from rest_framework.schemas import get_schema_view
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
@@ -57,8 +58,6 @@ router.register(r"research", ResearchViewSet)
 # Additionally, we include login URLs for the browsable API.
 
 urlpatterns = [
-    path("jet/", include("jet.urls", namespace="jet")),  # Django JET URLS
-    path("jet/dashboard/", include("jet.dashboard.urls", namespace="jet-dashboard")),  # Django JET dashboard URLS
     path("", admin.site.urls),
     path("api/token/", MyTokenObtainPairView.as_view(), name="token_obtain_pair"),
     path("api/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
@@ -66,4 +65,12 @@ urlpatterns = [
     # url(r'^$', TemplateView.as_view(template_name='index.html'), name="home"),
     url(r"^api/", include(router.urls)),
     url(r"^api-auth/", include("rest_framework.urls", namespace="rest_framework")),
+    path('openapi', get_schema_view(
+        title="AAAIMX API",
+        description="API for productivity …"
+    ), name='openapi-schema'),
+    path('docs', TemplateView.as_view(
+        template_name='swagger.html',
+        extra_context={'schema_url': 'openapi-schema'}
+    ), name='swagger-ui'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
