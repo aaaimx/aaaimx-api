@@ -9,3 +9,4 @@ static
 .vscode
 settings_local.py
 cert-out.png
+venv
