@@ -3,14 +3,14 @@ services:
   ###
   # services
   ###
-  django:
+  web:
     build: .
     network_mode: host
-    command: python manage.py runserver 0.0.0.0:3001
+    command: gunicorn aaaimxadmin.wsgi --log-file -
     volumes:
         - .:/app
     ports:
-        - "3001:3001"
+        - "8000:8000"
     env_file: .env
     tty: true
     stdin_open: true

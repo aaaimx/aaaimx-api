@@ -5,7 +5,8 @@ from .mixins import ExportCsvMixin
 # Register your models here.
 @admin.register(Certificate)
 class AdminCertifcate(admin.ModelAdmin, ExportCsvMixin):
-    list_display = ('uuid', 'type', 'to', 'QR', 'published', 'created_at', 'file', 'description')
+    list_display = ('QR', 'type', 'to',  'published',
+                    'created_at', 'file', 'description')
     list_filter = ('type', 'to', 'created_at',)
     search_fields = ('to', 'description', 'created_at')
     ordering = ('-created_at',)
