@@ -32,8 +32,8 @@ class AdminProject(admin.ModelAdmin):
 
 @admin.register(Research)
 class AdminResearch(admin.ModelAdmin):
-    list_display = ('title', "resume", "year", "type")
-    list_filter = ('title', 'projects', 'lines', "year", "type")
+    list_display = ('title', "year", "type")
+    list_filter = ('lines', "year", "type")
     search_fields = ('title',)
     list_per_page = 10
 
