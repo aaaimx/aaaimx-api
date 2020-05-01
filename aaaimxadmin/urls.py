@@ -60,9 +60,9 @@ router.register(r"research", ResearchViewSet)
 
 urlpatterns = [
     path("", admin.site.urls),
-    path("api/token", MyTokenObtainPairView.as_view(), name="token_obtain_pair"),
-    path("api/refresh", TokenRefreshView.as_view(), name="token_refresh"),
-    path("api/token/verify", TokenVerifyView.as_view(), name="token_verify"),
+    path("api/token/", MyTokenObtainPairView.as_view(), name="token_obtain_pair"),
+    path("api/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
+    path("api/token/verify/", TokenVerifyView.as_view(), name="token_verify"),
     # url(r'^$', TemplateView.as_view(template_name='index.html'), name="home"),
     url(r"^api/", include(router.urls)),
     url(r"^api-auth/", include("rest_framework.urls", namespace="rest_framework")),
