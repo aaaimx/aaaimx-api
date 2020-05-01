@@ -39,7 +39,7 @@ admin.site.index_title = "Welcome to AAAIMX Administration Portal"
 admin.site.site_url = "http://www.aaaimx.org"
 
 # Routers provide an easy way of automatically determining the URL conf.
-router = routers.SimpleRouter(trailing_slash=False)
+router = routers.DefaultRouter() # routers.SimpleRouter(trailing_slash=False)
 router.register(r"users", UserViewSet)
 router.register(r"groups", GroupViewSet)
 router.register(r"roles", RoleViewSet)
