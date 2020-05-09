@@ -2,9 +2,3 @@
 set -eo pipefail
 echo "-----> Creating google drive key file"
 echo $GOOGLE_DRIVE_JSON_KEY > $GOOGLE_DRIVE_STORAGE_JSON_KEY_FILE
-
-# python manage.py flush --no-input
-python manage.py makemigrations
-python manage.py migrate
-# python manage.py createsuperuser --user "${SU_NAME}"
-python manage.py collectstatic --no-input
