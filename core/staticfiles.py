@@ -13,4 +13,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-GOOGLE_DRIVE_STORAGE_JSON_KEY_FILE = os.path.join(BASE_DIR, "key.json")
+GOOGLE_DRIVE_STORAGE_JSON_KEY_FILE = os.path.join(
+    BASE_DIR, os.environ.get('GOOGLE_DRIVE_STORAGE_JSON_KEY_FILE'))

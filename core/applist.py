@@ -21,7 +21,6 @@ THIRD_PARTY_APPS = (
 )
 
 LOCAL_APPS = (
-    "DIS",
     "productivity",
     "logistic",
     "finances",

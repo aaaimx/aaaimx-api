@@ -7,7 +7,7 @@ services:
     build: .
     network_mode: host
     restart: always
-    command: gunicorn aaaimxadmin.wsgi --log-file -
+    command: python manage.py runserver # gunicorn aaaimxadmin.wsgi --log-file -
     volumes:
         - .:/usr/src/app/
     ports:

@@ -1,0 +1,1080 @@
+info:
+  description: ''
+  title: ''
+  version: ''
+openapi: 3.0.0
+paths:
+  /api/advisors/:
+    get:
+      description: API endpoint that allows Advisors to be viewed or edited.
+      operationId: advisors_list
+      parameters:
+      - in: query
+        name: limit
+        schema:
+          description: Number of results to return per page.
+          title: Limit
+          type: integer
+      - in: query
+        name: offset
+        schema:
+          description: The initial index from which to return the results.
+          title: Offset
+          type: integer
+      - in: query
+        name: all
+        type: boolean
+      tags:
+      - advisors
+    post:
+      description: API endpoint that allows Advisors to be viewed or edited.
+      operationId: advisors_create
+      tags:
+      - advisors
+  /api/advisors/{id}/:
+    delete:
+      description: API endpoint that allows Advisors to be viewed or edited.
+      operationId: advisors_delete
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this advisor.
+          title: ID
+          type: integer
+      tags:
+      - advisors
+    get:
+      description: API endpoint that allows Advisors to be viewed or edited.
+      operationId: advisors_read
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this advisor.
+          title: ID
+          type: integer
+      tags:
+      - advisors
+    patch:
+      description: API endpoint that allows Advisors to be viewed or edited.
+      operationId: advisors_partial_update
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this advisor.
+          title: ID
+          type: integer
+      tags:
+      - advisors
+    put:
+      description: API endpoint that allows Advisors to be viewed or edited.
+      operationId: advisors_update
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this advisor.
+          title: ID
+          type: integer
+      tags:
+      - advisors
+  /api/authors/:
+    get:
+      description: API endpoint that allows Authors to be viewed or edited.
+      operationId: authors_list
+      parameters:
+      - in: query
+        name: limit
+        schema:
+          description: Number of results to return per page.
+          title: Limit
+          type: integer
+      - in: query
+        name: offset
+        schema:
+          description: The initial index from which to return the results.
+          title: Offset
+          type: integer
+      - in: query
+        name: all
+        type: boolean
+      tags:
+      - authors
+    post:
+      description: API endpoint that allows Authors to be viewed or edited.
+      operationId: authors_create
+      tags:
+      - authors
+  /api/authors/{id}/:
+    delete:
+      description: API endpoint that allows Authors to be viewed or edited.
+      operationId: authors_delete
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this author.
+          title: ID
+          type: integer
+      tags:
+      - authors
+    get:
+      description: API endpoint that allows Authors to be viewed or edited.
+      operationId: authors_read
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this author.
+          title: ID
+          type: integer
+      tags:
+      - authors
+    patch:
+      description: API endpoint that allows Authors to be viewed or edited.
+      operationId: authors_partial_update
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this author.
+          title: ID
+          type: integer
+      tags:
+      - authors
+    put:
+      description: API endpoint that allows Authors to be viewed or edited.
+      operationId: authors_update
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this author.
+          title: ID
+          type: integer
+      tags:
+      - authors
+  /api/certificates/:
+    get:
+      description: GET method to process pagination, filtering & sort
+      operationId: certificates_list
+      parameters:
+      - in: query
+        name: limit
+        schema:
+          description: Number of results to return per page.
+          title: Limit
+          type: integer
+      - in: query
+        name: offset
+        schema:
+          description: The initial index from which to return the results.
+          title: Offset
+          type: integer
+      - in: query
+        name: all
+        type: boolean
+      tags:
+      - certificates
+    post:
+      description: API endpoint that allows Certificates to be viewed or edited.
+      operationId: certificates_create
+      tags:
+      - certificates
+  /api/certificates/{uuid}/:
+    delete:
+      description: API endpoint that allows Certificates to be viewed or edited.
+      operationId: certificates_delete
+      parameters:
+      - in: path
+        name: uuid
+        required: true
+        schema:
+          description: A UUID string identifying this certificate.
+          title: uuid
+          type: string
+      tags:
+      - certificates
+    get:
+      description: API endpoint that allows Certificates to be viewed or edited.
+      operationId: certificates_read
+      parameters:
+      - in: path
+        name: uuid
+        required: true
+        schema:
+          description: A UUID string identifying this certificate.
+          title: uuid
+          type: string
+      tags:
+      - certificates
+    patch:
+      description: API endpoint that allows Certificates to be viewed or edited.
+      operationId: certificates_partial_update
+      parameters:
+      - in: path
+        name: uuid
+        required: true
+        schema:
+          description: A UUID string identifying this certificate.
+          title: uuid
+          type: string
+      tags:
+      - certificates
+    put:
+      description: API endpoint that allows Certificates to be viewed or edited.
+      operationId: certificates_update
+      parameters:
+      - in: path
+        name: uuid
+        required: true
+        schema:
+          description: A UUID string identifying this certificate.
+          title: uuid
+          type: string
+      tags:
+      - certificates
+  /api/divisions/:
+    get:
+      description: GET method to process pagination, filtering & sort
+      operationId: divisions_list
+      parameters:
+      - in: query
+        name: limit
+        schema:
+          description: Number of results to return per page.
+          title: Limit
+          type: integer
+      - in: query
+        name: offset
+        schema:
+          description: The initial index from which to return the results.
+          title: Offset
+          type: integer
+      - in: query
+        name: all
+        type: boolean
+      tags:
+      - divisions
+    post:
+      description: API endpoint that allows divisions to be viewed or edited.
+      operationId: divisions_create
+      tags:
+      - divisions
+  /api/divisions/{id}/:
+    delete:
+      description: API endpoint that allows divisions to be viewed or edited.
+      operationId: divisions_delete
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this division.
+          title: ID
+          type: integer
+      tags:
+      - divisions
+    get:
+      description: API endpoint that allows divisions to be viewed or edited.
+      operationId: divisions_read
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this division.
+          title: ID
+          type: integer
+      tags:
+      - divisions
+    patch:
+      description: API endpoint that allows divisions to be viewed or edited.
+      operationId: divisions_partial_update
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this division.
+          title: ID
+          type: integer
+      tags:
+      - divisions
+    put:
+      description: API endpoint that allows divisions to be viewed or edited.
+      operationId: divisions_update
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this division.
+          title: ID
+          type: integer
+      tags:
+      - divisions
+  /api/groups/:
+    get:
+      description: API endpoint that allows groups to be viewed or edited.
+      operationId: groups_list
+      parameters:
+      - in: query
+        name: limit
+        schema:
+          description: Number of results to return per page.
+          title: Limit
+          type: integer
+      - in: query
+        name: offset
+        schema:
+          description: The initial index from which to return the results.
+          title: Offset
+          type: integer
+      - in: query
+        name: all
+        type: boolean
+      tags:
+      - groups
+    post:
+      description: API endpoint that allows groups to be viewed or edited.
+      operationId: groups_create
+      tags:
+      - groups
+  /api/groups/{id}/:
+    delete:
+      description: API endpoint that allows groups to be viewed or edited.
+      operationId: groups_delete
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this group.
+          title: ID
+          type: integer
+      tags:
+      - groups
+    get:
+      description: API endpoint that allows groups to be viewed or edited.
+      operationId: groups_read
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this group.
+          title: ID
+          type: integer
+      tags:
+      - groups
+    patch:
+      description: API endpoint that allows groups to be viewed or edited.
+      operationId: groups_partial_update
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this group.
+          title: ID
+          type: integer
+      tags:
+      - groups
+    put:
+      description: API endpoint that allows groups to be viewed or edited.
+      operationId: groups_update
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this group.
+          title: ID
+          type: integer
+      tags:
+      - groups
+  /api/lines/:
+    get:
+      description: GET method to process pagination, filtering & sort
+      operationId: lines_list
+      parameters:
+      - in: query
+        name: limit
+        schema:
+          description: Number of results to return per page.
+          title: Limit
+          type: integer
+      - in: query
+        name: offset
+        schema:
+          description: The initial index from which to return the results.
+          title: Offset
+          type: integer
+      - in: query
+        name: all
+        type: boolean
+      tags:
+      - lines
+    post:
+      description: API endpoint that allows Lines to be viewed or edited.
+      operationId: lines_create
+      tags:
+      - lines
+  /api/lines/{id}/:
+    delete:
+      description: API endpoint that allows Lines to be viewed or edited.
+      operationId: lines_delete
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this line.
+          title: ID
+          type: integer
+      tags:
+      - lines
+    get:
+      description: API endpoint that allows Lines to be viewed or edited.
+      operationId: lines_read
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this line.
+          title: ID
+          type: integer
+      tags:
+      - lines
+    patch:
+      description: API endpoint that allows Lines to be viewed or edited.
+      operationId: lines_partial_update
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this line.
+          title: ID
+          type: integer
+      tags:
+      - lines
+    put:
+      description: API endpoint that allows Lines to be viewed or edited.
+      operationId: lines_update
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this line.
+          title: ID
+          type: integer
+      tags:
+      - lines
+  /api/members/:
+    get:
+      description: GET method to process pagination, filtering & sort
+      operationId: members_list
+      parameters:
+      - in: query
+        name: limit
+        schema:
+          description: Number of results to return per page.
+          title: Limit
+          type: integer
+      - in: query
+        name: offset
+        schema:
+          description: The initial index from which to return the results.
+          title: Offset
+          type: integer
+      - in: query
+        name: all
+        type: boolean
+      tags:
+      - members
+    post:
+      description: API endpoint that allows members to be viewed or edited.
+      operationId: members_create
+      tags:
+      - members
+  /api/members/divisions/:
+    get:
+      description: API endpoint that allows members to be viewed or edited.
+      operationId: members_divisions
+      tags:
+      - members
+  /api/members/panel/:
+    get:
+      description: API endpoint that allows members to be viewed or edited.
+      operationId: members_panel
+      tags:
+      - members
+  /api/members/{id}/:
+    delete:
+      description: API endpoint that allows members to be viewed or edited.
+      operationId: members_delete
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this member.
+          title: ID
+          type: integer
+      tags:
+      - members
+    get:
+      description: API endpoint that allows members to be viewed or edited.
+      operationId: members_read
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this member.
+          title: ID
+          type: integer
+      tags:
+      - members
+    patch:
+      description: API endpoint that allows members to be viewed or edited.
+      operationId: members_partial_update
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this member.
+          title: ID
+          type: integer
+      tags:
+      - members
+    put:
+      description: API endpoint that allows members to be viewed or edited.
+      operationId: members_update
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this member.
+          title: ID
+          type: integer
+      tags:
+      - members
+  /api/memberships/:
+    get:
+      description: GET method to process pagination, filtering & sort
+      operationId: memberships_list
+      parameters:
+      - in: query
+        name: limit
+        schema:
+          description: Number of results to return per page.
+          title: Limit
+          type: integer
+      - in: query
+        name: offset
+        schema:
+          description: The initial index from which to return the results.
+          title: Offset
+          type: integer
+      - in: query
+        name: all
+        type: boolean
+      tags:
+      - memberships
+    post:
+      description: API endpoint that allows Memberships to be viewed or edited.
+      operationId: memberships_create
+      tags:
+      - memberships
+  /api/memberships/{uuid}/:
+    delete:
+      description: API endpoint that allows Memberships to be viewed or edited.
+      operationId: memberships_delete
+      parameters:
+      - in: path
+        name: uuid
+        required: true
+        schema:
+          description: A UUID string identifying this membership.
+          title: uuid
+          type: string
+      tags:
+      - memberships
+    get:
+      description: API endpoint that allows Memberships to be viewed or edited.
+      operationId: memberships_read
+      parameters:
+      - in: path
+        name: uuid
+        required: true
+        schema:
+          description: A UUID string identifying this membership.
+          title: uuid
+          type: string
+      tags:
+      - memberships
+    patch:
+      description: API endpoint that allows Memberships to be viewed or edited.
+      operationId: memberships_partial_update
+      parameters:
+      - in: path
+        name: uuid
+        required: true
+        schema:
+          description: A UUID string identifying this membership.
+          title: uuid
+          type: string
+      tags:
+      - memberships
+    put:
+      description: API endpoint that allows Memberships to be viewed or edited.
+      operationId: memberships_update
+      parameters:
+      - in: path
+        name: uuid
+        required: true
+        schema:
+          description: A UUID string identifying this membership.
+          title: uuid
+          type: string
+      tags:
+      - memberships
+  /api/partners/:
+    get:
+      description: GET method to process pagination, filtering & sort
+      operationId: partners_list
+      parameters:
+      - in: query
+        name: limit
+        schema:
+          description: Number of results to return per page.
+          title: Limit
+          type: integer
+      - in: query
+        name: offset
+        schema:
+          description: The initial index from which to return the results.
+          title: Offset
+          type: integer
+      - in: query
+        name: all
+        type: boolean
+      tags:
+      - partners
+    post:
+      description: API endpoint that allows Partners to be viewed or edited.
+      operationId: partners_create
+      tags:
+      - partners
+  /api/partners/{uuid}/:
+    delete:
+      description: API endpoint that allows Partners to be viewed or edited.
+      operationId: partners_delete
+      parameters:
+      - in: path
+        name: uuid
+        required: true
+        schema:
+          description: A UUID string identifying this partner.
+          title: uuid
+          type: string
+      tags:
+      - partners
+    get:
+      description: API endpoint that allows Partners to be viewed or edited.
+      operationId: partners_read
+      parameters:
+      - in: path
+        name: uuid
+        required: true
+        schema:
+          description: A UUID string identifying this partner.
+          title: uuid
+          type: string
+      tags:
+      - partners
+    patch:
+      description: API endpoint that allows Partners to be viewed or edited.
+      operationId: partners_partial_update
+      parameters:
+      - in: path
+        name: uuid
+        required: true
+        schema:
+          description: A UUID string identifying this partner.
+          title: uuid
+          type: string
+      tags:
+      - partners
+    put:
+      description: API endpoint that allows Partners to be viewed or edited.
+      operationId: partners_update
+      parameters:
+      - in: path
+        name: uuid
+        required: true
+        schema:
+          description: A UUID string identifying this partner.
+          title: uuid
+          type: string
+      tags:
+      - partners
+  /api/projects/:
+    get:
+      description: GET method to process pagination, filtering & sort
+      operationId: projects_list
+      parameters:
+      - in: query
+        name: limit
+        schema:
+          description: Number of results to return per page.
+          title: Limit
+          type: integer
+      - in: query
+        name: offset
+        schema:
+          description: The initial index from which to return the results.
+          title: Offset
+          type: integer
+      - in: query
+        name: all
+        type: boolean
+      tags:
+      - projects
+    post:
+      description: API endpoint that allows projects to be viewed or edited.
+      operationId: projects_create
+      tags:
+      - projects
+  /api/projects/{uuid}/:
+    delete:
+      description: API endpoint that allows projects to be viewed or edited.
+      operationId: projects_delete
+      parameters:
+      - in: path
+        name: uuid
+        required: true
+        schema:
+          description: A UUID string identifying this project.
+          title: uuid
+          type: string
+      tags:
+      - projects
+    get:
+      description: API endpoint that allows projects to be viewed or edited.
+      operationId: projects_read
+      parameters:
+      - in: path
+        name: uuid
+        required: true
+        schema:
+          description: A UUID string identifying this project.
+          title: uuid
+          type: string
+      tags:
+      - projects
+    patch:
+      description: API endpoint that allows projects to be viewed or edited.
+      operationId: projects_partial_update
+      parameters:
+      - in: path
+        name: uuid
+        required: true
+        schema:
+          description: A UUID string identifying this project.
+          title: uuid
+          type: string
+      tags:
+      - projects
+    put:
+      description: API endpoint that allows projects to be viewed or edited.
+      operationId: projects_update
+      parameters:
+      - in: path
+        name: uuid
+        required: true
+        schema:
+          description: A UUID string identifying this project.
+          title: uuid
+          type: string
+      tags:
+      - projects
+  /api/refresh/:
+    post:
+      description: 'Takes a refresh type JSON web token and returns an access type
+        JSON web
+
+        token if the refresh token is valid.'
+      operationId: refresh_create
+      tags:
+      - refresh
+  /api/research/:
+    get:
+      description: API endpoint that allows research to be viewed or edited.
+      operationId: research_list
+      parameters:
+      - in: query
+        name: limit
+        schema:
+          description: Number of results to return per page.
+          title: Limit
+          type: integer
+      - in: query
+        name: offset
+        schema:
+          description: The initial index from which to return the results.
+          title: Offset
+          type: integer
+      - in: query
+        name: all
+        type: boolean
+      tags:
+      - research
+    post:
+      description: API endpoint that allows research to be viewed or edited.
+      operationId: research_create
+      tags:
+      - research
+  /api/research/statistics/:
+    get:
+      description: API endpoint that allows research to be viewed or edited.
+      operationId: research_statistics
+      tags:
+      - research
+  /api/research/{uuid}/:
+    delete:
+      description: API endpoint that allows research to be viewed or edited.
+      operationId: research_delete
+      parameters:
+      - in: path
+        name: uuid
+        required: true
+        schema:
+          description: A UUID string identifying this research.
+          title: uuid
+          type: string
+      tags:
+      - research
+    get:
+      description: API endpoint that allows research to be viewed or edited.
+      operationId: research_read
+      parameters:
+      - in: path
+        name: uuid
+        required: true
+        schema:
+          description: A UUID string identifying this research.
+          title: uuid
+          type: string
+      tags:
+      - research
+    patch:
+      description: API endpoint that allows research to be viewed or edited.
+      operationId: research_partial_update
+      parameters:
+      - in: path
+        name: uuid
+        required: true
+        schema:
+          description: A UUID string identifying this research.
+          title: uuid
+          type: string
+      tags:
+      - research
+    put:
+      description: API endpoint that allows research to be viewed or edited.
+      operationId: research_update
+      parameters:
+      - in: path
+        name: uuid
+        required: true
+        schema:
+          description: A UUID string identifying this research.
+          title: uuid
+          type: string
+      tags:
+      - research
+  /api/roles/:
+    get:
+      description: API endpoint that allows roles to be viewed or edited.
+      operationId: roles_list
+      parameters:
+      - in: query
+        name: limit
+        schema:
+          description: Number of results to return per page.
+          title: Limit
+          type: integer
+      - in: query
+        name: offset
+        schema:
+          description: The initial index from which to return the results.
+          title: Offset
+          type: integer
+      - in: query
+        name: all
+        type: boolean
+      tags:
+      - roles
+    post:
+      description: API endpoint that allows roles to be viewed or edited.
+      operationId: roles_create
+      tags:
+      - roles
+  /api/roles/{id}/:
+    delete:
+      description: API endpoint that allows roles to be viewed or edited.
+      operationId: roles_delete
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this role.
+          title: ID
+          type: integer
+      tags:
+      - roles
+    get:
+      description: API endpoint that allows roles to be viewed or edited.
+      operationId: roles_read
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this role.
+          title: ID
+          type: integer
+      tags:
+      - roles
+    patch:
+      description: API endpoint that allows roles to be viewed or edited.
+      operationId: roles_partial_update
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this role.
+          title: ID
+          type: integer
+      tags:
+      - roles
+    put:
+      description: API endpoint that allows roles to be viewed or edited.
+      operationId: roles_update
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this role.
+          title: ID
+          type: integer
+      tags:
+      - roles
+  /api/token/:
+    post:
+      operationId: token_create
+      tags:
+      - token
+  /api/users/:
+    get:
+      description: API endpoint that allows users to be viewed or edited.
+      operationId: users_list
+      parameters:
+      - in: query
+        name: limit
+        schema:
+          description: Number of results to return per page.
+          title: Limit
+          type: integer
+      - in: query
+        name: offset
+        schema:
+          description: The initial index from which to return the results.
+          title: Offset
+          type: integer
+      - in: query
+        name: all
+        type: boolean
+      tags:
+      - users
+    post:
+      description: API endpoint that allows users to be viewed or edited.
+      operationId: users_create
+      tags:
+      - users
+  /api/users/{id}/:
+    delete:
+      description: API endpoint that allows users to be viewed or edited.
+      operationId: users_delete
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this user.
+          title: ID
+          type: integer
+      tags:
+      - users
+    get:
+      description: API endpoint that allows users to be viewed or edited.
+      operationId: users_read
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this user.
+          title: ID
+          type: integer
+      tags:
+      - users
+    patch:
+      description: API endpoint that allows users to be viewed or edited.
+      operationId: users_partial_update
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this user.
+          title: ID
+          type: integer
+      tags:
+      - users
+    put:
+      description: API endpoint that allows users to be viewed or edited.
+      operationId: users_update
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this user.
+          title: ID
+          type: integer
+      tags:
+      - users
+servers:
+- url: ''
