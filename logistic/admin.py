@@ -19,7 +19,7 @@ class AdminCertifcate(admin.ModelAdmin, ExportCsvMixin):
 
 @admin.register(Event)
 class AdminEvent(admin.ModelAdmin):
-    list_display = ('title', 'date_start', 'date_end',  'description', 'type', 'division', 'flyer')
+    list_display = ('title', 'date_start', 'date_end',  'description', 'type', 'division')
     list_filter = ('date_start', 'type', 'division')
 
 @admin.register(Component)

@@ -1,1 +1,1 @@
-web: gunicorn aaaimxadmin.wsgi --log-file -
+web: ./bin/entrypoint.sh && gunicorn aaaimxadmin.wsgi --log-file -

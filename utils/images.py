@@ -52,7 +52,7 @@ def generate_cert(name, type, uuid, url):
 
     QR = generate_qr(url)
     img.paste(QR, (1690, 1050))
-    output = LOCATION('utils/cert-out.png')
+    output = LOCATION('utils/certificate.png')
     img.save(output)
     return ImageFile(open(output, 'rb+'))
 
