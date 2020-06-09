@@ -15,9 +15,9 @@ class Event(models.Model):
     date_start = models.DateTimeField(blank=True)
     date_end = models.DateTimeField(blank=True)
     description = models.TextField(default="", blank=True)
-    type = models.CharField(max_length=100)
-    division = models.ForeignKey(Division, null=True, on_delete=models.SET_NULL)
-    place = models.CharField(max_length=100)
+    type = models.CharField(max_length=100, blank=True)
+    division = models.ForeignKey(Division, null=True, blank=True, on_delete=models.SET_NULL)
+    place = models.CharField(max_length=100, blank=True)
     flyer = models.ImageField(
         default=None, null=True, blank=True, upload_to='flyers')
 
