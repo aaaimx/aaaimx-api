@@ -1,6 +1,6 @@
-from .models import Certificate
+from .models import *
 from rest_framework import viewsets
-from .serializers import CertificateSerializer
+from .serializers import *
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.settings import api_settings
@@ -8,6 +8,14 @@ from django.db.models import Q
 from utils.images import generate_cert, LOCATION
 from .forms import CertFile
 import re
+
+
+class EventViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows Events to be viewed or edited.
+    """
+    queryset = Event.objects.all().order_by('-date_start')
+    serializer_class = EventSerializer
 
 # ViewSets define the view behavior.
 class CertificateViewSet(viewsets.ModelViewSet):

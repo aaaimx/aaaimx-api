@@ -31,7 +31,7 @@ from rest_framework_simplejwt.views import (
 from .token import MyTokenObtainPairView
 from productivity.views import *
 from finances.views import *
-from logistic.views import CertificateViewSet
+from logistic.views import *
 
 admin.site.site_header = "AAAIMX Admin"
 admin.site.site_title = "AAAIMX Admin Portal"
@@ -49,6 +49,7 @@ router.register(r"authors", AuthorViewSet)
 router.register(r"partners", PartnerViewSet)
 router.register(r"memberships", MembershipViewSet)
 router.register(r"certificates", CertificateViewSet)
+router.register(r"events", EventViewSet)
 router.register(r"divisions", DivisionViewSet)
 router.register(r"projects", ProjectViewSet)
 router.register(r"lines", LineViewSet)
