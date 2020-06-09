@@ -31,14 +31,14 @@ class CertificateViewSet(viewsets.ModelViewSet):
         """
         # get query params
         to = request.GET.get('to', "")
-        query = request.GET.get('query', "")
+        event = request.GET.get('event', "")
         type = request.GET.get('type', "")
         status = request.GET.get('status', None)
         _all = request.GET.get('all', None)
 
         self.queryset = self.queryset.filter(Q(to__icontains=to))
-        if query:
-            self.queryset = self.queryset.filter(description__icontains=query)
+        if event:
+            self.queryset = self.queryset.filter(event__icontains=event)
         if type:
             self.queryset = self.queryset.filter(type=type)
 
