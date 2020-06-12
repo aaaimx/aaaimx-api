@@ -1,7 +1,7 @@
 info:
   description: ''
   title: ''
-  version: '1.0.0'
+  version: '1.1.0'
 openapi: 3.0.0
 paths:
   /api/advisors/:
@@ -312,6 +312,83 @@ paths:
           type: integer
       tags:
       - divisions
+  /api/events/:
+    get:
+      description: API endpoint that allows Events to be viewed or edited.
+      operationId: events_list
+      parameters:
+      - in: query
+        name: limit
+        schema:
+          description: Number of results to return per page.
+          title: Limit
+          type: integer
+      - in: query
+        name: offset
+        schema:
+          description: The initial index from which to return the results.
+          title: Offset
+          type: integer
+      tags:
+      - events
+    post:
+      description: API endpoint that allows Events to be viewed or edited.
+      operationId: events_create
+      tags:
+      - events
+  /api/events/{id}/:
+    delete:
+      description: API endpoint that allows Events to be viewed or edited.
+      operationId: events_delete
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this event.
+          title: ID
+          type: integer
+      tags:
+      - events
+    get:
+      description: API endpoint that allows Events to be viewed or edited.
+      operationId: events_read
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this event.
+          title: ID
+          type: integer
+      tags:
+      - events
+    patch:
+      description: API endpoint that allows Events to be viewed or edited.
+      operationId: events_partial_update
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this event.
+          title: ID
+          type: integer
+      tags:
+      - events
+    put:
+      description: API endpoint that allows Events to be viewed or edited.
+      operationId: events_update
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this event.
+          title: ID
+          type: integer
+      tags:
+      - events
   /api/groups/:
     get:
       description: API endpoint that allows groups to be viewed or edited.
