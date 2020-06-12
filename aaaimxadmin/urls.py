@@ -69,7 +69,8 @@ urlpatterns = [
     url(r"^api-auth/", include("rest_framework.urls", namespace="rest_framework")),
     path('openapi', get_schema_view(
         title="AAAIMX API",
-        description="API for productivity …"
+        description="API for productivity …",
+        version="1.1.0"
     ), name='openapi-schema'),
     path('docs', TemplateView.as_view(
         template_name='swagger.html',
