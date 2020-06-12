@@ -21,9 +21,6 @@ paths:
           description: The initial index from which to return the results.
           title: Offset
           type: integer
-      - in: query
-        name: all
-        type: boolean
       tags:
       - advisors
     post:
@@ -101,9 +98,6 @@ paths:
           description: The initial index from which to return the results.
           title: Offset
           type: integer
-      - in: query
-        name: all
-        type: boolean
       tags:
       - authors
     post:
@@ -181,9 +175,6 @@ paths:
           description: The initial index from which to return the results.
           title: Offset
           type: integer
-      - in: query
-        name: all
-        type: boolean
       tags:
       - certificates
     post:
@@ -261,9 +252,6 @@ paths:
           description: The initial index from which to return the results.
           title: Offset
           type: integer
-      - in: query
-        name: all
-        type: boolean
       tags:
       - divisions
     post:
@@ -341,9 +329,6 @@ paths:
           description: The initial index from which to return the results.
           title: Offset
           type: integer
-      - in: query
-        name: all
-        type: boolean
       tags:
       - groups
     post:
@@ -421,9 +406,6 @@ paths:
           description: The initial index from which to return the results.
           title: Offset
           type: integer
-      - in: query
-        name: all
-        type: boolean
       tags:
       - lines
     post:
@@ -501,9 +483,6 @@ paths:
           description: The initial index from which to return the results.
           title: Offset
           type: integer
-      - in: query
-        name: all
-        type: boolean
       tags:
       - members
     post:
@@ -593,9 +572,6 @@ paths:
           description: The initial index from which to return the results.
           title: Offset
           type: integer
-      - in: query
-        name: all
-        type: boolean
       tags:
       - memberships
     post:
@@ -673,9 +649,6 @@ paths:
           description: The initial index from which to return the results.
           title: Offset
           type: integer
-      - in: query
-        name: all
-        type: boolean
       tags:
       - partners
     post:
@@ -753,9 +726,6 @@ paths:
           description: The initial index from which to return the results.
           title: Offset
           type: integer
-      - in: query
-        name: all
-        type: boolean
       tags:
       - projects
     post:
@@ -842,9 +812,6 @@ paths:
           description: The initial index from which to return the results.
           title: Offset
           type: integer
-      - in: query
-        name: all
-        type: boolean
       tags:
       - research
     post:
@@ -928,9 +895,6 @@ paths:
           description: The initial index from which to return the results.
           title: Offset
           type: integer
-      - in: query
-        name: all
-        type: boolean
       tags:
       - roles
     post:
@@ -1013,9 +977,6 @@ paths:
           description: The initial index from which to return the results.
           title: Offset
           type: integer
-      - in: query
-        name: all
-        type: boolean
       tags:
       - users
     post:
