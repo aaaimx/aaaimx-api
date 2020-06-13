@@ -86,9 +86,9 @@ class MembershipViewSet(viewsets.ModelViewSet):
         kwargs['partial'] = True
         return self.update(request, *args, **kwargs)
 
-class BankMovementViewSet(viewsets.ModelViewSet):
+class InvoiceViewSet(viewsets.ModelViewSet):
     """
-    API endpoint that allows BankMovements to be viewed or edited.
+    API endpoint that allows Invoices to be viewed or edited.
     """
-    queryset = BankMovement.objects.all()
+    queryset = Invoice.objects.all()
     serializer_class = MembershipSerializer

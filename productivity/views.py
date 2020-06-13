@@ -10,7 +10,7 @@ from django.db.models import Q, Sum
 from .serializers import *
 from .models import *
 from logistic.models import Certificate
-from finances.models import BankMovement
+from finances.models import Invoice
 import re
 # Create your views here.
 
@@ -351,11 +351,11 @@ class ResearchViewSet(viewsets.ModelViewSet):
                     board=True).count(), 'name': 'Board'}
             ],
             'finances': [
-                {'value': BankMovement.objects.filter(type='Income').aggregate(
+                {'value': Invoice.objects.filter(type='Income').aggregate(
                     Sum('amount')).get('amount__sum', 0), 'name': 'Incomes'},
-                {'value': BankMovement.objects.filter(type='Donation').aggregate(
+                {'value': Invoice.objects.filter(type='Donation').aggregate(
                     Sum('amount')).get('amount__sum', 0), 'name': 'Donation'},
-                {'value': BankMovement.objects.filter(type='Expense').aggregate(
+                {'value': Invoice.objects.filter(type='Expense').aggregate(
                     Sum('amount')).get('amount__sum', 0), 'name': 'Expenses'}
             ],
             'divisions': divisions

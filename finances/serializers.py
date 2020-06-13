@@ -6,7 +6,7 @@ class MembershipSerializer(serializers.ModelSerializer):
         model = Membership
         exclude = []
 
-class BankMovementSerializer(serializers.ModelSerializer):
+class InvoiceSerializer(serializers.ModelSerializer):
     class Meta:
-        model = BankMovement
+        model = Invoice
         exclude = []

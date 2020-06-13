@@ -8,7 +8,7 @@ from gdstorage.storage import GoogleDriveStorage
 gd_storage = GoogleDriveStorage()
 
 # Create your models here.
-class BankMovement(models.Model):
+class Invoice(models.Model):
     def __str__(self):
         return '{0}: ${1} - {2}'.format(self.type, self.amount, self.origin)
     to = models.CharField(default="", max_length=100, blank=True)

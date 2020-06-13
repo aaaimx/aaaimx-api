@@ -9,7 +9,7 @@ class AdminMembership(admin.ModelAdmin):
     list_filter = ('member', 'exp',)
 
 
-@admin.register(BankMovement)
-class AdminBankMovement(admin.ModelAdmin):
+@admin.register(Invoice)
+class AdminInvoice(admin.ModelAdmin):
     list_display = ('id', 'origin', 'to',  'concept',  'amount', 'voucher',  'type', )
     list_filter = ('origin', 'amount', 'to',  'type',)
