@@ -26,7 +26,7 @@ $ python manage.py createuseruser
 ### Generate backup
 If `aaaimx-admin.json` not exists contact a administrator
 ```bash
-$ python manage.py dumpdata --all -e authtoken -e admin -e dashboard -e sessions --natural-primary --indent=4 > aaaimx-admin.json
+$ python manage.py dumpdata --all -e admin -e sessions --natural-primary --indent=4 > aaaimx-admin.json
 ```
 
 ### If backup exists syncdb
