@@ -67,6 +67,19 @@ class MemberViewSet(viewsets.ModelViewSet):
         serializer = self.get_serializer(instance)
         return Response(serializer.data)
 
+    @action(detail=True, methods=['GET'])
+    def research(self, request, pk=None):
+        authorship = Author.objects.filter(member=pk)
+        advisory = Author.objects.filter(member=pk)
+        leaders = Member.objects.get(id=pk).project_set.all()
+        data = [author.research for author in authorship.union(advisory)]
+        research = ResearchSerializer(data, many=True)
+        projects = ProjectSerializer(leaders, many=True)
+        return Response({
+            'projects': projects.data,
+            'research': research.data
+        })
+
     def update(self, request, *args, **kwargs):
         partial = kwargs.pop('partial', False)
         instance = Member.objects.get(pk=kwargs['pk'])
@@ -96,9 +109,11 @@ class MemberViewSet(viewsets.ModelViewSet):
     @action(detail=False, methods=['get'])
     def divisions(self, request):
         division_members = Member.objects.all().order_by('-name')
-        division_members = list(filter(lambda m: m.divisions.all() or m.board, division_members))
+        division_members = list(
+            filter(lambda m: m.divisions.all() or m.board, division_members))
         serializer = self.get_serializer(division_members, many=True)
         return Response(serializer.data)
+
 
 class PartnerViewSet(viewsets.ModelViewSet):
     """
@@ -106,7 +121,6 @@ class PartnerViewSet(viewsets.ModelViewSet):
     """
     queryset = Partner.objects.all().order_by('-name')
     serializer_class = PartnerSerializer
-    
 
     def list(self, request):
         """
@@ -118,7 +132,7 @@ class PartnerViewSet(viewsets.ModelViewSet):
         _all = request.GET.get('all', None)
 
         self.queryset = self.queryset.filter(Q(name__icontains=name) | Q(
-                alias__icontains=name))
+            alias__icontains=name))
         if type:
             self.queryset = self.queryset.filter(type=type)
 
@@ -131,6 +145,22 @@ class PartnerViewSet(viewsets.ModelViewSet):
         page = self.paginate_queryset(self.queryset)
         serializer = self.get_serializer(page, many=True)
         return self.get_paginated_response(serializer.data)
+    
+    @action(detail=True, methods=['GET'])
+    def research(self, request, pk=None):
+        data = Project.objects.filter(institute=pk)
+        members = Member.objects.filter(adscription=pk)
+        research = []
+        for proj in data:
+            research += proj.research_set.all()
+        projects = ProjectSerializer(data, many=True)
+        research = ResearchSerializer(research, many=True)
+        members = MemberSerializer(members, many=True)
+        return Response({
+            'projects': projects.data,
+            'research': research.data,
+            'members': members.data,
+        })
 
 
 class RoleViewSet(viewsets.ModelViewSet):
@@ -166,6 +196,17 @@ class LineViewSet(viewsets.ModelViewSet):
         page = self.paginate_queryset(self.queryset)
         serializer = self.get_serializer(page, many=True)
         return self.get_paginated_response(serializer.data)
+
+    @action(detail=True, methods=['GET'])
+    def research(self, request, pk=None):
+        projects = Line.objects.get(pk=pk).project_set.all()
+        research = Line.objects.get(pk=pk).research_set.all()
+        projects = ProjectSerializer(projects, many=True)
+        research = ResearchSerializer(research, many=True)
+        return Response({
+            'projects': projects.data,
+            'research': research.data
+        })
 
 
 class DivisionViewSet(viewsets.ModelViewSet):
@@ -209,6 +250,7 @@ class ProjectViewSet(viewsets.ModelViewSet):
         # get query params
         title = request.GET.get('title', "")
         institute = request.GET.get('institute', None)
+        line = request.GET.get('line', None)
         _all = request.GET.get('all', None)
 
         self.queryset = self.filter_queryset(self.get_queryset())
@@ -242,18 +284,15 @@ class ResearchViewSet(viewsets.ModelViewSet):
         # get query params
         year = request.GET.get('year', 0)
         title = request.GET.get('title', "")
-        type = request.GET.get('type', None)
+        type = request.GET.get('type', "")
+        line = request.GET.get('line', None)
         _all = request.GET.get('all', None)
 
-        self.queryset = self.filter_queryset(self.get_queryset())
+        self.queryset = Research.objects.filter(
+            title__icontains=title, type__icontains=type)
 
-        # filter by title
-        matched = list(filter(lambda r: re.findall(
-            title.upper(), r.title.upper()), self.queryset))
-        if type:
-            matched = list(filter(lambda r: r.type == type, matched))
-        if year and year != 0 and year != "":
-            matched = list(filter(lambda r: r.year == int(year), matched))
+        if line:
+            self.queryset = self.queryset.filter(lines=line)
 
         # serialize data
         if _all is not None:
@@ -261,7 +300,7 @@ class ResearchViewSet(viewsets.ModelViewSet):
             return Response(serializer.data)
 
         # pagination
-        page = self.paginate_queryset(matched)
+        page = self.paginate_queryset(self.queryset)
         serializer = self.get_serializer(page, many=True)
         return self.get_paginated_response(serializer.data)
 
@@ -275,34 +314,51 @@ class ResearchViewSet(viewsets.ModelViewSet):
             })
         return JsonResponse({
             'research': [
-              { 'value': self.queryset.filter(type='Article').count(), 'name': 'Articles' },
-              { 'value': self.queryset.filter(type='Presentation').count(), 'name': 'Presentations' },
-              { 'value': self.queryset.filter(type='Thesis').count(), 'name': 'Theses' },
-              { 'value': Project.objects.count(), 'name': 'Projects' }
+                {'value': self.queryset.filter(
+                    type='Article').count(), 'name': 'Articles'},
+                {'value': self.queryset.filter(
+                    type='Presentation').count(), 'name': 'Presentations'},
+                {'value': self.queryset.filter(
+                    type='Thesis').count(), 'name': 'Theses'},
+                {'value': Project.objects.count(), 'name': 'Projects'}
             ],
             'certs': [
-              { 'value': Certificate.objects.filter(type='PARTICIPATION').count(), 'name': 'PARTICIPATION' },
-              { 'value': Certificate.objects.filter(type='RECOGNITION').count(), 'name': 'RECOGNITION' },
-              { 'value': Certificate.objects.filter(type='APPRECIATION').count(), 'name': 'APPRECIATION' }
+                {'value': Certificate.objects.filter(
+                    type='PARTICIPATION').count(), 'name': 'PARTICIPATION'},
+                {'value': Certificate.objects.filter(
+                    type='RECOGNITION').count(), 'name': 'RECOGNITION'},
+                {'value': Certificate.objects.filter(
+                    type='APPRECIATION').count(), 'name': 'APPRECIATION'}
             ],
             'partners': [
-              { 'value': Partner.objects.filter(type='Sponsor').count(), 'name': 'Sponsors' },
-              { 'value': Partner.objects.filter(type='Research Center').count(), 'name': 'Research Centers' },
-              { 'value': Partner.objects.filter(type='Division').count(), 'name': 'Divisions' },
-              { 'value': Partner.objects.filter(type='Partner').count(), 'name': 'Partners' }
+                {'value': Partner.objects.filter(
+                    type='Sponsor').count(), 'name': 'Sponsors'},
+                {'value': Partner.objects.filter(
+                    type='Research Center').count(), 'name': 'Research Centers'},
+                {'value': Partner.objects.filter(
+                    type='Division').count(), 'name': 'Divisions'},
+                {'value': Partner.objects.filter(
+                    type='Partner').count(), 'name': 'Partners'}
             ],
             'members': [
-              { 'value': Member.objects.filter(active=True).count(), 'name': 'Active' },
-              { 'value': Member.objects.filter(active=False).count(), 'name': 'Inactive' }
+                {'value': Member.objects.filter(
+                    active=True).count(), 'name': 'Active'},
+                {'value': Member.objects.filter(
+                    active=False).count(), 'name': 'Inactive'}
             ],
             'committee': [
-              { 'value': Member.objects.filter(committee=True).count(), 'name': 'Committee' },
-              { 'value': Member.objects.filter(board=True).count(), 'name': 'Board' }
+                {'value': Member.objects.filter(
+                    committee=True).count(), 'name': 'Committee'},
+                {'value': Member.objects.filter(
+                    board=True).count(), 'name': 'Board'}
             ],
             'finances': [
-              { 'value': BankMovement.objects.filter(type='Income').aggregate(Sum('amount')).get('amount__sum', 0), 'name': 'Incomes' },
-              { 'value': BankMovement.objects.filter(type='Donation').aggregate(Sum('amount')).get('amount__sum', 0), 'name': 'Donation' },
-              { 'value': BankMovement.objects.filter(type='Expense').aggregate(Sum('amount')).get('amount__sum', 0), 'name': 'Expenses' }
+                {'value': BankMovement.objects.filter(type='Income').aggregate(
+                    Sum('amount')).get('amount__sum', 0), 'name': 'Incomes'},
+                {'value': BankMovement.objects.filter(type='Donation').aggregate(
+                    Sum('amount')).get('amount__sum', 0), 'name': 'Donation'},
+                {'value': BankMovement.objects.filter(type='Expense').aggregate(
+                    Sum('amount')).get('amount__sum', 0), 'name': 'Expenses'}
             ],
             'divisions': divisions
         })
