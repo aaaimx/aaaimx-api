@@ -72,7 +72,6 @@ class MembershipViewSet(viewsets.ModelViewSet):
         serializer.save()
         avatar = request.FILES.get('avatar', None)
         if avatar:
-            print(dir(avatar))
             self.generate_mem(serializer, avatar)
             
         if getattr(instance, '_prefetched_objects_cache', None):

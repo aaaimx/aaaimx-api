@@ -7,7 +7,6 @@ class CertificateSerializer(serializers.ModelSerializer):
         model = Certificate
         exclude = []
 
-
 class EventSerializer(serializers.ModelSerializer):
     class Meta:
         model = Event
