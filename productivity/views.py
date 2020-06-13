@@ -32,25 +32,23 @@ class MemberViewSet(viewsets.ModelViewSet):
         panel = request.GET.get('panel', None)
         division = request.GET.get('division', None)
         _all = request.GET.get('all', None)
-        order = 'charge'
+        order = request.GET.get('order', '-charge')
 
         if panel == "true":
             self.queryset = Member.objects.filter(Q(name__icontains=name) | Q(
-                surname__icontains=name), Q(committee=True) | Q(board=True))
+                surname__icontains=name), Q(committee=True) | Q(board=True)).order_by(order)
         elif division:
             self.queryset = Member.objects.filter(
-                Q(name__icontains=name) | Q(surname__icontains=name), divisions__name=division)
+                Q(name__icontains=name) | Q(surname__icontains=name), divisions__name=division).order_by(order)
         else:
             self.queryset = Member.objects.filter(
-                Q(name__icontains=name) | Q(surname__icontains=name))
+                Q(name__icontains=name) | Q(surname__icontains=name)).order_by(order)
 
         # filter by status
         if active == "true":
             self.queryset = self.queryset.filter(active=True)
         elif active == "false":
             self.queryset = self.queryset.filter(active=False)
-
-        self.queryset.order_by(order)
 
         # serialize data
         if _all is not None:
@@ -253,14 +251,14 @@ class ProjectViewSet(viewsets.ModelViewSet):
         line = request.GET.get('line', None)
         _all = request.GET.get('all', None)
 
-        self.queryset = self.filter_queryset(self.get_queryset())
+        self.queryset = Project.objects.filter(
+            title__icontains=title).order_by('title')
 
-        # filter by title
-        matched = list(filter(lambda m: re.findall(
-            title.upper(), m.title.upper()), self.queryset))
+        if line:
+            self.queryset = self.queryset.filter(lines=line)
+
         if institute:
-            matched = list(
-                filter(lambda m: m.institute.alias == institute, matched))
+            self.queryset = self.queryset.filter(institute__alias=institute)
 
         # serialize data
         if _all is not None:
@@ -268,7 +266,7 @@ class ProjectViewSet(viewsets.ModelViewSet):
             return Response(serializer.data)
 
         # pagination
-        page = self.paginate_queryset(matched)
+        page = self.paginate_queryset(self.queryset)
         serializer = self.get_serializer(page, many=True)
         return self.get_paginated_response(serializer.data)
 
@@ -289,7 +287,7 @@ class ResearchViewSet(viewsets.ModelViewSet):
         _all = request.GET.get('all', None)
 
         self.queryset = Research.objects.filter(
-            title__icontains=title, type__icontains=type)
+            title__icontains=title, type__icontains=type).order_by('-year')
 
         if line:
             self.queryset = self.queryset.filter(lines=line)
