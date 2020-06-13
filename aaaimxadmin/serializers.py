@@ -9,6 +9,7 @@ class UserSerializer(serializers.ModelSerializer):
         read_only=True,
         slug_field='name'
     )
+    is_superuser = serializers.BooleanField(read_only=True)
     class Meta:
         model = User
         fields = ['id', 'username', 'email', 'is_superuser', 'groups']

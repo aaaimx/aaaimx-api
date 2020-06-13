@@ -41,7 +41,6 @@ admin.site.site_url = "http://www.aaaimx.org"
 # Routers provide an easy way of automatically determining the URL conf.
 router = routers.DefaultRouter() # routers.SimpleRouter(trailing_slash=False)
 router.register(r"users", UserViewSet)
-router.register(r"groups", GroupViewSet)
 router.register(r"roles", RoleViewSet)
 router.register(r"members", MemberViewSet)
 router.register(r"advisors", AdvisorViewSet)

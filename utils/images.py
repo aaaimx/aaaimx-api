@@ -57,7 +57,7 @@ def generate_cert(name, type, uuid, url):
     return ImageFile(open(output, 'rb+'))
 
 
-def generate_membership(name, uuid, url, avatar=LOCATION("utils/foto.jpg")):
+def generate_membership(name, uuid, url, avatar):
     img = Image.open(LOCATION("utils/tmp/clean_membership.png"))
     widthImg, heightImg = img.size
 
@@ -72,9 +72,10 @@ def generate_membership(name, uuid, url, avatar=LOCATION("utils/foto.jpg")):
     widthQr, heightQr = QR.size
     avatar = Image.open(avatar)
     avatar.thumbnail(size)
+    widthAvatar, heightAvatar = avatar.size
+    print(widthImg, widthAvatar)
     img.paste(QR, (int((widthImg - widthQr) / 2), 1300))
-    # img.paste(avatar, (920, 530))
-    output = LOCATION('utils/membership-out.png')
+    img.paste(avatar, (860 + int((548 - widthAvatar) / 2), 400))
+    output = LOCATION('utils/membership.png')
     img.save(output)
     return ImageFile(open(output, 'rb+'))
-

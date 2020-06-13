@@ -27,15 +27,7 @@ class MembershipViewSet(viewsets.ModelViewSet):
         status = request.GET.get('status', None)
         _all = request.GET.get('all', None)
 
-        self.queryset = self.queryset.filter(Q(to__icontains=to))
-        if query:
-            self.queryset = self.queryset.filter(description__icontains=query)
-        if type:
-            self.queryset = self.queryset.filter(type=type)
-
-        # filter by status
-        if status:
-            self.queryset = self.queryset.filter(published=status.capitalize())
+        self.queryset = self.get_queryset()
 
         # serialize data
         if _all is not None:
@@ -48,7 +40,7 @@ class MembershipViewSet(viewsets.ModelViewSet):
         return self.get_paginated_response(serializer.data)
 
     def generate_mem(self, serializer, avatar):
-        uuid = serializer.data['uuid']
+        uuid = serializer.data.get('uuid')
         name = serializer.data['display_name']
         url = 'http://www.aaaimx.org/memberships/?id={0}'.format(uuid)
         imgMembership = generate_membership(name, uuid, url, avatar)
@@ -64,18 +56,12 @@ class MembershipViewSet(viewsets.ModelViewSet):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         self.perform_create(serializer)
-        self.generate_mem(serializer)
-        headers = self.get_success_headers(serializer.data)
-        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+        avatar = request.FILES['avatar']
+        self.generate_mem(serializer, avatar)
+        return Response(serializer.data, status=201)
 
     def perform_create(self, serializer):
         serializer.save()
-
-    def get_success_headers(self, data):
-        try:
-            return {'Location': str(data[api_settings.URL_FIELD_NAME])}
-        except (TypeError, KeyError):
-            return {}
 
     def update(self, request, *args, **kwargs):
         partial = kwargs.pop('partial', False)
@@ -84,7 +70,7 @@ class MembershipViewSet(viewsets.ModelViewSet):
             instance, data=request.data, partial=partial)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        avatar = request.FILES.get('file', None)
+        avatar = request.FILES.get('avatar', None)
         if avatar:
             print(dir(avatar))
             self.generate_mem(serializer, avatar)
