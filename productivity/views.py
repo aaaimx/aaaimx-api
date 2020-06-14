@@ -292,6 +292,9 @@ class ResearchViewSet(viewsets.ModelViewSet):
         if line:
             self.queryset = self.queryset.filter(lines=line)
 
+        if year:
+            self.queryset = self.queryset.filter(year=year)
+
         # serialize data
         if _all is not None:
             serializer = self.get_serializer(self.queryset, many=True)
