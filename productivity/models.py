@@ -1,11 +1,6 @@
 from django.db import models
 from uuid import uuid4
-from gdstorage.storage import GoogleDriveStorage
 from datetime import datetime, timedelta
-
-# Define Google Drive Storage
-gd_storage = GoogleDriveStorage()
-
 
 class Role(models.Model):
     def __str__(self):
@@ -18,8 +13,7 @@ class Division(models.Model):
         return self.name
     name = models.CharField(default="", max_length=100, unique=True)
     story = models.TextField(default="", blank=True)
-    logo = models.ImageField(
-        default=None, blank=True, upload_to='logos', storage=gd_storage)
+    logo = models.CharField(default="", max_length=100)
 
 
 class Partner(models.Model):
@@ -31,8 +25,7 @@ class Partner(models.Model):
     alias = models.CharField(max_length=100, blank=True)
     site = models.URLField(default="", max_length=100, blank=True)
     logoName = models.CharField(max_length=100, blank=True)
-    logoFile = models.ImageField(
-        default=None, blank=True, upload_to='logos', storage=gd_storage)
+    logoFile = models.CharField(max_length=100, blank=True, null=True, default="")
     type = models.CharField(max_length=100, default="")
 
 
@@ -47,8 +40,7 @@ class Member(models.Model):
     active = models.BooleanField(default=False)
     board = models.BooleanField(default=False, blank=True)
     committee = models.BooleanField(default=False, blank=True)
-    thumbnailFile = models.ImageField(
-        default=None, blank=True, upload_to='thumbnail', storage=gd_storage)
+    thumbnailFile = models.CharField(max_length=100, default="", null=True, blank=True)
     roles = models.ManyToManyField(
         Role, blank=True, verbose_name="list of roles")
     charge = models.CharField(max_length=100, default="", blank=True)
@@ -81,7 +73,6 @@ class Project(models.Model):
 class Research(models.Model):
     def __str__(self):
         return self.title
-
     class Meta:
         verbose_name_plural = "research"
     uuid = models.UUIDField(default=uuid4, primary_key=True, editable=True)
