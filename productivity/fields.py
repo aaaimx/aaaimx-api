@@ -10,6 +10,7 @@ class AuthorsListingField(serializers.RelatedField):
             "member": value.member.id,
             "name": value.member.name,
             "surname": value.member.surname,
+            "adscription": value.member.adscription_id,
             "active": value.member.active,
         }
 
@@ -20,7 +21,9 @@ class AdvisorListingField(serializers.RelatedField):
             "position": value.position,
             "id": value.id,
             "member": value.member.id,
+            "name": value.member.name,
             "surname": value.member.surname,
+            "adscription": value.member.adscription_id,
             "active": value.member.active,
         }
 
