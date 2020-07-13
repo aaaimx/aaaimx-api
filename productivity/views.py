@@ -127,10 +127,11 @@ class PartnerViewSet(viewsets.ModelViewSet):
         # get query params
         name = request.GET.get('name', "")
         type = request.GET.get('type', None)
+        order = request.GET.get('order', 'alias')
         _all = request.GET.get('all', None)
 
         self.queryset = self.queryset.filter(Q(name__icontains=name) | Q(
-            alias__icontains=name))
+            alias__icontains=name)).order_by(order)
         if type:
             self.queryset = self.queryset.filter(type=type)
 
@@ -143,7 +144,7 @@ class PartnerViewSet(viewsets.ModelViewSet):
         page = self.paginate_queryset(self.queryset)
         serializer = self.get_serializer(page, many=True)
         return self.get_paginated_response(serializer.data)
-    
+
     @action(detail=True, methods=['GET'])
     def research(self, request, pk=None):
         data = Project.objects.filter(institute=pk)
@@ -238,7 +239,7 @@ class ProjectViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows projects to be viewed or edited.
     """
-    queryset = Project.objects.all().order_by('title')
+    queryset = Project.objects.all()
     serializer_class = ProjectSerializer
 
     def list(self, request):
@@ -249,10 +250,11 @@ class ProjectViewSet(viewsets.ModelViewSet):
         title = request.GET.get('title', "")
         institute = request.GET.get('institute', None)
         line = request.GET.get('line', None)
+        order = request.GET.get('order', 'title')
         _all = request.GET.get('all', None)
 
         self.queryset = Project.objects.filter(
-            title__icontains=title).order_by('title')
+            title__icontains=title).order_by(order)
 
         if line:
             self.queryset = self.queryset.filter(lines=line)
@@ -275,7 +277,7 @@ class ResearchViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows research to be viewed or edited.
     """
-    queryset = Research.objects.all().order_by('-year')
+    queryset = Research.objects.all()
     serializer_class = ResearchSerializer
 
     def list(self, request, *args, **kwargs):
@@ -284,10 +286,11 @@ class ResearchViewSet(viewsets.ModelViewSet):
         title = request.GET.get('title', "")
         type = request.GET.get('type', "")
         line = request.GET.get('line', None)
+        order = request.GET.get('order', '-year')
         _all = request.GET.get('all', None)
 
         self.queryset = Research.objects.filter(
-            title__icontains=title, type__icontains=type).order_by('-year')
+            title__icontains=title, type__icontains=type).order_by(order)
 
         if line:
             self.queryset = self.queryset.filter(lines=line)
