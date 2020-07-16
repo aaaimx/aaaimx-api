@@ -19,19 +19,23 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib.auth.models import User
-from rest_framework import routers
 from django.views.generic.base import TemplateView
-from .views import UserViewSet, GroupViewSet
+
+# REST FRAMEWORK
+from rest_framework import routers
 from rest_framework.schemas import get_schema_view
+from .views import UserViewSet, GroupViewSet
+from productivity.views import *
+from finances.views import *
+from logistic.views import *
+
+# SIMPLE JTW
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
     TokenVerifyView,
 )
 from .token import MyTokenObtainPairView
-from productivity.views import *
-from finances.views import *
-from logistic.views import *
 
 admin.site.site_header = "AAAIMX Admin"
 admin.site.site_title = "AAAIMX Admin Portal"
@@ -58,14 +62,22 @@ router.register(r"research", ResearchViewSet)
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 
+api_urlpatterns = [
+    path("", include(router.urls)),
+    path("token/", MyTokenObtainPairView.as_view(), name="token_obtain_pair"),
+    path("refresh/", TokenRefreshView.as_view(), name="token_refresh"),
+    path("token/verify/", TokenVerifyView.as_view(), name="token_verify"),
+    path('accounts/', include('rest_registration.api.urls')),
+    path("auth/", include("rest_framework.urls", namespace="rest_framework")),
+]
+
 urlpatterns = [
+
+    # APPLICATION
     path("", admin.site.urls),
-    path("api/token/", MyTokenObtainPairView.as_view(), name="token_obtain_pair"),
-    path("api/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
-    path("api/token/verify/", TokenVerifyView.as_view(), name="token_verify"),
-    # url(r'^$', TemplateView.as_view(template_name='index.html'), name="home"),
-    url(r"^api/", include(router.urls)),
-    url(r"^api-auth/", include("rest_framework.urls", namespace="rest_framework")),
+    path("api/", include(api_urlpatterns)),
+
+    # DOCS
     path('openapi', get_schema_view(
         title="AAAIMX API",
         description="API for productivity …",
