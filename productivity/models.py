@@ -44,8 +44,8 @@ class Member(models.Model):
     board = models.BooleanField(default=False, blank=True)
     committee = models.BooleanField(default=False, blank=True)
 
-    divisions = models.ManyToManyField(
-        Division, blank=True, verbose_name="members")
+    divisions = ArrayField(models.CharField(
+        max_length=50, blank=True), size=10, blank=True, null=True, default=list)
     roles = ArrayField(models.CharField(
         max_length=30, blank=True), size=20, blank=True, null=True, default=list)
 
@@ -85,8 +85,8 @@ class Research(models.Model):
         verbose_name_plural = "research"
     uuid = models.UUIDField(default=uuid4, primary_key=True, editable=True)
     title = models.TextField(default="", blank=False)
-    lines = models.ManyToManyField(
-        Line, blank=True, verbose_name="research lines")
+    lines = ArrayField(models.CharField(
+        max_length=50, blank=True), size=20, blank=True, null=True, default=list)
     projects = models.ManyToManyField(
         Project, blank=True, verbose_name="related projects")
     resume = models.TextField(default="", blank=True)

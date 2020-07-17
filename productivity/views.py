@@ -39,7 +39,7 @@ class MemberViewSet(viewsets.ModelViewSet):
                 surname__icontains=name), Q(committee=True) | Q(board=True)).order_by(order)
         elif division:
             self.queryset = Member.objects.filter(
-                Q(name__icontains=name) | Q(surname__icontains=name), divisions__name=division).order_by(order)
+                Q(name__icontains=name) | Q(surname__icontains=name), divisions__icontains=division).order_by(order)
         else:
             self.queryset = Member.objects.filter(
                 Q(name__icontains=name) | Q(surname__icontains=name)).order_by(order)
@@ -257,7 +257,7 @@ class ProjectViewSet(viewsets.ModelViewSet):
             title__icontains=title).order_by(order)
 
         if line:
-            self.queryset = self.queryset.filter(lines=line)
+            self.queryset = self.queryset.filter(lines__icontains=line)
 
         if institute:
             self.queryset = self.queryset.filter(institute__alias=institute)
@@ -293,7 +293,7 @@ class ResearchViewSet(viewsets.ModelViewSet):
             title__icontains=title, type__icontains=type).order_by(order)
 
         if line:
-            self.queryset = self.queryset.filter(lines=line)
+            self.queryset = self.queryset.filter(lines__icontains=line)
 
         if year:
             self.queryset = self.queryset.filter(year=year)
