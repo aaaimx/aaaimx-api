@@ -314,7 +314,7 @@ class ResearchViewSet(viewsets.ModelViewSet):
         for div in Division.objects.all():
             divisions.append({
                 'name': div.name,
-                'value': div.member_set.count()
+                # 'value': div.member_set.count()
             })
         return JsonResponse({
             'research': [
