@@ -52,7 +52,7 @@ class AdminAdvisor(admin.ModelAdmin):
 
 @admin.register(Member)
 class AdminMember(admin.ModelAdmin):
-    list_display = ('name', 'surname', 'active', 'board', 'committee', 'charge', 'adscription', 'thumbnailFile')
+    list_display = ('name', 'surname', 'active', 'board', 'committee', 'charge', 'roles', 'adscription', 'thumbnailFile')
     list_filter = ('active', 'divisions', 'charge', 'roles', 'adscription')
     search_fields = ('name', 'surname', 'charge',)
     actions = ['mark_as_committee',]
