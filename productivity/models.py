@@ -47,7 +47,7 @@ class Member(models.Model):
     divisions = models.ManyToManyField(
         Division, blank=True, verbose_name="members")
     roles = ArrayField(models.CharField(
-        max_length=30, blank=True), size=20, default=list)
+        max_length=30, blank=True), size=20, blank=True, null=True, default=list)
 
     thumbnailFile = models.CharField(
         max_length=100, default="", null=True, blank=True)
@@ -73,8 +73,8 @@ class Project(models.Model):
         Member, blank=True, verbose_name="collaborators")
     institute = models.ForeignKey(
         Partner, null=True, on_delete=models.SET_NULL)
-    lines = models.ManyToManyField(
-        Line, blank=True, verbose_name="interest areas")
+    lines = ArrayField(models.CharField(
+        max_length=50, blank=True), size=20, blank=True, null=True, default=list)
 
 
 class Research(models.Model):
