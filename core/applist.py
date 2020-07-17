@@ -17,8 +17,15 @@ THIRD_PARTY_APPS = (
     "storages",
     "corsheaders",
     "rest_framework",
+    'rest_registration',
     "gdstorage",
 )
+
+REST_REGISTRATION = {
+    'REGISTER_VERIFICATION_ENABLED': False,
+    'RESET_PASSWORD_VERIFICATION_ENABLED': False,
+    'REGISTER_EMAIL_VERIFICATION_ENABLED': False,
+}
 
 LOCAL_APPS = (
     "productivity",

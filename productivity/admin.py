@@ -26,13 +26,13 @@ class AdminDivision(admin.ModelAdmin):
 
 @admin.register(Project)
 class AdminProject(admin.ModelAdmin):
-    list_display = ('title','start', 'end', 'responsible',)
+    list_display = ('title','start', 'end', 'responsible', 'lines')
     list_filter = ('responsible', 'start', 'end', 'lines')
     list_per_page = 10
 
 @admin.register(Research)
 class AdminResearch(admin.ModelAdmin):
-    list_display = ('title', "year", "type")
+    list_display = ('title', "year", "type",)
     list_filter = ('lines', "year", "type")
     search_fields = ('title',)
     list_per_page = 10
@@ -52,7 +52,7 @@ class AdminAdvisor(admin.ModelAdmin):
 
 @admin.register(Member)
 class AdminMember(admin.ModelAdmin):
-    list_display = ('name', 'surname', 'active', 'board', 'committee', 'charge', 'adscription', 'thumbnailFile')
+    list_display = ('name', 'surname', 'active', 'board', 'committee', 'charge', 'roles', 'adscription', 'thumbnailFile')
     list_filter = ('active', 'divisions', 'charge', 'roles', 'adscription')
     search_fields = ('name', 'surname', 'charge',)
     actions = ['mark_as_committee',]

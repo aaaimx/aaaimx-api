@@ -1,6 +1,8 @@
 from django.db import models
 from uuid import uuid4
 from datetime import datetime, timedelta
+from django.contrib.postgres.fields import ArrayField, JSONField
+
 
 class Role(models.Model):
     def __str__(self):
@@ -25,7 +27,8 @@ class Partner(models.Model):
     alias = models.CharField(max_length=100, blank=True)
     site = models.URLField(default="", max_length=100, blank=True)
     logoName = models.CharField(max_length=100, blank=True)
-    logoFile = models.CharField(max_length=100, blank=True, null=True, default="")
+    logoFile = models.CharField(
+        max_length=100, blank=True, null=True, default="")
     type = models.CharField(max_length=100, default="")
 
 
@@ -35,15 +38,19 @@ class Member(models.Model):
     name = models.CharField(default="", max_length=100)
     surname = models.CharField(default="", blank=True, max_length=100)
     email = models.EmailField(default="", blank=True, max_length=100)
-    divisions = models.ManyToManyField(
-        Division, blank=True, verbose_name="members")
+
+    charge = models.CharField(max_length=100, default="", blank=True)
     active = models.BooleanField(default=False)
     board = models.BooleanField(default=False, blank=True)
     committee = models.BooleanField(default=False, blank=True)
-    thumbnailFile = models.CharField(max_length=100, default="", null=True, blank=True)
-    roles = models.ManyToManyField(
-        Role, blank=True, verbose_name="list of roles")
-    charge = models.CharField(max_length=100, default="", blank=True)
+
+    divisions = models.ManyToManyField(
+        Division, blank=True, verbose_name="members")
+    roles = ArrayField(models.CharField(
+        max_length=30, blank=True), size=20, blank=True, null=True, default=list)
+
+    thumbnailFile = models.CharField(
+        max_length=100, default="", null=True, blank=True)
     adscription = models.ForeignKey(
         Partner, null=True, blank=True, related_name="adscription_institute", on_delete=models.SET_NULL)
 
@@ -66,13 +73,14 @@ class Project(models.Model):
         Member, blank=True, verbose_name="collaborators")
     institute = models.ForeignKey(
         Partner, null=True, on_delete=models.SET_NULL)
-    lines = models.ManyToManyField(
-        Line, blank=True, verbose_name="interest areas")
+    lines = ArrayField(models.CharField(
+        max_length=50, blank=True), size=20, blank=True, null=True, default=list)
 
 
 class Research(models.Model):
     def __str__(self):
         return self.title
+
     class Meta:
         verbose_name_plural = "research"
     uuid = models.UUIDField(default=uuid4, primary_key=True, editable=True)
