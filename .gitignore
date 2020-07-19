@@ -93,5 +93,5 @@ __pycache__/
 venv
 media
 static
-cert-out.png
+*.png
 *.json

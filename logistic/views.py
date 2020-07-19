@@ -56,7 +56,7 @@ class CertificateViewSet(viewsets.ModelViewSet):
         serializer = self.get_serializer(page, many=True)
         return self.get_paginated_response(serializer.data)
 
-    def generate_cert(self, serializer):
+    def generate_cert(self, serializer, host):
         uuid = serializer.data['uuid']
         to = serializer.data['to']
         type = serializer.data['type']
@@ -64,28 +64,20 @@ class CertificateViewSet(viewsets.ModelViewSet):
         imgCert = generate_cert(to, type, uuid, url)
         inst = Certificate.objects.filter(pk=uuid).update(QR=url)
         inst = Certificate.objects.get(pk=uuid)
-        cert = CertFile(files={'file': imgCert }, instance=inst)
-        if cert.is_valid():
-            cert.save(commit=False)
-            cert.save()
+        inst.file = host + '/media/' + uuid + '.png'
+        inst.save()
 
 
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         self.perform_create(serializer)
-        self.generate_cert(serializer)
-        headers = self.get_success_headers(serializer.data)
-        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+        self.generate_cert(serializer, request.scheme + '://' + request.META['HTTP_HOST'])
+        return Response(serializer.data, status=201)
 
     def perform_create(self, serializer):
         serializer.save()
 
-    def get_success_headers(self, data):
-        try:
-            return {'Location': str(data[api_settings.URL_FIELD_NAME])}
-        except (TypeError, KeyError):
-            return {}
 
     def update(self, request, *args, **kwargs):
         partial = kwargs.pop('partial', False)
@@ -95,13 +87,7 @@ class CertificateViewSet(viewsets.ModelViewSet):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         if not request.FILES.get('file', None):
-            self.generate_cert(serializer)
-            
-        if getattr(instance, '_prefetched_objects_cache', None):
-            # If 'prefetch_related' has been applied to a queryset, we need to
-            # forcibly invalidate the prefetch cache on the instance.
-            instance._prefetched_objects_cache = {}
-
+            self.generate_cert(serializer, request.scheme + '://' + request.META['HTTP_HOST'])
         return Response(serializer.data)
 
     def partial_update(self, request, *args, **kwargs):

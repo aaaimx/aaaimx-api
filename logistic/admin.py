@@ -15,11 +15,12 @@ class AdminCertifcate(admin.ModelAdmin, ExportCsvMixin):
     list_per_page = 10
 
     def add(self, request, queryset):
-        queryset.update(
-            event=EVENT)
+        queryset.update(event=EVENT)
     
     def publish(self, request, queryset):
-        queryset.update(published=True)
+        for q in queryset:
+            q.file = 'https://www.aaaimx.org/certificates/2020/' + q.file
+            q.save()
 
     add.short_description = "Add a event: " + EVENT
     publish.short_description = "Publish selected certificates"

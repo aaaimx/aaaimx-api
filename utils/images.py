@@ -52,7 +52,7 @@ def generate_cert(name, type, uuid, url):
 
     QR = generate_qr(url)
     img.paste(QR, (1690, 1050))
-    output = LOCATION('utils/certificate.png')
+    output = LOCATION(f'media/{uuid}.png')
     img.save(output)
     return ImageFile(open(output, 'rb+'))
 
@@ -76,6 +76,6 @@ def generate_membership(name, uuid, url, avatar):
     print(widthImg, widthAvatar)
     img.paste(QR, (int((widthImg - widthQr) / 2), 1300))
     img.paste(avatar, (860 + int((548 - widthAvatar) / 2), 400))
-    output = LOCATION('utils/membership.png')
+    output = LOCATION('media/membership.png')
     img.save(output)
     return ImageFile(open(output, 'rb+'))

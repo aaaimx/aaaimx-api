@@ -2,10 +2,6 @@ from django.db import models
 from uuid import uuid4
 from datetime import datetime
 from productivity.models import Division
-from gdstorage.storage import GoogleDriveStorage
-
-# Define Google Drive Storage
-gd_storage = GoogleDriveStorage()
 
 # Create your models here.
 class Event(models.Model):
@@ -30,7 +26,7 @@ class Certificate(models.Model):
     published = models.BooleanField(default=False)
     to = models.CharField(max_length=100, blank=True, default="")
     QR = models.CharField(max_length=100, blank=True, default='www.aaaimx.org/certificates/?id=')
-    file = models.ImageField(upload_to='certs', blank=True, storage=gd_storage)
+    file = models.CharField(max_length=100, blank=True, default="")
     description = models.TextField(default="", blank=True)
     created_at = models.DateTimeField(default=datetime.now, blank=True, null=True)
 
