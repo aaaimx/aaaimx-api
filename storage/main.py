@@ -3,9 +3,9 @@ from datetime import datetime
 import os
 
 class AAAIMXStorage():
-    def __init__(self, user, password):
-        self.user = user
-        self.password = password
+    def __init__(self):
+        self.user = os.environ.get('USER')
+        self.password = os.environ.get('PASS')
         self.session = None
 
     def login(self):
@@ -28,12 +28,12 @@ class AAAIMXStorage():
 
 
 
-USER = os.environ.get('USER')
-PASS = os.environ.get('PASS')
-file = open('./storage/file.png','rb')
-ftp = AAAIMXStorage(USER, PASS)
-ftp.login()
-ftp.create('certificates/2020')
-ftp.save(file, 'certificates/2020/file.png')
-print(ftp.list('certificates/2019'))
-file.close()   
+# USER = os.environ.get('USER')
+# PASS = os.environ.get('PASS')
+# file = open('./storage/file.png','rb')
+# ftp = AAAIMXStorage(USER, PASS)
+# ftp.login()
+# ftp.create('certificates/2020')
+# ftp.save(file, 'certificates/2020/file.png')
+# print(ftp.list('certificates/2019'))
+# file.close()   

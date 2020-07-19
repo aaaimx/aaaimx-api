@@ -26,7 +26,7 @@ class Certificate(models.Model):
     published = models.BooleanField(default=False)
     to = models.CharField(max_length=100, blank=True, default="")
     QR = models.CharField(max_length=100, blank=True, default='www.aaaimx.org/certificates/?id=')
-    file = models.CharField(max_length=100, blank=True, default="")
+    file = models.CharField(max_length=200, blank=True, default="")
     description = models.TextField(default="", blank=True)
     created_at = models.DateTimeField(default=datetime.now, blank=True, null=True)
 

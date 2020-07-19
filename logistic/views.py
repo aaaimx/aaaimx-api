@@ -4,11 +4,12 @@ from .serializers import *
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.settings import api_settings
+from rest_framework.decorators import action
 from django.db.models import Q
 from utils.images import generate_cert, LOCATION
 from .forms import CertFile
 import re
-
+from storage.main import AAAIMXStorage
 
 class EventViewSet(viewsets.ModelViewSet):
     """
@@ -84,11 +85,24 @@ class CertificateViewSet(viewsets.ModelViewSet):
         instance = Certificate.objects.get(pk=kwargs['pk'])
         serializer = self.get_serializer(
             instance, data=request.data, partial=partial)
-        serializer.is_valid(raise_exception=True)
+        serializer.is_valid(raise_exception=False)
         serializer.save()
         if not request.FILES.get('file', None):
             self.generate_cert(serializer, request.scheme + '://' + request.META['HTTP_HOST'])
         return Response(serializer.data)
+
+    @action(detail=True, methods=['PATCH'])
+    def upload(self, request, pk=None):
+        instance = Certificate.objects.get(pk=pk)
+        file = request.FILES['file']
+        path = request.POST['upload'] + f'/{instance.type}/' + str(instance.uuid) + '.' + file.name.split('.')[1]
+        ftp = AAAIMXStorage()
+        ftp.login()
+        ftp.save(file, path)
+        ftp.exit()
+        instance.file = 'https://www.aaaimx.org/' + path
+        instance.save()
+        return Response({})
 
     def partial_update(self, request, *args, **kwargs):
         instance = Certificate.objects.get(pk=kwargs['pk'])

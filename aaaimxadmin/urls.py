@@ -24,7 +24,8 @@ from django.views.generic.base import TemplateView
 # REST FRAMEWORK
 from rest_framework import routers
 from rest_framework.schemas import get_schema_view
-from .views import UserViewSet, GroupViewSet, image
+from .views import UserViewSet, GroupViewSet
+from storage.views import *
 from productivity.views import *
 from finances.views import *
 from logistic.views import *
@@ -69,6 +70,7 @@ api_urlpatterns = [
     path("token/verify/", TokenVerifyView.as_view(), name="token_verify"),
     path('accounts/', include('rest_registration.api.urls')),
     path("auth/", include("rest_framework.urls", namespace="rest_framework")),
+    path("storage/", ftp_list)
 ]
 
 urlpatterns = [
