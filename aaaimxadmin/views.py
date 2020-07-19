@@ -6,7 +6,21 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 
 # ViewSets define the view behavior.
+from django.http.response import HttpResponse
+from PIL import Image
+import os
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+
+def LOCATION(file): return os.path.join(BASE_DIR, file)
+def image(request):
+    # ... create/load image here ...
+    image = Image.open(LOCATION("utils/certificate.png"))
+    # serialize to HTTP response
+    response = HttpResponse(content_type="image/png")
+    #response['Content-Length'] = str(len(response.content))
+    image.save(response, 'PNG')
+    return response
 
 class UserViewSet(viewsets.ModelViewSet):
     """
@@ -34,3 +48,4 @@ class GroupViewSet(viewsets.ModelViewSet):
     """
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
+

@@ -64,7 +64,7 @@ class CertificateViewSet(viewsets.ModelViewSet):
         imgCert = generate_cert(to, type, uuid, url)
         inst = Certificate.objects.filter(pk=uuid).update(QR=url)
         inst = Certificate.objects.get(pk=uuid)
-        inst.file = host + '/media/' + uuid + '.png'
+        inst.file = host + '/image/'
         inst.save()
 
 

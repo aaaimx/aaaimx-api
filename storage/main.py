@@ -26,6 +26,8 @@ class AAAIMXStorage():
     def exit(self):
         self.session.quit()
 
+
+
 USER = os.environ.get('USER')
 PASS = os.environ.get('PASS')
 file = open('./storage/file.png','rb')

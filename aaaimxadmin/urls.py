@@ -24,7 +24,7 @@ from django.views.generic.base import TemplateView
 # REST FRAMEWORK
 from rest_framework import routers
 from rest_framework.schemas import get_schema_view
-from .views import UserViewSet, GroupViewSet
+from .views import UserViewSet, GroupViewSet, image
 from productivity.views import *
 from finances.views import *
 from logistic.views import *
@@ -76,6 +76,7 @@ urlpatterns = [
     # APPLICATION
     path("", admin.site.urls),
     path("api/", include(api_urlpatterns)),
+    path("image/", image),
 
     # DOCS
     path('openapi', get_schema_view(
