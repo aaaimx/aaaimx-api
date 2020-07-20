@@ -15,13 +15,12 @@ gd_storage = GoogleDriveStorage()
 class Invoice(models.Model):
     def __str__(self):
         return '{0}: ${1} - {2}'.format(self.type, self.amount, self.origin)
-    to = models.CharField(default="", max_length=100, blank=True)
     origin = models.CharField(default="", max_length=100, blank=True)
-    concept = models.TextField(default="", blank=True)
+    description = models.TextField(default="", blank=True)
     amount = models.FloatField(default=0, blank=True)
     type = models.CharField(default="", max_length=100, blank=True)
-    voucher = models.FileField(
-        upload_to='vouchers/%Y-%m-%D/', blank=True, storage=gd_storage)
+    voucher = models.URLField(default="", null=True, blank=True)
+    issued_at = models.DateTimeField(auto_now=True, blank=True)
 
 
 class Membership(models.Model):
