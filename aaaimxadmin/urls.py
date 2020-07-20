@@ -58,6 +58,7 @@ router.register(r"divisions", DivisionViewSet)
 router.register(r"projects", ProjectViewSet)
 router.register(r"lines", LineViewSet)
 router.register(r"research", ResearchViewSet)
+router.register(r"invoices", InvoiceViewSet)
 
 
 # Wire up our API using automatic URL routing.

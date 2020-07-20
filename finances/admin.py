@@ -11,5 +11,5 @@ class AdminMembership(admin.ModelAdmin):
 
 @admin.register(Invoice)
 class AdminInvoice(admin.ModelAdmin):
-    list_display = ('origin',  'description',  'amount',   'type', 'issued_at', 'voucher',)
-    list_filter = ('origin',  'type', 'issued_at')
+    list_display = ('origin',  'description',  'amount',   'type', 'created_at', 'voucher',)
+    list_filter = ('origin',  'type', 'created_at')

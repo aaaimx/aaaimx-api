@@ -20,7 +20,7 @@ class Invoice(models.Model):
     amount = models.FloatField(default=0, blank=True)
     type = models.CharField(default="", max_length=100, blank=True)
     voucher = models.URLField(default="", null=True, blank=True)
-    issued_at = models.DateTimeField(auto_now=True, blank=True)
+    created_at = models.DateTimeField(auto_now=True, editable=True, blank=True)
 
 
 class Membership(models.Model):

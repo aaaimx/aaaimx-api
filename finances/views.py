@@ -90,4 +90,4 @@ class InvoiceViewSet(viewsets.ModelViewSet):
     API endpoint that allows Invoices to be viewed or edited.
     """
     queryset = Invoice.objects.all()
-    serializer_class = MembershipSerializer
+    serializer_class = InvoiceSerializer
