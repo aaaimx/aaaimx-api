@@ -4,8 +4,8 @@ import os
 
 class AAAIMXStorage():
     def __init__(self):
-        self.user = os.environ.get('USER')
-        self.password = os.environ.get('PASS')
+        self.user = os.environ.get('FTP_USER')
+        self.password = os.environ.get('FTP_PASS')
         self.session = None
 
     def login(self):

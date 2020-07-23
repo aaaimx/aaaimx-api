@@ -75,6 +75,5 @@ def generate_membership(name, uuid, url, avatar):
     print(widthImg, widthAvatar)
     img.paste(QR, (int((widthImg - widthQr) / 2), 1300))
     img.paste(avatar, (860 + int((548 - widthAvatar) / 2), 400))
-    output = LOCATION('media/membership.png')
+    output = LOCATION('utils/membership.png')
     img.save(output)
-    return ImageFile(open(output, 'rb+'))

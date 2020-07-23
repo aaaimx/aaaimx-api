@@ -6,9 +6,13 @@ from .models import *
 from rest_framework import viewsets
 from .forms import MemFile
 from utils.images import generate_membership, LOCATION
-
-
+from django.db import models
+from django.db.models import Sum, Count
+from django.db.models.functions import Cast, TruncDate, TruncDay, TruncYear, TruncMonth, TruncWeek
+from rest_framework.response import Response
 # Create your views here.
+
+
 class MembershipViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows Memberships to be viewed or edited.
@@ -46,11 +50,10 @@ class MembershipViewSet(viewsets.ModelViewSet):
         imgMembership = generate_membership(name, uuid, url, avatar)
         inst = Membership.objects.filter(pk=uuid).update(QR=url)
         inst = Membership.objects.get(pk=uuid)
-        m = MemFile(files={'file': imgMembership }, instance=inst)
+        m = MemFile(files={'file': imgMembership}, instance=inst)
         if m.is_valid():
             m.save(commit=False)
             m.save()
-
 
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
@@ -73,7 +76,7 @@ class MembershipViewSet(viewsets.ModelViewSet):
         avatar = request.FILES.get('avatar', None)
         if avatar:
             self.generate_mem(serializer, avatar)
-            
+
         if getattr(instance, '_prefetched_objects_cache', None):
             # If 'prefetch_related' has been applied to a queryset, we need to
             # forcibly invalidate the prefetch cache on the instance.
@@ -85,9 +88,28 @@ class MembershipViewSet(viewsets.ModelViewSet):
         kwargs['partial'] = True
         return self.update(request, *args, **kwargs)
 
+
 class InvoiceViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows Invoices to be viewed or edited.
     """
     queryset = Invoice.objects.all()
     serializer_class = InvoiceSerializer
+
+    def list(self, request):
+        """
+        GET method to process pagination, filtering & sort
+        """
+        # get query params
+        amount = request.GET.get('amount', 0)
+        type = request.GET.get('type', "")
+        order = request.GET.get('order', '-created_at')
+
+        incomes = Invoice.objects.filter(type="Income").annotate(month=TruncMonth(
+            'created_at')).values('month').annotate(total=Sum('amount')).values('month', 'total')
+        expenses = Invoice.objects.filter(type="Expense").annotate(month=TruncMonth(
+            'created_at')).values('month').annotate(total=Sum('amount')).values('month', 'total')
+        print(incomes, expenses)
+        page = self.paginate_queryset(self.queryset)
+        serializer = self.get_serializer(page, many=True)
+        return self.get_paginated_response(serializer.data)

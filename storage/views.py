@@ -1,10 +1,8 @@
 from django.http.response import HttpResponse, JsonResponse
 from PIL import Image
 from .main import AAAIMXStorage
+from utils.images import LOCATION, generate_qr
 import os
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-def LOCATION(file): return os.path.join(BASE_DIR, file)
 
 def image(request):
     # ... create/load image here ...
@@ -16,7 +14,11 @@ def image(request):
     return response
 
 def ftp_list(request):
+    folder = request.GET.get('folder')
     ftp = AAAIMXStorage()
     ftp.login()
-    folders = ftp.list(path='certificates/')
+    folders = ftp.list(path=folder)
     return JsonResponse({'folders': folders})
+
+def generate_QR(request):
+    return 
