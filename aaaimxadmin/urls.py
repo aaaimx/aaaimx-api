@@ -80,6 +80,7 @@ urlpatterns = [
     path("", admin.site.urls),
     path("api/", include(api_urlpatterns)),
     path("image/", image),
+    path("membership/", membership),
 
     # DOCS
     path('openapi', get_schema_view(

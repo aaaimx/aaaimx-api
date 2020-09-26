@@ -5,6 +5,8 @@ from django.core.files.base import ContentFile
 from io import BytesIO, StringIO
 import qrcode
 import os
+import requests
+from io import BytesIO
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -57,23 +59,26 @@ def generate_cert(name, type, uuid, url):
 
 
 def generate_membership(name, uuid, url, avatar):
-    img = Image.open(LOCATION("utils/tmp/clean_membership.png"))
+    img = Image.open(LOCATION("utils/tmp/clean_membership.jpg"))
     widthImg, heightImg = img.size
 
     draw = ImageDraw.Draw(img)
-    draw.text((65, 350), name.upper(),
-              "#fff", font=ImageFont.truetype(NORWESTER, 70))
-    draw.text((300, 1850), 'ID: {0}'.format(uuid),
-              "#fff", font=ImageFont.truetype(MONSERRAT, 35))
+    draw.text((30, 120), name.upper(),
+              "#fff", font=ImageFont.truetype(NORWESTER, 35))
+    draw.text((140, 625), 'ID: {0}'.format(uuid),
+              "#fff", font=ImageFont.truetype(MONSERRAT, 15))
 
-    QR = generate_qr(url, 13)
-    size = 500, 500
+    QR = generate_qr(url, 6)
+    size = 200, 200
     widthQr, heightQr = QR.size
-    avatar = Image.open(avatar)
-    avatar.thumbnail(size)
+    response = requests.get(avatar)
+    avatar = Image.open(BytesIO(response.content))
+    avatar.thumbnail(size, Image.ANTIALIAS)
     widthAvatar, heightAvatar = avatar.size
     print(widthImg, widthAvatar)
-    img.paste(QR, (int((widthImg - widthQr) / 2), 1300))
-    img.paste(avatar, (860 + int((548 - widthAvatar) / 2), 400))
-    output = LOCATION('utils/membership.png')
+    img.paste(QR, (int((widthImg - widthQr) / 2), 440))
+    img.paste(avatar, (300 + int((150 - widthAvatar) / 2), 170))
+    output = LOCATION('media/membership.jpg')
     img.save(output)
+
+
