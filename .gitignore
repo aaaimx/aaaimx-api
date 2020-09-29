@@ -82,6 +82,7 @@ target/
 *.log
 *.pot
 *.pyc
+*.json
 __pycache__/
 .vscode
 .idea
@@ -91,7 +92,4 @@ __pycache__/
 .env.staging
 .env.postgres
 venv
-media
 static
-*.png
-*.json
