@@ -18,6 +18,18 @@ class EventViewSet(viewsets.ModelViewSet):
     queryset = Event.objects.all().order_by('-date_start')
     serializer_class = EventSerializer
 
+    filterset_fields = ['type', 'place']
+    search_fields = ['type', 'description', 'title', 'place']
+    ordering_fields = '__all__'
+    ordering = ['-date_start']
+
+class ParticipantViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows Participants to be viewed or edited.
+    """
+    queryset = Participant.objects.all().order_by('-created_at')
+    serializer_class = ParticipantSerializer
+
 # ViewSets define the view behavior.
 class CertificateViewSet(viewsets.ModelViewSet):
     """
@@ -26,36 +38,10 @@ class CertificateViewSet(viewsets.ModelViewSet):
     queryset = Certificate.objects.all().order_by('-created_at')
     serializer_class = CertificateSerializer
 
-    def list(self, request):
-        """
-        GET method to process pagination, filtering & sort
-        """
-        # get query params
-        to = request.GET.get('to', "")
-        event = request.GET.get('event', None)
-        type = request.GET.get('type', "")
-        status = request.GET.get('status', None)
-        _all = request.GET.get('all', None)
-
-        self.queryset = self.queryset.filter(Q(to__icontains=to))
-        if event is not None:
-            self.queryset = self.queryset.filter(event__exact=event)
-        if type:
-            self.queryset = self.queryset.filter(type=type)
-
-        # filter by status
-        if status:
-            self.queryset = self.queryset.filter(published=status.capitalize())
-
-        # serialize data
-        if _all is not None:
-            serializer = self.get_serializer(self.queryset, many=True)
-            return Response(serializer.data)
-
-        # pagination
-        page = self.paginate_queryset(self.queryset)
-        serializer = self.get_serializer(page, many=True)
-        return self.get_paginated_response(serializer.data)
+    filterset_fields = ['type', 'published', 'event']
+    search_fields = ['type', 'description', 'to', 'event']
+    ordering_fields = '__all__'
+    ordering = ['-created_at']
 
     def generate_cert(self, serializer, host):
         uuid = serializer.data['uuid']

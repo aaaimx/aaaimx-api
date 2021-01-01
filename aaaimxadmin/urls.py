@@ -41,24 +41,18 @@ from .token import MyTokenObtainPairView
 admin.site.site_header = "AAAIMX Admin"
 admin.site.site_title = "AAAIMX Admin Portal"
 admin.site.index_title = "Welcome to AAAIMX Administration Portal"
-admin.site.site_url = "http://www.aaaimx.org"
+admin.site.site_url = "/api/"
 
 # Routers provide an easy way of automatically determining the URL conf.
 router = routers.DefaultRouter() # routers.SimpleRouter(trailing_slash=False)
 router.register(r"users", UserViewSet)
-router.register(r"roles", RoleViewSet)
 router.register(r"members", MemberViewSet)
-router.register(r"advisors", AdvisorViewSet)
-router.register(r"authors", AuthorViewSet)
 router.register(r"partners", PartnerViewSet)
 router.register(r"memberships", MembershipViewSet)
 router.register(r"certificates", CertificateViewSet)
 router.register(r"events", EventViewSet)
 router.register(r"divisions", DivisionViewSet)
-router.register(r"projects", ProjectViewSet)
-router.register(r"lines", LineViewSet)
-router.register(r"research", ResearchViewSet)
-router.register(r"invoices", InvoiceViewSet)
+router.register(r"participants", ParticipantViewSet)
 
 
 # Wire up our API using automatic URL routing.

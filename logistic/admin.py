@@ -31,7 +31,4 @@ class AdminEvent(admin.ModelAdmin):
     list_display = ('title', 'date_start', 'date_end',  'description', 'type', 'division')
     list_filter = ('date_start', 'type', 'division')
 
-@admin.register(Component)
-class AdminComponent(admin.ModelAdmin):
-    list_display = ('description', 'stock', 'available', 'observations')
-    list_filter = ('stock', 'available')
+

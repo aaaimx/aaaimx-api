@@ -18,6 +18,7 @@ THIRD_PARTY_APPS = (
     "corsheaders",
     "rest_framework",
     'rest_registration',
+    'django_filters',
     "gdstorage",
 )
 
