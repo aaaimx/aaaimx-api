@@ -2,12 +2,8 @@ from django.db import models
 from uuid import uuid4
 from datetime import datetime, timedelta
 from productivity.models import Member
-from gdstorage.storage import GoogleDriveStorage
 from django.contrib.postgres.fields import JSONField
 from django.utils import timezone
-
-# Define Google Drive Storage
-gd_storage = GoogleDriveStorage()
 
 # Create your models here.
 
@@ -33,8 +29,6 @@ class Membership(models.Model):
     type = models.CharField(default="", max_length=50, blank=True)
     QR = models.URLField(default="", max_length=100, blank=True)
     exp = models.DateTimeField(default=timezone.now, blank=True)
-    avatar = models.ImageField(upload_to='avatars',
-                               blank=True, storage=gd_storage)
-    file = models.ImageField(upload_to='memberships',
-                             blank=True, storage=gd_storage)
+    avatar = models.ImageField(upload_to='avatars', blank=True)
+    file = models.ImageField(upload_to='memberships', blank=True)
     created_at = models.DateTimeField(auto_now=True, editable=False)

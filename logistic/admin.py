@@ -32,3 +32,8 @@ class AdminEvent(admin.ModelAdmin):
     list_filter = ('date_start', 'type', 'division')
 
 
+@admin.register(Participant)
+class AdminParticipant(admin.ModelAdmin):
+    ordering = ('id',)
+    list_display = ('fullname', 'email', 'adscription',  'career', 'department', 'enrollment')
+    

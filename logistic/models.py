@@ -11,9 +11,10 @@ class Event(models.Model):
     def __str__(self):
         return self.title
     title = models.CharField(max_length=100, null=True, default="")
-    # corum = models.IntegerField(default=0, null=True, blank=True)
-    # hours = models.IntegerField(default=0, null=True, blank=True)
-    # published = models.BooleanField(default=False)
+    corum = models.IntegerField(default=0, null=True, blank=True)
+    hours = models.IntegerField(default=0, null=True, blank=True)
+    published = models.BooleanField(default=False)
+    open_to_public = models.BooleanField(default=False)
 
     date_start = models.DateTimeField(blank=True)
     date_end = models.DateTimeField(blank=True)
@@ -44,10 +45,9 @@ class Certificate(models.Model):
 
 class Participant(models.Model):
     def __str__(self):
-        return self.name + ' ' + self.surname
-    name = models.CharField(default="", max_length=100)
-    surname = models.CharField(default="", blank=True, max_length=100)
-    email = models.EmailField(default="", blank=True, max_length=100)
+        return self.fullname
+    fullname = models.CharField(default="", blank=True, max_length=200)
+    email = models.EmailField(default="", blank=True, max_length=200)
 
     event = models.ForeignKey(
         Event, null=True, blank=True, on_delete=models.CASCADE)
@@ -63,3 +63,5 @@ class Participant(models.Model):
 
     created_at = models.DateTimeField(
         auto_now_add=True, blank=True, null=True)
+
+    cc_hours = models.IntegerField(default=0, blank=True)
