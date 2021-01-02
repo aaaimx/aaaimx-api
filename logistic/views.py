@@ -48,6 +48,10 @@ class ParticipantViewSet(viewsets.ModelViewSet):
     queryset = Participant.objects.all().order_by('-created_at')
     serializer_class = ParticipantSerializer
 
+    filterset_fields = ['event', 'career', 'department', 'adscription']
+    search_fields = ['career', 'department', 'adscription']
+    ordering_fields = '__all__'
+
     @action(detail=False, methods=['POST', 'GET'], permission_classes=[], authentication_classes=[])
     def register(self, request, *args, **kwargs):
         enrollment = request.data.get('enrollment', None)
