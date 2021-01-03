@@ -20,7 +20,12 @@ def membership(request):
     nickname = request.GET['nickname']
     avatar = request.GET['avatar']
     generate_membership(nickname, id, id, avatar)
-    return JsonResponse({})
+    image = Image.open(LOCATION("utils/membership.png"))
+    
+    # serialize to HTTP response
+    response = HttpResponse(content_type="image/png")
+    image.save(response, 'PNG')
+    return response
 
 def ftp_list(request):
     folder = request.GET.get('folder', '')
