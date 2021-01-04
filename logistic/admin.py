@@ -7,7 +7,7 @@ EVENT = "SINABIA 2019"
 # Register your models here.
 @admin.register(Certificate)
 class AdminCertifcate(admin.ModelAdmin, ExportCsvMixin):
-    list_display = ('to', 'uuid', 'event',  'published', 'file', 'description')
+    list_display = ('to', 'uuid', 'event',  'published', 'has_custom_file', 'file', 'description')
     list_filter = ('event', 'type', 'published', 'created_at',)
     search_fields = ('to', 'description', 'created_at')
     ordering = ('-created_at',)

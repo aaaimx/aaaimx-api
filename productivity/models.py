@@ -35,24 +35,14 @@ class Partner(models.Model):
 class Member(models.Model):
     def __str__(self):
         return self.name + ' ' + self.surname
-    name = models.CharField(default="", max_length=100)
-    surname = models.CharField(default="", blank=True, max_length=100)
+    name = models.CharField(default="", max_length=50)
     email = models.EmailField(default="", blank=True, max_length=100)
 
-    charge = models.CharField(max_length=100, default="", blank=True)
-    active = models.BooleanField(default=False)
-    board = models.BooleanField(default=False, blank=True)
-    committee = models.BooleanField(default=False, blank=True)
-
-    divisions = ArrayField(models.CharField(
-        max_length=50, blank=True), size=10, blank=True, null=True, default=list)
+    username = models.CharField(max_length=50, default="", blank=True)
+    active = models.BooleanField(default=True)
     roles = ArrayField(models.CharField(
-        max_length=30, blank=True), size=20, blank=True, null=True, default=list)
-
-    thumbnailFile = models.CharField(
-        max_length=100, default="", null=True, blank=True)
-    adscription = models.ForeignKey(
-        Partner, null=True, blank=True, related_name="adscription_institute", on_delete=models.SET_NULL)
+        max_length=50, blank=True), size=20, blank=True, null=True, default=list)
+    dateJoined = models.DateField(null=True, blank=True)
 
 
 class Line(models.Model):

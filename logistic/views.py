@@ -83,23 +83,32 @@ class CertificateViewSet(viewsets.ModelViewSet):
     ordering_fields = '__all__'
     ordering = ['-created_at']
 
-    def generate_cert(self, serializer, host):
+    def upload_to_ftp(self, file, path):
+        ftp = AAAIMXStorage()
+        ftp.login()
+        ftp.save(file, path)
+        ftp.exit()
+
+    def generate_cert(self, serializer):
         uuid = serializer.data['uuid']
         to = serializer.data['to']
         type = serializer.data['type']
         url = 'https://www.aaaimx.org/certificates/?id={0}'.format(uuid)
-        imgCert = generate_cert(to, type, uuid, url)
-        inst = Certificate.objects.filter(pk=uuid).update(QR=url)
-        inst = Certificate.objects.get(pk=uuid)
-        inst.file = host + '/image/'
-        inst.save()
+        file = generate_cert(to, type, uuid, url)
+        instance = Certificate.objects.get(pk=uuid)
+        path = '%s/%s/%s.jpg' % (instance.ftp_folder, instance.type, str(instance.uuid))
+        self.upload_to_ftp(file, path)
+        instance.has_custom_file = False
+        instance.QR = url
+        instance.file = 'https://www.aaaimx.org/' + path
+        instance.save()
+        return Response({})
 
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         self.perform_create(serializer)
-        self.generate_cert(serializer, request.scheme +
-                           '://' + request.META['HTTP_HOST'])
+        self.generate_cert(serializer)
         return Response(serializer.data, status=201)
 
     def perform_create(self, serializer):
@@ -113,20 +122,17 @@ class CertificateViewSet(viewsets.ModelViewSet):
         serializer.is_valid(raise_exception=False)
         serializer.save()
         if not request.FILES.get('file', None):
-            self.generate_cert(serializer, request.scheme +
-                               '://' + request.META['HTTP_HOST'])
+            self.generate_cert(serializer)
         return Response(serializer.data)
 
     @action(detail=True, methods=['PATCH'])
     def upload(self, request, pk=None):
         instance = Certificate.objects.get(pk=pk)
         file = request.FILES['file']
-        path = request.POST['upload'] + f'/{instance.type}/' + \
+        path = request.POST['ftp_folder'] + f'/{instance.type}/' + \
             str(instance.uuid) + '.' + file.name.split('.')[1]
-        ftp = AAAIMXStorage()
-        ftp.login()
-        ftp.save(file, path)
-        ftp.exit()
+        self.upload_to_ftp(file, path)
+        instance.has_custom_file = True
         instance.file = 'https://www.aaaimx.org/' + path
         instance.save()
         return Response({})

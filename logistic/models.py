@@ -34,14 +34,17 @@ class Certificate(models.Model):
     type = models.CharField(max_length=100, default="RECOGNITION", blank=True,)
     event = models.CharField(max_length=200, default="", blank=True, null=True)
     published = models.BooleanField(default=False)
+    has_custom_file = models.BooleanField(default=False)
     to = models.CharField(max_length=100, blank=True, default="")
     QR = models.CharField(max_length=100, blank=True,
                           default='www.aaaimx.org/certificates/?id=')
     file = models.CharField(max_length=200, blank=True, default="")
+    ftp_folder = models.CharField(max_length=50, blank=True, default="")
     description = models.TextField(default="", blank=True)
     created_at = models.DateTimeField(
         default=datetime.now, blank=True, null=True)
 
+# Certificate.objects.all().update(has_custom_file=True)
 
 class Participant(models.Model):
     def __str__(self):

@@ -57,6 +57,8 @@ def generate_cert(name, type, uuid, url):
     output = LOCATION(f'utils/certificate.png')
     img.save(output)
 
+    return ImageFile(open(output, 'rb+'))
+
 
 def generate_membership(name, uuid, url, avatar):
     img = Image.open(LOCATION("utils/tmp/clean_membership.jpg"))
