@@ -93,12 +93,13 @@ class CertificateViewSet(viewsets.ModelViewSet):
         uuid = serializer.data['uuid']
         to = serializer.data['to']
         type = serializer.data['type']
+        desc = serializer.data['description']
         url = 'https://www.aaaimx.org/certificates/?id={0}'.format(uuid)
-        file = generate_cert(to, type, uuid, url)
+        file = generate_cert(to, type, desc, uuid, url)
         instance = Certificate.objects.get(pk=uuid)
         path = '%s/%s/%s.jpg' % (instance.ftp_folder, instance.type, str(instance.uuid))
         self.upload_to_ftp(file, path)
-        instance.has_custom_file = False
+        instance.has_custom_file = True
         instance.QR = url
         instance.file = 'https://www.aaaimx.org/' + path
         instance.save()

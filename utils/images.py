@@ -1,3 +1,4 @@
+import textwrap
 from PIL import Image, ImageFont, ImageDraw
 from PIL import ImageFile as PILImageFile
 from django.core.files.images import ImageFile
@@ -17,12 +18,13 @@ def LOCATION(file): return os.path.join(BASE_DIR, file)
 # font files
 SPARTAN = LOCATION("utils/fonts/LeagueSpartan-Bold.otf")
 ARIMO = LOCATION("utils/fonts/Arimo-Regular.ttf")
-COOPER = LOCATION("utils/fonts/CooperHewitt-Light.otf")
+COOPER = LOCATION("utils/fonts/CooperHewitt-Semibold.otf")
 NORWESTER = LOCATION("utils/fonts/Norwester.otf")
 MONSERRAT = LOCATION("utils/fonts/Montserrat-Black.otf")
 
 
 def SPARTAN_FONT(size): return ImageFont.truetype(SPARTAN, size)
+def COPPER_FONT(size): return ImageFont.truetype(COOPER, size)
 
 
 def generate_qr(url, size=5):
@@ -37,26 +39,48 @@ def generate_qr(url, size=5):
     return qr.make_image(fill_color="black", back_color="white")
 
 
-def generate_cert(name, type, uuid, url):
-    TYPE = "CERTIFICATE OF {0}".format(type)
+def generate_cert(name, type, desc, uuid, url):
+    '''
+    Generate certificate from clean template
+    '''
+    # Create Certifcate image from template
+    # get image sizes for calculations
     img = Image.open(LOCATION("utils/tmp/clean_cert.png"))
     widthImg, heightImg = img.size
-    typeWidth = SPARTAN_FONT(75).getsize(TYPE)[0]
-    nameWidth = SPARTAN_FONT(92).getsize(name)[0]
-
     draw = ImageDraw.Draw(img)
+
+    # Certificate type
+    TYPE = "CERTIFICATE OF %s" % type
+    typeWidth = SPARTAN_FONT(75).getsize(TYPE)[0]
     draw.text(((widthImg - typeWidth) / 2, 350),
               TYPE, '#003138', font=SPARTAN_FONT(75))
+
+    # Participant name
+    nameWidth = SPARTAN_FONT(92).getsize(name)[0]
     draw.text(((widthImg - nameWidth) / 2, 620),
               name, '#800000', font=SPARTAN_FONT(92))
-    draw.text((100, 1270), 'Certificate ID: {0}'.format(
+
+    # Certificate UUID
+    draw.text((100, 1270), 'Certificate ID: %s' % str(
         uuid), "#737373", font=ImageFont.truetype(ARIMO, 30))
 
+    # Certificate description multiline
+    lines = textwrap.wrap(desc, width=70)
+    desc_font_size = 40
+    desc_start_at = 770
+    for line in lines:
+        width, height = COPPER_FONT(desc_font_size).getsize(line)
+        draw.text(((widthImg - width) / 2, desc_start_at), line,
+                  "#003138", font=COPPER_FONT(desc_font_size))
+        desc_start_at += height + 10
+
+    # Certificate QR
     QR = generate_qr(url)
     img.paste(QR, (1690, 1050))
+
+    # save result and return as binary image
     output = LOCATION(f'utils/certificate.png')
     img.save(output)
-
     return ImageFile(open(output, 'rb+'))
 
 
@@ -82,5 +106,3 @@ def generate_membership(name, uuid, url, avatar):
     img.paste(avatar, (300 + int((150 - widthAvatar) / 2), 170))
     output = LOCATION('utils/membership.png')
     img.save(output)
-
-

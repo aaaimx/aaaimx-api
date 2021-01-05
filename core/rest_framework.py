@@ -30,9 +30,10 @@ JWT_AUTH = {
 
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": datetime.timedelta(hours=1),
-    "REFRESH_TOKEN_LIFETIME": datetime.timedelta(hours=1),
+    "REFRESH_TOKEN_LIFETIME": datetime.timedelta(days=1),
     "USER_ID_FIELD": "username",
     'USER_ID_CLAIM': 'username',
+    'UPDATE_LAST_LOGIN': True,
 }
 
 CORS_ORIGIN_ALLOW_ALL = True

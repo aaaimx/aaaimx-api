@@ -12,11 +12,12 @@ class UserSerializer(serializers.ModelSerializer):
         slug_field='name'
     )
     is_superuser = serializers.BooleanField(read_only=True)
+    is_staff = serializers.BooleanField(read_only=True)
 
     class Meta:
         model = User
         fields = ['id', 'username', 'first_name',
-                  'last_name', 'email', 'is_superuser', 'groups']
+                  'last_name', 'email', 'is_superuser', 'is_staff', 'last_login', 'groups']
 
 
 class GroupSerializer(serializers.ModelSerializer):

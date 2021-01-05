@@ -8,27 +8,14 @@ from rest_framework.response import Response
 # ViewSets define the view behavior.
 
 
-class UserViewSet(viewsets.ModelViewSet):
+class UserViewSet(viewsets.ReadOnlyModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
     """
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
 
-    def create(self, request):
-        return Response({'message': 'This action is not available'}, status=405)
-
-    def update(self, request, pk=None):
-        return Response({'message': 'This action is not available'}, status=405)
-
-    def partial_update(self, request, pk=None):
-        return Response({'message': 'This action is not available'}, status=405)
-
-    def destroy(self, request, pk=None):
-        return Response({'message': 'This action is not available'}, status=405)
-
-
-class GroupViewSet(viewsets.ModelViewSet):
+class GroupViewSet(viewsets.ReadOnlyModelViewSet):
     """
     API endpoint that allows groups to be viewed or edited.
     """
