@@ -23,11 +23,22 @@ NORWESTER = LOCATION("utils/fonts/Norwester.otf")
 MONSERRAT = LOCATION("utils/fonts/Montserrat-Black.otf")
 
 
-def SPARTAN_FONT(size): return ImageFont.truetype(SPARTAN, size)
-def COPPER_FONT(size): return ImageFont.truetype(COOPER, size)
+def SPARTAN_FONT(size):
+    return ImageFont.truetype(SPARTAN, size)
+
+
+def ARIMO_FONT(size):
+    return ImageFont.truetype(ARIMO, size)
+
+
+def COPPER_FONT(size):
+    return ImageFont.truetype(COOPER, size)
 
 
 def generate_qr(url, size=5):
+    '''
+    Returns a QR code image with URL
+    '''
     qr = qrcode.QRCode(
         version=1,
         error_correction=qrcode.constants.ERROR_CORRECT_L,
@@ -46,37 +57,52 @@ def generate_cert(name, type, desc, uuid, url):
     # Create Certifcate image from template
     # get image sizes for calculations
     img = Image.open(LOCATION("utils/tmp/clean_cert.png"))
-    widthImg, heightImg = img.size
-    draw = ImageDraw.Draw(img)
+    imgWidth, imgHeight = img.size
+    cert_draw = ImageDraw.Draw(img)
 
     # Certificate type
-    TYPE = "CERTIFICATE OF %s" % type
-    typeWidth = SPARTAN_FONT(75).getsize(TYPE)[0]
-    draw.text(((widthImg - typeWidth) / 2, 350),
-              TYPE, '#003138', font=SPARTAN_FONT(75))
+    type_text = "CERTIFICATE OF %s" % type
+    start_at = 350
+    font_size = 75
+    color = '#003138'
+    width = SPARTAN_FONT(font_size).getsize(type_text)[0]
+    cert_draw.text(((imgWidth - width) / 2, start_at),
+                   type_text, color, font=SPARTAN_FONT(font_size))
 
     # Participant name
-    nameWidth = SPARTAN_FONT(92).getsize(name)[0]
-    draw.text(((widthImg - nameWidth) / 2, 620),
-              name, '#800000', font=SPARTAN_FONT(92))
+    start_at = 620
+    color = '#800000'
+    font_size = 92
+    width = SPARTAN_FONT(font_size).getsize(name)[0]
+    cert_draw.text(((imgWidth - width) / 2, start_at),
+                   name, color, font=SPARTAN_FONT(font_size))
 
     # Certificate UUID
-    draw.text((100, 1270), 'Certificate ID: %s' % str(
-        uuid), "#737373", font=ImageFont.truetype(ARIMO, 30))
+    uuid_text = 'Certificate ID: %s' % str(uuid)
+    uuid_x = 100
+    uuid_y = 1270
+    font_size = 30
+    color = "#737373"
+    cert_draw.text((uuid_x, uuid_y), uuid_text,
+                   color, font=ARIMO_FONT(font_size))
 
     # Certificate description multiline
+    start_at = 770
+    color = "#003138"
+    font_size = 40
+    line_space = 10
     lines = textwrap.wrap(desc, width=70)
-    desc_font_size = 40
-    desc_start_at = 770
     for line in lines:
-        width, height = COPPER_FONT(desc_font_size).getsize(line)
-        draw.text(((widthImg - width) / 2, desc_start_at), line,
-                  "#003138", font=COPPER_FONT(desc_font_size))
-        desc_start_at += height + 10
+        width, height = COPPER_FONT(font_size).getsize(line)
+        cert_draw.text(((imgWidth - width) / 2, start_at), line,
+                       color, font=COPPER_FONT(font_size))
+        start_at += height + line_space
 
     # Certificate QR
     QR = generate_qr(url)
-    img.paste(QR, (1690, 1050))
+    QR_x = 1690
+    QR_y = 1050
+    img.paste(QR, (QR_x, QR_y))
 
     # save result and return as binary image
     output = LOCATION(f'utils/certificate.png')
@@ -101,7 +127,6 @@ def generate_membership(name, uuid, url, avatar):
     avatar = Image.open(BytesIO(response.content))
     avatar.thumbnail(size, Image.ANTIALIAS)
     widthAvatar, heightAvatar = avatar.size
-    print(widthImg, widthAvatar)
     img.paste(QR, (int((widthImg - widthQr) / 2), 440))
     img.paste(avatar, (300 + int((150 - widthAvatar) / 2), 170))
     output = LOCATION('utils/membership.png')

@@ -12,6 +12,7 @@ from .forms import CertFile
 import re
 from storage.main import AAAIMXStorage
 from datetime import date
+from bs4 import BeautifulSoup
 
 
 class EventViewSet(viewsets.ModelViewSet):
@@ -93,13 +94,15 @@ class CertificateViewSet(viewsets.ModelViewSet):
         uuid = serializer.data['uuid']
         to = serializer.data['to']
         type = serializer.data['type']
-        desc = serializer.data['description']
+        desc = BeautifulSoup('<p>%s</p>' %
+                             serializer.data['description'], "xml").get_text()
         url = 'https://www.aaaimx.org/certificates/?id={0}'.format(uuid)
         file = generate_cert(to, type, desc, uuid, url)
         instance = Certificate.objects.get(pk=uuid)
-        path = '%s/%s/%s.jpg' % (instance.ftp_folder, instance.type, str(instance.uuid))
+        path = '%s/%s/%s.jpg' % (instance.ftp_folder,
+                                 instance.type, str(instance.uuid))
         self.upload_to_ftp(file, path)
-        instance.has_custom_file = True
+        instance.description = desc
         instance.QR = url
         instance.file = 'https://www.aaaimx.org/' + path
         instance.save()
