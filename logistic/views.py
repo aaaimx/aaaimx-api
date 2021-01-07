@@ -1,6 +1,7 @@
 from .models import *
 from rest_framework import viewsets
 from .serializers import *
+from .mixins import DeepListModelMixin
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.settings import api_settings
@@ -15,12 +16,13 @@ from datetime import date
 from bs4 import BeautifulSoup
 
 
-class EventViewSet(viewsets.ModelViewSet):
+class EventViewSet(DeepListModelMixin, viewsets.ModelViewSet):
     """
     API endpoint that allows Events to be viewed or edited.
     """
     queryset = Event.objects.all().order_by('-date_start')
     serializer_class = EventSerializer
+    deep_serializer = EventSerializerDeep
 
     filterset_fields = ['type', 'published', 'place']
     search_fields = ['type', 'description', 'title', 'place']
@@ -35,19 +37,20 @@ class EventViewSet(viewsets.ModelViewSet):
 
         page = self.paginate_queryset(queryset)
         if page is not None:
-            serializer = self.get_serializer(page, many=True)
+            serializer = EventSerializerDeep(page, many=True)
             return self.get_paginated_response(serializer.data)
 
-        serializer = self.get_serializer(queryset, many=True)
+        serializer = EventSerializerDeep(queryset, many=True)
         return Response(serializer.data)
 
 
-class ParticipantViewSet(viewsets.ModelViewSet):
+class ParticipantViewSet(DeepListModelMixin, viewsets.ModelViewSet):
     """
     API endpoint that allows Participants to be viewed or edited.
     """
     queryset = Participant.objects.all().order_by('-created_at')
     serializer_class = ParticipantSerializer
+    deep_serializer = ParticipantSerializerDeep
 
     filterset_fields = ['event', 'career', 'department', 'adscription']
     search_fields = ['career', 'department', 'adscription']
@@ -72,12 +75,13 @@ class ParticipantViewSet(viewsets.ModelViewSet):
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
 
 
-class CertificateViewSet(viewsets.ModelViewSet):
+class CertificateViewSet(DeepListModelMixin, viewsets.ModelViewSet):
     """
     API endpoint that allows Certificates to be viewed or edited.
     """
     queryset = Certificate.objects.all().order_by('-created_at')
     serializer_class = CertificateSerializer
+    deep_serializer = CertificateSerializerDeep
 
     filterset_fields = ['type', 'published', 'event']
     search_fields = ['type', 'description', 'to', 'event']
@@ -114,9 +118,6 @@ class CertificateViewSet(viewsets.ModelViewSet):
         self.perform_create(serializer)
         self.generate_cert(serializer)
         return Response(serializer.data, status=201)
-
-    def perform_create(self, serializer):
-        serializer.save()
 
     def update(self, request, *args, **kwargs):
         partial = kwargs.pop('partial', False)

@@ -20,3 +20,20 @@ class ExportCsvMixin:
         return response
 
     export_as_csv.short_description = "Export Selected"
+
+
+class DeepListModelMixin:
+    """
+    Apply this mixin to any view or viewset to get a deep 'list' action
+    based on a `depth_serializer` attribute, aditionally to the default single field serializer_class.
+    """
+    def list(self, request, *args, **kwargs):
+        queryset = self.filter_queryset(self.get_queryset())
+
+        page = self.paginate_queryset(queryset)
+        if page is not None:
+            serializer = self.deep_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+
+        serializer = self.deep_serializer(queryset, many=True)
+        return Response(serializer.data)

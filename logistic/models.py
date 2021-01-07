@@ -32,7 +32,8 @@ class Certificate(models.Model):
         return '{0}: {1}'.format(self.type, self.to)
     uuid = models.UUIDField(default=uuid4, primary_key=True, editable=True)
     type = models.CharField(max_length=100, default="RECOGNITION", blank=True,)
-    event = models.CharField(max_length=200, default="", blank=True, null=True)
+    event = models.ForeignKey(
+        Event, null=True, blank=True, on_delete=models.SET_NULL)
     published = models.BooleanField(default=False)
     to = models.CharField(max_length=100, blank=True, default="")
     QR = models.CharField(max_length=100, blank=True,
@@ -67,3 +68,12 @@ class Participant(models.Model):
         auto_now_add=True, blank=True, null=True)
 
     cc_hours = models.IntegerField(default=0, blank=True)
+
+# all = Certificate.objects.all()
+# for cert in all:
+#     try:
+#         event = Event.objects.get(title=cert.event_title)
+#         cert.event = event
+#         cert.save()
+#     except:
+#         pass
