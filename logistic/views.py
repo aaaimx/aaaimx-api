@@ -84,10 +84,10 @@ class CertificateViewSet(viewsets.ModelViewSet):
     ordering_fields = '__all__'
     ordering = ['-created_at']
 
-    def upload_to_ftp(self, file, path):
+    def upload_to_ftp(self, file, folder, filename):
         ftp = AAAIMXStorage()
         ftp.login()
-        ftp.save(file, path)
+        ftp.save(file, folder, filename)
         ftp.exit()
 
     def generate_cert(self, serializer):
@@ -99,12 +99,12 @@ class CertificateViewSet(viewsets.ModelViewSet):
         url = 'https://www.aaaimx.org/certificates/?id={0}'.format(uuid)
         file = generate_cert(to, type, desc, uuid, url)
         instance = Certificate.objects.get(pk=uuid)
-        path = '%s/%s/%s.jpg' % (instance.ftp_folder,
-                                 instance.type, str(instance.uuid))
-        self.upload_to_ftp(file, path)
+        folder = '%s/%s/' % (instance.ftp_folder, instance.type)
+        filename = '%s.jpg' % str(instance.uuid)
+        self.upload_to_ftp(file, folder, filename)
         instance.description = desc
         instance.QR = url
-        instance.file = 'https://www.aaaimx.org/' + path
+        instance.file = 'https://www.aaaimx.org/' + folder + filename
         instance.save()
         return Response({})
 
@@ -133,11 +133,12 @@ class CertificateViewSet(viewsets.ModelViewSet):
     def upload(self, request, pk=None):
         instance = Certificate.objects.get(pk=pk)
         file = request.FILES['file']
-        path = request.POST['ftp_folder'] + f'/{instance.type}/' + \
-            str(instance.uuid) + '.' + file.name.split('.')[1]
-        self.upload_to_ftp(file, path)
-        instance.has_custom_file = True
-        instance.file = 'https://www.aaaimx.org/' + path
+        ftp_folder = request.POST['ftp_folder']
+        folder = '%s/%s/' % (ftp_folder, instance.type)
+        filename = '%s.jpg' % str(instance.uuid)
+        self.upload_to_ftp(file, folder, filename)
+        instance.file = 'https://www.aaaimx.org/' + folder + filename
+        instance.ftp_folder = ftp_folder
         instance.save()
         return Response({})
 
@@ -154,3 +155,13 @@ class CertificateViewSet(viewsets.ModelViewSet):
             instance._prefetched_objects_cache = {}
 
         return Response(serializer.data)
+
+    def destroy(self, request, *args, **kwargs):
+        instance = self.get_object()
+        folder = '%s/%s' % (instance.ftp_folder, instance.type)
+        ftp = AAAIMXStorage()
+        ftp.login()
+        ftp.remove(folder, str(instance.uuid) + '.jpg')
+        ftp.exit()
+        self.perform_destroy(instance)
+        return Response(status=status.HTTP_204_NO_CONTENT)

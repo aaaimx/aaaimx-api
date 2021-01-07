@@ -34,7 +34,6 @@ class Certificate(models.Model):
     type = models.CharField(max_length=100, default="RECOGNITION", blank=True,)
     event = models.CharField(max_length=200, default="", blank=True, null=True)
     published = models.BooleanField(default=False)
-    has_custom_file = models.BooleanField(default=False)
     to = models.CharField(max_length=100, blank=True, default="")
     QR = models.CharField(max_length=100, blank=True,
                           default='www.aaaimx.org/certificates/?id=')

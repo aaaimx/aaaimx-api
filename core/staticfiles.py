@@ -15,3 +15,6 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 GOOGLE_DRIVE_STORAGE_JSON_KEY_FILE = os.path.join(
     BASE_DIR, os.environ.get('GOOGLE_DRIVE_STORAGE_JSON_KEY_FILE'))
+
+FTP_USER = os.environ.get('FTP_USER')
+FTP_PASS = os.environ.get('FTP_PASS')

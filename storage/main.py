@@ -1,39 +1,33 @@
+import os
 import ftplib
 from datetime import datetime
-import os
+from django.conf import settings
 
 class AAAIMXStorage():
     def __init__(self):
-        self.user = os.environ.get('FTP_USER')
-        self.password = os.environ.get('FTP_PASS')
+        self.user = settings.FTP_USER
+        self.password = settings.FTP_PASS
         self.session = None
 
     def login(self):
         self.session = ftplib.FTP('ftp.aaaimx.org', self.user, self.password)
 
-    def save(self, file, path):
-        self.session.storbinary('STOR ' + str(path), file)
-
-    def create(self, folder):
+    def save(self, file, folder, filename):
         try:
-            self.session.mkd(folder)
-        except ftplib.error_perm:
-            pass
+            self.session.storbinary('STOR %s/%s' % (folder, filename), file)
+        except Exception as err:
+            print(err)
+            if 'No such file or directory' in str(err):
+                self.session.mkd(folder)
+                self.session.storbinary('STOR %s/%s' %
+                                        (folder, filename), file)
+
+    def remove(self, folder, filename):
+        self.session.cwd(folder)
+        self.session.delete(filename)
 
     def list(self, path):
-        return self.session.nlst(path) 
+        return self.session.nlst(path)
 
     def exit(self):
         self.session.quit()
-
-
-
-# USER = os.environ.get('USER')
-# PASS = os.environ.get('PASS')
-# file = open('./storage/file.png','rb')
-# ftp = AAAIMXStorage(USER, PASS)
-# ftp.login()
-# ftp.create('certificates/2020')
-# ftp.save(file, 'certificates/2020/file.png')
-# print(ftp.list('certificates/2019'))
-# file.close()   
