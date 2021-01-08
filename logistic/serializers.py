@@ -5,7 +5,7 @@ from .models import *
 
 
 class CertificateSerializer(serializers.ModelSerializer):
-    corum = serializers.IntegerField(required=False, default=0)
+    
 
     class Meta:
         model = Certificate
@@ -20,6 +20,7 @@ class CertificateSerializerDeep(serializers.ModelSerializer):
 
 
 class EventSerializer(serializers.ModelSerializer):
+    corum = serializers.IntegerField(required=False, default=0)
     class Meta:
         model = Event
         exclude = []
