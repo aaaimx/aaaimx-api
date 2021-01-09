@@ -41,4 +41,4 @@ SIMPLE_JWT = {
 # https://pypi.org/project/django-cors-headers/
 
 CORS_ALLOW_CREDENTIALS = True
-CORS_ALLOWED_ORIGINS = os.environ.get("DJANGO_ALLOWED_ORIGINS").split(' ')
+CORS_ORIGIN_WHITELIST = os.environ.get("DJANGO_ALLOWED_ORIGINS").split(' ')
