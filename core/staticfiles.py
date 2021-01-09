@@ -18,3 +18,4 @@ GOOGLE_DRIVE_STORAGE_JSON_KEY_FILE = os.path.join(
 
 FTP_USER = os.environ.get('FTP_USER')
 FTP_PASS = os.environ.get('FTP_PASS')
+FTP_BASE_URL = os.environ.get('FTP_BASE_URL')

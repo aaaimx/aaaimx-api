@@ -14,7 +14,7 @@ import re
 from storage.main import AAAIMXStorage
 from datetime import date
 from bs4 import BeautifulSoup
-
+from django.conf import settings
 
 class EventViewSet(DeepListModelMixin, viewsets.ModelViewSet):
     """
@@ -94,21 +94,23 @@ class CertificateViewSet(DeepListModelMixin, viewsets.ModelViewSet):
         ftp.save(file, folder, filename)
         ftp.exit()
 
+        return settings.FTP_BASE_URL + folder + filename
+
     def generate_cert(self, serializer):
         uuid = serializer.data['uuid']
         to = serializer.data['to']
         type = serializer.data['type']
         desc = BeautifulSoup('<p>%s</p>' %
                              serializer.data['description'], "xml").get_text()
-        url = 'https://www.aaaimx.org/certificates/?id={0}'.format(uuid)
-        file = generate_cert(to, type, desc, uuid, url)
+        QR = settings.FTP_BASE_URL + 'certificates/?id={0}'.format(uuid)
+        file = generate_cert(to, type, desc, uuid, QR)
         instance = Certificate.objects.get(pk=uuid)
         folder = '%s/%s/' % (instance.ftp_folder, instance.type)
         filename = '%s.jpg' % str(instance.uuid)
-        self.upload_to_ftp(file, folder, filename)
+        url = self.upload_to_ftp(file, folder, filename)
         instance.description = desc
-        instance.QR = url
-        instance.file = 'https://www.aaaimx.org/' + folder + filename
+        instance.QR = QR
+        instance.file = url
         instance.save()
         return Response({})
 
@@ -137,8 +139,8 @@ class CertificateViewSet(DeepListModelMixin, viewsets.ModelViewSet):
         ftp_folder = request.POST['ftp_folder']
         folder = '%s/%s/' % (ftp_folder, instance.type)
         filename = '%s.jpg' % str(instance.uuid)
-        self.upload_to_ftp(file, folder, filename)
-        instance.file = 'https://www.aaaimx.org/' + folder + filename
+        url = self.upload_to_ftp(file, folder, filename)
+        instance.file = url
         instance.ftp_folder = ftp_folder
         instance.save()
         return Response({})

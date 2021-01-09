@@ -1,3 +1,4 @@
+import os
 import datetime
 
 REST_FRAMEWORK = {
@@ -36,5 +37,7 @@ SIMPLE_JWT = {
     'UPDATE_LAST_LOGIN': True,
 }
 
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_ALLOW_ALL= bool(os.environ.get("DJANGO_ORIGIN_ALLOW_ALL", 0))
 CORS_ALLOW_CREDENTIALS = True
+if not CORS_ORIGIN_ALLOW_ALL:
+    CORS_ALLOWED_ORIGINS = os.environ.get("DJANGO_ALLOWED_ORIGINS").split(' ')
