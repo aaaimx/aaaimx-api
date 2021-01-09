@@ -37,7 +37,8 @@ SIMPLE_JWT = {
     'UPDATE_LAST_LOGIN': True,
 }
 
-CORS_ORIGIN_ALLOW_ALL= bool(os.environ.get("DJANGO_ORIGIN_ALLOW_ALL", 0))
+# Django Cors Headers
+# https://pypi.org/project/django-cors-headers/
+
 CORS_ALLOW_CREDENTIALS = True
-if not CORS_ORIGIN_ALLOW_ALL:
-    CORS_ALLOWED_ORIGINS = os.environ.get("DJANGO_ALLOWED_ORIGINS").split(' ')
+CORS_ALLOWED_ORIGINS = os.environ.get("DJANGO_ALLOWED_ORIGINS").split(' ')
