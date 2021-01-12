@@ -1,20 +1,22 @@
-from .models import *
-from rest_framework import viewsets
-from .serializers import *
-from .mixins import DeepListModelMixin
-from rest_framework import status
-from rest_framework.response import Response
-from rest_framework.settings import api_settings
-from rest_framework.decorators import action
-from django.db.models import Q
-from django.shortcuts import get_object_or_404
-from utils.images import generate_cert, LOCATION
-from .forms import CertFile
+# standard library imports
 import re
-from storage.main import AAAIMXStorage
 from datetime import date
+
+# related third party imports
 from bs4 import BeautifulSoup
 from django.conf import settings
+from django.shortcuts import get_object_or_404
+from rest_framework import viewsets
+from rest_framework import status
+from rest_framework.response import Response
+from rest_framework.decorators import action
+
+# local application/library specific imports
+from utils.images import generate_cert
+from storage.main import AAAIMXStorage
+from .mixins import DeepListModelMixin
+from .models import *
+from .serializers import *
 
 class EventViewSet(DeepListModelMixin, viewsets.ModelViewSet):
     """
@@ -23,8 +25,9 @@ class EventViewSet(DeepListModelMixin, viewsets.ModelViewSet):
     queryset = Event.objects.all().order_by('-date_start')
     serializer_class = EventSerializer
     deep_serializer = EventSerializerDeep
+    filter_date_field = "date_start"
 
-    filterset_fields = ['type', 'published', 'place']
+    filterset_fields = '__all__'
     search_fields = ['type', 'description', 'title', 'place']
     ordering_fields = '__all__'
     ordering = ['-date_start']
@@ -51,6 +54,7 @@ class ParticipantViewSet(DeepListModelMixin, viewsets.ModelViewSet):
     queryset = Participant.objects.all().order_by('-created_at')
     serializer_class = ParticipantSerializer
     deep_serializer = ParticipantSerializerDeep
+    filter_date_field = "created_at"
 
     filterset_fields = ['event', 'career', 'department', 'adscription']
     search_fields = ['career', 'department', 'adscription']
@@ -81,10 +85,12 @@ class CertificateViewSet(DeepListModelMixin, viewsets.ModelViewSet):
     """
     queryset = Certificate.objects.all().order_by('-created_at')
     serializer_class = CertificateSerializer
+
     deep_serializer = CertificateSerializerDeep
+    filter_date_field = "created_at"
 
     filterset_fields = ['type', 'published', 'event']
-    search_fields = ['type', 'description', 'to', 'event']
+    search_fields = ['type', 'description', 'to']
     ordering_fields = '__all__'
     ordering = ['-created_at']
 

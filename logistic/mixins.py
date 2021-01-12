@@ -1,6 +1,7 @@
 import csv
 from django.http import HttpResponse
 
+
 class ExportCsvMixin:
 
     def export_as_csv(self, request, queryset):
@@ -27,7 +28,9 @@ class DeepListModelMixin:
     Apply this mixin to any view or viewset to get a deep 'list' action
     based on a `depth_serializer` attribute, aditionally to the default single field serializer_class.
     """
+
     def list(self, request, *args, **kwargs):
+        self.filter_by_date_range(request)
         queryset = self.filter_queryset(self.get_queryset())
 
         page = self.paginate_queryset(queryset)
@@ -37,3 +40,10 @@ class DeepListModelMixin:
 
         serializer = self.deep_serializer(queryset, many=True)
         return Response(serializer.data)
+
+    def filter_by_date_range(self, request):
+        range = request.GET.getlist('range[]', None)
+        if range:
+            key = self.filter_date_field
+            obj = {'%s__range' % key: range}
+            self.queryset = self.queryset .filter(**obj)
