@@ -51,7 +51,7 @@ class Participant(models.Model):
         return self.fullname
     fullname = models.CharField(default="", blank=True, max_length=200)
     email = models.EmailField(default="", blank=True, max_length=200)
-
+    responsible = models.BooleanField(default=False)
     event = models.ForeignKey(
         Event, null=True, blank=True, on_delete=models.CASCADE)
 

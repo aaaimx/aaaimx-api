@@ -18,6 +18,7 @@ from .mixins import DeepListModelMixin
 from .models import *
 from .serializers import *
 
+
 class EventViewSet(DeepListModelMixin, viewsets.ModelViewSet):
     """
     API endpoint that allows Events to be viewed or edited.
@@ -35,7 +36,8 @@ class EventViewSet(DeepListModelMixin, viewsets.ModelViewSet):
     @action(detail=False, methods=['GET'])
     def future(self, request):
 
-        queryset = self.get_queryset().filter(date_start__gte=date.today())
+        queryset = self.get_queryset().filter(
+            date_start__gte=date.today(), published=True)
         queryset = self.filter_queryset(queryset)
 
         page = self.paginate_queryset(queryset)
