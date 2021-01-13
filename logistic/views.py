@@ -37,7 +37,7 @@ class EventViewSet(DeepListModelMixin, viewsets.ModelViewSet):
     def future(self, request):
 
         queryset = self.get_queryset().filter(
-            date_start__gte=date.today(), published=True)
+            date_start__gte=date.today(), is_draft=False)
         queryset = self.filter_queryset(queryset)
 
         page = self.paginate_queryset(queryset)

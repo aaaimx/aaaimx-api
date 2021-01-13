@@ -13,7 +13,7 @@ class Event(models.Model):
     title = models.CharField(max_length=100, null=True, default="")
     corum = models.IntegerField(default=0, null=True, blank=True)
     hours = models.IntegerField(default=0, null=True, blank=True)
-    published = models.BooleanField(default=False)
+    is_draft = models.BooleanField(default=True)
     open_to_public = models.BooleanField(default=False)
 
     date_start = models.DateTimeField(blank=True)
