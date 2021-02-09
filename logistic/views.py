@@ -24,7 +24,6 @@ class EventViewSet(viewsets.ModelViewSet):
     """
     queryset = Event.objects.all().order_by('-date_start')
     serializer_class = EventSerializer
-    pagination_class = None
     filter_date_field = "date_start"
 
     filterset_fields = '__all__'
