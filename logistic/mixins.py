@@ -23,27 +23,16 @@ class ExportCsvMixin:
     export_as_csv.short_description = "Export Selected"
 
 
-class DeepListModelMixin:
+class DateRangeFilterMixin:
     """
-    Apply this mixin to any view or viewset to get a deep 'list' action
-    based on a `depth_serializer` attribute, aditionally to the default single field serializer_class.
+    Apply this mixin to any view or viewset to get a filtered 'list' action
+    based on a `filter_date_field` attribute.
     """
 
-    def list(self, request, *args, **kwargs):
-        self.filter_by_date_range(request)
-        queryset = self.filter_queryset(self.get_queryset())
-
-        page = self.paginate_queryset(queryset)
-        if page is not None:
-            serializer = self.deep_serializer(page, many=True)
-            return self.get_paginated_response(serializer.data)
-
-        serializer = self.deep_serializer(queryset, many=True)
-        return Response(serializer.data)
-
-    def filter_by_date_range(self, request):
-        range = request.GET.getlist('range[]', None)
-        if range:
+    def get_queryset(self):
+        range = self.request.GET.getlist('range[]', None)
+        if self.action == 'list' and range:
             key = self.filter_date_field
             obj = {'%s__range' % key: range}
-            self.queryset = self.queryset .filter(**obj)
+            return self.queryset.filter(**obj)
+        return self.queryset

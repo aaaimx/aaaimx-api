@@ -3,7 +3,6 @@
 from django.db import migrations, models
 import django.db.models.deletion
 import django.utils.timezone
-import gdstorage.storage
 import uuid
 
 
@@ -25,7 +24,7 @@ class Migration(migrations.Migration):
                 ('concept', models.TextField(blank=True, default='')),
                 ('amount', models.FloatField(blank=True, default=0)),
                 ('type', models.CharField(blank=True, default='', max_length=100)),
-                ('voucher', models.FileField(blank=True, storage=gdstorage.storage.GoogleDriveStorage(), upload_to='vouchers/%Y-%m-%D/')),
+                ('voucher', models.FileField(blank=True, upload_to='vouchers/%Y-%m-%D/')),
             ],
         ),
         migrations.CreateModel(
@@ -36,8 +35,8 @@ class Migration(migrations.Migration):
                 ('type', models.CharField(blank=True, default='', max_length=50)),
                 ('QR', models.URLField(blank=True, default='', max_length=100)),
                 ('exp', models.DateTimeField(blank=True, default=django.utils.timezone.now)),
-                ('avatar', models.ImageField(blank=True, storage=gdstorage.storage.GoogleDriveStorage(), upload_to='avatars')),
-                ('file', models.ImageField(blank=True, storage=gdstorage.storage.GoogleDriveStorage(), upload_to='memberships')),
+                ('avatar', models.ImageField(blank=True, upload_to='avatars')),
+                ('file', models.ImageField(blank=True, upload_to='memberships')),
                 ('created_at', models.DateTimeField(auto_now=True)),
                 ('member', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='productivity.Member')),
             ],

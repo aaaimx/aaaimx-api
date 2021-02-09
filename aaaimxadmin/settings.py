@@ -11,13 +11,11 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-import datetime
-from core.applist import *
-from core.databases import *
-from core.mailserver import *
-from core.staticfiles import *
-from core.rest_framework import *
-from core.internationalization import *
+from .config.applist import *
+from .config.databases import *
+from .config.mailserver import *
+from .config.rest_framework import *
+from .config.internationalization import *
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -80,3 +78,18 @@ AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator", },
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator", },
 ]
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/3.0/howto/static-files/
+
+STATIC_URL = "/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "sfiles"),)
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+FTP_USER = os.environ.get('FTP_USER')
+FTP_PASS = os.environ.get('FTP_PASS')
+FTP_BASE_URL = os.environ.get('FTP_BASE_URL')
