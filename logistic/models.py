@@ -20,7 +20,7 @@ class TimeFieldsMixin(models.Model):
 class Event(models.Model):
     def __str__(self):
         return self.title
-    title = models.CharField(max_length=100, null=True, default="")
+    title = models.TextField(default="", blank=True)
     corum = models.IntegerField(default=0, null=True, blank=True)
     hours = models.IntegerField(default=0, null=True, blank=True)
     is_draft = models.BooleanField(default=True)

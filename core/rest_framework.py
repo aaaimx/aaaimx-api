@@ -23,11 +23,6 @@ REST_FRAMEWORK = {
     "PAGE_SIZE": 10,
     'TEST_REQUEST_DEFAULT_FORMAT': 'json'
 }
-JWT_AUTH = {
-    "JWT_ALLOW_REFRESH": True,
-    "JWT_EXPIRATION_DELTA": datetime.timedelta(seconds=10),
-    "JWT_REFRESH_EXPIRATION_DELTA": datetime.timedelta(minutes=15),
-}
 
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": datetime.timedelta(hours=1),
