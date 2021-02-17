@@ -14,11 +14,9 @@ DJANGO_APPS = (
 )
 
 THIRD_PARTY_APPS = (
-    "storages",
     "corsheaders",
     "rest_framework",
     'django_filters',
-    "gdstorage",
 )
 
 LOCAL_APPS = (

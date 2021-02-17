@@ -63,7 +63,6 @@ api_urlpatterns = [
     path("token/", MyTokenObtainPairView.as_view(), name="token_obtain_pair"),
     path("refresh/", TokenRefreshView.as_view(), name="token_refresh"),
     path("token/verify/", TokenVerifyView.as_view(), name="token_verify"),
-    path('accounts/', include('rest_registration.api.urls')),
     path("auth/", include("rest_framework.urls", namespace="rest_framework")),
     path("storage/", ftp_list)
 ]
@@ -75,17 +74,6 @@ urlpatterns = [
     path("api/", include(api_urlpatterns)),
     path("image/", image),
     path("membership/", membership),
-
-    # DOCS
-    path('openapi', get_schema_view(
-        title="AAAIMX API",
-        description="API for productivity …",
-        version="1.1.0"
-    ), name='openapi-schema'),
-    path('docs', TemplateView.as_view(
-        template_name='swagger.html',
-        extra_context={'schema_url': 'openapi-schema'}
-    ), name='swagger-ui'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

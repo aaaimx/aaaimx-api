@@ -3,7 +3,6 @@
 import datetime
 from django.db import migrations, models
 import django.db.models.deletion
-import gdstorage.storage
 import uuid
 
 
@@ -25,7 +24,7 @@ class Migration(migrations.Migration):
                 ('published', models.BooleanField(default=False)),
                 ('to', models.CharField(blank=True, default='', max_length=100)),
                 ('QR', models.CharField(blank=True, default='www.aaaimx.org/certificates/?id=', max_length=100)),
-                ('file', models.ImageField(blank=True, storage=gdstorage.storage.GoogleDriveStorage(), upload_to='certs')),
+                ('file', models.ImageField(blank=True, upload_to='certs')),
                 ('description', models.TextField(blank=True, default='')),
                 ('created_at', models.DateTimeField(blank=True, default=datetime.datetime.now, null=True)),
             ],

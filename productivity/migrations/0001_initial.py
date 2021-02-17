@@ -3,7 +3,6 @@
 import datetime
 from django.db import migrations, models
 import django.db.models.deletion
-import gdstorage.storage
 import uuid
 
 
@@ -21,7 +20,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(default='', max_length=100, unique=True)),
                 ('story', models.TextField(blank=True, default='')),
-                ('logo', models.ImageField(blank=True, default=None, storage=gdstorage.storage.GoogleDriveStorage(), upload_to='logos')),
+                ('logo', models.ImageField(blank=True, default=None, upload_to='logos')),
             ],
         ),
         migrations.CreateModel(
@@ -41,7 +40,7 @@ class Migration(migrations.Migration):
                 ('active', models.BooleanField(default=False)),
                 ('board', models.BooleanField(blank=True, default=False)),
                 ('committee', models.BooleanField(blank=True, default=False)),
-                ('thumbnailFile', models.ImageField(blank=True, default=None, storage=gdstorage.storage.GoogleDriveStorage(), upload_to='thumbnail')),
+                ('thumbnailFile', models.ImageField(blank=True, default=None, upload_to='thumbnail')),
                 ('charge', models.CharField(blank=True, default='', max_length=100)),
             ],
         ),
@@ -53,7 +52,7 @@ class Migration(migrations.Migration):
                 ('alias', models.CharField(blank=True, max_length=100)),
                 ('site', models.URLField(blank=True, default='', max_length=100)),
                 ('logoName', models.CharField(blank=True, max_length=100)),
-                ('logoFile', models.ImageField(blank=True, default=None, storage=gdstorage.storage.GoogleDriveStorage(), upload_to='logos')),
+                ('logoFile', models.ImageField(blank=True, default=None, upload_to='logos')),
                 ('type', models.CharField(default='', max_length=100)),
             ],
         ),
