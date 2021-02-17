@@ -57,6 +57,12 @@ class ParticipantViewSet(DateRangeFilterMixin, viewsets.ModelViewSet):
     search_fields = ['career', 'department', 'adscription']
     ordering_fields = '__all__'
 
+    def get_queryset(self):
+        isCC = self.request.GET.get('isCC')
+        if isCC:
+            return self.queryset.filter(enrollment__isnull=False, cc_hours__gt=0, adscription='ITM')
+        return self.queryset
+
     def get_serializer_class(self):
         if self.action == 'list':
             return ParticipantSerializerDeep
