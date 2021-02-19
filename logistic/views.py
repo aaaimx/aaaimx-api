@@ -32,6 +32,7 @@ class DateRangeFilterBackend(filters.BaseFilterBackend):
             return queryset.filter(**obj)
         return queryset
 
+
 class CCFilterBackend(filters.BaseFilterBackend):
     """
     Filter by date range using `filter_date_field` property
@@ -45,6 +46,7 @@ class CCFilterBackend(filters.BaseFilterBackend):
                 cc_hours__gt=0,
                 adscription='ITM')
         return queryset
+
 
 class EventViewSet(viewsets.ModelViewSet):
     """
@@ -81,7 +83,8 @@ class ParticipantViewSet(viewsets.ModelViewSet):
     queryset = Participant.objects.all().order_by('-created_at')
     serializer_class = ParticipantSerializer
     filter_date_field = "created_at"
-    filter_backends = [DjangoFilterBackend, CCFilterBackend, DateRangeFilterBackend]
+    filter_backends = [DjangoFilterBackend,
+                       CCFilterBackend, DateRangeFilterBackend]
     filterset_fields = ['event', 'career', 'department', 'adscription']
     search_fields = ['fullname', 'career', 'department', 'adscription']
     ordering_fields = '__all__'

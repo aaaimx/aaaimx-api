@@ -1,25 +1,11 @@
 from django.contrib import admin
 from .models import *
 
-# Register your models here.
-@admin.register(Partner)
-class AdminPartner(admin.ModelAdmin):
-    list_display = ('uuid', 'name', 'alias', 'type', 'site', 'logoFile')
-    list_filter = ('type',)
-    list_per_page = 10
-
 
 @admin.register(Division)
 class AdminDivision(admin.ModelAdmin):
-    list_display = ('name', 'logo', 'story')
+    list_display = ('name', 'logo', 'fanpage')
     list_filter = ('name',)
-
-# @admin.register(Research)
-# class AdminResearch(admin.ModelAdmin):
-#     list_display = ('title', "year", "type",)
-#     list_filter = ('lines', "year", "type")
-#     search_fields = ('title',)
-#     list_per_page = 10
 
 
 # @admin.register(Member)

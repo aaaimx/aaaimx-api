@@ -14,6 +14,7 @@ DJANGO_APPS = (
 )
 
 THIRD_PARTY_APPS = (
+    'drf_yasg',
     "corsheaders",
     "rest_framework",
     'django_filters',
