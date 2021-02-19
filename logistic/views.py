@@ -117,13 +117,17 @@ class CertificateViewSet(viewsets.ModelViewSet):
     queryset = Certificate.objects.all().order_by('-created_at')
     serializer_class = CertificateSerializer
     filter_backends = [DjangoFilterBackend, DateRangeFilterBackend]
-    deep_serializer = CertificateSerializerDeep
     filter_date_field = "created_at"
 
     filterset_fields = ['type', 'published', 'event']
     search_fields = ['type', 'description', 'to']
     ordering_fields = '__all__'
     ordering = ['-created_at']
+
+    def get_serializer_class(self):
+        if self.action == 'list':
+            return CertificateSerializerDeep
+        return CertificateSerializer
 
     def get_queryset(self):
         if self.action == 'unasigned':
