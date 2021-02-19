@@ -5,10 +5,11 @@ from datetime import date
 # related third party imports
 from django.conf import settings
 from django.shortcuts import get_object_or_404
-from rest_framework import viewsets
-from rest_framework import status
+from rest_framework import viewsets, status, filters
 from rest_framework.response import Response
 from rest_framework.decorators import action
+
+from django_filters.rest_framework import DjangoFilterBackend
 
 # local application/library specific imports
 from utils.images import generate_cert
@@ -18,6 +19,33 @@ from .models import *
 from .serializers import *
 
 
+class DateRangeFilterBackend(filters.BaseFilterBackend):
+    """
+    Filter by date range using `filter_date_field` property
+    """
+
+    def filter_queryset(self, request, queryset, view):
+        range = request.GET.getlist('range[]', None)
+        if range:
+            key = view.filter_date_field
+            obj = {'%s__range' % key: range}
+            return queryset.filter(**obj)
+        return queryset
+
+class CCFilterBackend(filters.BaseFilterBackend):
+    """
+    Filter by date range using `filter_date_field` property
+    """
+
+    def filter_queryset(self, request, queryset, view):
+        isCC = request.GET.get('isCC')
+        if view.action == 'list' and isCC:
+            return queryset.filter(
+                enrollment__isnull=False,
+                cc_hours__gt=0,
+                adscription='ITM')
+        return queryset
+
 class EventViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows Events to be viewed or edited.
@@ -25,6 +53,7 @@ class EventViewSet(viewsets.ModelViewSet):
     queryset = Event.objects.all().order_by('-date_start')
     serializer_class = EventSerializer
     filter_date_field = "date_start"
+    filter_backends = [DjangoFilterBackend, DateRangeFilterBackend]
 
     filterset_fields = '__all__'
     search_fields = ['type', 'description', 'title', 'place']
@@ -45,23 +74,17 @@ class EventViewSet(viewsets.ModelViewSet):
         return Response(serializer.data)
 
 
-class ParticipantViewSet(DateRangeFilterMixin, viewsets.ModelViewSet):
+class ParticipantViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows Participants to be viewed or edited.
     """
     queryset = Participant.objects.all().order_by('-created_at')
     serializer_class = ParticipantSerializer
     filter_date_field = "created_at"
-
+    filter_backends = [DjangoFilterBackend, CCFilterBackend, DateRangeFilterBackend]
     filterset_fields = ['event', 'career', 'department', 'adscription']
-    search_fields = ['career', 'department', 'adscription']
+    search_fields = ['fullname', 'career', 'department', 'adscription']
     ordering_fields = '__all__'
-
-    def get_queryset(self):
-        isCC = self.request.GET.get('isCC')
-        if isCC:
-            return self.queryset.filter(enrollment__isnull=False, cc_hours__gt=0, adscription='ITM')
-        return self.queryset
 
     def get_serializer_class(self):
         if self.action == 'list':
@@ -93,7 +116,7 @@ class CertificateViewSet(viewsets.ModelViewSet):
     """
     queryset = Certificate.objects.all().order_by('-created_at')
     serializer_class = CertificateSerializer
-
+    filter_backends = [DjangoFilterBackend, DateRangeFilterBackend]
     deep_serializer = CertificateSerializerDeep
     filter_date_field = "created_at"
 
@@ -105,13 +128,6 @@ class CertificateViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         if self.action == 'unasigned':
             return self.queryset.filter(event__isnull=True)
-
-        range = self.request.GET.getlist('range[]', None)
-        if self.action == 'list' and range:
-            key = self.filter_date_field
-            obj = {'%s__range' % key: range}
-            return self.queryset.filter(**obj)
-
         return self.queryset
 
     @action(detail=False, methods=['GET'])
