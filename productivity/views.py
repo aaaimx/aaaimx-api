@@ -162,52 +162,6 @@ class PartnerViewSet(viewsets.ModelViewSet):
         })
 
 
-class RoleViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows roles to be viewed or edited.
-    """
-    queryset = Role.objects.all()
-    serializer_class = RoleSerializer
-
-
-class LineViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows Lines to be viewed or edited.
-    """
-    queryset = Line.objects.all()
-    serializer_class = LineSerializer
-
-    def list(self, request):
-        """
-        GET method to process pagination, filtering & sort
-        """
-        # get query params
-        _all = request.GET.get('all', None)
-
-        self.queryset = self.filter_queryset(self.get_queryset())
-
-        # serialize data
-        if _all is not None:
-            serializer = self.get_serializer(self.queryset, many=True)
-            return Response(serializer.data)
-
-        # pagination
-        page = self.paginate_queryset(self.queryset)
-        serializer = self.get_serializer(page, many=True)
-        return self.get_paginated_response(serializer.data)
-
-    @action(detail=True, methods=['GET'])
-    def research(self, request, pk=None):
-        projects = Line.objects.get(pk=pk).project_set.all()
-        research = Line.objects.get(pk=pk).research_set.all()
-        projects = ProjectSerializer(projects, many=True)
-        research = ResearchSerializer(research, many=True)
-        return Response({
-            'projects': projects.data,
-            'research': research.data
-        })
-
-
 class DivisionViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows divisions to be viewed or edited.
@@ -234,43 +188,6 @@ class DivisionViewSet(viewsets.ModelViewSet):
         serializer = self.get_serializer(page, many=True)
         return self.get_paginated_response(serializer.data)
 
-
-class ProjectViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows projects to be viewed or edited.
-    """
-    queryset = Project.objects.all()
-    serializer_class = ProjectSerializer
-
-    def list(self, request):
-        """
-        GET method to process pagination, filtering & sort
-        """
-        # get query params
-        title = request.GET.get('title', "")
-        institute = request.GET.get('institute', None)
-        line = request.GET.get('line', None)
-        order = request.GET.get('order', 'title')
-        _all = request.GET.get('all', None)
-
-        self.queryset = Project.objects.filter(
-            title__icontains=title).order_by(order)
-
-        if line:
-            self.queryset = self.queryset.filter(lines__icontains=line)
-
-        if institute:
-            self.queryset = self.queryset.filter(institute__alias=institute)
-
-        # serialize data
-        if _all is not None:
-            serializer = self.get_serializer(self.queryset, many=True)
-            return Response(serializer.data)
-
-        # pagination
-        page = self.paginate_queryset(self.queryset)
-        serializer = self.get_serializer(page, many=True)
-        return self.get_paginated_response(serializer.data)
 
 
 class ResearchViewSet(viewsets.ModelViewSet):
@@ -367,18 +284,3 @@ class ResearchViewSet(viewsets.ModelViewSet):
             'divisions': divisions
         })
 
-
-class AdvisorViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows Advisors to be viewed or edited.
-    """
-    queryset = Advisor.objects.all()
-    serializer_class = AdvisorSerializer
-
-
-class AuthorViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows Authors to be viewed or edited.
-    """
-    queryset = Author.objects.all()
-    serializer_class = AuthorSerializer

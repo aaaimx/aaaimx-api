@@ -2,13 +2,7 @@ from django.db import models
 from uuid import uuid4
 from datetime import datetime, timedelta
 from django.contrib.postgres.fields import ArrayField, JSONField
-
-
-class Role(models.Model):
-    def __str__(self):
-        return self.name
-    name = models.CharField(default="", max_length=100, unique=True)
-
+from .mixins import TimeModelMixin
 
 class Division(models.Model):
     def __str__(self):
@@ -32,7 +26,7 @@ class Partner(models.Model):
     type = models.CharField(max_length=100, default="")
 
 
-class Member(models.Model):
+class Member(TimeModelMixin):
     def __str__(self):
         return self.name + ' ' + self.surname
     name = models.CharField(default="", max_length=50)
@@ -44,64 +38,17 @@ class Member(models.Model):
         max_length=50, blank=True), size=20, blank=True, null=True, default=list)
     dateJoined = models.DateField(null=True, blank=True)
 
-
-class Line(models.Model):
-    def __str__(self):
-        return self.topic
-    topic = models.CharField(default="", unique=True, max_length=200)
-
-
-class Project(models.Model):
-    def __str__(self):
-        return self.title
-    uuid = models.UUIDField(default=uuid4, primary_key=True, editable=True)
-    title = models.TextField(default="", blank=True)
-    start = models.DateField(default=datetime.now, blank=True)
-    end = models.DateField(default=datetime.now, blank=True)
-    responsible = models.CharField(default="", max_length=100, blank=True)
-    collaborators = models.ManyToManyField(
-        Member, blank=True, verbose_name="collaborators")
-    institute = models.ForeignKey(
-        Partner, null=True, on_delete=models.SET_NULL)
-    lines = ArrayField(models.CharField(
-        max_length=50, blank=True), size=20, blank=True, null=True, default=list)
-
-
-class Research(models.Model):
+class Research(TimeModelMixin):
     def __str__(self):
         return self.title
 
     class Meta:
         verbose_name_plural = "research"
+
     uuid = models.UUIDField(default=uuid4, primary_key=True, editable=True)
     title = models.TextField(default="", blank=False)
-    lines = ArrayField(models.CharField(
-        max_length=50, blank=True), size=20, blank=True, null=True, default=list)
-    projects = models.ManyToManyField(
-        Project, blank=True, verbose_name="related projects")
-    resume = models.TextField(default="", blank=True)
-    year = models.IntegerField(default=2018, blank=True)
-    grade = models.CharField(default="", max_length=100, blank=True)
-    event = models.CharField(default="", max_length=200, blank=True)
-    pub_in = models.CharField(default="", max_length=200, blank=True)
-    pub_type = models.CharField(default="", max_length=200, blank=True)
-    type = models.CharField(default="", max_length=200, blank=True)
-    link = models.URLField(default="", max_length=500, blank=True)
+    tags = ArrayField(models.CharField(max_length=50, blank=True), size=20, blank=True, null=True, default=list)
+    description = models.TextField(default="", blank=True)
+    type = models.CharField(default="", max_length=30,blank=True, null=True)
+    banner = models.URLField(max_length=200, blank=True, default="")
 
-
-class Advisor(models.Model):
-    def __str__(self):
-        return '{0}.- {1}, {2}.'.format(self.position, self.member.surname, self.member.name[0:1])
-    member = models.ForeignKey(Member, on_delete=models.CASCADE)
-    research = models.ForeignKey(
-        Research, related_name="advisors", on_delete=models.CASCADE)
-    position = models.IntegerField(blank=True, default=1)
-
-
-class Author(models.Model):
-    def __str__(self):
-        return '{0}.- {1}, {2}.'.format(self.position, self.member.surname, self.member.name[0:1])
-    member = models.ForeignKey(Member, on_delete=models.CASCADE)
-    research = models.ForeignKey(
-        Research, default=None, related_name="authors", on_delete=models.CASCADE)
-    position = models.IntegerField(blank=True, default=1)

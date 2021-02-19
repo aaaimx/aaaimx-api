@@ -3,21 +3,11 @@ from .models import *
 from .fields import *
 
 # Serializers define the API representation.
-class RoleSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Role
-        exclude = []
 
-        
+
 class MemberSerializer(serializers.ModelSerializer):
     class Meta:
         model = Member
-        exclude = []
-
-
-class LineSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Line
         exclude = []
 
 
@@ -51,33 +41,9 @@ class ResearchSerializer(serializers.ModelSerializer):
         ]
 
 
-class AdvisorSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Advisor
-        exclude = []
-
-
-class AuthorSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Author
-        exclude = []
-
-
-class ProjectSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Project
-        exclude = []
-
-
 class DivisionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Division
-        exclude = []
-
-
-class LineSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Line
         exclude = []
 
 

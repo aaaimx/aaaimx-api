@@ -4,15 +4,27 @@ Basic building blocks for generic class based views.
 We don't bind behaviour to http method handlers yet,
 which allows mixin classes to be composed in interesting ways.
 """
+from django.db import models
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.settings import api_settings
+
+
+class TimeModelMixin(models.Model):
+
+    # timestamp fields
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        abstract = True
 
 
 class CreateModelMixin:
     """
     Create a model instance.
     """
+
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
@@ -34,6 +46,7 @@ class ListModelMixin:
     """
     List a queryset.
     """
+
     def list(self, request, *args, **kwargs):
         queryset = self.filter_queryset(self.get_queryset())
 
@@ -50,6 +63,7 @@ class RetrieveModelMixin:
     """
     Retrieve a model instance.
     """
+
     def retrieve(self, request, *args, **kwargs):
         instance = self.get_object()
         serializer = self.get_serializer(instance)
@@ -60,10 +74,12 @@ class UpdateModelMixin:
     """
     Update a model instance.
     """
+
     def update(self, request, *args, **kwargs):
         partial = kwargs.pop('partial', False)
         instance = self.model.get(pk=kwargs['pk'])
-        serializer = self.get_serializer(instance, data=request.data, partial=partial)
+        serializer = self.get_serializer(
+            instance, data=request.data, partial=partial)
         serializer.is_valid(raise_exception=True)
         serializer.save()
 
@@ -83,6 +99,7 @@ class DestroyModelMixin:
     """
     Destroy a model instance.
     """
+
     def destroy(self, request, *args, **kwargs):
         instance = self.get_object()
         self.perform_destroy(instance)
