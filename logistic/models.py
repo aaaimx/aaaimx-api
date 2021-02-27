@@ -67,12 +67,17 @@ class Participant(TimeFieldsMixin):
     gender = models.CharField(default="", blank=True, max_length=50)
 
     # school fields
-    enrollment = models.CharField(max_length=100, default="", null=True, blank=True)
-    department = models.CharField(max_length=100, default="", null=True, blank=True)
-    career = models.CharField(max_length=100, default="", null=True, blank=True)
-    adscription = models.CharField(max_length=100, default="", null=True, blank=True)
+    enrollment = models.CharField(
+        max_length=100, default="", null=True, blank=True)
+    department = models.CharField(
+        max_length=100, default="", null=True, blank=True)
+    career = models.CharField(
+        max_length=100, default="", null=True, blank=True)
+    adscription = models.CharField(
+        max_length=100, default="", null=True, blank=True)
 
     # management fields
-    event = models.ForeignKey(Event, null=True, blank=True, on_delete=models.CASCADE)
+    event = models.ForeignKey(
+        Event, null=True, related_name='participants', blank=True, on_delete=models.CASCADE)
     is_responsible = models.BooleanField(default=False)
     cc_hours = models.IntegerField(default=0, blank=True)

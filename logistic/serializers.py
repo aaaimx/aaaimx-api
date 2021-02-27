@@ -5,7 +5,6 @@ from .models import *
 
 
 class CertificateSerializer(serializers.ModelSerializer):
-    
 
     class Meta:
         model = Certificate
@@ -19,20 +18,6 @@ class CertificateSerializerDeep(serializers.ModelSerializer):
         depth = 1
 
 
-class EventSerializer(serializers.ModelSerializer):
-    corum = serializers.IntegerField(required=False, default=0)
-    class Meta:
-        model = Event
-        exclude = []
-
-
-class EventSerializerDeep(serializers.ModelSerializer):
-    class Meta:
-        model = Event
-        exclude = []
-        depth = 1
-
-
 class ParticipantSerializer(serializers.ModelSerializer):
     class Meta:
         model = Participant
@@ -42,5 +27,26 @@ class ParticipantSerializer(serializers.ModelSerializer):
 class ParticipantSerializerDeep(serializers.ModelSerializer):
     class Meta:
         model = Participant
+        exclude = []
+        depth = 1
+
+
+class EventSerializer(serializers.ModelSerializer):
+    corum = serializers.IntegerField(required=False, default=0)
+
+    class Meta:
+        model = Event
+        exclude = []
+
+
+class EventSerializerDeep(serializers.ModelSerializer):
+    
+    participants = ParticipantSerializer(
+        many=True,
+        read_only=True
+    )
+
+    class Meta:
+        model = Event
         exclude = []
         depth = 1
