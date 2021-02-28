@@ -8,6 +8,7 @@ from django.shortcuts import get_object_or_404
 from rest_framework import viewsets, status, filters
 from rest_framework.response import Response
 from rest_framework.decorators import action
+from rest_framework.filters import OrderingFilter, SearchFilter
 
 from django_filters.rest_framework import DjangoFilterBackend
 
@@ -55,10 +56,11 @@ class EventViewSet(viewsets.ModelViewSet):
     queryset = Event.objects.all().order_by('-date_start')
     serializer_class = EventSerializer
     filter_date_field = "date_start"
-    filter_backends = [DjangoFilterBackend, DateRangeFilterBackend]
+    filter_backends = [DjangoFilterBackend, OrderingFilter,
+                       SearchFilter, DateRangeFilterBackend]
 
     filterset_fields = '__all__'
-    search_fields = ['type', 'description', 'title', 'place']
+    search_fields = ['description', 'title', ]
     ordering_fields = '__all__'
     ordering = ['-date_start']
 
@@ -83,8 +85,8 @@ class ParticipantViewSet(viewsets.ModelViewSet):
     queryset = Participant.objects.all().order_by('-created_at')
     serializer_class = ParticipantSerializer
     filter_date_field = "created_at"
-    filter_backends = [DjangoFilterBackend,
-                       CCFilterBackend, DateRangeFilterBackend]
+    filter_backends = [DjangoFilterBackend, OrderingFilter,
+                       SearchFilter, CCFilterBackend, DateRangeFilterBackend]
     filterset_fields = ['event', 'career', 'department', 'adscription']
     search_fields = ['fullname', 'career', 'department', 'adscription']
     ordering_fields = '__all__'
@@ -119,7 +121,8 @@ class CertificateViewSet(viewsets.ModelViewSet):
     """
     queryset = Certificate.objects.all().order_by('-created_at')
     serializer_class = CertificateSerializer
-    filter_backends = [DjangoFilterBackend, DateRangeFilterBackend]
+    filter_backends = [DjangoFilterBackend, OrderingFilter,
+                       SearchFilter, DateRangeFilterBackend]
     filter_date_field = "created_at"
 
     filterset_fields = ['type', 'published', 'event']
