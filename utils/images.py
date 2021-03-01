@@ -33,7 +33,7 @@ def ARIMO_FONT(size):
 
 
 def COPPER_FONT(size):
-    return ImageFont.truetype(COOPER_LIGHT, size)
+    return ImageFont.truetype(COOPER, size)
 
 
 def generate_qr(url, size=5):
