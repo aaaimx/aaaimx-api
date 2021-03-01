@@ -19,6 +19,7 @@ def LOCATION(file): return os.path.join(BASE_DIR, file)
 SPARTAN = LOCATION("utils/fonts/LeagueSpartan-Bold.otf")
 ARIMO = LOCATION("utils/fonts/Arimo-Regular.ttf")
 COOPER = LOCATION("utils/fonts/CooperHewitt-Semibold.otf")
+COOPER_LIGHT = LOCATION("utils/fonts/CooperHewitt-Light.otf")
 NORWESTER = LOCATION("utils/fonts/Norwester.otf")
 MONSERRAT = LOCATION("utils/fonts/Montserrat-Black.otf")
 
@@ -32,7 +33,7 @@ def ARIMO_FONT(size):
 
 
 def COPPER_FONT(size):
-    return ImageFont.truetype(COOPER, size)
+    return ImageFont.truetype(COOPER_LIGHT, size)
 
 
 def generate_qr(url, size=5):
@@ -52,11 +53,12 @@ def generate_qr(url, size=5):
 
 def generate_cert(name, type, desc, uuid, url):
     '''
-    Generate certificate from clean template
+    Generate certificate from clean template (2000x1414px)
     '''
+
     # Create Certifcate image from template
     # get image sizes for calculations
-    img = Image.open(LOCATION("utils/tmp/clean_cert.png"))
+    img = Image.open(LOCATION("utils/tmp/certificate_v2.png"))
     imgWidth, imgHeight = img.size
     cert_draw = ImageDraw.Draw(img)
 

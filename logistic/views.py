@@ -87,7 +87,7 @@ class ParticipantViewSet(viewsets.ModelViewSet):
     filter_date_field = "created_at"
     filter_backends = [DjangoFilterBackend, OrderingFilter,
                        SearchFilter, CCFilterBackend, DateRangeFilterBackend]
-    filterset_fields = ['event', 'career', 'department', 'adscription']
+    filterset_fields = '__all__'
     search_fields = ['fullname', 'career', 'department', 'adscription']
     ordering_fields = '__all__'
 
