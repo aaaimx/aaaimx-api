@@ -98,16 +98,6 @@ class ParticipantViewSet(viewsets.ModelViewSet):
 
     @action(detail=False, methods=['POST', 'GET'], permission_classes=[], authentication_classes=[])
     def register(self, request, *args, **kwargs):
-        enrollment = request.data.get('enrollment', None)
-        event_id = request.data.get('event', None)
-        event = get_object_or_404(Event, pk=event_id)
-        p = Participant.objects.filter(event=event, enrollment=enrollment)
-
-        if (len(p)):
-            return Response({
-                'detail': 'Already registered'
-            }, status=status.HTTP_403_FORBIDDEN)
-
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         self.perform_create(serializer)
