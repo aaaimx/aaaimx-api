@@ -58,7 +58,7 @@ def generate_cert(name, type, desc, uuid, url):
 
     # Create Certifcate image from template
     # get image sizes for calculations
-    img = Image.open(LOCATION("utils/tmp/certificate_v2.png"))
+    img = Image.open(LOCATION("utils/tmp/certificate_v1.png"))
     imgWidth, imgHeight = img.size
     cert_draw = ImageDraw.Draw(img)
 
