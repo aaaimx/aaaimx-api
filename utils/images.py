@@ -8,6 +8,7 @@ import qrcode
 import os
 import requests
 from io import BytesIO
+from django.conf import settings
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -58,7 +59,7 @@ def generate_cert(name, type, desc, uuid, url):
 
     # Create Certifcate image from template
     # get image sizes for calculations
-    img = Image.open(LOCATION("utils/tmp/certificate_v1.png"))
+    img = Image.open(LOCATION("utils/tmp/" + settings.CERT_TEMPLATE))
     imgWidth, imgHeight = img.size
     cert_draw = ImageDraw.Draw(img)
 
