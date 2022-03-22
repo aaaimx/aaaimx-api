@@ -94,4 +94,4 @@ FTP_USER = os.environ.get('FTP_USER')
 FTP_PASS = os.environ.get('FTP_PASS')
 FTP_BASE_URL = os.environ.get('FTP_BASE_URL')
 
-CERT_TEMPLATE = os.environ.get('CERT_TEMPLATE', 'certificate_v1.png')
+CERT_TEMPLATE = os.environ.get('CERT_TEMPLATE', 'certificate_v4.png')
